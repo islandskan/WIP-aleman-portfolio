@@ -6,6 +6,7 @@ function HomePage() {
             <Link href='/about'>About</Link>
             <Link href='/contact'>Contact</Link>
             <Link href='/projects'>Projects</Link>
+            <Link href='/news'>News</Link>
         </>
     );
 }
