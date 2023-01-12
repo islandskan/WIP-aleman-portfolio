@@ -2,7 +2,7 @@ import Link from 'next/link';
 function HomePage() {
     return (
         <>
-            <div>Welcome to Next.js!</div>
+            <div>Add the project list here!</div>
         </>
     );
 }
