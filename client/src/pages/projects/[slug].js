@@ -1,8 +1,10 @@
+import { MetaData } from '../../components/MetaData';
 function Project() {
     return (
         <>
-            <div>
-                <h2>Project</h2>
+            <MetaData page='Single Project' />
+            <div className='container'>
+                <h2>Hallo</h2>
             </div>
         </>
     );
