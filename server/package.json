@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "server-side code for portfolio and graphql",
     "main": "src/index.js",
-    "type": "commonjs",
+    "type": "module",
     "private": true,
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,6 +12,8 @@
     "author": "Sigridur Eggertsdottir, @islandskan",
     "license": "MIT",
     "devDependencies": {
+        "@graphql-tools/mock": "^8.7.15",
+        "@graphql-tools/schema": "^9.0.13",
         "dotenv": "^16.0.3",
         "nodemon": "^2.0.20"
     },
