@@ -1,0 +1,77 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.formIntro {
+    margin-bottom: 2em;
+}
+
+.contactParagraph {
+}
+
+.formContainer {
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.label {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.textarea {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.submit {
+}
+
+.submitMsg {
+    /* min-height: 550px; */
+}
+
+@media screen and (min-width: 1024px) {
+    .contact {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        grid-template-rows: 0 1fr 0;
+        column-gap: 2em;
+    }
+
+    .contact::before {
+        grid-column: 1 / -1;
+        grid-row: 1 / span 1;
+    }
+
+    .contact::after {
+        grid-column: 1 / -1;
+        grid-row: 3 / span 1;
+    }
+
+    .formIntro {
+        grid-column: 1 / span 1;
+    }
+
+    .formContainer {
+        grid-column: 2 / span 1;
+    }
+}
