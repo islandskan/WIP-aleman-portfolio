@@ -15,15 +15,13 @@ export const Navbar = () => {
     return (
         <nav>
             <div className='logo'>
-                <Link href='/'>
-                    <h1>Madeleine Aleman</h1>
-                </Link>
+                <h1>Madeleine Aleman</h1>
             </div>
             <BurgerMenu handleClick={handleClick} isExpanded={isExpanded} />
             <div className={`menu ${isMenuOpen}`}>
                 <ul>
                     <li>
-                        <Link href='/'>Projects</Link>
+                        <Link href='/'>Home</Link>
                     </li>
                     <li>
                         <Link href='/about'>About</Link>
