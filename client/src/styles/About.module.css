@@ -1,0 +1,72 @@
+/* https://stackoverflow.com/questions/73659662/rich-text-react-renderer-does-not-render-h1-or-spaces-between-paragraphs */
+
+.aboutContainer {
+}
+
+.artistContainer,
+.cvContainer,
+.publishedContainer {
+}
+
+.bodyContainer {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.aboutTitle {
+    margin-bottom: 0;
+}
+
+.cvContainer {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: 50px auto;
+    row-gap: 15px;
+}
+
+.cvBtn {
+    grid-column: 13 / -1;
+}
+
+.cvContainer .aboutTitle {
+    grid-column: 1 / span 2;
+}
+
+.cvContainer .bodyContainer {
+    grid-column: 1 / -2;
+}
+
+.artistContainer .aboutTitle,
+.publishedContainer .aboutTitle {
+    margin-bottom: 25px;
+}
+
+/* Styles for the Rich Text Field Nodes */
+
+.bodyContainer p {
+    line-height: 1.6;
+    padding-left: 4px;
+}
+
+.artistContainer p:nth-of-type(3),
+.artistContainer p:nth-of-type(5) {
+    margin-top: 1.6rem;
+}
+
+.cvContainer .bodyContainer p:nth-of-type(5) {
+    margin-bottom: 1.6rem;
+}
+
+.cvContainer .bodyContainer h3 {
+    margin-top: 1.1em;
+    margin-bottom: 0.55em;
+}
+
+.cvContainer .bodyContainer h3:not(.page-title) ~ p,
+.publishedContainer .bodyContainer p {
+    margin-bottom: 8px;
+}
+
+.publishedContainer .bodyContainer a {
+    font-weight: 400;
+}
