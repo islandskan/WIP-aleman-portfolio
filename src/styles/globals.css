@@ -216,18 +216,18 @@ nav .logo {
     width: 100%;
 }
 
-.container::after {
+/* .container::after {
     height: 150px;
-}
+} */
 
 .footer {
     height: 150px;
     padding: 1.5em 0;
     background-color: var(--white);
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
     right: 0;
-    left: 0;
+    left: 0; */
 }
 
 .footer-list {

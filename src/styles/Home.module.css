@@ -21,6 +21,7 @@
 .projectsCard__thumbnail {
     position: relative;
     max-width: 450px;
+    height: 450px;
 }
 
 .projectCard__title {

@@ -1,8 +1,8 @@
 import { MetaData } from '../../components/MetaData';
-function Project() {
+function Hilma() {
     return (
         <>
-            <MetaData page='Single Project' />
+            <MetaData page='Project Hilma' />
             <div className='container'>
                 <h2>Hallo</h2>
             </div>
@@ -10,4 +10,4 @@ function Project() {
     );
 }
 
-export default Project;
+export default Hilma;
