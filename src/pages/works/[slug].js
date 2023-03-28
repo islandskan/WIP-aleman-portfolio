@@ -35,16 +35,15 @@
 //         },
 //     };
 // }
-// function Project({ projects }) {
-//     console.log({ projects });
-//     return (
-//         <>
-//             <MetaData page='project' />
-//             <div className='container'>
-//                 <h2 className='projektTitle'>Hallo</h2>
-//             </div>
-//         </>
-//     );
-// }
+function Project({ projects }) {
+    console.log({ projects });
+    return (
+        <>
+            <div className='container'>
+                <h2 className='projektTitle'>Hallo</h2>
+            </div>
+        </>
+    );
+}
 
-// export default Project;
+export default Project;
