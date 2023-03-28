@@ -1,24 +1,129 @@
 .news {
-    --dark: #372948;
-    --opaqdark: rgba(55, 41, 72, 0.5);
+    --dark: #08040e;
+    --gap: 1.2em;
+    /* --white: #fcf7f4; */
+    --white: #c3c3c3;
 }
 
 .newsList {
-    /* border-top: 2px solid var(--opaqdark); */
-    padding: 20px 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    column-gap: 20px;
-    row-gap: 20px;
+    column-gap: var(--gap);
 }
 
 .newsCard {
-    padding: 16px 8px;
-    border: 1px solid var(--opaqdark);
-    cursor: pointer;
+    padding: 1.8em 8px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    /* background-image: radial-gradient(
+        circle at center,
+        var(--dark) 50%,
+        transparent 50%
+    );
+    background-repeat: no-repeat;
+    transition: background-size 0.5s, color 0.5s, box-shadow 0.5s ease-in;
+    background-size: 0 0;
+    background-position: 50% 50%; */
+    /* box-shadow: 1px 1px 15px 10px rgba(0, 0, 0, 0.02),
+        2px 2px 10px rgba(0, 0, 0, 0.05); */
 }
 
-.newsCard__heading {
+.newsCard::before {
+    content: '';
+    width: 100%;
+    background-color: var(--dark);
+    height: 2px;
+    position: absolute;
+    top: 0;
+}
+
+.newsCard:last-of-type::after {
+    content: '';
+    width: 100%;
+    background-color: var(--dark);
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+}
+
+.newsCard .newsCard:hover,
+.newsCard:focus-within {
+    /* background-size: 200% 200%;
+    color: var(--dark); */
+    /* box-shadow: 12px 10px 20px rgba(0, 0, 0, 0.14),
+        0 18px 20px rgba(0, 0, 0, 0.14); */
+}
+
+.newsCard__txtWrapper {
+    width: max(100%, 250px);
+    min-height: 100px;
+    text-align: start;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 100px;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+}
+
+.linkIcon__wrapper {
+    /* border: 1px solid var(--dark); */
+    cursor: pointer;
+    background-color: transparent;
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.linkIcon__wrapper:hover .linkIcon,
+.linkIcon__wrapper:focus .linkIcon {
+    /* animation: rotateOut 0.8s linear infinite; */
+}
+
+.linkIcon {
+    /* transition: rotate 0.4s ease-in; */
+    /* translate: -8px; */
+    transition: rotate 0.3s ease-in;
+}
+
+/* .linkIcon__wrapper:hover .linkIcon {
+    translate: 8px;
+} */
+
+.linkIcon.open {
+    rotate: 90deg;
+}
+
+.newsCard__txtWrapper,
+.newsLink,
+.newsLink svg path {
+    transition: all 0.6s ease-in;
+}
+
+/* .newsCard:hover .newsCard__txtWrapper,
+.newsCard:hover .newsLink,
+.newsCard:hover .newsLink svg path,
+.newsCard:focus-within .newsCard__txtWrapper,
+.newsCard:focus-within .newsLink,
+.newsCard:focus-within .newsLink svg path {
+    color: white;
+    stroke: white;
+} */
+
+.newsInfo {
+    font-style: italic;
+    font-size: 14px;
+}
+
+.newsCard.currentNews {
+    --lightDark: rgba(45, 40, 52, 0.1);
+}
+
+.newsCard.currentNews:hover,
+.newsCard.currentInfo:focus {
+    /* border-radius: 50%; */
 }
 
 .newsCard__title {
@@ -26,14 +131,56 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 1.5;
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 1;
+    display: flex;
+    align-items: flex-end;
 }
 
-.newsCard__heading p {
+/* .newsCard__heading p {
     font-size: 14px;
     line-height: 1.6;
     opacity: 0.8;
-}
+} */
 
 .newsCard__dates {
-    font-size: 32px;
+    grid-column: 1 / span 2;
+    display: flex;
+}
+
+.newsCard__dates p {
+    width: fit-content;
+    background-color: var(--dark);
+    color: var(--white);
+    padding: 2px 4px;
+    font-size: 0.8rem;
+}
+
+.newsCard__dates p:nth-of-type(2) {
+    margin-left: 8px;
+}
+
+.newsCard__location {
+    /* border: 1px solid red; */
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 1;
+}
+
+.newsCard__link {
+    position: absolute;
+    bottom: 1em;
+}
+
+@media screen and (min-width: 680px) {
+    .newsList {
+    }
+    .newsCard {
+    }
+
+    .newsList {
+        row-gap: var(--gap);
+    }
+}
+
+@media screen and (min-width: 1051px) {
 }
