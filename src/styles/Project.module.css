@@ -1,0 +1,104 @@
+/* STYLES FOR PROJECT COMPONENTS */
+
+.projectImageFigure {
+    /* border: 1px solid red; */
+}
+.projectImage {
+    /* border: 1px solid red; */
+    /* max-width: 1000px; */
+}
+
+/* Styles for the Video component, regarding size, thumbnail images etc. */
+
+/* Styles for the Audio component */
+
+/* Archive images */
+
+.archiveContainer {
+    border: 1px solid red;
+    /* grid-column: 1 / span 12; */
+    /* display: grid; */
+    /* grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(auto-fill, 5vw); */
+    row-gap: 15px;
+    column-gap: 15px;
+}
+
+.archive__container {
+}
+
+.title__wrapper {
+    grid-column: 1 / span 5;
+}
+
+.archiveImgFigure {
+    width: fit-content;
+    overflow: hidden;
+    /* width: 100%; */
+    /* display: flex;
+    justify-content: center; */
+}
+/*
+.archiveImgFigure:nth-of-type(1) {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 3;
+}
+
+.archiveImgFigure:nth-of-type(2) {
+    grid-column: 4 / span 3;
+    grid-row: 1 / span 3;
+}
+
+.archiveImgFigure:nth-of-type(3) {
+    grid-column: 7 / span 3;
+    grid-row: 1 / span 3;
+}
+
+.archiveImgFigure:nth-of-type(4) {
+    grid-column: 10 / span 3;
+    grid-row: 1 / span 3;
+}
+
+.archiveImgFigure:nth-of-type(5) {
+    grid-column: 1 / span 3;
+    grid-row: 4 / span 3;
+}
+
+.archiveImgFigure:nth-of-type(6) {
+    grid-column: 4 / span 3;
+    grid-row: 4 / span 3;
+}
+
+.archiveImgFigure:nth-of-type(7) {
+    grid-column: 7 / span 3;
+    grid-row: 4 / span 3;
+}
+.archiveImgFigure:nth-of-type(8) {
+    grid-column: 10 / span 3;
+    grid-row: 4 / span 3;
+}
+
+.archiveImgFigure:nth-of-type(9) {
+    grid-column: 1 / span 3;
+    grid-row: 7 / span 3;
+} */
+
+.archiveImg {
+    /* width: max-content; */
+    /* width: 100%;
+    height: 100%;
+    object-fit: cover; */
+}
+/* LAYOUT STYLES FOR SPECIFIC PAGES */
+
+/* hilma */
+
+/* emanuel */
+
+/* axel */
+
+/* journey i & journey ii */
+
+/* correspondances i & correspondances ii */
+
+/* axis mundi berlin & axis mundi stockholm */
