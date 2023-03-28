@@ -1,0 +1,46 @@
+/* Styles for the PDF component on Hilma Page */
+
+.PDFthumbnail {
+    grid-column: 2 / span 10;
+    /* grid-row: 9 / span 2; */
+    /* display: flex; */
+}
+
+.PDF__link {
+    display: inline-block;
+}
+
+.PDFthumbnail__img {
+}
+
+.PDFthumbnail__txt {
+    margin-left: 1rem;
+}
+
+/* .linkContainer {
+    display: grid;
+    grid-template-columns: 5ch repeat(5, 1fr);
+    grid-template-rows: 2.5em repeat(2, min(3.5em, 0.3fr));
+    row-gap: 20px;
+} */
+
+/* .link {
+    width: fit-content;
+    line-height: 1.8;
+    height: fit-content;
+    font-size: 1rem;
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 1;
+    text-decoration: underline;
+} */
+
+/* .linkBody {
+    grid-column: 2 / span 3;
+    grid-row: 2 / span 2;
+} */
+
+/* p.linkBody {
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.9;
+} */

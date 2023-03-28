@@ -1,0 +1,13 @@
+.seeMoreLink {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    /* width: fit-content; */
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+.linkIcon {
+    font-size: 1.2rem;
+    margin-left: 8px;
+}
