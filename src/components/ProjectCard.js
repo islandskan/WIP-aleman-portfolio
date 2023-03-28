@@ -1,23 +1,35 @@
+import SeeMoreLink from './SeeMoreLink';
+import Image from 'next/image';
 import Link from 'next/link';
-import { ProjectThumbnail } from './Images';
-import styles from '../styles/Projects.module.css';
+import styles from '../styles/Home.module.css';
+import { SrOnly } from './SrOnly.js';
+const ProjectCard = ({ card }) => {
+    const { slug, projectThumbnail, projectTitle } = card.fields;
 
-const ProjectCard = ({ project }) => {
-    const { slug, projectTitle, thumbnail } = project;
-    const WIDTH = 450;
-    const HEIGHT = 450;
+    const thumbnailImgUrl = `https:${projectThumbnail.fields.file.url}`;
 
     return (
-        <div className={styles.projectCard} key={project.slug}>
-            <Link href={`/projects/${slug}`}>
-                <div className={styles.projectsCard__thumbnail}>
-                    {/* <ProjectThumbnail url= /> */}
-                    <h4 className={styles.projectCard__title}>
-                        {projectTitle}
-                    </h4>
-                </div>
+        <li className={`${styles.projectCard}`} key={slug}>
+            <Link
+                href={`/works/${slug}`}
+                className={styles.projectsCard__thumbnail}
+            >
+                <SrOnly text={`Go to ${projectTitle}`} />
+                <h4 className={styles.projectCard__title}>{projectTitle}</h4>
+                <Image
+                    src={thumbnailImgUrl}
+                    alt={projectTitle}
+                    height='300'
+                    width='600'
+                    className={styles.projectsCard__thumbnail}
+                />
             </Link>
-        </div>
+            <SeeMoreLink
+                slug={`/works/${slug}`}
+                text='See Project'
+                skipSrOnly
+            />
+        </li>
     );
 };
 
