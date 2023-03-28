@@ -1,6 +1,23 @@
 import Head from 'next/head';
+// seoMetaData
+// import { createClient } from 'contentful';
 
-export const MetaData = ({ page }) => {
+// export async function getStaticProps() {
+//     const client = createClient({
+//         space: process.env.CONTENTFUL_SPACE_ID,
+//         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+//     });
+//     const res = await client.getEntry('4aY3PUfmlNbFFlnKfd9a60');
+
+//     return {
+//         props: {
+//             seoMetaData: res.items,
+//         },
+//     };
+// }
+
+export const MetaData = ({ page, seoMetaData }) => {
+    // console.log(seoMetaData);
     return (
         <Head>
             <title>{`Madeleine Aleman | ${page}`}</title>
