@@ -1,4 +1,4 @@
 # example netlify.toml
 [build]
-  command = "npm run build && npm run export"
-  publish = "out"
+  command = "CI = npm run build"
+  publish = ".next"
