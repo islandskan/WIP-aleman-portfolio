@@ -9,6 +9,9 @@ export async function getStaticProps() {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     });
     const res = await client.getEntry('1WWyIGGnTjJ00GoQLnL5pl');
+    if (!res) {
+        return { notFound: true };
+    }
     return {
         props: {
             res,
@@ -16,6 +19,7 @@ export async function getStaticProps() {
     };
 }
 function Archive({ res }) {
+    console.log(res);
     const { title, year, projectImages, slug } = res.fields;
 
     const archiveImagesImageCollection = projectImages.map((image) => (
