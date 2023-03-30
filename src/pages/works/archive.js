@@ -19,7 +19,6 @@ export async function getStaticProps() {
     };
 }
 function Archive({ res }) {
-    console.log(res);
     const { title, year, projectImages, slug } = res.fields;
 
     const archiveImagesImageCollection = projectImages.map((image) => (
