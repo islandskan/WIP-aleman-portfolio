@@ -3,13 +3,12 @@ import { BurgerMenu } from './BurgerMenu';
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 
-export const Navbar = ({ className }) => {
+export const Navbar = () => {
     const [isExpanded, setIsExpanded] = useState(false);
     let menuRef = useRef();
     const router = useRouter();
     const currentPage = router.pathname;
 
-    console.log(className);
     let isMenuOpen = isExpanded ? 'open' : '';
 
     // closes mobile menu when you click somewhere outside
@@ -47,7 +46,7 @@ export const Navbar = ({ className }) => {
     ));
 
     return (
-        <nav ref={menuRef} className={className}>
+        <nav ref={menuRef}>
             <div className='nav_container'>
                 <Link className='logo' href='/' aria-hidden='true'>
                     Madeleine Aleman
