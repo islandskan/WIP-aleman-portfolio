@@ -9,7 +9,12 @@ export async function getStaticProps() {
         space: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     });
+
     const res = await client.getEntry('48jH0hTsCSEZM9StIUxsJl');
+
+    if (!res) {
+        return { notFound: true };
+    }
     return {
         props: {
             res,

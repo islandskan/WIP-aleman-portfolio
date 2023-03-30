@@ -12,6 +12,9 @@ export async function getStaticProps() {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     });
     const res = await client.getEntry('JCmCHk3RexEzFahtV48MJ');
+    if (!res) {
+        return { notFound: true };
+    }
     return {
         props: {
             res,
