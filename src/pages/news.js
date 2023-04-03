@@ -21,29 +21,10 @@ export async function getStaticProps() {
     };
 }
 
-// export async function getStaticProps() {
-//     const res = await fetchEntries('newsCards');
-//     const newsCards = res.map((item) => {
-//         return item.fields;
-//     });
-//     return {
-//         props: {
-//             newsCards,
-//         },
-//     };
-// }
 const News = ({ newsCards }) => {
-    // const[cardOpen, setCardOpen] = useState(false)
-    // const handleToggle = (index) => {
-    //     if (clicked === index) {
-    //      return setClicked("0");
-    //     }
-    //     setClicked(index);
-    // }
-
-    const newsElements = newsCards.map((card, index) => (
+    const newsElements = newsCards.map((card) => (
         <>
-            <NewsCard key={card.sys.id} card={card} btnId={index} />
+            <NewsCard key={card.sys.id} card={card} />
         </>
     ));
 

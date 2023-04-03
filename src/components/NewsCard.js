@@ -1,19 +1,9 @@
 import styles from '../styles/News.module.css';
 import SeeMoreLink from './SeeMoreLink';
-import { GrLinkNext } from 'react-icons/gr';
 import { setNewsDates } from '../utils/setNewsDates';
-import { useState } from 'react';
 
-export const NewsCard = ({ card, btnId }) => {
+export const NewsCard = ({ card }) => {
     const { title, location, link, startDate, endDate } = card.fields;
-
-    const [openNews, setOpenNews] = useState(false);
-
-    const handleClick = () => {
-        setOpenNews((prev) => !prev);
-    };
-
-    const isOpen = openNews ? `${styles.open}` : '';
 
     return (
         <div className={`${styles.newsCard}`}>
@@ -31,27 +21,6 @@ export const NewsCard = ({ card, btnId }) => {
                 {location && (
                     <p className={styles.newsCard__location}>{location}</p>
                 )}
-                <button
-                    className={styles.linkIcon__wrapper}
-                    onClick={handleClick}
-                >
-                    <GrLinkNext
-                        key={btnId}
-                        className={`${styles.linkIcon} ${isOpen}`}
-                    />
-                </button>
-                {/* {openNews && (
-                        <div className={styles.newsCard__moreInfo}>
-                            {link && (
-                                <SeeMoreLink
-                                    slug={link}
-                                    linkClass={styles.newsLink}
-                                    text='Read More'
-                                    srLinkName={`about ${title}`}
-                                />
-                            )}
-                        </div>
-                    )} */}
             </div>
         </div>
     );
