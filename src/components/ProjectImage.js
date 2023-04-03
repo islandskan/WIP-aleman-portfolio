@@ -15,6 +15,7 @@ export const ProjectImage = ({ image, ariaSetSize, index }) => {
                 alt={image.imageAltText}
                 height={900}
                 width={800}
+                loading='lazy'
             />
             <figcaption>{imageInfo.join(' - ')}</figcaption>
         </figure>

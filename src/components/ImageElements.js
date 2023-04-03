@@ -11,6 +11,7 @@ export const ImageElement = ({ image }) => {
                 alt={imageAlt}
                 height={350}
                 width={300}
+                loading='lazy'
             />
         </figure>
     );

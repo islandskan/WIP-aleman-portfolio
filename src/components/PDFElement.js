@@ -16,6 +16,7 @@ export const PDFElement = ({ hilmaPDF }) => {
                     alt={hilmaPDF.thumbnail.fields.title}
                     width={WIDTH / 1.5}
                     height={HEIGHT / 1.5}
+                    loading='lazy'
                     className={styles.PDFthumbnail__img}
                 />
             </Link>

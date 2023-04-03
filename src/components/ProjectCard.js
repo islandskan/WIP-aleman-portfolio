@@ -22,6 +22,7 @@ const ProjectCard = ({ card }) => {
                     height='300'
                     width='600'
                     className={styles.projectsCard__thumbnail}
+                    loading='lazy'
                 />
             </Link>
             <SeeMoreLink
