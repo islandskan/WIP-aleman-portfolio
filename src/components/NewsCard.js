@@ -1,9 +1,11 @@
 import styles from '../styles/News.module.css';
-import SeeMoreLink from './SeeMoreLink';
+// import SeeMoreLink from './SeeMoreLink';
+import Link from 'next/link';
 import { setNewsDates } from '../utils/setNewsDates';
 
 export const NewsCard = ({ card }) => {
     const { title, location, link, startDate, endDate } = card.fields;
+    console.log(link);
 
     return (
         <div className={`${styles.newsCard}`}>
@@ -20,6 +22,15 @@ export const NewsCard = ({ card }) => {
                 )}
                 {location && (
                     <p className={styles.newsCard__location}>{location}</p>
+                )}
+                {link && (
+                    <Link
+                        className={styles.newsCard__link}
+                        href={link}
+                        target='_blank'
+                    >
+                        Read more
+                    </Link>
                 )}
             </div>
         </div>
