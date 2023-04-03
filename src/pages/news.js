@@ -23,9 +23,7 @@ export async function getStaticProps() {
 
 const News = ({ newsCards }) => {
     const newsElements = newsCards.map((card) => (
-        <>
-            <NewsCard key={card.sys.id} card={card} />
-        </>
+        <NewsCard key={card.sys.id} card={card} />
     ));
 
     return (
