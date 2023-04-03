@@ -3,9 +3,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import { SrOnly } from './SrOnly.js';
+import { resizeImg } from '../utils/resizeProjectImg';
 const ProjectCard = ({ card }) => {
-    const { slug, projectThumbnail, projectTitle } = card.fields;
+    const cardImgSizes = resizeImg(card);
 
+    const { slug, projectThumbnail, projectTitle } = card.fields;
+    const { height, width } = cardImgSizes;
+    console.log(`${projectTitle}, Height: ${height}, width: ${width}`);
     const thumbnailImgUrl = `https:${projectThumbnail.fields.file.url}`;
 
     return (
@@ -19,8 +23,8 @@ const ProjectCard = ({ card }) => {
                 <Image
                     src={thumbnailImgUrl}
                     alt={projectTitle}
-                    height='300'
-                    width='600'
+                    height={height}
+                    width={width}
                     className={styles.projectsCard__thumbnail}
                     loading='lazy'
                 />
