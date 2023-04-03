@@ -5,7 +5,6 @@
     "main": "src/pages/index.js",
     "author": "Sigridur Eggertsdottir/ @islandskan",
     "license": "MIT",
-    "type": "module",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
