@@ -18,6 +18,7 @@
 }
 .projectsCard__thumbnail {
     margin-bottom: 8px;
+    /* border: 2px solid white; */
 }
 
 .projectCard__title {
