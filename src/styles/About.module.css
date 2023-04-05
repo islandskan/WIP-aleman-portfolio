@@ -2,9 +2,8 @@
 
 .aboutContainer {
     display: grid;
-    row-gap: 2em;
+    row-gap: 4em;
     grid-template-columns: repeat(12, 1fr);
-    /* grid-template-rows: repeat(auto-fill, 1fr); */
 }
 
 /* grid layout for the containers */
@@ -22,10 +21,6 @@
     font-size: 1rem;
     line-height: 1.85;
     font-weight: 300;
-}
-
-.aboutTitle {
-    margin-bottom: 0;
 }
 
 .cvContainer {
@@ -48,17 +43,29 @@
 }
 
 .cvContainer .bodyContainer h5 {
+    /* border: 1px solid red; */
     font-size: 1.1rem;
     margin: 0.7em 0 0.5em 0;
 }
 
-.cvContainer .bodyContainer h6 {
-    font-size: 1rem;
-    margin-bottom: 0.3em;
+.cvContainer .bodyContainer h5::before {
+    content: '';
+    height: 2em;
+    display: block;
 }
 
+.cvContainer .bodyContainer h6 {
+    /* border: 1px solid red; */
+    font-size: 1rem;
+    margin: 1em 0 6px 0;
+}
+
+.cvContainer .bodyContainer li {
+    /* border: 1px solid black; */
+    margin-bottom: 4px;
+}
 .cvContainer .bodyContainer p {
-    line-height: 1.9;
+    line-height: 1.8;
 }
 
 .artistContainer .aboutTitle,
