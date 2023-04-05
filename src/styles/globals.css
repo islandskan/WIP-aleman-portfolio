@@ -157,7 +157,6 @@ nav {
     left: 0;
     right: 0;
     padding: var(--padding);
-    background-color: aqua;
 }
 
 .nav_container {
