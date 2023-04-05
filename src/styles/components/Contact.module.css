@@ -1,5 +1,6 @@
 .formContainer {
     --transparentDarker: rgba(14, 6, 27, 0.7);
+
     --dark: #08040e;
     --white: #fcf7f4;
     display: flex;

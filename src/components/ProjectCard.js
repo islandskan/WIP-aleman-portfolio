@@ -6,17 +6,14 @@ import { SrOnly } from './SrOnly.js';
 import { resizeImg } from '../utils/resizeProjectImg';
 
 const ProjectCard = ({ card }) => {
-    // const cardImgSizes = resizeImg(card);
+    const cardImgSizes = resizeImg(card);
 
     console.log(card.fields.projectThumbnail.fields.file.details.image);
 
     const { slug, projectThumbnail, projectTitle } = card.fields;
-    // const { height, width } = cardImgSizes;
+    const { height, width } = cardImgSizes;
     // console.log(`${projectTitle}, Height: ${height}, width: ${width}`);
     const thumbnailImgUrl = `https:${projectThumbnail.fields.file.url}`;
-    const { height, width } =
-        card.fields.projectThumbnail.fields.file.details.image;
-    console.log(height, width);
 
     return (
         <li className={`${styles.projectCard}`} key={slug}>

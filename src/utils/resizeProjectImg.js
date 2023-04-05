@@ -1,6 +1,9 @@
 const resizeImg = (card) => {
     const imgSizes = card.fields.projectThumbnail.fields.file.details.image;
     let { height, width } = imgSizes;
+
+    // imgSizes.map((unit) => unit * console.log(unit * ))
+
     if (height > width) {
         height = width;
         width *= 0.3;
