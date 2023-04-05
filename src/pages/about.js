@@ -55,15 +55,16 @@ const About = ({ aboutItems }) => {
 
     console.log(publishedBodyText.content[0].content);
 
-    const options = {
-        renderNode: {
-            [INLINES.ASSET_HYPERLINK]: (node) => {
-                return `<a href="https:${node.data.target.fields.file.url}">${node.content}</a>`;
-            },
-        },
-    };
+    // const options = {
+    //     renderNode: {
+    //         [INLINES.ASSET_HYPERLINK]: (node) => {
+    //             return `<a href="https:${node.data.target.fields.file.url}">${node.content}</a>`;
+    //         },
+    //     },
+    // };
 
-    console.log(options);
+    // console.log(options);
+    // className={`container ${styles.aboutContainer}
 
     return (
         <>
@@ -96,10 +97,7 @@ const About = ({ aboutItems }) => {
                             {publishedTitle}
                         </h3>
                         <div className={styles.bodyContainer}>
-                            {documentToReactComponents(
-                                publishedBodyText,
-                                options
-                            )}
+                            {documentToReactComponents(publishedBodyText)}
                         </div>
                     </div>
                 </div>

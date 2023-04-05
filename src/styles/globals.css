@@ -13,9 +13,7 @@
     --transparentDarker: rgba(14, 6, 27, 0.7);
     --pinkish: #bb85ba;
     --lilac: #b0aff6;
-    --verticalPadding320: 1.5em;
-    --verticalPadding768: 2em;
-    --verticalPadding1024: 2em;
+    --padding: 1.5em;
     --menuHeight: 50px;
 }
 
@@ -149,13 +147,6 @@ h6 {
     user-select: none;
 }
 
-/* Layout styles */
-
-.layout {
-    max-width: 1100px;
-    margin: auto;
-}
-
 /* Global Components styles */
 
 nav {
@@ -165,7 +156,8 @@ nav {
     z-index: 8;
     left: 0;
     right: 0;
-    padding: var(--verticalPadding320);
+    padding: var(--padding);
+    background-color: aqua;
 }
 
 .nav_container {
@@ -223,7 +215,7 @@ nav .logo {
     cursor: pointer;
     position: absolute;
     z-index: 9;
-    right: var(--verticalPadding320);
+    right: var(--padding);
     padding: 2px 0;
 }
 
@@ -248,40 +240,20 @@ nav .logo {
     rotate: 45deg;
 }
 
-/* navigation styles for landing page */
+/* Layout styles */
 
-nav.landingPage,
-nav.landingPage .menu {
-    background-color: var(--transparentDarker);
+.layout {
+    max-width: 1100px;
+    margin: auto;
 }
-
-nav.landingPage .logo,
-nav.landingPage .menu__link a {
-    color: var(--white);
-}
-
-nav.landingPage .menu .menu__link.active a {
-    --dark: #5e526e;
-    color: var(--dark);
-}
-
-nav.landingPage .burger-menu {
-    background-color: transparent;
-}
-
-nav.landingPage .line {
-    background-color: var(--white);
-}
-
-/* End of landing page navbar */
 
 .container {
     min-height: 100vh;
-    position: relative;
+    /* position: relative; */
     display: grid;
     row-gap: 2em;
     z-index: 2;
-    padding: 0 var(--verticalPadding320);
+    padding: 0 var(--padding);
 }
 
 .container::before,
@@ -298,7 +270,7 @@ nav.landingPage .line {
     display: grid;
     row-gap: 2em;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 60px repeat(auto-fill, 1fr);
+    /* grid-template-rows: 60px repeat(auto-fill, 1fr); */
 }
 
 .page-title-wrapper {
@@ -334,31 +306,6 @@ nav.landingPage .line {
 .projektYear,
 .pageSub-title {
     font-size: 1rem;
-}
-
-.footer {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto;
-    padding: var(--verticalPadding320);
-    background-color: var(--white);
-    color: var(--dark);
-}
-
-.footer-link {
-    color: var(--white);
-}
-
-.footer__link-container {
-    color: var(--white);
-}
-
-.footer__small-container {
-}
-
-.footer small {
-    font-size: 14px;
-    opacity: 0.7;
 }
 
 /* NOT FOUND 404 styles */
@@ -412,30 +359,14 @@ p.linkBody {
     margin-right: 6px;
 }
 
-.boxShadow {
-    box-shadow: 1px 1px 10px 8px rgba(0, 0, 0, 0.02),
-        2px 2px 10px 2px rgba(0, 0, 0, 0.03);
-}
-
 /* Break points */
 
 @media screen and (min-width: 412px) {
 }
 
 @media screen and (min-width: 768px) {
-    nav.landingPage {
-        left: calc(var(--verticalPadding768) * -2);
-        right: calc(var(--verticalPadding768) * -2);
-    }
-    .layout {
-        padding: 0 var(--verticalPadding768);
-    }
     .burger-menu {
         display: none;
-    }
-
-    nav {
-        margin: 0 var(--verticalPadding768);
     }
 
     .menu {
@@ -464,22 +395,9 @@ p.linkBody {
     .container {
         row-gap: 3.5em;
     }
-
-    .footer {
-        padding: var(--verticalPadding768) 0;
-    }
 }
 
 @media screen and (min-width: 1024px) {
-    nav.landingPage {
-        left: calc(var(--verticalPadding1024) * -2);
-        right: calc(var(--verticalPadding1024) * -2);
-    }
-
-    .layout {
-        padding: 0 var(--verticalPadding1024);
-    }
-
     .nav_container {
         justify-content: space-around;
     }
@@ -514,7 +432,6 @@ p.linkBody {
     }
 
     nav {
-        margin: 0 var(--verticalPadding1024);
         justify-content: center;
     }
     .container {
@@ -523,10 +440,6 @@ p.linkBody {
 
     .container::before {
         height: 10px;
-    }
-
-    .footer {
-        padding: var(--verticalPadding320) 0;
     }
 }
 
