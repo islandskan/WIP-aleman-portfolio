@@ -24,7 +24,7 @@ const ProjectCard = ({ card }) => {
                     src={thumbnailImgUrl}
                     alt={projectTitle}
                     height='500'
-                    width='500'
+                    width={width}
                     className={styles.projectsCard__thumbnail}
                     loading='lazy'
                 />
