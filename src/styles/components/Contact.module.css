@@ -115,22 +115,18 @@
     }
 }
 
-@media screen and (min-width: 768px) {
-    .formContainer {
-        /* display: grid;
-        grid-template-columns: 1fr 1.5fr;
-        column-gap: 50px; */
-    }
-
-    .projectContainer {
-        grid-column: 1 / span 1;
-    }
-}
-
 @media screen and (min-width: 1000px) {
-    .projectContainer,
+    /* .projectContainer,
     .form {
         grid-column: 3 / span 8;
+    } */
+
+    .projectContainer {
+        grid-column: 2 / span 4;
+    }
+
+    .form {
+        grid-column: 7 / span 5;
     }
 }
 
