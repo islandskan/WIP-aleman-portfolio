@@ -1,13 +1,19 @@
 .formContainer {
+    grid-template-columns: repeat(12, 1fr);
     --transparentDarker: rgba(14, 6, 27, 0.7);
 
     --dark: #08040e;
     --white: #fcf7f4;
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+
+.projectContainer {
+    grid-column: 1 / span 12;
 }
 
 .form {
+    grid-column: 1 / span 12;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -90,14 +96,46 @@
 .submitMsg {
 }
 
+@media screen and (min-width: 550px) {
+    .formContainer::before,
+    .formContainer::after {
+        content: '';
+        display: block;
+        width: 100%;
+        grid-column: 2 / span 10;
+    }
+
+    .formContainer::before {
+        height: 50px;
+    }
+
+    .projectContainer,
+    .form {
+        grid-column: 2 / span 10;
+    }
+}
+
 @media screen and (min-width: 768px) {
     .formContainer {
-        display: grid;
+        /* display: grid;
         grid-template-columns: 1fr 1.5fr;
-        column-gap: 50px;
+        column-gap: 50px; */
     }
 
     .projectContainer {
         grid-column: 1 / span 1;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .projectContainer,
+    .form {
+        grid-column: 3 / span 8;
+    }
+}
+
+@media and (min-width: 1024px) {
+    .news::before {
+        height: 10px;
     }
 }
