@@ -86,7 +86,15 @@
     line-height: 1.9;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 550px) {
+    .artistContainer,
+    .cvContainer,
+    .publishedContainer {
+        grid-column: 2 / span 10;
+    }
+}
+
+@media screen and (min-width: 1000px) {
     .artistContainer,
     .cvContainer,
     .publishedContainer {
