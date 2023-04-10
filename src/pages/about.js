@@ -69,36 +69,34 @@ const About = ({ aboutItems }) => {
     return (
         <>
             <MetaData page='About' />
-            <div id='about' className='container'>
-                <div className={styles.aboutContainer}>
-                    <div className={styles.artistContainer}>
-                        <h3 className={`page-title ${styles.aboutTitle}`}>
-                            {artistTitle}
-                        </h3>
-                        <div className={styles.bodyContainer}>
-                            {documentToReactComponents(artistBodyText)}
-                        </div>
+            <div id='about' className={`${styles.aboutContainer} container`}>
+                <div className={styles.artistContainer}>
+                    <h3 className={`page-title ${styles.aboutTitle}`}>
+                        {artistTitle}
+                    </h3>
+                    <div className={styles.bodyContainer}>
+                        {documentToReactComponents(artistBodyText)}
                     </div>
-                    <div className={styles.cvContainer}>
-                        <h3 className={`page-title ${styles.aboutTitle}`}>
-                            {cvTitle}
-                        </h3>
-                        <Button
-                            type='button'
-                            classname={styles.cvBtn}
-                            text='Save as PDF'
-                        />
-                        <div className={styles.bodyContainer}>
-                            {documentToReactComponents(cvBodyText)}
-                        </div>
+                </div>
+                <div className={styles.cvContainer}>
+                    <h3 className={`page-title ${styles.aboutTitle}`}>
+                        {cvTitle}
+                    </h3>
+                    <Button
+                        type='button'
+                        classname={styles.cvBtn}
+                        text='Save as PDF'
+                    />
+                    <div className={styles.bodyContainer}>
+                        {documentToReactComponents(cvBodyText)}
                     </div>
-                    <div className={styles.publishedContainer}>
-                        <h3 className={`page-title ${styles.aboutTitle}`}>
-                            {publishedTitle}
-                        </h3>
-                        <div className={styles.bodyContainer}>
-                            {documentToReactComponents(publishedBodyText)}
-                        </div>
+                </div>
+                <div className={styles.publishedContainer}>
+                    <h3 className={`page-title ${styles.aboutTitle}`}>
+                        {publishedTitle}
+                    </h3>
+                    <div className={styles.bodyContainer}>
+                        {documentToReactComponents(publishedBodyText)}
                     </div>
                 </div>
             </div>

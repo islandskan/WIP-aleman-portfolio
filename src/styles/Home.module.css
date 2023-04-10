@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    grid-column: 1 / span 12;
 }
 
 .projectCard {
@@ -30,7 +31,33 @@
 .projectsCard__thumbnail img {
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 550px) {
+    .homeContainer::before,
+    .homeContainer::after {
+        content: '';
+        display: block;
+        width: 100%;
+        grid-column: 2 / span 10;
+    }
+
+    .homeContainer::before {
+        height: 50px;
+    }
+    .projectsList {
+        grid-column: 2 / span 10;
+    }
+}
+
+@media screen and (min-width: 940px) {
+    .projectsList {
+        grid-column: 3 / span 8;
+    }
+}
+
+@media and (min-width: 1024px) {
+    .homeContainer::before {
+        height: 10px;
+    }
 }
 
 /* @media screen and (min-width: 1024px) {

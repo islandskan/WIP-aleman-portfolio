@@ -1,5 +1,4 @@
 .formContainer {
-    grid-template-columns: repeat(12, 1fr);
     --transparentDarker: rgba(14, 6, 27, 0.7);
 
     --dark: #08040e;
@@ -116,17 +115,9 @@
 }
 
 @media screen and (min-width: 1000px) {
-    /* .projectContainer,
+    .projectContainer,
     .form {
         grid-column: 3 / span 8;
-    } */
-
-    .projectContainer {
-        grid-column: 2 / span 4;
-    }
-
-    .form {
-        grid-column: 7 / span 5;
     }
 }
 
