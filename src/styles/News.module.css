@@ -2,10 +2,13 @@
     --dark: #08040e;
     --gap: 1.2em;
     /* --white: #fcf7f4; */
-    --white: #c3c3c3;
+    /* --white: #c3c3c3; */
+    --white: #e3e3e3;
+    grid-template-columns: repeat(12, 1fr);
 }
 
 .newsList {
+    grid-column: 1 / span 12;
     display: grid;
     column-gap: var(--gap);
 }
@@ -136,9 +139,13 @@
     grid-row: 3 / span 1;
 }
 
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 550px) {
     .newsList {
+        grid-column: 2 / span 10;
     }
+}
+
+@media screen and (min-width: 680px) {
     .newsCard {
     }
 
@@ -147,5 +154,8 @@
     }
 }
 
-@media screen and (min-width: 1051px) {
+@media screen and (min-width: 1000px) {
+    .newsList {
+        grid-column: 3 / span 8;
+    }
 }
