@@ -243,7 +243,6 @@ nav .logo {
 /* Layout styles */
 
 .container {
-    border: 1px solid red;
     min-height: 100vh;
     position: relative;
     display: grid;
@@ -288,12 +287,12 @@ nav .logo {
 }
 
 .imageContainer {
-    border: 2px solid black;
-    grid-row: 4 / span 1;
-    /* border: 1px solid red; */
-    display: flex;
+    display: grid;
+    row-gap: 3rem;
+
+    /* display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
     /* overflow-x: auto; */
 }
 
@@ -415,7 +414,13 @@ p.linkBody {
     }
 
     .container {
-        row-gap: 3.5em;
+        row-gap: 4em;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .imageContainer {
+        justify-self: center;
     }
 }
 
@@ -430,27 +435,6 @@ p.linkBody {
 @media screen and (min-width: 1024px) {
     .nav_container {
         /* justify-content: space-around; */
-    }
-
-    .projectContainer {
-    }
-
-    .page-title-wrapper {
-        grid-column: 4 / span 6;
-        grid-row: 1 / span 1;
-    }
-
-    .projectContainer p {
-        font-size: 1rem;
-        grid-column: 4 / span 6;
-        grid-row: 2 / span 2;
-    }
-
-    .imageContainer {
-        grid-column: 1 / span 12;
-        grid-row: 4 / span 1;
-        display: flex;
-        overflow-x: auto;
     }
     .linkContainer {
         grid-column: 2 / span 3;
