@@ -8,22 +8,25 @@ import { resizeImg } from '../utils/resizeProjectImg';
 const ProjectCard = ({ card }) => {
     const cardImgSizes = resizeImg(card);
 
-    console.log(card.fields.projectThumbnail.fields.file.details.image);
-
     const { slug, projectThumbnail, projectTitle } = card.fields;
     const { height, width } = cardImgSizes;
     // console.log(`${projectTitle}, Height: ${height}, width: ${width}`);
     const thumbnailImgUrl = `https:${projectThumbnail.fields.file.url}`;
+    const isTallImg = height > width;
+    // console.log(isTallImg, projectTitle);
 
     return (
-        <li className={`${styles.projectCard}`} key={slug}>
+        <li
+            className={`${styles.projectCard} ${isTallImg ? styles.tall : ''}`}
+            key={slug}
+        >
             <Link href={`/works/${slug}`}>
                 <SrOnly text={`Go to ${projectTitle}`} />
                 <h4 className={styles.projectCard__title}>{projectTitle}</h4>
                 <Image
                     src={thumbnailImgUrl}
                     alt={projectTitle}
-                    height='500'
+                    height={height}
                     width={width}
                     className={styles.projectsCard__thumbnail}
                     loading='lazy'
