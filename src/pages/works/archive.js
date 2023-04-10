@@ -28,9 +28,7 @@ function Archive({ res }) {
         <>
             <MetaData page='Archive' />
             <div id={slug} className='container'>
-                <div
-                    className={`projectContainer ${styles.archive__container}`}
-                >
+                <div className={styles.archiveContainer}>
                     <div
                         className={`page-title-wrapper ${styles.title__wrapper}`}
                     >
@@ -38,7 +36,7 @@ function Archive({ res }) {
                         <h3 className='projektYear'>{year}</h3>
                     </div>
                     {/* <p>{content[0].fields.textParagraph}</p> */}
-                    <div className={styles.archiveContainer}>
+                    <div className={styles.archiveWrapper}>
                         {archiveImagesImageCollection}
                     </div>
                 </div>

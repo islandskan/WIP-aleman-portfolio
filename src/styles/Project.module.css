@@ -16,14 +16,14 @@
 
 .archiveContainer {
     grid-column: 1 / span 12;
+}
+
+.archiveWrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
     row-gap: 15px;
     column-gap: 15px;
     grid-auto-flow: dense;
-}
-
-.archive__container {
 }
 
 .title__wrapper {
