@@ -9,9 +9,8 @@ export const ImageElement = ({ image }) => {
                 className={styles.archiveImg}
                 src={imageUrl}
                 alt={imageAlt}
-                height={350}
-                width={300}
-                loading='lazy'
+                height={360}
+                width={360}
             />
         </figure>
     );
