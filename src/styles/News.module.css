@@ -165,12 +165,6 @@
     }
 }
 
-@media screen and (min-width: 1000px) {
-    .newsList {
-        grid-column: 3 / span 8;
-    }
-}
-
 @media and (min-width: 1024px) {
     .news::before {
         height: 10px;
