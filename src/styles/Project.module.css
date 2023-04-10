@@ -1,7 +1,14 @@
 /* STYLES FOR PROJECT COMPONENTS */
 
 .projectImageFigure {
-    /* border: 1px solid red; */
+    display: grid;
+    row-gap: 8px;
+    grid-template-rows: 2fr minmax(2rem, 3vh);
+}
+
+.projectImageFigure figcaption {
+    justify-self: center;
+    align-self: center;
 }
 .projectImage {
     /* border: 1px solid red; */
