@@ -29,9 +29,11 @@ function Works({ projectCards }) {
     return (
         <>
             <MetaData page='Start' />
-            <ul id='works' className={`container ${styles.projectsList}`}>
-                {projectList}
-            </ul>
+            <div className={`${styles.homeContainer} container`}>
+                <ul id='works' className={styles.projectsList}>
+                    {projectList}
+                </ul>
+            </div>
         </>
     );
 }
