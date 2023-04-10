@@ -1,6 +1,5 @@
 import { MetaData } from '../../components/MetaData.js';
-import { PDFElement } from '../../components/PDFElement.js';
-import { LinkElement } from '../../components/LinkElements.js';
+import { PDFElement, BlogImg } from '../../components/PDFElement.js';
 import { ImageCollection } from '../../components/ImageCollection.js';
 import { Video } from '../../components/VideoElements';
 import { createClient } from 'contentful';
@@ -26,11 +25,10 @@ function Hilma({ res }) {
     const { title, year, content, slug } = res.fields;
     console.log(content);
     const hilmaImages = content.slice(2, 16);
-    const blogLink = content[16].fields;
+    const blogLink = content[17].fields;
     const hilmaPDF = content[1].fields;
-    // const hilmaVideo = content[17].fields;
 
-    console.log(content[17].fields);
+    console.log(blogLink);
 
     return (
         <>
@@ -42,15 +40,11 @@ function Hilma({ res }) {
                         <h3 className='projektYear'>{year}</h3>
                     </div>
                     <p>{content[0].fields.textParagraph}</p>
-                    <LinkElement
-                        linkText={blogLink.linkText}
-                        linkUrl={blogLink.linkUrl}
-                        linkBody={blogLink.linkBody}
-                    />
                     <div className='imageContainer'>
                         <ImageCollection images={hilmaImages} />
                     </div>
-                    <PDFElement hilmaPDF={hilmaPDF} />
+                    <PDFElement item={hilmaPDF} />
+                    <BlogImg item={blogLink} />
                     {/* <Video video={hilmaVideo} /> */}
                     <NextAndPrevProjects />
                 </div>
