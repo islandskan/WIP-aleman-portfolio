@@ -1,5 +1,5 @@
 import { MetaData } from '../../components/MetaData.js';
-import { PDFElement, BlogImg } from '../../components/PDFElement.js';
+import { ThumbnailLink } from '../../components/thumbnailLink.js';
 import { ImageCollection } from '../../components/ImageCollection.js';
 import { Video } from '../../components/VideoElements';
 import { createClient } from 'contentful';
@@ -43,8 +43,8 @@ function Hilma({ res }) {
                     <div className='imageContainer'>
                         <ImageCollection images={hilmaImages} />
                     </div>
-                    <PDFElement item={hilmaPDF} />
-                    <BlogImg item={blogLink} />
+                    <ThumbnailLink item={hilmaPDF} />
+                    <ThumbnailLink item={blogLink} />
                     {/* <Video video={hilmaVideo} /> */}
                     <NextAndPrevProjects />
                 </div>
