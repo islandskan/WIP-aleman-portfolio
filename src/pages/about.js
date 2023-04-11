@@ -6,7 +6,6 @@ import { Video } from '../components/VideoElements';
 import { createClient } from 'contentful';
 import { INLINES } from '@contentful/rich-text-types';
 import { generatePDF } from '../utils/generatePDF';
-import { PDFElement } from '../components/PDFElement';
 // import { fetchEntries } from '../api/fetchEntries';
 //https://www.contentful.com/blog/rendering-linked-assets-entries-in-contentful/
 
