@@ -5,6 +5,8 @@ import { Button } from '../components/Button';
 import { Video } from '../components/VideoElements';
 import { createClient } from 'contentful';
 import { INLINES } from '@contentful/rich-text-types';
+import { generatePDF } from '../utils/generatePDF';
+import { PDFElement } from '../components/PDFElement';
 // import { fetchEntries } from '../api/fetchEntries';
 //https://www.contentful.com/blog/rendering-linked-assets-entries-in-contentful/
 
@@ -38,7 +40,7 @@ export async function getStaticProps() {
 // }
 
 const About = ({ aboutItems }) => {
-    console.log(aboutItems[1].fields);
+    // console.log(aboutItems[1].fields);
 
     const { aboutTitle: artistTitle, aboutContent: artistBody } =
         aboutItems[0].fields;
@@ -46,14 +48,14 @@ const About = ({ aboutItems }) => {
         aboutItems[1].fields;
     const { aboutTitle: cvTitle, aboutContent: cvBody } = aboutItems[2].fields;
 
-    console.log(artistTitle, artistBody);
-    console.log(cvTitle, cvBody);
-    console.log(publishedTitle, publishedBody);
+    // console.log(artistTitle, artistBody);
+    // console.log(cvTitle, cvBody);
+    // console.log(publishedTitle, publishedBody);
     const artistBodyText = artistBody.fields.formattedText;
     const cvBodyText = cvBody.fields.formattedText;
     const publishedBodyText = publishedBody.fields.formattedText;
 
-    console.log(publishedBodyText.content[0].content);
+    // console.log(publishedBodyText.content[0].content);
 
     // const options = {
     //     renderNode: {
@@ -63,8 +65,9 @@ const About = ({ aboutItems }) => {
     //     },
     // };
 
-    // console.log(options);
-    // className={`container ${styles.aboutContainer}
+    const handleSaveCV = () => {
+        generatePDF('cvBody');
+    };
 
     return (
         <>
@@ -86,8 +89,9 @@ const About = ({ aboutItems }) => {
                         type='button'
                         classname={styles.cvBtn}
                         text='Save as PDF'
+                        onClick={handleSaveCV}
                     />
-                    <div className={styles.bodyContainer}>
+                    <div className={styles.bodyContainer} id='cvBody'>
                         {documentToReactComponents(cvBodyText)}
                     </div>
                 </div>
