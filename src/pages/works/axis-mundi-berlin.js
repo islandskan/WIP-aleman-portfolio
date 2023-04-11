@@ -1,5 +1,6 @@
 import { MetaData } from '../../components/MetaData.js';
 import { createClient } from 'contentful';
+import { getProjectTxt } from '../../utils/getProjectContent.js';
 import { setImageCollection } from '../../utils/setImageCollection.js';
 import { ImageCollection } from '../../components/ImageCollection.js';
 import NextAndPrevProjects from '../../components/NextAndPrevProjects.js';
@@ -38,7 +39,7 @@ function AxisMundiBerlin({ res }) {
                             <h3 className='projektYear'>{year}</h3>
                         </div>
                     </div>
-                    <p>{content[0].fields.textParagraph}</p>
+                    <p>{getProjectTxt(content)}</p>
                     <div className='imageContainer'>
                         <ImageCollection images={axisMundiBerlinImages} />
                     </div>

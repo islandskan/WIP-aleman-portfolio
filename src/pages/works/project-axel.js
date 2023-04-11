@@ -1,5 +1,6 @@
 import { MetaData } from '../../components/MetaData.js';
 import { createClient } from 'contentful';
+import { getProjectTxt } from '../../utils/getProjectContent.js';
 import { ImageCollection } from '../../components/ImageCollection.js';
 import { LinkElement } from '../../components/LinkElements.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -40,7 +41,7 @@ function Axel({ res }) {
                         <h2 className='projektTitle'>{title}</h2>
                         <h3 className='projektYear'>{year}</h3>
                     </div>
-                    <p>{content[0].fields.textParagraph}</p>
+                    <p>{getProjectTxt(content)}</p>
                     {/* <Video videoId={axelVideoId} url={url} /> */}
                     <div className='imageContainer'>
                         <ImageCollection images={axelImages} />

@@ -1,5 +1,6 @@
 import { MetaData } from '../../components/MetaData.js';
 import { createClient } from 'contentful';
+import { getProjectTxt } from '../../utils/getProjectContent.js';
 import { ImageCollection } from '../../components/ImageCollection.js';
 import NextAndPrevProjects from '../../components/NextAndPrevProjects.js';
 
@@ -33,7 +34,7 @@ function Korrespondanser2({ res }) {
                         <h2 className='projektTitle'>{title}</h2>
                         <h3 className='projektYear'>{year}</h3>
                     </div>
-                    <p>{content[0].fields.textParagraph}</p>
+                    <p>{getProjectTxt(content)}</p>
                     <div className='imageContainer'>
                         <ImageCollection images={korrespondanser2Images} />
                     </div>

@@ -1,5 +1,6 @@
 import { MetaData } from '../../components/MetaData';
 import { createClient } from 'contentful';
+import { getProjectTxt } from '../../utils/getProjectContent';
 import { ImageCollection } from '../../components/ImageCollection.js';
 import { AudioElement } from '../../components/AudioElement.js';
 import NextAndPrevProjects from '../../components/NextAndPrevProjects.js';
@@ -35,7 +36,7 @@ function AxisMundiSTHML({ res }) {
                         <h2 className='projektTitle'>{title}</h2>
                         <h3 className='projektYear'>{year}</h3>
                     </div>
-                    <p>{content[0].fields.textParagraph}</p>
+                    <p>{getProjectTxt(content)}</p>
                     <div className='imageContainer'>
                         <ImageCollection images={axisMundiSthlmImages} />
                     </div>

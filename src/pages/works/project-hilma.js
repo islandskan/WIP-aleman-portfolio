@@ -3,7 +3,9 @@ import { ThumbnailLink } from '../../components/thumbnailLink.js';
 import { ImageCollection } from '../../components/ImageCollection.js';
 import { Video } from '../../components/VideoElements';
 import { createClient } from 'contentful';
+import { getProjectTxt } from '../../utils/getProjectContent.js';
 import NextAndPrevProjects from '../../components/NextAndPrevProjects.js';
+import { setImageCollection } from '../../utils/setImageCollection.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -39,7 +41,7 @@ function Hilma({ res }) {
                         <h2 className='projektTitle'>{title}</h2>
                         <h3 className='projektYear'>{year}</h3>
                     </div>
-                    <p>{content[0].fields.textParagraph}</p>
+                    <p>{getProjectTxt(content)}</p>
                     <div className='imageContainer'>
                         <ImageCollection images={hilmaImages} />
                     </div>
