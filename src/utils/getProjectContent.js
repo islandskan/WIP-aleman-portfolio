@@ -26,7 +26,7 @@ const getProjectTitle = (title) => {
 
 // extract intro texts from projects
 const getProjectTxt = (content) => {
-    return;
+    return content[0].fields.textParagraph;
 };
 
 // extract videos from projects
@@ -35,8 +35,10 @@ const getProjectVideo = (content) => {
 };
 
 // extract pdfs from projects
-const getProjectPdf = (content) => {
+const getProjectPdf = (response) => {
     return;
+
+    // const artistBodyText = artistBody.fields.formattedText;
 };
 
 // extract links from projects
