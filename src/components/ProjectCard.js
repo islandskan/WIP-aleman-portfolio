@@ -3,10 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import { SrOnly } from './SrOnly.js';
-import { resizeImg } from '../utils/resizeProjectImg';
+import { getCardImg } from '../utils/getProjectContent';
 
 const ProjectCard = ({ card }) => {
-    const cardImgSizes = resizeImg(card);
+    const cardImgSizes = getCardImg(card);
 
     const { slug, projectThumbnail, projectTitle } = card.fields;
     const { height, width } = cardImgSizes;
