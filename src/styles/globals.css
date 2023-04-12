@@ -266,7 +266,7 @@ nav .logo {
 }
 .projectContainer {
     display: grid;
-    row-gap: 2em;
+    row-gap: 3em;
     grid-template-columns: repeat(12, 1fr);
     grid-column: 1 / span 12;
 }
@@ -288,12 +288,11 @@ nav .logo {
 
 .imageContainer {
     display: grid;
-    row-gap: 3rem;
+    row-gap: 2.5rem;
+}
 
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
-    /* overflow-x: auto; */
+.imageContainer::before {
+    content: '';
 }
 
 .imageContainer img {
