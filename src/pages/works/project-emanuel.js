@@ -2,10 +2,10 @@ import { MetaData } from '../../components/MetaData.js';
 import { createClient } from 'contentful';
 import { getProjectTxt } from '../../utils/getProjectContent.js';
 import { ImageCollection } from '../../components/ImageCollection.js';
-// import { LinkElement } from '../../components/LinkElements.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-// import { Video } from '../components/VideoElements.js';
+import { Video } from '../../components/Video.js';
 import NextAndPrevProjects from '../../components/NextAndPrevProjects.js';
+import styles from '../../styles/Project.module.css';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -30,10 +30,8 @@ function Emanuel({ res }) {
     console.log(emanuelEssayLink);
     // console.log(content[8].fields.formattedtext);
     // const emanuelEssayAbstract = content[8].fields.formattedtext;
-    // const emanuelTeaserVideo = content[1].fields;
-    // const emanuelInterviewVideo = content[2].fields;
-    // const emanuelSecondInterviewVideo = content[3].fields;
-    // console.log(emanuelEssayAbstract);
+    const emanuelInterviewVideo = content[2].fields;
+    const emanuelSecondInterviewVideo = content[3].fields;
 
     return (
         <>
@@ -45,12 +43,15 @@ function Emanuel({ res }) {
                         <h3 className='projektYear'>{year}</h3>
                     </div>
                     <p>{getProjectTxt(content)}</p>
-                    {/* <Video video={emanuelTeaserVideo} /> */}
+                    <div className={styles.videoContainer}>
+                        <Video video={emanuelInterviewVideo} />
+                        <Video video={emanuelSecondInterviewVideo} />
+                    </div>
+
                     <div className='imageContainer'>
                         <ImageCollection images={emanuelImages} />
                     </div>
                     {/* <div>{documentToReactComponents(emanuelEssayLink)}</div> */}
-                    {/* <Video video={emanuelInterviewVideo} /> */}
                     {/* <Video video={emanuelSecondInterviewVideo} /> */}
                     <NextAndPrevProjects />
                 </div>
