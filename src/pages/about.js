@@ -2,7 +2,7 @@ import { MetaData } from '../components/MetaData';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import styles from '../styles/About.module.css';
 import { Button } from '../components/Button';
-import { Video } from '../components/VideoElements';
+// import { Video } from '../components/VideoElements';
 import { createClient } from 'contentful';
 import { INLINES } from '@contentful/rich-text-types';
 import { generatePDF } from '../utils/generatePDF';

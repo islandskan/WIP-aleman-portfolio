@@ -1,5 +1,5 @@
 import { MetaData } from '../../components/MetaData.js';
-import { ThumbnailLink } from '../../components/thumbnailLink.js';
+import { ThumbnailLink } from '../../components/ThumbnailLink.js';
 import { ImageCollection } from '../../components/ImageCollection.js';
 import { Video } from '../../components/Video';
 import { createClient } from 'contentful';

@@ -2,7 +2,7 @@ import { MetaData } from '../../components/MetaData.js';
 import { createClient } from 'contentful';
 import { getProjectTxt } from '../../utils/getProjectContent.js';
 import { ImageCollection } from '../../components/ImageCollection.js';
-import { LinkElement } from '../../components/LinkElements.js';
+// import { LinkElement } from '../../components/LinkElements.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export async function getStaticProps() {
