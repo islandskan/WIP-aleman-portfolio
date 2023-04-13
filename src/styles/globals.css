@@ -336,30 +336,6 @@ p.linkBody {
     line-height: 1.9;
 }
 
-.nextprevProjects {
-    width: 220px;
-    /* display: flex; */
-    display: none;
-    justify-content: space-between;
-    justify-self: center;
-    /* align-items: center; */
-}
-.nextPrevLink {
-    display: flex;
-    align-items: center;
-    font-size: 0.9rem;
-    padding: 4px 8px;
-    transition: all 0.5s ease;
-}
-
-.prev span {
-    margin-left: 6px;
-}
-
-.next span {
-    margin-right: 6px;
-}
-
 /* Hover, focus, transitions etc */
 
 /* Break points */
