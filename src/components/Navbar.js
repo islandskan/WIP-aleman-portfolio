@@ -30,7 +30,7 @@ export const Navbar = () => {
     };
 
     const links = [
-        { url: '/', name: 'Home' },
+        { url: '/', name: 'Works' },
         { url: '/about', name: 'About' },
         { url: '/news', name: 'News' },
         { url: '/contact', name: 'Contact' },
