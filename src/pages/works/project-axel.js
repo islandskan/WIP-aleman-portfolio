@@ -1,10 +1,11 @@
 import { MetaData } from '../../components/MetaData.js';
 import { createClient } from 'contentful';
+import styles from '../../styles/Project.module.css';
 import { getProjectTxt } from '../../utils/getProjectContent.js';
 import { ImageCollection } from '../../components/ImageCollection.js';
-import { LinkElement } from '../../components/LinkElements.js';
+// import { LinkElement } from '../../components/LinkElements.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-// import { Video } from '../components/VideoElements.js';
+import { Video } from '../../components/Video.js';
 import NextAndPrevProjects from '../../components/NextAndPrevProjects.js';
 
 export async function getStaticProps() {
@@ -28,9 +29,9 @@ function Axel({ res }) {
     const { title, year, content, slug } = res.fields;
     console.log(content);
     const axelImages = content.slice(2);
-    // const axelVideoId = content[1].fields.videoId;
+    const axelVideo = content[1].fields;
     // const { url } = content[1].fields.videoThumbnail.fields.file;
-    // console.log(url);
+    console.log(axelVideo);
 
     return (
         <>
@@ -42,7 +43,9 @@ function Axel({ res }) {
                         <h3 className='projektYear'>{year}</h3>
                     </div>
                     <p>{getProjectTxt(content)}</p>
-                    {/* <Video videoId={axelVideoId} url={url} /> */}
+                    <div className={styles.videoContainer}>
+                        <Video video={axelVideo} />
+                    </div>
                     <div className='imageContainer'>
                         <ImageCollection images={axelImages} />
                     </div>
