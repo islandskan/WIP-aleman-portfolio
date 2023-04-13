@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
-const NextAndPrevProjects = () => {
+export const ProjectNav = () => {
     const router = useRouter();
     console.log(router);
     return (
@@ -20,5 +20,3 @@ const NextAndPrevProjects = () => {
         </div>
     );
 };
-
-export default NextAndPrevProjects;
