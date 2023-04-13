@@ -3,7 +3,6 @@ import { createClient } from 'contentful';
 import { getProjectTxt } from '../../utils/getProjectContent.js';
 import { setImageCollection } from '../../utils/setImageCollection.js';
 import { ImageCollection } from '../../components/ImageCollection.js';
-import NextAndPrevProjects from '../../components/NextAndPrevProjects.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -43,7 +42,6 @@ function AxisMundiBerlin({ res }) {
                     <div className='imageContainer'>
                         <ImageCollection images={axisMundiBerlinImages} />
                     </div>
-                    <NextAndPrevProjects />
                 </div>
             </div>
         </>

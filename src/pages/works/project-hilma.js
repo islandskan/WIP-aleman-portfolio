@@ -5,7 +5,6 @@ import { Video } from '../../components/Video';
 import { createClient } from 'contentful';
 import styles from '../../styles/Project.module.css';
 import { getProjectTxt } from '../../utils/getProjectContent.js';
-import NextAndPrevProjects from '../../components/NextAndPrevProjects.js';
 import { setImageCollection } from '../../utils/setImageCollection.js';
 
 export async function getStaticProps() {
@@ -51,7 +50,6 @@ function Hilma({ res }) {
                     <ThumbnailLink item={hilmaPDF} />
                     <ThumbnailLink item={blogLink} />
                     {/* <Video video={hilmaVideo} /> */}
-                    <NextAndPrevProjects />
                 </div>
             </div>
         </>

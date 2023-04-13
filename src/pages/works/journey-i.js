@@ -2,7 +2,6 @@ import { MetaData } from '../../components/MetaData.js';
 import { createClient } from 'contentful';
 import { getProjectTxt } from '../../utils/getProjectContent.js';
 import { ImageCollection } from '../../components/ImageCollection.js';
-import NextAndPrevProjects from '../../components/NextAndPrevProjects.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -38,7 +37,6 @@ function Journey1({ res }) {
                     <div className='imageContainer'>
                         <ImageCollection images={journey1Images} />
                     </div>
-                    <NextAndPrevProjects />
                 </div>
             </div>
         </>

@@ -4,7 +4,6 @@ import { getProjectTxt } from '../../utils/getProjectContent.js';
 import { ImageCollection } from '../../components/ImageCollection.js';
 import { LinkElement } from '../../components/LinkElements.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import NextAndPrevProjects from '../../components/NextAndPrevProjects.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -40,7 +39,6 @@ function Journey2({ res }) {
                     <div className='imageContainer'>
                         {/* <ImageCollection images={journey2Images} /> */}
                     </div>
-                    <NextAndPrevProjects />
                 </div>
             </div>
         </>

@@ -6,7 +6,6 @@ import { ImageCollection } from '../../components/ImageCollection.js';
 // import { LinkElement } from '../../components/LinkElements.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Video } from '../../components/Video.js';
-import NextAndPrevProjects from '../../components/NextAndPrevProjects.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -31,7 +30,6 @@ function Axel({ res }) {
     const axelImages = content.slice(2);
     const axelVideo = content[1].fields;
     // const { url } = content[1].fields.videoThumbnail.fields.file;
-    console.log(axelVideo);
 
     return (
         <>
@@ -49,7 +47,6 @@ function Axel({ res }) {
                     <div className='imageContainer'>
                         <ImageCollection images={axelImages} />
                     </div>
-                    <NextAndPrevProjects />
                 </div>
             </div>
         </>

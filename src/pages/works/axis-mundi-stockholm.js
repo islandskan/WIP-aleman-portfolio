@@ -3,7 +3,6 @@ import { createClient } from 'contentful';
 import { getProjectTxt } from '../../utils/getProjectContent';
 import { ImageCollection } from '../../components/ImageCollection.js';
 import { AudioElement } from '../../components/AudioElement.js';
-import NextAndPrevProjects from '../../components/NextAndPrevProjects.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -41,7 +40,6 @@ function AxisMundiSTHML({ res }) {
                         <ImageCollection images={axisMundiSthlmImages} />
                     </div>
                     <AudioElement audio={axisMundiSthmlAudio} />
-                    <NextAndPrevProjects />
                 </div>
             </div>
         </>

@@ -4,7 +4,6 @@ import { getProjectTxt } from '../../utils/getProjectContent.js';
 import { ImageCollection } from '../../components/ImageCollection.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Video } from '../../components/Video.js';
-import NextAndPrevProjects from '../../components/NextAndPrevProjects.js';
 import styles from '../../styles/Project.module.css';
 
 export async function getStaticProps() {
@@ -53,7 +52,6 @@ function Emanuel({ res }) {
                     </div>
                     {/* <div>{documentToReactComponents(emanuelEssayLink)}</div> */}
                     {/* <Video video={emanuelSecondInterviewVideo} /> */}
-                    <NextAndPrevProjects />
                 </div>
             </div>
         </>
