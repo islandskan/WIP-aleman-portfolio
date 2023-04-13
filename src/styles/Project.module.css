@@ -50,11 +50,11 @@
 .videoContainer {
     grid-column: span 12;
     display: grid;
+    justify-self: center;
+    grid-template-rows: minmax(280px, 1fr);
     row-gap: 2rem;
-}
-
-.videoContainer::before {
-    content: '';
+    max-width: 560px;
+    width: 100%;
 }
 
 @media screen and (min-width: 411px) {
@@ -103,10 +103,18 @@
     }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 630px) {
+    .videoContainer {
+        grid-template-rows: minmax(300px, 1fr);
+    }
 }
 
-@media screen and (min-width: 789px) {
+/* w=1434, h=810 */
+
+@media screen and (min-width: 690px) {
+    .videoContainer {
+        grid-template-rows: minmax(350px, 1fr);
+    }
     .archiveContainer {
         /* grid-template-columns: repeat(auto-fit, minmax(5vw, 1fr)); */
     }
