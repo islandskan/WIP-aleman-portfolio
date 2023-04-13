@@ -1,95 +1,87 @@
 import styles from '../styles/components/Contact.module.css';
-import { InputField, TextArea } from './FormElements.js';
-import { useState, useEffect } from 'react';
-import { send } from 'emailjs-com';
+// import { send } from 'emailjs-com';
 import { Button } from './Button';
+import { useForm } from 'react-hook-form';
 
 export const ContactElement = () => {
-    const [value, setValue] = useState('');
-    const onInput = (e) => {
-        setValue(e.target.value);
-        console.log(e.target.value);
-    };
+    // formState: {isSubmitted, isSubmitSuccessful, isSubmitting, isLoading, isValid, isValidating}
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+    const delayInMS = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-    const onClear = () => {
-        setValue('');
-    };
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-        sendSubmit();
-        e.target.reset();
-    };
-
-    const sendSubmit = () => {
-        console.log('Hello');
+    const onSubmit = async (data) => {
+        await delayInMS(2000);
+        console.log(JSON.stringify(data));
+        console.log(errors);
     };
 
     return (
-        <form className={styles.form} onSubmit={onSubmit}>
-            <InputField
-                labelFor='fullname'
-                labelTitle='Full Name'
-                inputType='text'
-                inputId='fullname'
-                inputName='from_fullname'
-                placeholder='Write full name here'
-                isRequired={true}
-                labelClass={styles.label}
-                inputClass={styles.input}
-                value={value}
-                onChange={onInput}
+        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+            <>
+                <label htmlFor='fullname' className={styles.label}>
+                    Full Name
+                </label>
+                <input
+                    type='text'
+                    name='from_fullname'
+                    id='fullname'
+                    {...register('from_fullname')}
+                    className={styles.input}
+                    placeholder='Enter your full name'
+                />
+            </>
+
+            <>
+                <label htmlFor='email' className={styles.label}>
+                    Email
+                </label>
+                <input
+                    type='email'
+                    name='from_email'
+                    id='email'
+                    {...register('from_email', {
+                        required: true,
+                        pattern: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                    })}
+                    className={styles.input}
+                    placeholder='Enter your email'
+                />
+            </>
+
+            <label htmlFor='subject' className={styles.label}>
+                Subject
+            </label>
+            <input
+                type='text'
+                name='subject'
+                id='subject'
+                {...register('subject')}
+                className={styles.input}
+                placeholder='Enter subject of your message'
             />
-            <InputField
-                labelFor='email'
-                labelTitle='Email'
-                inputType='email'
-                inputId='email'
-                inputName='from_email'
-                placeholder='Write email here'
-                isRequired={true}
-                labelClass={styles.label}
-                inputClass={styles.input}
-                value={value}
-                onChange={onInput}
+
+            <label htmlFor='message' className={styles.label}>
+                Message
+            </label>
+
+            <textarea
+                name='message'
+                id='message'
+                {...register('message', { required: 'Please enter a message' })}
+                className={styles.textarea}
+                placeholder='Enter your message'
             />
-            <InputField
-                labelFor='subject'
-                labelTitle='Subject'
-                inputType='text'
-                inputId='subject'
-                inputName='subject'
-                placeholder='Write subject here'
-                isRequired={false}
-                labelClass={styles.label}
-                inputClass={styles.input}
-                value={value}
-                onChange={onInput}
-            />
-            <TextArea
-                labelFor='message'
-                labelTitle='Message'
-                textareaName='message'
-                textareaId='message'
-                placeholder='Write your message here'
-                isRequired={true}
-                labelClass={styles.label}
-                textareaClass={styles.textarea}
-                value={value}
-                onChange={onInput}
-            />
+
             <fieldset className={styles.formBtns}>
                 <Button
                     type='submit'
                     classname={styles.submit}
                     text='Send Message'
                 />
-                <Button
-                    type='reset'
-                    classname={styles.reset}
-                    text='Reset'
-                    onClick={onClear}
-                />
+                <Button type='reset' classname={styles.reset} text='Reset' />
             </fieldset>
         </form>
     );
