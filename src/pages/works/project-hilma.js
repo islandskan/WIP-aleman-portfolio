@@ -1,8 +1,9 @@
 import { MetaData } from '../../components/MetaData.js';
 import { ThumbnailLink } from '../../components/thumbnailLink.js';
 import { ImageCollection } from '../../components/ImageCollection.js';
-import { Video } from '../../components/VideoElements';
+import { Video } from '../../components/Video';
 import { createClient } from 'contentful';
+import styles from '../../styles/Project.module.css';
 import { getProjectTxt } from '../../utils/getProjectContent.js';
 import NextAndPrevProjects from '../../components/NextAndPrevProjects.js';
 import { setImageCollection } from '../../utils/setImageCollection.js';
@@ -29,8 +30,7 @@ function Hilma({ res }) {
     const hilmaImages = content.slice(2, 16);
     const blogLink = content[17].fields;
     const hilmaPDF = content[1].fields;
-
-    console.log(blogLink);
+    const hilmaVideo = content[16].fields;
 
     return (
         <>
@@ -42,6 +42,9 @@ function Hilma({ res }) {
                         <h3 className='projektYear'>{year}</h3>
                     </div>
                     <p>{getProjectTxt(content)}</p>
+                    <div className={styles.videoContainer}>
+                        <Video video={hilmaVideo} />
+                    </div>
                     <div className='imageContainer'>
                         <ImageCollection images={hilmaImages} />
                     </div>
