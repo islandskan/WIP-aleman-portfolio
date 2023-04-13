@@ -58,6 +58,12 @@
     width: 100%;
 }
 
+.linkContainer {
+    grid-column: span 12;
+    display: grid;
+    row-gap: 2rem;
+}
+
 @media screen and (min-width: 411px) {
     .archiveContainer {
         /* grid-auto-flow: row; */
