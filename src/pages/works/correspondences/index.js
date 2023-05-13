@@ -1,9 +1,6 @@
 import styles from '../../../styles/Home.module.css';
 import { GoBackLink } from '../../../components/GoBackLink';
-
-// import ProjectListItem from '../../components/ProjectListItem';
 import { MetaData } from '../../../components/MetaData';
-// import { EmailJSForm } from '../components/test-components/EmailJSForm';
 import { createClient } from 'contentful';
 import { ProjectList } from '../../../components/ProjectList';
 
@@ -25,14 +22,8 @@ export async function getStaticProps() {
 }
 
 function Correspondences({ res }) {
-    console.log(res);
-
     const projects = res.fields.projectLinksUnderMenu;
-    console.log(projects);
     const { projectLinkUrl } = res.fields;
-
-    console.log(projectLinkUrl);
-
     return (
         <>
             <MetaData page='Correspondences' />

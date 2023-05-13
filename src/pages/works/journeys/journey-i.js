@@ -20,11 +20,8 @@ export async function getStaticProps() {
     };
 }
 function Journey1({ res }) {
-    console.log(res);
     const { title, content, slug } = res.fields;
-    console.log(content);
     const journey1Images = content.slice(1);
-
     return (
         <>
             <MetaData page='Journey 1' />

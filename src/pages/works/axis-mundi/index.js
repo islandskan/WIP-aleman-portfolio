@@ -22,13 +22,8 @@ export async function getStaticProps() {
 }
 
 function AxisMundi({ res }) {
-    console.log(res);
-
     const { projectLinkUrl } = res.fields;
-
     const projects = res.fields.projectLinksUnderMenu;
-    console.log(projects);
-
     return (
         <>
             <MetaData page='Axis Mundi' />

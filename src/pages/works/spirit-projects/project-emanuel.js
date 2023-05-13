@@ -56,7 +56,6 @@ function Emanuel({ res }) {
                     <div className={styles.linkContainer}>
                         <ThumbnailLink item={emanuelPDF} />
                     </div>
-                    {/* <Video video={emanuelSecondInterviewVideo} /> */}
                 </div>
                 <GoBackLink slug={slug} />
             </div>

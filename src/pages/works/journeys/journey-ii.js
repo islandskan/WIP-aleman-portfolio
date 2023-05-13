@@ -1,8 +1,8 @@
 import { MetaData } from '../../../components/MetaData.js';
 import { createClient } from 'contentful';
-import { getProjectTxt } from '../../../utils/getProjectContent.js';
-import { ImageCollection } from '../../../components/ImageCollection.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { INLINES } from '@contentful/rich-text-types';
+
 import { GoBackLink } from '../../../components/GoBackLink.js';
 
 export async function getStaticProps() {
@@ -21,10 +21,28 @@ export async function getStaticProps() {
     };
 }
 function Journey2({ res }) {
-    console.log(res);
     const { title, content, slug } = res.fields;
-    console.log(content);
+
+    const text = content[0].fields.formattedText;
     // const journey2Images = content.slice(2);
+
+    const options = {
+        renderNode: {
+            [INLINES.ASSET_HYPERLINK]: (node, children) => {
+                return (
+                    <a
+                        href={
+                            node.data && node.data.target.fields.file.url
+                                ? node.data.target.fields.file.url
+                                : null
+                        }
+                    >
+                        {children}
+                    </a>
+                );
+            },
+        },
+    };
 
     return (
         <>
@@ -34,7 +52,9 @@ function Journey2({ res }) {
                     <div className='page-title-wrapper'>
                         <h2 className='projektTitle'>{title}</h2>
                     </div>
-                    <p>{getProjectTxt(content)}</p>
+                    <div className='page-text-wrapper'>
+                        {documentToReactComponents(text, options)}
+                    </div>
                     <div className='imageContainer'>
                         {/* <ImageCollection images={journey2Images} /> */}
                     </div>

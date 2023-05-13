@@ -22,13 +22,8 @@ export async function getStaticProps() {
 }
 
 function Journeys({ res }) {
-    console.log(res);
-
     const projects = res.fields.projectLinksUnderMenu;
-    console.log(projects);
-
     const { projectLinkUrl } = res.fields;
-
     return (
         <>
             <MetaData page='Journeys' />

@@ -4,6 +4,7 @@ import { setImageCollection } from '../../../utils/setImageCollection.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { createClient } from 'contentful';
 import { GoBackLink } from '../../../components/GoBackLink.js';
+import { AudioElement } from '../../../components/AudioElement.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -22,10 +23,10 @@ export async function getStaticProps() {
 }
 
 function AxisMundiBerlin({ res }) {
-    console.log(res);
     const { title, content, slug } = res.fields;
-    console.log(content);
-    // const axisMundiBerlinImages = content.slice(1);
+
+    const axisMundiAudio = content[1].fields;
+    const axisMundiBerlinImages = content.slice(2);
 
     return (
         <>
@@ -38,9 +39,10 @@ function AxisMundiBerlin({ res }) {
                         </div>
                     </div>
                     <p>{getProjectTxt(content)}</p>
-                    {/* <div className='imageContainer'>
+                    <AudioElement audioObj={axisMundiAudio} />
+                    <div className='imageContainer'>
                         <ImageCollection images={axisMundiBerlinImages} />
-                    </div>  */}
+                    </div>
                 </div>
                 <GoBackLink slug={slug} />
             </div>

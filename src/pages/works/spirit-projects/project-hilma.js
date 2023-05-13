@@ -26,15 +26,10 @@ export async function getStaticProps() {
 
 function Hilma({ res }) {
     const { title, content, slug } = res.fields;
-    console.log(content);
     // const hilmaImages = content.slice(2, 16);
     const blogLink = content[2].fields;
     const hilmaPDF = content[3].fields;
     const hilmaVideo = content[1].fields;
-
-    // console.log(blogLink);
-    console.log(hilmaPDF);
-
     return (
         <>
             <MetaData page='Project Hilma' />

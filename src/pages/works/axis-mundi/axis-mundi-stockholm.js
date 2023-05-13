@@ -1,7 +1,6 @@
 import { MetaData } from '../../../components/MetaData';
 import { getProjectTxt } from '../../../utils/getProjectContent';
 import { ImageCollection } from '../../../components/ImageCollection.js';
-import { AudioElement } from '../../../components/AudioElement.js';
 import { createClient } from 'contentful';
 import { GoBackLink } from '../../../components/GoBackLink';
 
@@ -23,10 +22,7 @@ export async function getStaticProps() {
 
 function AxisMundiSTHML({ res }) {
     const { title, content, slug } = res.fields;
-    console.log(content);
-    // const axisMundiSthlmImages = content.slice(1, 8);
-    // const axisMundiSthmlAudio = content[8].fields.audio;
-
+    const axisMundiSthlmImages = content.slice(1);
     return (
         <>
             <MetaData page='Axis Mundi Stockholm' />
@@ -36,10 +32,9 @@ function AxisMundiSTHML({ res }) {
                         <h2 className='projektTitle'>{title}</h2>
                     </div>
                     <p>{getProjectTxt(content)}</p>
-                    {/* <div className='imageContainer'>
+                    <div className='imageContainer'>
                         <ImageCollection images={axisMundiSthlmImages} />
                     </div>
-                    <AudioElement audio={axisMundiSthmlAudio} />  */}
                 </div>
                 <GoBackLink slug={slug} />
             </div>

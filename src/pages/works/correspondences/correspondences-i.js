@@ -1,6 +1,5 @@
 import { MetaData } from '../../../components/MetaData.js';
 import { createClient } from 'contentful';
-import { getProjectTxt } from '../../../utils/getProjectContent.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { INLINES } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -22,13 +21,10 @@ export async function getStaticProps() {
     };
 }
 function Korrespondanser1({ res }) {
-    console.log(res);
-    const { title, year, content, slug } = res.fields;
-    console.log(content);
+    const { title, content, slug } = res.fields;
     const korrespondanser1Images = content.slice(1);
 
     const text = content[0].fields.formattedText;
-    console.log(text);
 
     const options = {
         renderNode: {
@@ -50,7 +46,6 @@ function Korrespondanser1({ res }) {
                     <div className='page-text-wrapper'>
                         {documentToReactComponents(text, options)}
                     </div>
-                    <p>{getProjectTxt(content)}</p>
                     <div className='imageContainer'>
                         <ImageCollection images={korrespondanser1Images} />
                     </div>

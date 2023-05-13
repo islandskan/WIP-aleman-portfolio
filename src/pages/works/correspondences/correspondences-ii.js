@@ -1,6 +1,5 @@
 import { MetaData } from '../../../components/MetaData.js';
 import { createClient } from 'contentful';
-import { getProjectTxt } from '../../../utils/getProjectContent.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { INLINES } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -22,13 +21,10 @@ export async function getStaticProps() {
     };
 }
 function Korrespondanser2({ res }) {
-    console.log(res);
     const { title, content, slug } = res.fields;
-    console.log(content);
     const korrespondanser2Images = content.slice(1);
 
     const text = content[0].fields.formattedText;
-    console.log(text);
 
     const options = {
         renderNode: {
