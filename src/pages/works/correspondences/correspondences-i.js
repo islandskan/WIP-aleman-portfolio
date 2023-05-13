@@ -4,6 +4,7 @@ import { getProjectTxt } from '../../../utils/getProjectContent.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { INLINES } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { GoBackLink } from '../../../components/GoBackLink.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -54,6 +55,7 @@ function Korrespondanser1({ res }) {
                         <ImageCollection images={korrespondanser1Images} />
                     </div>
                 </div>
+                <GoBackLink slug={slug} />
             </div>
         </>
     );

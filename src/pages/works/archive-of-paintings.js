@@ -2,6 +2,7 @@ import { MetaData } from '../../components/MetaData.js';
 import { createClient } from 'contentful';
 import { ImageElement } from '../../components/ImageElements.js';
 import styles from '../../styles/Project.module.css';
+import { GoBackLink } from '../../components/GoBackLink.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -28,9 +29,9 @@ function Archive({ res }) {
     // ));
     return (
         <>
-            {/* <MetaData page='Archive' />
+            <MetaData page='Archive' />
             <div id={slug} className='container'>
-                <div className={styles.archiveContainer}>
+                {/* <div className={styles.archiveContainer}>
                     <div
                         className={`page-title-wrapper ${styles.title__wrapper}`}
                     >
@@ -41,8 +42,9 @@ function Archive({ res }) {
                     <div className={styles.archiveWrapper}>
                         {archiveImagesImageCollection}
                     </div>
-                </div>
-            </div> */}
+                </div> */}
+                <GoBackLink slug={slug} />
+            </div>
         </>
     );
 }

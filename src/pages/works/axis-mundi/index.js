@@ -1,8 +1,8 @@
 import styles from '../../../styles/Home.module.css';
-// import ProjectListItem from '../../components/ProjectListItem';
 import { MetaData } from '../../../components/MetaData';
 import { createClient } from 'contentful';
-import Link from 'next/link';
+import { ProjectList } from '../../../components/ProjectList';
+import { GoBackLink } from '../../../components/GoBackLink';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -24,23 +24,17 @@ export async function getStaticProps() {
 function AxisMundi({ res }) {
     console.log(res);
 
+    const { projectLinkUrl } = res.fields;
+
     const projects = res.fields.projectLinksUnderMenu;
     console.log(projects);
 
-    const projectList = projects.map((item) => (
-        <li key={item.sys.id}>
-            <Link href={`axis-mundi/${item.fields.slug}`}>
-                {item.fields.projectTitle}
-            </Link>
-        </li>
-    ));
     return (
         <>
             <MetaData page='Axis Mundi' />
             <div className={`${styles.homeContainer} container`}>
-                <ul id='works' className={styles.projectsList}>
-                    {projectList}
-                </ul>
+                <ProjectList projects={projects} url={projectLinkUrl} />
+                <GoBackLink slug={projectLinkUrl} />
             </div>
         </>
     );

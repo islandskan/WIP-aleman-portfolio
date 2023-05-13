@@ -1,9 +1,11 @@
 import styles from '../../../styles/Home.module.css';
+import { GoBackLink } from '../../../components/GoBackLink';
+
 // import ProjectListItem from '../../components/ProjectListItem';
 import { MetaData } from '../../../components/MetaData';
 // import { EmailJSForm } from '../components/test-components/EmailJSForm';
 import { createClient } from 'contentful';
-import Link from 'next/link';
+import { ProjectList } from '../../../components/ProjectList';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -27,21 +29,16 @@ function Correspondences({ res }) {
 
     const projects = res.fields.projectLinksUnderMenu;
     console.log(projects);
+    const { projectLinkUrl } = res.fields;
 
-    const projectList = projects.map((item) => (
-        <li key={item.sys.id}>
-            <Link href={`correspondences/${item.fields.slug}`}>
-                {item.fields.projectTitle}
-            </Link>
-        </li>
-    ));
+    console.log(projectLinkUrl);
+
     return (
         <>
             <MetaData page='Correspondences' />
             <div className={`${styles.homeContainer} container`}>
-                <ul id='works' className={styles.projectsList}>
-                    {projectList}
-                </ul>
+                <ProjectList projects={projects} url={projectLinkUrl} />
+                <GoBackLink slug={projectLinkUrl} />
             </div>
         </>
     );

@@ -3,6 +3,7 @@ import { createClient } from 'contentful';
 import { getProjectTxt } from '../../../utils/getProjectContent.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { GoBackLink } from '../../../components/GoBackLink.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -38,6 +39,7 @@ function Journey2({ res }) {
                         {/* <ImageCollection images={journey2Images} /> */}
                     </div>
                 </div>
+                <GoBackLink slug={slug} />
             </div>
         </>
     );

@@ -1,8 +1,8 @@
 import styles from '../../../styles/Home.module.css';
 import { MetaData } from '../../../components/MetaData';
-import Link from 'next/link';
 import { GoBackLink } from '../../../components/GoBackLink';
 import { createClient } from 'contentful';
+import { ProjectList } from '../../../components/ProjectList';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -27,20 +27,14 @@ function SpiritProjects({ res }) {
     const projects = res.fields.projectLinksUnderMenu;
     console.log(projects);
 
-    const projectList = projects.map((item) => (
-        <li key={item.sys.id}>
-            <Link href={`spirit-projects/${item.fields.slug}`}>
-                {item.fields.projectTitle}
-            </Link>
-        </li>
-    ));
+    const { projectLinkUrl } = res.fields;
+
     return (
         <>
             <MetaData page='Spirit Projects' />
             <div className={`${styles.homeContainer} container`}>
-                <ul id='works' className={styles.projectsList}>
-                    {projectList}
-                </ul>
+                <ProjectList projects={projects} url={projectLinkUrl} />
+                <GoBackLink slug={projectLinkUrl} />
             </div>
         </>
     );

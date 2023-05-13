@@ -1,9 +1,9 @@
 import styles from '../../../styles/Home.module.css';
-// import ProjectListItem from '../../components/ProjectListItem';
 import { MetaData } from '../../../components/MetaData';
-// import { EmailJSForm } from '../components/test-components/EmailJSForm';
 import { createClient } from 'contentful';
-import Link from 'next/link';
+import { ProjectList } from '../../../components/ProjectList';
+import { GoBackLink } from '../../../components/GoBackLink';
+
 export async function getStaticProps() {
     const client = createClient({
         space: process.env.CONTENTFUL_SPACE_ID,
@@ -27,20 +27,14 @@ function Journeys({ res }) {
     const projects = res.fields.projectLinksUnderMenu;
     console.log(projects);
 
-    const projectList = projects.map((item) => (
-        <li key={item.sys.id}>
-            <Link href={`journeys/${item.fields.slug}`}>
-                {item.fields.projectTitle}
-            </Link>
-        </li>
-    ));
+    const { projectLinkUrl } = res.fields;
+
     return (
         <>
             <MetaData page='Journeys' />
             <div className={`${styles.homeContainer} container`}>
-                <ul id='works' className={styles.projectsList}>
-                    {projectList}
-                </ul>
+                <ProjectList projects={projects} url={projectLinkUrl} />
+                <GoBackLink slug={projectLinkUrl} />
             </div>
         </>
     );

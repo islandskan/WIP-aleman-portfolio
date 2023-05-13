@@ -2,6 +2,7 @@ import { MetaData } from '../../../components/MetaData.js';
 import { createClient } from 'contentful';
 import { getProjectTxt } from '../../../utils/getProjectContent.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
+import { GoBackLink } from '../../../components/GoBackLink.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -37,6 +38,7 @@ function Journey1({ res }) {
                         <ImageCollection images={journey1Images} />
                     </div>
                 </div>
+                <GoBackLink slug={slug} />
             </div>
         </>
     );
