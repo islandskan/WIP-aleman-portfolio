@@ -77,6 +77,11 @@
     margin-top: max(1.2em, 2vh);
 }
 
+.publishedContainer .bodyContainer a {
+    /* border: 1px solid red; */
+    text-decoration: none;
+}
+
 .publishedContainer .bodyContainer p {
     line-height: 1.9;
 }

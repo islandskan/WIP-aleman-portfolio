@@ -1,5 +1,4 @@
 import styles from '../styles/News.module.css';
-// import SeeMoreLink from './SeeMoreLink';
 import Link from 'next/link';
 import { setNewsDates } from '../utils/setNewsDates';
 
@@ -10,7 +9,18 @@ export const NewsCard = ({ card }) => {
     return (
         <div className={`${styles.newsCard}`}>
             <div className={styles.newsCard__txtWrapper}>
-                <h4 className={styles.newsCard__title}>{title}</h4>
+                {link ? (
+                    <Link
+                        className={styles.newsCard__link}
+                        href={link}
+                        target='_blank'
+                    >
+                        <h4 className={styles.newsCard__title}>{title}</h4>
+                    </Link>
+                ) : (
+                    <h4 className={styles.newsCard__title}>{title}</h4>
+                )}
+
                 {/* <span className={styles.newsInfo}>
                     {setNewsDates(startDate, endDate)}
                 </span> */}
@@ -22,15 +32,6 @@ export const NewsCard = ({ card }) => {
                 )}
                 {location && (
                     <p className={styles.newsCard__location}>{location}</p>
-                )}
-                {link && (
-                    <Link
-                        className={styles.newsCard__link}
-                        href={link}
-                        target='_blank'
-                    >
-                        Read more
-                    </Link>
                 )}
             </div>
         </div>

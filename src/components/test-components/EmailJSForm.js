@@ -18,7 +18,7 @@ export const EmailJSForm = () => {
             'service_lfq9k6v',
             'template_jpzonfk',
             toSend,
-            process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+            process.env.EMAILJS_PUBLIC_KEY
         )
             .then((response) => {
                 console.log(`SUCCESS! ${response.status}, ${response.text}`);

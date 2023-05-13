@@ -4,6 +4,8 @@
     /* --white: #fcf7f4; */
     /* --white: #c3c3c3; */
     --white: #e3e3e3;
+    --opac: 0.5;
+    --lineHeight: 0.5px;
     grid-template-columns: repeat(12, 1fr);
 }
 
@@ -37,7 +39,8 @@
     content: '';
     width: 100%;
     background-color: var(--dark);
-    height: 2px;
+    opacity: var(--opac);
+    height: var(--lineHeight);
     position: absolute;
     top: 0;
 }
@@ -46,7 +49,7 @@
     content: '';
     width: 100%;
     background-color: var(--dark);
-    height: 2px;
+    height: var(--lineHeight);
     position: absolute;
     bottom: 0;
 }
@@ -64,8 +67,6 @@
     min-height: 100px;
     text-align: start;
     display: grid;
-    grid-template-columns: repeat(3, 1fr) 100px;
-    grid-template-rows: 0.5fr 1fr 0.5fr;
 }
 
 /* .newsCard:hover .newsCard__txtWrapper,
@@ -92,17 +93,6 @@
     /* border-radius: 50%; */
 }
 
-.newsCard__title {
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 1.5;
-    grid-column: 1 / span 3;
-    grid-row: 2 / span 1;
-    display: flex;
-    align-items: flex-end;
-}
-
 /* .newsCard__heading p {
     font-size: 14px;
     line-height: 1.6;
@@ -110,33 +100,51 @@
 } */
 
 .newsCard__dates {
-    grid-column: 1 / span 2;
     display: flex;
+    align-items: center;
+    /* grid-row: 1 / span 1; */
+    /* border: 1px solid red; */
+    max-width: fit-content;
+    margin-bottom: 8px;
 }
 
 .newsCard__dates p {
     width: fit-content;
-    background-color: var(--dark);
-    color: var(--white);
-    padding: 2px 4px;
+    border: var(--lineHeight) solid var(--dark);
+
+    padding: 2px 6px;
     font-size: 0.8rem;
 }
 
 .newsCard__dates p:nth-of-type(2) {
-    margin-left: 8px;
+    margin-left: 10px;
+}
+
+.newsCard__link {
+    grid-row: 2;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    /* grid-column: 3 / span 2;
+    grid-row: 3 / span 1; */
+}
+
+.newsCard__title {
+    /* text-transform: uppercase; */
+    line-height: 1.5;
+    margin-bottom: 6px;
+
+    /* grid-column: 1 / span 3; */
+    /* grid-row: 2 / span 1; */
 }
 
 .newsCard__location {
     /* border: 1px solid red; */
-    grid-column: 1 / span 2;
+    /* grid-column: 1 / span 2;
+    grid-row: 3 / span 1; */
     grid-row: 3 / span 1;
-}
-
-.newsCard__link {
-    /* position: absolute;
-    bottom: 1em; */
-    grid-column: 3 / span 2;
-    grid-row: 3 / span 1;
+    font-size: 0.9rem;
 }
 
 @media screen and (min-width: 550px) {

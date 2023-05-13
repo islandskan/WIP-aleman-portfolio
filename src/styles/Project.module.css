@@ -64,6 +64,14 @@
     row-gap: 2rem;
 }
 
+.essayContainer {
+    grid-column: 1 / span 12;
+}
+
+.essayContainer p {
+    font-size: 12px;
+}
+
 @media screen and (min-width: 411px) {
     .archiveContainer {
         /* grid-auto-flow: row; */
@@ -105,7 +113,8 @@
 }
 
 @media screen and (min-width: 550px) {
-    .videoContainer {
+    .videoContainer,
+    .essayContainer {
         grid-column: 2 / span 10;
     }
 }
@@ -128,7 +137,8 @@
 }
 
 @media screen and (min-width: 1000px) {
-    .videoContainer {
+    .videoContainer,
+    .essayContainer {
         grid-column: 3 / span 8;
         /* grid-column: span 6; */
     }

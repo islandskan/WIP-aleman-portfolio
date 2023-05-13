@@ -1,4 +1,3 @@
-import SeeMoreLink from './SeeMoreLink';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
@@ -32,11 +31,6 @@ const ProjectCard = ({ card }) => {
                     loading='lazy'
                 />
             </Link>
-            <SeeMoreLink
-                slug={`/works/${slug}`}
-                text='See Project'
-                skipSrOnly
-            />
         </li>
     );
 };

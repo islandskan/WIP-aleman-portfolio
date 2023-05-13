@@ -1,0 +1,5 @@
+.goBackContainer {
+    /* border: 1px solid black; */
+    grid-column: 1 / -1;
+    height: fit-content;
+}

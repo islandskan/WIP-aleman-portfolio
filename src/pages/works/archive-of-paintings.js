@@ -1,6 +1,6 @@
 import { MetaData } from '../../components/MetaData.js';
 import { createClient } from 'contentful';
-import { ImageElement } from '../../components/ImageElements';
+import { ImageElement } from '../../components/ImageElements.js';
 import styles from '../../styles/Project.module.css';
 
 export async function getStaticProps() {
@@ -19,14 +19,16 @@ export async function getStaticProps() {
     };
 }
 function Archive({ res }) {
-    const { title, year, projectImages, slug } = res.fields;
+    const { title, projectImages, slug } = res.fields;
 
-    const archiveImagesImageCollection = projectImages.map((image) => (
-        <ImageElement key={image.sys.id} image={image} />
-    ));
+    console.log(res);
+
+    // const archiveImagesImageCollection = projectImages.map((image) => (
+    //     <ImageElement key={image.sys.id} image={image} />
+    // ));
     return (
         <>
-            <MetaData page='Archive' />
+            {/* <MetaData page='Archive' />
             <div id={slug} className='container'>
                 <div className={styles.archiveContainer}>
                     <div
@@ -35,12 +37,12 @@ function Archive({ res }) {
                         <h2 className='projektTitle'>{title}</h2>
                         <h3 className='projektYear'>{year}</h3>
                     </div>
-                    {/* <p>{content[0].fields.textParagraph}</p> */}
+
                     <div className={styles.archiveWrapper}>
                         {archiveImagesImageCollection}
                     </div>
                 </div>
-            </div>
+            </div> */}
         </>
     );
 }

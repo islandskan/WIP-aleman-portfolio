@@ -1,10 +1,12 @@
-import { MetaData } from '../../components/MetaData.js';
+import { MetaData } from '../../../components/MetaData.js';
 import { createClient } from 'contentful';
-import { getProjectTxt } from '../../utils/getProjectContent.js';
-import { ImageCollection } from '../../components/ImageCollection.js';
+import { getProjectTxt } from '../../../utils/getProjectContent.js';
+import { ImageCollection } from '../../../components/ImageCollection.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { Video } from '../../components/Video.js';
-import styles from '../../styles/Project.module.css';
+import { Video } from '../../../components/Video.js';
+import styles from '../../../styles/Project.module.css';
+import { GoBackLink } from '../../../components/GoBackLink.js';
+import { ThumbnailLink } from '../../../components/ThumbnailLink.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -23,36 +25,40 @@ export async function getStaticProps() {
 }
 function Emanuel({ res }) {
     console.log(res);
-    const { title, year, content, slug } = res.fields;
+    const { title, content, slug } = res.fields;
     const emanuelImages = content.slice(4, 7);
-    const emanuelEssayLink = content[7].fields.formattedText.content[0];
-    console.log(emanuelEssayLink);
-    // console.log(content[8].fields.formattedtext);
-    // const emanuelEssayAbstract = content[8].fields.formattedtext;
+    // console.log(emanuelImages);
+
+    console.log(content[6]);
+
+    const emanuelPDF = content[6].fields;
+
+    const emanuelVideo = content[1].fields;
     const emanuelInterviewVideo = content[2].fields;
-    const emanuelSecondInterviewVideo = content[3].fields;
 
     return (
         <>
             <MetaData page='Project Emanuel' />
-            <div id={slug} className='container'>
+            <div className='container'>
                 <div className='projectContainer'>
                     <div className='page-title-wrapper'>
                         <h2 className='projektTitle'>{title}</h2>
-                        <h3 className='projektYear'>{year}</h3>
                     </div>
                     <p>{getProjectTxt(content)}</p>
                     <div className={styles.videoContainer}>
+                        <Video video={emanuelVideo} />
                         <Video video={emanuelInterviewVideo} />
-                        <Video video={emanuelSecondInterviewVideo} />
                     </div>
 
-                    <div className='imageContainer'>
+                    {/* <div className='imageContainer'>
                         <ImageCollection images={emanuelImages} />
+                    </div> */}
+                    <div className={styles.linkContainer}>
+                        <ThumbnailLink item={emanuelPDF} />
                     </div>
-                    {/* <div>{documentToReactComponents(emanuelEssayLink)}</div> */}
                     {/* <Video video={emanuelSecondInterviewVideo} /> */}
                 </div>
+                <GoBackLink slug={slug} />
             </div>
         </>
     );

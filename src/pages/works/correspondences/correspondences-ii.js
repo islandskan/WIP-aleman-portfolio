@@ -1,7 +1,9 @@
-import { MetaData } from '../../components/MetaData.js';
+import { MetaData } from '../../../components/MetaData.js';
 import { createClient } from 'contentful';
-import { getProjectTxt } from '../../utils/getProjectContent.js';
-import { ImageCollection } from '../../components/ImageCollection.js';
+import { getProjectTxt } from '../../../utils/getProjectContent.js';
+import { ImageCollection } from '../../../components/ImageCollection.js';
+import { INLINES } from '@contentful/rich-text-types';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -20,9 +22,22 @@ export async function getStaticProps() {
 }
 function Korrespondanser2({ res }) {
     console.log(res);
-    const { title, year, content, slug } = res.fields;
+    const { title, content, slug } = res.fields;
     console.log(content);
     const korrespondanser2Images = content.slice(1);
+
+    const text = content[0].fields.formattedText;
+    console.log(text);
+
+    const options = {
+        renderNode: {
+            [INLINES.HYPERLINK]: ({ data }, children) => (
+                <a href={data.uri} target='_blank' rel='noopener noreferrer'>
+                    {children}
+                </a>
+            ),
+        },
+    };
 
     return (
         <>
@@ -31,9 +46,10 @@ function Korrespondanser2({ res }) {
                 <div className='projectContainer'>
                     <div className='page-title-wrapper'>
                         <h2 className='projektTitle'>{title}</h2>
-                        <h3 className='projektYear'>{year}</h3>
                     </div>
-                    <p>{getProjectTxt(content)}</p>
+                    <div className='page-text-wrapper'>
+                        {documentToReactComponents(text, options)}
+                    </div>
                     <div className='imageContainer'>
                         <ImageCollection images={korrespondanser2Images} />
                     </div>

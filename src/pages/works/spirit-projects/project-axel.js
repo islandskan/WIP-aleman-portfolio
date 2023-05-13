@@ -1,16 +1,19 @@
-import { MetaData } from '../../components/MetaData.js';
+import { MetaData } from '../../../components/MetaData.js';
 import { createClient } from 'contentful';
-import { getProjectTxt } from '../../utils/getProjectContent.js';
-import { ImageCollection } from '../../components/ImageCollection.js';
+import styles from '../../../styles/Project.module.css';
+import { getProjectTxt } from '../../../utils/getProjectContent.js';
+import { ImageCollection } from '../../../components/ImageCollection.js';
 // import { LinkElement } from '../../components/LinkElements.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { Video } from '../../../components/Video.js';
+import { GoBackLink } from '../../../components/GoBackLink.js';
 
 export async function getStaticProps() {
     const client = createClient({
         space: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     });
-    const res = await client.getEntry('XEoJ3qEqr4YTfXFGvlhQp');
+    const res = await client.getEntry('4eILv8i9D1rPwYnrXvJLoq');
     if (!res) {
         return { notFound: true };
     }
@@ -20,29 +23,34 @@ export async function getStaticProps() {
         },
     };
 }
-function Journey2({ res }) {
+
+function Axel({ res }) {
     console.log(res);
-    const { title, year, content, slug } = res.fields;
+    const { title, content, slug } = res.fields;
     console.log(content);
-    // const journey2Images = content.slice(2);
+    const axelImages = content.slice(2);
+    const axelVideo = content[1].fields;
 
     return (
         <>
-            <MetaData page='Journey 2' />
-            <div id={slug} className='container'>
+            <MetaData page='Project Axel' />
+            <div className='container'>
                 <div className='projectContainer'>
                     <div className='page-title-wrapper'>
                         <h2 className='projektTitle'>{title}</h2>
-                        <h3 className='projektYear'>{year}</h3>
                     </div>
                     <p>{getProjectTxt(content)}</p>
+                    <div className={styles.videoContainer}>
+                        <Video video={axelVideo} />
+                    </div>
                     <div className='imageContainer'>
-                        {/* <ImageCollection images={journey2Images} /> */}
+                        <ImageCollection images={axelImages} />
                     </div>
                 </div>
+                <GoBackLink slug={slug} />
             </div>
         </>
     );
 }
 
-export default Journey2;
+export default Axel;

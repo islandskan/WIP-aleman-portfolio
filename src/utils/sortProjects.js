@@ -5,10 +5,10 @@ const sortProjects = (projects) => {
     return sortedProjectCards;
 };
 
-const renderProjects = (Component, cards) => {
-    const sortedCards = sortProjects(cards);
-    return sortedCards.map((card) => (
-        <Component key={card.fields.slug} card={card} />
+const renderProjects = (Component, projects) => {
+    const sortedList = sortProjects(projects);
+    return sortedList.map((project) => (
+        <Component key={project.fields.projectLinkUrl} project={project} />
     ));
 };
 

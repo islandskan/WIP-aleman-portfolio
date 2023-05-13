@@ -58,21 +58,18 @@ img {
 }
 
 .btn {
-    background-color: var(--dark);
-    color: var(--white);
+    background-color: transparent;
+    color: var(--dark);
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     max-width: 400px;
     height: 50px;
-    border: 2px solid transparent;
+    border: 2px solid var(--dark);
 }
 
 .btn:focus,
 .btn:hover {
-    background-color: var(--white);
-    color: var(--dark);
-    border-color: var(--dark);
 }
 
 button,
@@ -115,7 +112,6 @@ h5,
 h6 {
     letter-spacing: 0.085rem;
     font-weight: 400;
-    font-family: 'Montserrat', sans-serif;
 }
 
 p,
@@ -242,6 +238,7 @@ nav .logo {
 /* Layout styles */
 
 .container {
+    /* border: 1px solid blue; */
     min-height: 100vh;
     position: relative;
     display: grid;
@@ -257,13 +254,15 @@ nav .logo {
 .container::after {
     content: '';
     display: block;
-    width: 100%;
+    grid-column: 1 / -1;
 }
 
 .container::before {
     height: 50px;
 }
+
 .projectContainer {
+    /* border: 1px solid red; */
     display: grid;
     row-gap: 3em;
     grid-template-columns: repeat(12, 1fr);
@@ -276,13 +275,13 @@ nav .logo {
 
 .page-title-wrapper,
 .projectContainer p,
+.page-text-wrapper,
 .imageContainer {
     grid-column: 1 / span 12;
 }
 
 .projectContainer p {
     font-size: 1rem;
-    grid-row: 2 / span 2;
 }
 
 .imageContainer {
@@ -356,7 +355,8 @@ p.linkBody {
     } */
     .page-title-wrapper,
     .projectContainer p,
-    .imageContainer {
+    .imageContainer,
+    .page-text-wrapper {
         grid-column: 2 / span 10;
     }
 }
@@ -403,7 +403,8 @@ p.linkBody {
 @media screen and (min-width: 1000px) {
     .page-title-wrapper,
     .projectContainer p,
-    .imageContainer {
+    .imageContainer,
+    .page-text-wrapper {
         grid-column: 3 / span 8;
     }
 }

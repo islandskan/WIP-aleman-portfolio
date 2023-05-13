@@ -1,7 +1,7 @@
-import { MetaData } from '../../components/MetaData.js';
+import { MetaData } from '../../../components/MetaData.js';
 import { createClient } from 'contentful';
-import { getProjectTxt } from '../../utils/getProjectContent.js';
-import { ImageCollection } from '../../components/ImageCollection.js';
+import { getProjectTxt } from '../../../utils/getProjectContent.js';
+import { ImageCollection } from '../../../components/ImageCollection.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -20,7 +20,7 @@ export async function getStaticProps() {
 }
 function Journey1({ res }) {
     console.log(res);
-    const { title, year, content, slug } = res.fields;
+    const { title, content, slug } = res.fields;
     console.log(content);
     const journey1Images = content.slice(1);
 
@@ -31,7 +31,6 @@ function Journey1({ res }) {
                 <div className='projectContainer'>
                     <div className='page-title-wrapper'>
                         <h2 className='projektTitle'>{title}</h2>
-                        <h3 className='projektYear'>{year}</h3>
                     </div>
                     <p>{getProjectTxt(content)}</p>
                     <div className='imageContainer'>

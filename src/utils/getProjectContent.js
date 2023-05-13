@@ -5,13 +5,16 @@ const getCardImg = (card) => {
     return { height, width };
 };
 
-const getProjectContent = (res) => {
-    const { title, year, content, slug } = res.fields;
-    console.log(content);
-    getProjectImg(content);
-    getProjectTitle(title);
-    getProjectTxt(content);
-};
+// const getProjectContent = (res) => {
+//     // const { title, year, content, slug } = res.fields;
+//     res.map((project) => {
+//         const { projectLinkUrl, projectLinksTitle, startYear, endYear } =
+//             project.fields;
+
+//         // projectLinksUnderMenu,
+//         console.log(projectLinkUrl, projectLinksTitle, startYear, endYear);
+//     });
+// };
 
 // extract images from projects
 const getProjectImg = (content) => {
@@ -30,7 +33,7 @@ const getProjectTxt = (content) => {
 };
 
 // extract videos from projects
-const getProjectVideo = (content) => {
+const getProjectVideo = (videoContent) => {
     return;
 };
 
@@ -54,5 +57,5 @@ export {
     getProjectVideo,
     getProjectLink,
     getProjectPdf,
-    getProjectContent,
+    // getProjectContent,
 };

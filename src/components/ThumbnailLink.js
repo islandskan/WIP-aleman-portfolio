@@ -3,11 +3,12 @@ import Link from 'next/link';
 import styles from '../styles/components/PDFElement.module.css';
 
 export const ThumbnailLink = ({ item }) => {
+    console.log(item);
     const linkImg = `https:${item.thumbnail.fields.file.url}`;
 
     const linkUrl =
-        'pdfAsset' in item
-            ? `https:${item.pdfAsset.fields.file.url}`
+        'linkAsset' in item
+            ? `https:${item.linkAsset.fields.file.url}`
             : item.thumbnailLink;
 
     const { height: HEIGHT, width: WIDTH } =
@@ -15,7 +16,7 @@ export const ThumbnailLink = ({ item }) => {
 
     return (
         <figure className={styles.PDFthumbnail}>
-            <Link href={linkUrl} className={styles.PDF__link}>
+            <Link href={linkUrl} className={styles.PDF__link} target='_blank'>
                 <Image
                     src={linkImg}
                     alt={item.thumbnail.fields.title}
@@ -25,9 +26,9 @@ export const ThumbnailLink = ({ item }) => {
                     className={styles.PDFthumbnail__img}
                 />
             </Link>
-            {item.pdfText && (
+            {item.linkAssetText && (
                 <figcaption className={styles.PDFthumbnail__txt}>
-                    {item.pdfText}
+                    {item.linkAssetText}
                 </figcaption>
             )}
         </figure>

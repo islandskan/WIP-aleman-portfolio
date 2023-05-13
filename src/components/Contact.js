@@ -1,55 +1,78 @@
 import styles from '../styles/components/Contact.module.css';
-// import { send } from 'emailjs-com';
 import { Button } from './Button';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 export const ContactElement = () => {
-    // formState: {isSubmitted, isSubmitSuccessful, isSubmitting, isLoading, isValid, isValidating}
     const {
         register,
         handleSubmit,
         formState: { errors },
+        reset,
     } = useForm();
-    const delayInMS = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    // const delayInMS = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
     const onSubmit = async (data) => {
-        await delayInMS(2000);
-        console.log(JSON.stringify(data));
-        console.log(errors);
+        // await delayInMS(2000);
+        let config = {
+            method: 'post',
+            url: `${process.env.EMAIL_API_URL}/api/contact`,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            data,
+        };
+
+        try {
+            const response = await axios(config);
+            if (response.status == 200) {
+                console.log('Successful submission');
+                console.log(response);
+            }
+        } catch (error) {
+            console.error(error);
+        }
     };
 
     return (
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-            <>
-                <label htmlFor='fullname' className={styles.label}>
-                    Full Name
-                </label>
-                <input
-                    type='text'
-                    name='from_fullname'
-                    id='fullname'
-                    {...register('from_fullname')}
-                    className={styles.input}
-                    placeholder='Enter your full name'
-                />
-            </>
+            <label htmlFor='fullname' className={styles.label}>
+                Full Name
+            </label>
+            <input
+                type='text'
+                name='from_fullname'
+                id='fullname'
+                {...register('from_fullname')}
+                className={styles.input}
+                placeholder='Enter your full name'
+            />
 
-            <>
-                <label htmlFor='email' className={styles.label}>
-                    Email
-                </label>
-                <input
-                    type='email'
-                    name='from_email'
-                    id='email'
-                    {...register('from_email', {
-                        required: true,
-                        pattern: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
-                    })}
-                    className={styles.input}
-                    placeholder='Enter your email'
-                />
-            </>
+            <label htmlFor='email' className={styles.label}>
+                Email
+            </label>
+            <input
+                type='text'
+                name='from_email'
+                id='email'
+                {...register('from_email', {
+                    required: {
+                        value: true,
+                        message: 'Please enter an email address',
+                    },
+                    pattern: {
+                        value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
+                        message: 'Invalid email address',
+                    },
+                })}
+                className={`${styles.input} ${
+                    errors.name ? 'styles.errorInput' : null
+                }`}
+                placeholder='Enter your email'
+            />
+            {errors?.from_email && (
+                <p className={styles.errorMsg}>{errors.from_email?.message}</p>
+            )}
 
             <label htmlFor='subject' className={styles.label}>
                 Subject
@@ -70,10 +93,18 @@ export const ContactElement = () => {
             <textarea
                 name='message'
                 id='message'
-                {...register('message', { required: 'Please enter a message' })}
+                {...register('message', {
+                    required: {
+                        value: true,
+                        message: 'Please enter your message',
+                    },
+                })}
                 className={styles.textarea}
                 placeholder='Enter your message'
             />
+            {errors?.message && (
+                <p className={styles.errorMsg}>{errors.message?.message}</p>
+            )}
 
             <fieldset className={styles.formBtns}>
                 <Button
@@ -81,7 +112,6 @@ export const ContactElement = () => {
                     classname={styles.submit}
                     text='Send Message'
                 />
-                <Button type='reset' classname={styles.reset} text='Reset' />
             </fieldset>
         </form>
     );
