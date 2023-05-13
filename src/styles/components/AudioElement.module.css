@@ -1,86 +1,57 @@
+.audioContainer {
+    grid-column: 1 / -1;
+    display: grid;
+}
+
+.audioInfo {
+    display: grid;
+    row-gap: 2rem;
+}
+
+.audioInfo h4 {
+}
+
+.audioImgContainer {
+}
+
+.audioText {
+    font-size: 0.5rem;
+    /* border: 2px solid red; */
+}
+
 .audioPlayer {
-    /* background-color: var(--dark);
-    padding: 0 1.5em;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin: auto; */
-    grid-column: 1 / span 12;
+    height: 100px;
 }
 
-.time {
-}
-
-/* .progressbar {
-    --barBg: transparent;
-    --seekBeforeWidth: 100px;
-    --seekBeforeColor: red;
-    --barBorderRadius: 8px;
-    --barHeight: 20px;
-    --knobColor: #10185e;
-    --selectedKnob: #2accc6;
-    appearance: none;
-    background-color: var(--barBg);
-    position: relative;
-    width: 100%;
-    border-radius: var(--barBorderRadius);
-    outline: 2px solid black;
-    height: var(--barHeight);
-} */
-
-/* .progressbar::-webkit-slider-runnable-track {
-    background-color: var(--barBg);
-    position: relative;
-    width: 100%;
-    border-radius: var(--barBorderRadius);
-    outline: 2px solid black;
-    height: var(--barHeight);
-}
-
-.progressbar::-moz-range-track {
-    background-color: var(--barBg);
-    position: relative;
-    width: 100%;
-    border-radius: var(--barBorderRadius);
-    outline: 2px solid black;
-    height: var(--barHeight);
-}
-
-.progressBar::before {
-    content: '';
-    height: 11px;
-    width: var(--seekBeforeWidth);
-    background-color: var(--seekBeforeColor);
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    cursor: pointer;
-}
-
-.progressBar::-moz-range-progress {
-    background-color: var(--seekBeforeColor);
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    height: 11px;
-} */
-
-@media screen and (min-width: 492px) {
-    .audioPlayer {
+@media screen and (min-width: 550px) {
+    .audioContainer {
         grid-column: 2 / span 10;
     }
 }
 
-@media screen and (min-width: 920px) {
-    .audioPlayer {
+@media screen and (min-width: 1000px) {
+    .audioContainer {
         grid-column: 3 / span 8;
     }
-}
 
-@media screen and (min-width: 1100px) {
-    .audioPlayer {
-        /* grid-column: 4 / span 6; */
+    /* .audioInfo {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 30px 0.5fr;
+        column-gap: 1rem;
     }
+
+    .audioImgContainer {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1;
+    }
+
+    .audioInfo h4 {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+    }
+
+    .audioText {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+    } */
 }

@@ -8,15 +8,17 @@ export const AudioElement = ({ audioObj }) => {
 
     return (
         <div className={styles.audioContainer}>
-            <div className={styles.audioImageContainer}>
+            <div className={styles.audioInfo}>
                 <h4>{audioImageText}</h4>
-                <Image
-                    src={`https:${audioImage.fields.file.url}`}
-                    alt={audioImageText}
-                    height={audioImage.fields.file.details.image.height}
-                    width={audioImage.fields.file.details.image.width}
-                />
-                <div className={audioText}>
+                <figure className={styles.audioImgContainer}>
+                    <Image
+                        src={`https:${audioImage.fields.file.url}`}
+                        alt={audioImageText}
+                        height={audioImage.fields.file.details.image.height}
+                        width={audioImage.fields.file.details.image.width}
+                    />
+                </figure>
+                <div className={styles.audioText}>
                     {documentToReactComponents(audioText)}
                 </div>
             </div>
