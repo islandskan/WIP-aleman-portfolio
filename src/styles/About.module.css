@@ -18,6 +18,10 @@
     font-weight: 300;
 }
 
+.bodyContainer a {
+    font-weight: 400;
+}
+
 .cvContainer {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -75,11 +79,6 @@
 
 .artistContainer p:nth-of-type(2) {
     margin-top: max(1.2em, 2vh);
-}
-
-.publishedContainer .bodyContainer a {
-    /* border: 1px solid red; */
-    text-decoration: none;
 }
 
 .publishedContainer .bodyContainer p {
