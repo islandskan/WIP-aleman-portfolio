@@ -3,7 +3,6 @@ import Link from 'next/link';
 import styles from '../styles/components/PDFElement.module.css';
 
 export const ThumbnailLink = ({ item }) => {
-    console.log(item);
     const linkImg = `https:${item.thumbnail.fields.file.url}`;
 
     const linkUrl =

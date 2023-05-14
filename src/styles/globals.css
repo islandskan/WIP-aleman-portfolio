@@ -148,7 +148,7 @@ h6 {
 nav {
     background-color: var(--white);
     position: fixed;
-    top: 0;
+    bottom: 0;
     z-index: 8;
     left: 0;
     right: 0;
@@ -237,6 +237,11 @@ nav .logo {
 
 /* Layout styles */
 
+.layout {
+    /* border: 2px solid red; */
+    /* height: 100vh; */
+}
+
 .container {
     /* border: 1px solid blue; */
     min-height: 100vh;
@@ -257,7 +262,7 @@ nav .logo {
     grid-column: 1 / -1;
 }
 
-.container::before {
+.container::after {
     height: 50px;
 }
 

@@ -4,9 +4,11 @@ import SkipToMain from './SkipToMain';
 export const Layout = ({ children }) => {
     return (
         <>
-            <SkipToMain href='#main-content' />
+            <SkipToMain href='' />
             <Navbar />
-            <main tabIndex={-1}>{children}</main>
+            <main tabIndex={-1} className='layout'>
+                {children}
+            </main>
         </>
     );
 };

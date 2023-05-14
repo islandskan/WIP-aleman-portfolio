@@ -24,17 +24,20 @@ function Home({ res }) {
     const { details, url } = res.fields.file;
     const HEIGHT = details.image.height;
     const WIDTH = details.image.width;
+
+    console.log(HEIGHT, WIDTH);
     return (
         <>
             <MetaData page='Start' />
-            <div className={`container ${styles.homeContainer}`}>
-                <Image
-                    className={styles.homeImg}
-                    alt={res.fields.title}
-                    src={`https:${url}`}
-                    height={HEIGHT}
-                    width={WIDTH}
-                />
+            <div className='container'>
+                <figure className={styles.homeImg}>
+                    <Image
+                        alt={res.fields.title}
+                        src={`https:${url}`}
+                        height={HEIGHT}
+                        width={WIDTH}
+                    />
+                </figure>
             </div>
         </>
     );

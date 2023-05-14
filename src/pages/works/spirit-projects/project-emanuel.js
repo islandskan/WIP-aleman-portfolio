@@ -26,11 +26,8 @@ export async function getStaticProps() {
 function Emanuel({ res }) {
     console.log(res);
     const { title, content, slug } = res.fields;
-    const emanuelImages = content.slice(4, 7);
-    // console.log(emanuelImages);
-
-    console.log(content[6]);
-
+    console.log(content);
+    const emanuelImages = content.slice(3, 6);
     const emanuelPDF = content[6].fields;
 
     const emanuelVideo = content[1].fields;
@@ -50,9 +47,9 @@ function Emanuel({ res }) {
                         <Video video={emanuelInterviewVideo} />
                     </div>
 
-                    {/* <div className='imageContainer'>
+                    <div className='imageContainer'>
                         <ImageCollection images={emanuelImages} />
-                    </div> */}
+                    </div>
                     <div className={styles.linkContainer}>
                         <ThumbnailLink item={emanuelPDF} />
                     </div>
