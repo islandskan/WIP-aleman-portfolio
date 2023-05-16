@@ -30,7 +30,7 @@ function AxisMundiBerlin({ res }) {
 
     return (
         <>
-            <MetaData page='Axis Mundi Berlin' />
+            <MetaData page={title} />
             <div className='container'>
                 <div className='projectContainer'>
                     <div className='page-title-wrapper'>

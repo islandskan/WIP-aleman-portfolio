@@ -10,14 +10,6 @@
     justify-self: center;
     align-self: center;
 }
-.projectImage {
-    /* border: 1px solid red; */
-    /* max-width: 1000px; */
-}
-
-/* Styles for the Video component, regarding size, thumbnail images etc. */
-
-/* Styles for the Audio component */
 
 /* Archive images */
 
@@ -30,7 +22,7 @@
     grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
     row-gap: 15px;
     column-gap: 15px;
-    grid-auto-flow: dense;
+    /* grid-auto-flow: dense; */
 }
 
 .title__wrapper {
@@ -51,11 +43,14 @@
     grid-column: span 12;
     display: grid;
     justify-self: center;
-    grid-auto-rows: minmax(280px, 1fr);
-    grid-template-columns: 1fr;
     row-gap: 2rem;
     max-width: 560px;
     width: 100%;
+}
+
+.videoContainer iframe {
+    max-width: 560px;
+    height: 100%;
 }
 
 .linkContainer {

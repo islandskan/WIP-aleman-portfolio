@@ -16,6 +16,8 @@ export const Video = ({ video }) => {
     const { height: HEIGHT, width: WIDTH } =
         videoThumbnail.fields.file.details.image;
 
+    console.log(HEIGHT, WIDTH);
+
     return (
         <div>
             {hasWindow && (

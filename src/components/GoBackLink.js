@@ -1,4 +1,5 @@
 import styles from '../styles/components/GoBackLink.module.css';
+import { Button } from './Button';
 import { useRouter } from 'next/router';
 
 export const GoBackLink = ({ slug }) => {
@@ -9,9 +10,12 @@ export const GoBackLink = ({ slug }) => {
 
     return (
         <div className={styles.goBackContainer}>
-            <button type='button' onClick={() => router.push(getBackURL)}>
-                Go Back
-            </button>
+            <Button
+                type='button'
+                classname={styles.goBackBtn}
+                onClick={() => router.push(getBackURL)}
+                text='Go Back'
+            />
         </div>
     );
 };

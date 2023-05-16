@@ -43,6 +43,7 @@ body {
 a {
     text-decoration: none;
     color: var(--dark);
+    font-weight: 400;
     transition: all 0.2s;
 }
 
@@ -59,13 +60,14 @@ img {
 
 .btn {
     background-color: transparent;
+    font-family: var(--font);
     color: var(--dark);
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     max-width: 400px;
     height: 50px;
-    border: 2px solid var(--dark);
+    border: 1.5px solid var(--dark);
 }
 
 .btn:focus,
@@ -137,22 +139,31 @@ h6 {
 }
 
 .menu ul li {
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     line-height: 1.5;
     letter-spacing: 0.035rem;
     user-select: none;
 }
 
 /* Global Components styles */
-
+header,
 nav {
     background-color: var(--white);
+    padding: var(--padding);
     position: fixed;
-    bottom: 0;
-    z-index: 8;
     left: 0;
     right: 0;
-    padding: var(--padding);
+    z-index: 8;
+}
+
+header {
+    top: 0;
+    max-width: 960px;
+    margin: auto;
+}
+
+nav {
+    bottom: 0;
 }
 
 .nav_container {
@@ -160,10 +171,10 @@ nav {
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
-nav .logo {
+.logo {
     max-width: 240px;
     width: 100%;
 }
@@ -251,7 +262,7 @@ nav .logo {
     row-gap: 2em;
     z-index: 2;
     padding: 0 var(--padding);
-    max-width: 960px;
+    max-width: 1000px;
     margin: auto;
 }
 
@@ -260,9 +271,6 @@ nav .logo {
     content: '';
     display: block;
     grid-column: 1 / -1;
-}
-
-.container::after {
     height: 50px;
 }
 
@@ -390,7 +398,7 @@ p.linkBody {
     }
 
     .menu ul li {
-        font-size: 1.1rem;
+        font-size: 1rem;
         line-height: 1.3;
     }
 

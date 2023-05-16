@@ -23,10 +23,10 @@ export async function getStaticProps() {
 
 function Journeys({ res }) {
     const projects = res.fields.projectLinksUnderMenu;
-    const { projectLinkUrl } = res.fields;
+    const { projectLinkUrl, projectLinksTitle } = res.fields;
     return (
         <>
-            <MetaData page='Journeys' />
+            <MetaData page={projectLinksTitle} />
             <div className={`${styles.homeContainer} container`}>
                 <ProjectList projects={projects} url={projectLinkUrl} />
                 <GoBackLink slug={projectLinkUrl} />

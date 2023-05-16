@@ -47,9 +47,6 @@ export const Navbar = () => {
     return (
         <nav ref={menuRef}>
             <div className='nav_container'>
-                <Link className='logo' href='/' aria-hidden='true'>
-                    Madeleine Aleman
-                </Link>
                 <BurgerMenu handleClick={handleClick} isExpanded={isExpanded} />
                 <div className={`menu ${isMenuOpen}`}>
                     <ul>{menuLinks}</ul>

@@ -10,6 +10,9 @@ export const AudioElement = ({ audioObj }) => {
         <div className={styles.audioContainer}>
             <div className={styles.audioInfo}>
                 <h4>{audioImageText}</h4>
+                <div className={styles.audioText}>
+                    {documentToReactComponents(audioText)}
+                </div>
                 <figure className={styles.audioImgContainer}>
                     <Image
                         src={`https:${audioImage.fields.file.url}`}
@@ -18,9 +21,6 @@ export const AudioElement = ({ audioObj }) => {
                         width={audioImage.fields.file.details.image.width}
                     />
                 </figure>
-                <div className={styles.audioText}>
-                    {documentToReactComponents(audioText)}
-                </div>
             </div>
             <audio className={styles.audioPlayer} controls>
                 <source src={`https:${url}`} type={contentType} />

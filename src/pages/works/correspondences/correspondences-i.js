@@ -37,7 +37,7 @@ function Korrespondanser1({ res }) {
     };
     return (
         <>
-            <MetaData page='Project Correpsondences 1' />
+            <MetaData page={title} />
             <div id={slug} className='container'>
                 <div className='projectContainer'>
                     <div className='page-title-wrapper'>

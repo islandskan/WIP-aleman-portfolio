@@ -20,29 +20,32 @@ export async function getStaticProps() {
     };
 }
 function Archive({ res }) {
-    const { title, projectImages, slug } = res.fields;
+    const { title, content, slug } = res.fields;
 
-    console.log(res);
+    console.log(content);
 
-    // const archiveImagesImageCollection = projectImages.map((image) => (
-    //     <ImageElement key={image.sys.id} image={image} />
-    // ));
+    const archiveImagesImageCollection = content.map((item) => (
+        <>
+            <h4>{item.fields.title}</h4>
+
+            {/* <ImageElement key={image.sys.id} image={image} /> */}
+        </>
+    ));
     return (
         <>
-            <MetaData page='Archive' />
+            <MetaData page={title} />
             <div id={slug} className='container'>
-                {/* <div className={styles.archiveContainer}>
+                <div className={styles.archiveContainer}>
                     <div
                         className={`page-title-wrapper ${styles.title__wrapper}`}
                     >
                         <h2 className='projektTitle'>{title}</h2>
-                        <h3 className='projektYear'>{year}</h3>
                     </div>
 
                     <div className={styles.archiveWrapper}>
                         {archiveImagesImageCollection}
                     </div>
-                </div> */}
+                </div>
                 <GoBackLink slug={slug} />
             </div>
         </>

@@ -22,6 +22,10 @@ export async function getStaticProps() {
 }
 
 const News = ({ newsCards }) => {
+    /* Function to sort out the post about Ed art, to always push it to the bottom of the list
+    newsCards[i].fields.location === "Ed Art"
+    */
+
     const newsElements = newsCards.map((card) => (
         <NewsCard key={card.sys.id} card={card} />
     ));

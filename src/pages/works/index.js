@@ -24,8 +24,8 @@ function Works({ projectLinks }) {
     const projectList = renderProjects(ProjectListItem, projectLinks);
     return (
         <>
-            <MetaData page='Start' />
-            <div className={`${styles.homeContainer} container`}>
+            <MetaData page='Works' />
+            <div className='container'>
                 <ul id='works' className={styles.projectsList}>
                     {projectList}
                 </ul>

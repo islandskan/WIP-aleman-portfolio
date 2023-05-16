@@ -26,13 +26,15 @@ export async function getStaticProps() {
 
 function Hilma({ res }) {
     const { title, content, slug } = res.fields;
-    // const hilmaImages = content.slice(2, 16);
-    const blogLink = content[2].fields;
-    const hilmaPDF = content[3].fields;
+
+    console.log(content);
+    const hilmaImages = content.slice(2, 16);
+    const blogLink = content[16].fields;
+    const hilmaPDF = content[17].fields;
     const hilmaVideo = content[1].fields;
     return (
         <>
-            <MetaData page='Project Hilma' />
+            <MetaData page={title} />
             <div className='container'>
                 <div className='projectContainer'>
                     <div className='page-title-wrapper'>
@@ -42,9 +44,9 @@ function Hilma({ res }) {
                     <div className={styles.videoContainer}>
                         <Video video={hilmaVideo} />
                     </div>
-                    {/* <div className='imageContainer'>
+                    <div className='imageContainer'>
                         <ImageCollection images={hilmaImages} />
-                    </div> */}
+                    </div>
                     <div className={styles.linkContainer}>
                         <ThumbnailLink item={hilmaPDF} />
                         <ThumbnailLink item={blogLink} />

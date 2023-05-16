@@ -181,6 +181,6 @@
 
 @media and (min-width: 1024px) {
     .news::before {
-        height: 10px;
+        /* height: 10px; */
     }
 }

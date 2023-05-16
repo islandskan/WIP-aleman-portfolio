@@ -23,10 +23,10 @@ export async function getStaticProps() {
 
 function SpiritProjects({ res }) {
     const projects = res.fields.projectLinksUnderMenu;
-    const { projectLinkUrl } = res.fields;
+    const { projectLinkUrl, projectLinksTitle } = res.fields;
     return (
         <>
-            <MetaData page='Spirit Projects' />
+            <MetaData page={projectLinksTitle} />
             <div className={`${styles.homeContainer} container`}>
                 <ProjectList projects={projects} url={projectLinkUrl} />
                 <GoBackLink slug={projectLinkUrl} />

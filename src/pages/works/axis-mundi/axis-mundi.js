@@ -20,12 +20,12 @@ export async function getStaticProps() {
     };
 }
 
-function AxisMundiSTHML({ res }) {
+function AxisMundi({ res }) {
     const { title, content, slug } = res.fields;
-    const axisMundiSthlmImages = content.slice(1);
+    const axisMundiImages = content.slice(1);
     return (
         <>
-            <MetaData page='Axis Mundi Stockholm' />
+            <MetaData page={title} />
             <div className='container'>
                 <div className='projectContainer'>
                     <div className='page-title-wrapper'>
@@ -33,7 +33,7 @@ function AxisMundiSTHML({ res }) {
                     </div>
                     <p>{getProjectTxt(content)}</p>
                     <div className='imageContainer'>
-                        <ImageCollection images={axisMundiSthlmImages} />
+                        <ImageCollection images={axisMundiImages} />
                     </div>
                 </div>
                 <GoBackLink slug={slug} />
@@ -42,4 +42,4 @@ function AxisMundiSTHML({ res }) {
     );
 }
 
-export default AxisMundiSTHML;
+export default AxisMundi;

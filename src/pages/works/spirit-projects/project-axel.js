@@ -29,7 +29,7 @@ function Axel({ res }) {
 
     return (
         <>
-            <MetaData page='Project Axel' />
+            <MetaData page={title} />
             <div className='container'>
                 <div className='projectContainer'>
                     <div className='page-title-wrapper'>

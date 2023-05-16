@@ -35,7 +35,7 @@ function Emanuel({ res }) {
 
     return (
         <>
-            <MetaData page='Project Emanuel' />
+            <MetaData page={title} />
             <div className='container'>
                 <div className='projectContainer'>
                     <div className='page-title-wrapper'>
@@ -44,7 +44,6 @@ function Emanuel({ res }) {
                     <p>{getProjectTxt(content)}</p>
                     <div className={styles.videoContainer}>
                         <Video video={emanuelVideo} />
-                        <Video video={emanuelInterviewVideo} />
                     </div>
 
                     <div className='imageContainer'>
@@ -52,6 +51,9 @@ function Emanuel({ res }) {
                     </div>
                     <div className={styles.linkContainer}>
                         <ThumbnailLink item={emanuelPDF} />
+                    </div>
+                    <div className={styles.videoContainer}>
+                        <Video video={emanuelInterviewVideo} />
                     </div>
                 </div>
                 <GoBackLink slug={slug} />

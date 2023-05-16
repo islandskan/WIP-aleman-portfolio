@@ -22,11 +22,13 @@ export async function getStaticProps() {
 }
 
 function AxisMundi({ res }) {
-    const { projectLinkUrl } = res.fields;
+    console.log(res);
+    const { projectLinkUrl, projectLinksTitle } = res.fields;
     const projects = res.fields.projectLinksUnderMenu;
+
     return (
         <>
-            <MetaData page='Axis Mundi' />
+            <MetaData page={projectLinksTitle} />
             <div className={`${styles.homeContainer} container`}>
                 <ProjectList projects={projects} url={projectLinkUrl} />
                 <GoBackLink slug={projectLinkUrl} />

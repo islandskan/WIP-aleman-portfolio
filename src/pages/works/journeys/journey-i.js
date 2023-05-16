@@ -24,7 +24,7 @@ function Journey1({ res }) {
     const journey1Images = content.slice(1);
     return (
         <>
-            <MetaData page='Journey 1' />
+            <MetaData page={title} />
             <div id={slug} className='container'>
                 <div className='projectContainer'>
                     <div className='page-title-wrapper'>
