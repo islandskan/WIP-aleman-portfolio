@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import styles from '../styles/Project.module.css';
-export const ProjectImage = ({ image, ariaSetSize, index }) => {
+export const ProjectImage = ({ image }) => {
+    console.log(image);
     const imageUrl = `https:${image.image.fields.file.url}`;
     const imageInfo = [image.imageTitle, image.materialOrMethod, image.size];
+
+    console.log(imageUrl);
+    console.log(imageInfo);
     return (
-        <figure
-            className={styles.projectImageFigure}
-            aria-setsize={ariaSetSize}
-            aria-posinset={index}
-        >
+        <figure className={styles.projectImageFigure}>
             <Image
                 className={styles.projectImage}
                 src={imageUrl}

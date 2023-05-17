@@ -17,12 +17,27 @@
     grid-column: 1 / span 12;
 }
 
+/* parent of archiveGroup */
 .archiveWrapper {
+    row-gap: 3rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
-    row-gap: 15px;
-    column-gap: 15px;
-    /* grid-auto-flow: dense; */
+}
+
+.archiveGroup {
+    /* border: 2px solid black; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    grid-template-rows: 30px auto;
+    row-gap: 2.5rem;
+    column-gap: 3rem;
+}
+
+.archiveGroup h3 {
+    grid-row: 1 / span 1;
+    grid-column: 1 / -1;
+}
+
+.archiveGroup .projectImageFigure {
 }
 
 .title__wrapper {

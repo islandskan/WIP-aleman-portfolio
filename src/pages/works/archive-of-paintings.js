@@ -1,6 +1,6 @@
 import { MetaData } from '../../components/MetaData.js';
 import { createClient } from 'contentful';
-import { ImageElement } from '../../components/ImageElements.js';
+import { ImageCollection } from '../../components/ImageCollection.js';
 import styles from '../../styles/Project.module.css';
 import { GoBackLink } from '../../components/GoBackLink.js';
 
@@ -9,7 +9,24 @@ export async function getStaticProps() {
         space: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     });
-    const res = await client.getEntry('1WWyIGGnTjJ00GoQLnL5pl');
+
+    // const post = await client
+    // .getEntries({
+    //   content_type: "blogPost",
+    //   limit: 1,
+    //   include: 10,
+    //   "fields.slug": "the-power-of-the-contentful-rich-text-field",
+    // })
+    // .then((entry) => entry)
+    // .catch(console.error);
+
+    const res = await client
+        .getEntries({
+            content_type: 'archiveGroup',
+            include: 10,
+        })
+        .then((entry) => entry)
+        .catch(console.error);
     if (!res) {
         return { notFound: true };
     }
@@ -20,21 +37,20 @@ export async function getStaticProps() {
     };
 }
 function Archive({ res }) {
-    const { title, content, slug } = res.fields;
-
-    console.log(content);
-
-    const archiveImagesImageCollection = content.map((item) => (
-        <>
-            <h4>{item.fields.title}</h4>
-
-            {/* <ImageElement key={image.sys.id} image={image} /> */}
-        </>
+    const title = 'Archive of Paintings';
+    const slug = 'archive-of-paintings';
+    const { items } = res;
+    console.log(items[1].fields.images);
+    const archiveCollection = items.map((item) => (
+        <div key={item.sys.id} className={styles.archiveGroup}>
+            <h3>{`${item.fields.title} ${item.fields.year}`}</h3>
+            <ImageCollection images={item.fields.images} />
+        </div>
     ));
     return (
         <>
             <MetaData page={title} />
-            <div id={slug} className='container'>
+            <div className='container'>
                 <div className={styles.archiveContainer}>
                     <div
                         className={`page-title-wrapper ${styles.title__wrapper}`}
@@ -43,7 +59,7 @@ function Archive({ res }) {
                     </div>
 
                     <div className={styles.archiveWrapper}>
-                        {archiveImagesImageCollection}
+                        {archiveCollection}
                     </div>
                 </div>
                 <GoBackLink slug={slug} />
