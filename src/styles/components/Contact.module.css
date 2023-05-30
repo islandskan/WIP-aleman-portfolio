@@ -1,8 +1,12 @@
 .formContainer {
-    --transparentDarker: rgba(14, 6, 27, 0.7);
+    --transparentDarker: rgba(14, 6, 27, 0.5);
     --font: 'Quicksand', sans-serif;
     --dark: #08040e;
     --white: #fcf7f4;
+    --lineHeight: 0.5px;
+    --opac: 0.5;
+    --pinkish: #bb85ba;
+
     /* display: flex; */
     /* flex-direction: column; */
 }
@@ -32,7 +36,7 @@
     position: relative;
     top: 4px;
     margin-right: 2px;
-    color: red;
+    color: var(--pinkish);
 }
 
 .input {
@@ -51,7 +55,7 @@
     line-height: 1.5;
     outline: solid 2px transparent;
     transition: outline 0.05s ease;
-    border-bottom: 2px solid var(--dark);
+    border-bottom: var(--lineHeight) solid var(--transparentDarker);
     background-color: transparent;
 }
 

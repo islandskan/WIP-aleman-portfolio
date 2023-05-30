@@ -40,7 +40,6 @@ function Archive({ res }) {
     const title = 'Archive of Paintings';
     const slug = 'archive-of-paintings';
     const { items } = res;
-    console.log(items[1].fields.images);
     const archiveCollection = items.map((item) => (
         <div key={item.sys.id} className={styles.archiveGroup}>
             <h3>{`${item.fields.title} ${item.fields.year}`}</h3>

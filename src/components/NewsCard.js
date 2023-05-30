@@ -4,8 +4,6 @@ import { setNewsDates } from '../utils/setNewsDates';
 
 export const NewsCard = ({ card }) => {
     const { title, location, link, startDate, endDate } = card.fields;
-    console.log(link);
-
     return (
         <div className={`${styles.newsCard}`}>
             <div className={styles.newsCard__txtWrapper}>
