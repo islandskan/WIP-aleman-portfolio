@@ -25,11 +25,10 @@ function Works({ projectLinks }) {
     return (
         <>
             <MetaData page='Works' />
-            <div className='container'>
-                <ul id='works' className={styles.projectsList}>
-                    {projectList}
-                </ul>
-            </div>
+
+            <ul id='works' className={styles.projectsList}>
+                {projectList}
+            </ul>
         </>
     );
 }

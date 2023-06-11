@@ -31,18 +31,16 @@ function AxisMundiBerlin({ res }) {
     return (
         <>
             <MetaData page={title} />
-            <div className='container'>
-                <div className='projectContainer'>
+            <div className='wrapper'>
+                <div className='page-title-wrapper'>
                     <div className='page-title-wrapper'>
-                        <div className='page-title-wrapper'>
-                            <h2 className='projektTitle'>{title}</h2>
-                        </div>
+                        <h2 className='projektTitle'>{title}</h2>
                     </div>
-                    <p>{getProjectTxt(content)}</p>
-                    <AudioElement audioObj={axisMundiAudio} />
-                    <div className='imageContainer'>
-                        <ImageCollection images={axisMundiBerlinImages} />
-                    </div>
+                </div>
+                <p>{getProjectTxt(content)}</p>
+                <AudioElement audioObj={axisMundiAudio} />
+                <div className='imageContainer'>
+                    <ImageCollection images={axisMundiBerlinImages} />
                 </div>
                 <GoBackLink slug={slug} />
             </div>

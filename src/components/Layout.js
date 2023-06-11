@@ -7,10 +7,10 @@ export const Layout = ({ children }) => {
         <>
             <SkipToMain href='' />
             <Logo />
-            <Navbar />
             <main tabIndex={-1} className='layout'>
-                {children}
+                <div className='container'>{children}</div>
             </main>
+            <Navbar />
         </>
     );
 };

@@ -36,25 +36,23 @@ function Emanuel({ res }) {
     return (
         <>
             <MetaData page={title} />
-            <div className='container'>
-                <div className='projectContainer'>
-                    <div className='page-title-wrapper'>
-                        <h2 className='projektTitle'>{title}</h2>
-                    </div>
-                    <p>{getProjectTxt(content)}</p>
-                    <div className={styles.videoContainer}>
-                        <Video video={emanuelVideo} />
-                    </div>
+            <div className='wrapper'>
+                <div className='page-title-wrapper'>
+                    <h2 className='projektTitle'>{title}</h2>
+                </div>
+                <p>{getProjectTxt(content)}</p>
+                <div className={styles.videoContainer}>
+                    <Video video={emanuelVideo} />
+                </div>
 
-                    <div className='imageContainer'>
-                        <ImageCollection images={emanuelImages} />
-                    </div>
-                    <div className={styles.linkContainer}>
-                        <ThumbnailLink item={emanuelPDF} />
-                    </div>
-                    <div className={styles.videoContainer}>
-                        <Video video={emanuelInterviewVideo} />
-                    </div>
+                <div className='imageContainer'>
+                    <ImageCollection images={emanuelImages} />
+                </div>
+                <div className={styles.linkContainer}>
+                    <ThumbnailLink item={emanuelPDF} />
+                </div>
+                <div className={styles.videoContainer}>
+                    <Video video={emanuelInterviewVideo} />
                 </div>
                 <GoBackLink slug={slug} />
             </div>

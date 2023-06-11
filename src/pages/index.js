@@ -29,16 +29,14 @@ function Home({ res }) {
     return (
         <>
             <MetaData page='Start' />
-            <div className='container'>
-                <figure className={styles.homeImg}>
-                    <Image
-                        alt={res.fields.title}
-                        src={`https:${url}`}
-                        height={HEIGHT}
-                        width={WIDTH}
-                    />
-                </figure>
-            </div>
+            <figure className={styles.homeImg}>
+                <Image
+                    alt={res.fields.title}
+                    src={`https:${url}`}
+                    height={HEIGHT}
+                    width={WIDTH}
+                />
+            </figure>
         </>
     );
 }

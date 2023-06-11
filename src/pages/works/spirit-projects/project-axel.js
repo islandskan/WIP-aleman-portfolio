@@ -30,18 +30,16 @@ function Axel({ res }) {
     return (
         <>
             <MetaData page={title} />
-            <div className='container'>
-                <div className='projectContainer'>
-                    <div className='page-title-wrapper'>
-                        <h2 className='projektTitle'>{title}</h2>
-                    </div>
-                    <p>{getProjectTxt(content)}</p>
-                    <div className={styles.videoContainer}>
-                        <Video video={axelVideo} />
-                    </div>
-                    <div className='imageContainer'>
-                        <ImageCollection images={axelImages} />
-                    </div>
+            <div className='wrapper'>
+                <div className='page-title-wrapper'>
+                    <h2 className='projektTitle'>{title}</h2>
+                </div>
+                <p>{getProjectTxt(content)}</p>
+                <div className={styles.videoContainer}>
+                    <Video video={axelVideo} />
+                </div>
+                <div className='imageContainer'>
+                    <ImageCollection images={axelImages} />
                 </div>
                 <GoBackLink slug={slug} />
             </div>

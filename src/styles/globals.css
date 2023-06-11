@@ -23,7 +23,9 @@
     color: white;
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -249,21 +251,20 @@ nav {
 /* Layout styles */
 
 .layout {
-    /* border: 2px solid red; */
-    /* height: 100vh; */
-}
-
-.container {
-    /* border: 1px solid blue; */
     min-height: 100vh;
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    row-gap: 2em;
-    z-index: 2;
     padding: 0 var(--padding);
     max-width: 1000px;
     margin: auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* grid-template-rows: 50px auto 50px; */
+}
+
+.container {
+    display: grid;
+    grid-column: 1 / span 12;
+    /* grid-row: 2; */
+    grid-template-columns: repeat(12, 1fr);
 }
 
 .container::before,
@@ -271,15 +272,32 @@ nav {
     content: '';
     display: block;
     grid-column: 1 / -1;
+}
+
+.container::before,
+.container::after {
     height: 50px;
 }
 
-.projectContainer {
-    /* border: 1px solid red; */
+/* .container::before {
+    margin-bottom: 30px;
+}
+
+.container::after {
+    margin-top: 30px;
+} */
+
+.wrapper {
+    grid-column: 1 / -1;
     display: grid;
-    row-gap: 3em;
-    grid-template-columns: repeat(12, 1fr);
-    grid-column: 1 / span 12;
+    row-gap: 30px;
+    margin: 30px 0;
+}
+
+.text-wrapper {
+    row-gap: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .page-title-wrapper {
@@ -287,13 +305,13 @@ nav {
 }
 
 .page-title-wrapper,
-.projectContainer p,
+.container p,
 .page-text-wrapper,
 .imageContainer {
     grid-column: 1 / span 12;
 }
 
-.projectContainer p {
+.container p {
     font-size: 1rem;
 }
 
@@ -378,9 +396,10 @@ p.linkBody {
         height: 50px;
     } */
     .page-title-wrapper,
-    .projectContainer p,
+    .container p,
     .imageContainer,
-    .page-text-wrapper {
+    .page-text-wrapper,
+    .wrapper {
         grid-column: 2 / span 10;
     }
 }
@@ -414,7 +433,7 @@ p.linkBody {
     }
 
     .container {
-        row-gap: 4em;
+        /* row-gap: 4em; */
     }
 }
 
@@ -426,9 +445,10 @@ p.linkBody {
 
 @media screen and (min-width: 1000px) {
     .page-title-wrapper,
-    .projectContainer p,
+    .container p,
     .imageContainer,
-    .page-text-wrapper {
+    .page-text-wrapper,
+    .wrapper {
         grid-column: 3 / span 8;
     }
 }
@@ -450,11 +470,11 @@ p.linkBody {
         justify-content: center;
     }
     .container {
-        row-gap: 5em;
+        /* row-gap: 5em; */
     }
 
     .container::before {
-        height: 10px;
+        /* height: 10px; */
     }
 }
 

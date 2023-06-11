@@ -3,7 +3,7 @@
 }
 
 .homeImg img {
-    height: 100vh;
+    height: calc(100vh - 100px);
 }
 
 .projectsList {
@@ -43,6 +43,9 @@
 }
 
 .projectsCard__thumbnail img {
+}
+
+@media screen and (min-width: 550px) {
 }
 
 @media screen and (min-width: 768px) {

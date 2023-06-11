@@ -66,7 +66,7 @@ const About = ({ aboutItems }) => {
     return (
         <>
             <MetaData page='About' />
-            <div id='about' className={`${styles.aboutContainer} container`}>
+            <div className='wrapper'>
                 <div className={styles.artistContainer}>
                     <h3 className={`page-title ${styles.aboutTitle}`}>
                         {artistTitle}

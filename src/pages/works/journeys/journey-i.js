@@ -25,15 +25,13 @@ function Journey1({ res }) {
     return (
         <>
             <MetaData page={title} />
-            <div id={slug} className='container'>
-                <div className='projectContainer'>
-                    <div className='page-title-wrapper'>
-                        <h2 className='projektTitle'>{title}</h2>
-                    </div>
-                    <p>{getProjectTxt(content)}</p>
-                    <div className='imageContainer'>
-                        <ImageCollection images={journey1Images} />
-                    </div>
+            <div className='wrapper'>
+                <div className='page-title-wrapper'>
+                    <h2 className='projektTitle'>{title}</h2>
+                </div>
+                <p>{getProjectTxt(content)}</p>
+                <div className='imageContainer'>
+                    <ImageCollection images={journey1Images} />
                 </div>
                 <GoBackLink slug={slug} />
             </div>

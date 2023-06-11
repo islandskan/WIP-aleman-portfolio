@@ -27,10 +27,9 @@ function SpiritProjects({ res }) {
     return (
         <>
             <MetaData page={projectLinksTitle} />
-            <div className={`${styles.homeContainer} container`}>
-                <ProjectList projects={projects} url={projectLinkUrl} />
-                <GoBackLink slug={projectLinkUrl} />
-            </div>
+
+            <ProjectList projects={projects} url={projectLinkUrl} />
+            <GoBackLink slug={projectLinkUrl} />
         </>
     );
 }

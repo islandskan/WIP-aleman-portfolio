@@ -47,17 +47,15 @@ function Journey2({ res }) {
     return (
         <>
             <MetaData page={title} />
-            <div id={slug} className='container'>
-                <div className='projectContainer'>
-                    <div className='page-title-wrapper'>
-                        <h2 className='projektTitle'>{title}</h2>
-                    </div>
-                    <div className='page-text-wrapper'>
-                        {documentToReactComponents(text, options)}
-                    </div>
-                    <div className='imageContainer'>
-                        {/* <ImageCollection images={journey2Images} /> */}
-                    </div>
+            <div className='wrapper'>
+                <div className='page-title-wrapper'>
+                    <h2 className='projektTitle'>{title}</h2>
+                </div>
+                <div className='page-text-wrapper'>
+                    {documentToReactComponents(text, options)}
+                </div>
+                <div className='imageContainer'>
+                    {/* <ImageCollection images={journey2Images} /> */}
                 </div>
                 <GoBackLink slug={slug} />
             </div>

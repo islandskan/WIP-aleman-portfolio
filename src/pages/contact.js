@@ -6,18 +6,16 @@ const Contact = () => {
     return (
         <>
             <MetaData page='Contact' />
-            <div id='contact' className={`container ${styles.formContainer}`}>
-                <div className={styles.projectContainer}>
-                    <h2 className='page-title'>Contact</h2>
-                    <p className='paragraph'>
-                        Interested in collaborations, starting a new project, or
-                        just want to say hi? <br />
-                        Use the contact form to contact me and I&apos;ll get
-                        back to you as soon as I can.
-                    </p>
-                </div>
-                <ContactElement />
+            <div className='wrapper text-wrapper'>
+                <h2 className='page-title'>Contact</h2>
+                <p className='paragraph'>
+                    Interested in collaborations, starting a new project, or
+                    just want to say hi? <br />
+                    Use the contact form to contact me and I&apos;ll get back to
+                    you as soon as I can.
+                </p>
             </div>
+            <ContactElement />
         </>
     );
 };

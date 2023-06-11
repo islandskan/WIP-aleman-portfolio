@@ -26,15 +26,13 @@ function AxisMundi({ res }) {
     return (
         <>
             <MetaData page={title} />
-            <div className='container'>
-                <div className='projectContainer'>
-                    <div className='page-title-wrapper'>
-                        <h2 className='projektTitle'>{title}</h2>
-                    </div>
-                    <p>{getProjectTxt(content)}</p>
-                    <div className='imageContainer'>
-                        <ImageCollection images={axisMundiImages} />
-                    </div>
+            <div className='wrapper'>
+                <div className='page-title-wrapper'>
+                    <h2 className='projektTitle'>{title}</h2>
+                </div>
+                <p>{getProjectTxt(content)}</p>
+                <div className='imageContainer'>
+                    <ImageCollection images={axisMundiImages} />
                 </div>
                 <GoBackLink slug={slug} />
             </div>

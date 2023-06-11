@@ -1,4 +1,4 @@
-.news {
+.newsList {
     --dark: #08040e;
     --gap: 1.2em;
     /* --white: #fcf7f4; */
@@ -6,11 +6,7 @@
     --white: #e3e3e3;
     --opac: 0.5;
     --lineHeight: 0.5px;
-    grid-template-columns: repeat(12, 1fr);
-}
 
-.newsList {
-    grid-column: 1 / span 12;
     display: grid;
     column-gap: var(--gap);
 }
