@@ -14,8 +14,11 @@ const Contact = () => {
                     Use the contact form to contact me and I&apos;ll get back to
                     you as soon as I can.
                 </p>
+                <a className='paragraph' href='#'>
+                    email address
+                </a>
             </div>
-            <ContactElement />
+            {/* <ContactElement /> */}
         </>
     );
 };
