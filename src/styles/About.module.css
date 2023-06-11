@@ -1,9 +1,5 @@
 /* https://stackoverflow.com/questions/73659662/rich-text-react-renderer-does-not-render-h1-or-spaces-between-paragraphs */
 
-.aboutContainer {
-    /* border: 2px solid red; */
-}
-
 /* grid layout for the containers */
 
 .artistContainer,
@@ -45,18 +41,16 @@
 
 .cvContainer .bodyContainer h5::before {
     content: '';
-    height: 2em;
+    height: 1em;
     display: block;
 }
 
 .cvContainer .bodyContainer h6 {
-    /* border: 1px solid red; */
     font-size: 1rem;
     margin: 1em 0 6px 0;
 }
 
 .cvContainer .bodyContainer li {
-    /* border: 1px solid black; */
     margin-bottom: 4px;
 }
 .cvContainer .bodyContainer p {
@@ -65,7 +59,7 @@
 
 .artistContainer .aboutTitle,
 .publishedContainer .aboutTitle {
-    margin-bottom: 25px;
+    margin-bottom: 1rem;
 }
 
 .artistContainer p {
@@ -74,7 +68,7 @@
 }
 
 .artistContainer p:nth-of-type(2) {
-    margin-top: max(1.2em, 2vh);
+    margin-top: max(1em, 1vh);
 }
 
 .publishedContainer .bodyContainer p {
@@ -95,10 +89,6 @@
         width: 100%;
         grid-column: 2 / span 10;
     }
-
-    .aboutContainer::before {
-        height: 50px;
-    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -106,11 +96,5 @@
     .cvContainer,
     .publishedContainer {
         grid-column: 3 / span 8;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .aboutContainer::before {
-        height: 10px;
     }
 }

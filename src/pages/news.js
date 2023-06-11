@@ -32,7 +32,9 @@ const News = ({ newsCards }) => {
     return (
         <>
             <MetaData page='News' />
-            <div className={styles.newsList}>{newsElements}</div>
+            <div className='wrapper'>
+                <div className={styles.newsList}>{newsElements}</div>
+            </div>
         </>
     );
 };

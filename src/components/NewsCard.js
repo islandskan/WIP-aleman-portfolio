@@ -19,9 +19,6 @@ export const NewsCard = ({ card }) => {
                     <h4 className={styles.newsCard__title}>{title}</h4>
                 )}
 
-                {/* <span className={styles.newsInfo}>
-                    {setNewsDates(startDate, endDate)}
-                </span> */}
                 {(startDate || endDate) && (
                     <div className={styles.newsCard__dates}>
                         {startDate && <p>{startDate}</p>}
