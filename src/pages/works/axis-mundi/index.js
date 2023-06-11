@@ -29,8 +29,10 @@ function AxisMundi({ res }) {
     return (
         <>
             <MetaData page={projectLinksTitle} />
-            <ProjectList projects={projects} url={projectLinkUrl} />
-            <GoBackLink slug={projectLinkUrl} />
+            <div className='wrapper'>
+                <ProjectList projects={projects} url={projectLinkUrl} />
+                <GoBackLink slug={projectLinkUrl} />
+            </div>
         </>
     );
 }

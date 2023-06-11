@@ -8,7 +8,6 @@
     --pinkish: #bb85ba;
     display: grid;
     row-gap: 20px;
-    border: 1px solid red;
     grid-column: 1 / -1;
 }
 
