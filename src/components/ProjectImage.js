@@ -13,8 +13,8 @@ export const ProjectImage = ({ image }) => {
                 className={styles.projectImage}
                 src={imageUrl}
                 alt={image.imageAltText}
-                height={900}
-                width={800}
+                height={500}
+                width={400}
                 loading='lazy'
             />
             <figcaption>{imageInfo.join(' - ')}</figcaption>
