@@ -42,12 +42,16 @@ body {
     font-family: var(--font);
 }
 
-a {
+a,
+.link {
     text-decoration: none;
     color: var(--dark);
     font-weight: 400;
     transition: all 0.2s;
+    cursor: pointer;
 }
+
+/* link transition and animation here */
 
 ul {
     list-style: none;

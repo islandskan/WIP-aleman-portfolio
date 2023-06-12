@@ -1,9 +1,13 @@
 .homeImg {
     grid-column: 1 / span 12;
+    height: calc(100vh - 160px);
+    margin: auto;
+    overflow: hidden;
 }
 
 .homeImg img {
-    height: calc(100vh - 100px);
+    height: 100%;
+    /* height: calc(100vh - 100px); */
 }
 
 .projectsList {
