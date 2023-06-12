@@ -120,6 +120,7 @@ h5,
 h6 {
     letter-spacing: 0.085rem;
     font-weight: 400;
+    text-align: center;
 }
 
 p,
