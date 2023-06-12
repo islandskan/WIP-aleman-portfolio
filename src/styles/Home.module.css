@@ -1,12 +1,12 @@
 .homeImg {
     grid-column: 1 / span 12;
-    height: calc(100vh - 160px);
+    height: calc(100vh - 200px);
     margin: auto;
     overflow: hidden;
 }
 
 .homeImg img {
-    height: 100%;
+    height: auto;
     /* height: calc(100vh - 100px); */
 }
 
@@ -47,4 +47,22 @@
 }
 
 .projectsCard__thumbnail img {
+}
+
+@media screen and (min-width: 412px) {
+    .homeImg {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 550px) {
+    .homeImg {
+        width: 65%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .homeImg {
+        width: 50%;
+    }
 }
