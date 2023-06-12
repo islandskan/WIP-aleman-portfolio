@@ -160,6 +160,8 @@ nav {
     left: 0;
     right: 0;
     z-index: 8;
+    display: flex;
+    justify-content: center;
 }
 
 header {
@@ -174,10 +176,11 @@ nav {
 
 .nav_container {
     max-width: 960px;
+    width: 100%;
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
 }
 
 .logo {
@@ -421,7 +424,8 @@ p.linkBody {
         translate: 0;
         max-width: 420px;
         width: 100%;
-        display: inline-block;
+        margin: auto;
+        /* display: inline-block; */
         padding: 0;
     }
 
@@ -429,6 +433,7 @@ p.linkBody {
         flex-direction: row;
         justify-content: space-between;
         height: fit-content;
+        width: 100%;
     }
 
     .menu ul li {
