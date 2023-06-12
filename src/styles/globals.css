@@ -168,6 +168,7 @@ header {
     top: 0;
     max-width: 960px;
     margin: auto;
+    border: 1px solid red;
 }
 
 nav {
@@ -181,11 +182,6 @@ nav {
     display: flex;
     align-items: center;
     /* justify-content: flex-end; */
-}
-
-.logo {
-    max-width: 240px;
-    width: 100%;
 }
 
 .menu {
