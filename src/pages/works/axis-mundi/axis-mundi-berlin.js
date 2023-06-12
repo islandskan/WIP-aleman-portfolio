@@ -38,10 +38,10 @@ function AxisMundiBerlin({ res }) {
                     </div>
                 </div>
                 <p>{getProjectTxt(content)}</p>
-                <AudioElement audioObj={axisMundiAudio} />
                 <div className='imageContainer'>
                     <ImageCollection images={axisMundiBerlinImages} />
                 </div>
+                <AudioElement audioObj={axisMundiAudio} />
                 <GoBackLink slug={slug} />
             </div>
         </>
