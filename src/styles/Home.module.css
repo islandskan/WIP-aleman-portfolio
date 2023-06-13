@@ -17,6 +17,8 @@
     row-gap: 3em;
     grid-column: 1 / span 12;
     grid-auto-flow: row;
+    justify-content: center;
+    text-align: center;
 }
 
 .projectLink {

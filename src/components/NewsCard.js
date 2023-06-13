@@ -4,9 +4,26 @@ import { setNewsDates } from '../utils/setNewsDates';
 
 export const NewsCard = ({ card }) => {
     const { title, location, link, startDate, endDate } = card.fields;
+
+    const hasDates = (type) => {
+        if (startDate || endDate) {
+            const hasStartDate = startDate && <p>{startDate}</p>;
+            const hasEndDate = endDate && <p>{endDate}</p>;
+            return [hasStartDate, hasEndDate];
+        } else {
+            const typeStr = type.charAt(0).toUpperCase() + type.slice(1);
+            return <p>{typeStr}</p>;
+        }
+    };
+
     return (
         <div className={`${styles.newsCard}`}>
-            <div className={styles.newsCard__txtWrapper}>
+            <div className={`${styles.newsCard__txtWrapper}`}>
+                {
+                    <div className={styles.newsCard__dates}>
+                        {hasDates('ongoing')}
+                    </div>
+                }
                 {link ? (
                     <Link
                         className={styles.newsCard__link}
@@ -19,12 +36,6 @@ export const NewsCard = ({ card }) => {
                     <h4 className={styles.newsCard__title}>{title}</h4>
                 )}
 
-                {(startDate || endDate) && (
-                    <div className={styles.newsCard__dates}>
-                        {startDate && <p>{startDate}</p>}
-                        {endDate && <p>{endDate}</p>}
-                    </div>
-                )}
                 {location && (
                     <p className={styles.newsCard__location}>{location}</p>
                 )}

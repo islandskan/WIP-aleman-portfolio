@@ -10,10 +10,7 @@
 
 .newsCard {
     padding: 1.8em 8px;
-    display: flex;
     position: relative;
-    align-items: center;
-    justify-content: center;
     background-color: var(--white);
     /* background-image: radial-gradient(
         circle at center,
@@ -57,9 +54,11 @@
 
 .newsCard__txtWrapper {
     width: max(100%, 250px);
-    min-height: 100px;
-    text-align: start;
-    display: grid;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* .newsCard:hover .newsCard__txtWrapper,
@@ -95,8 +94,6 @@
 .newsCard__dates {
     display: flex;
     align-items: center;
-    /* grid-row: 1 / span 1; */
-    /* border: 1px solid red; */
     max-width: fit-content;
     margin-bottom: 8px;
 }
@@ -114,13 +111,23 @@
 }
 
 .newsCard__link {
-    grid-row: 2;
+    /* grid-row: 2; */
     width: fit-content;
     display: flex;
     align-items: center;
     font-size: 1.1rem;
+
     /* grid-column: 3 / span 2;
     grid-row: 3 / span 1; */
+}
+
+.newsCard__linkCenter {
+}
+
+.newsCard__linkCenter::before {
+    content: '';
+    height: 27px;
+    margin-bottom: 8px;
 }
 
 .newsCard__title {
@@ -130,9 +137,9 @@
 }
 
 .newsCard__location {
-    grid-row: 3 / span 1;
-    display: flex;
-    justify-content: flex-end;
+    /* grid-row: 3 / span 1; */
+    /* display: flex; */
+    /* justify-content: flex-end; */
 }
 
 @media screen and (min-width: 550px) {
