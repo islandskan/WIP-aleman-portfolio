@@ -1,6 +1,5 @@
 import styles from '../styles/News.module.css';
 import Link from 'next/link';
-import { setNewsDates } from '../utils/setNewsDates';
 
 export const NewsCard = ({ card }) => {
     const { title, location, link, startDate, endDate } = card.fields;

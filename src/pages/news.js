@@ -2,7 +2,7 @@ import { MetaData } from '../components/MetaData';
 import styles from '../styles/News.module.css';
 import { NewsCard } from '../components/NewsCard';
 import { createClient } from 'contentful';
-import { sortNewsCards } from '../utils/sortNews';
+import { sortCards } from '../utils/sortNews';
 // import { fetchEntries } from '../api/fetchEntries';
 
 export async function getStaticProps() {
@@ -23,11 +23,13 @@ export async function getStaticProps() {
 }
 
 const News = ({ newsCards }) => {
-    const sortedNewsCards = sortNewsCards(newsCards);
+    const sortedNewsCards = sortCards(newsCards);
 
     const newsElements = sortedNewsCards.map((card) => (
         <NewsCard key={card.sys.id} card={card} />
     ));
+
+    sortCards(newsCards);
 
     return (
         <>
