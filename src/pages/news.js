@@ -3,7 +3,6 @@ import styles from '../styles/News.module.css';
 import { NewsCard } from '../components/NewsCard';
 import { createClient } from 'contentful';
 import { sortCards } from '../utils/sortNews';
-// import { fetchEntries } from '../api/fetchEntries';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -28,8 +27,6 @@ const News = ({ newsCards }) => {
     const newsElements = sortedNewsCards.map((card) => (
         <NewsCard key={card.sys.id} card={card} />
     ));
-
-    sortCards(newsCards);
 
     return (
         <>
