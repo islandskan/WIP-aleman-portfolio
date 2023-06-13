@@ -1,11 +1,23 @@
-const sortNewsCards = (arr) => {
+const sortCards = (arr) => {
     const arrayCopy = [...arr];
-    const onlineShopItem = arrayCopy.splice(isOnlineShop(arr), 1);
-    return arrayCopy.concat(onlineShopItem);
+    const onlineShop = extractOnlineStore(arr, arrayCopy);
+    const sorted = sorter(arrayCopy);
+    return sorted.concat(onlineShop);
 };
 
 const isOnlineShop = (arr) => {
     return arr.findIndex((item) => item.fields.location === 'Ed Art');
 };
 
-export { sortNewsCards };
+const extractOnlineStore = (arr, arrCopy) => {
+    return arrCopy.splice(isOnlineShop(arr), 1);
+};
+
+const sorter = (arr) => {
+    return arr.sort(
+        (a, b) =>
+            Date.parse(a.fields.startDate) - Date.parse(b.fields.startDate)
+    );
+};
+
+export { sortCards };
