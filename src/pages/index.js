@@ -29,14 +29,14 @@ function Home({ res }) {
     return (
         <>
             <MetaData page='Start' />
-            <figure className={styles.homeImg}>
-                <Image
-                    alt={res.fields.title}
-                    src={`https:${url}`}
-                    height={HEIGHT}
-                    width={WIDTH}
-                />
-            </figure>
+
+            <Image
+                className={styles.homeImg}
+                alt={res.fields.title}
+                src={`https:${url}`}
+                height={HEIGHT}
+                width={WIDTH}
+            />
         </>
     );
 }

@@ -29,35 +29,15 @@ const About = ({ aboutItems }) => {
         artist: aboutItems.findIndex(
             (item) => item.fields.aboutTitle === 'Artist Statement'
         ),
-        published: aboutItems.findIndex(
-            (item) => item.fields.aboutTitle === 'Published'
-        ),
+        // published: aboutItems.findIndex(
+        //     (item) => item.fields.aboutTitle === 'Published'
+        // ),
     };
 
     const { aboutTitle: artistTitle, aboutPageContent: artistBody } =
         aboutItems[index.artist].fields;
-    const { aboutTitle: publishedTitle, aboutPageContent: publishedBody } =
-        aboutItems[index.published].fields;
     const { aboutTitle: cvTitle, aboutPageContent: cvBody } =
         aboutItems[index.cv].fields;
-
-    const options = {
-        renderNode: {
-            [INLINES.ASSET_HYPERLINK]: (node, children) => {
-                return (
-                    <a
-                        href={
-                            node.data && node.data.target.fields.file.url
-                                ? node.data.target.fields.file.url
-                                : null
-                        }
-                    >
-                        {children}
-                    </a>
-                );
-            },
-        },
-    };
 
     const handleSaveCV = () => {
         generatePDF('cvBody');
@@ -87,14 +67,6 @@ const About = ({ aboutItems }) => {
                     />
                     <div className={styles.bodyContainer} id='cvBody'>
                         {documentToReactComponents(cvBody)}
-                    </div>
-                </div>
-                <div className={styles.publishedContainer}>
-                    <h3 className={`page-title ${styles.aboutTitle}`}>
-                        {publishedTitle}
-                    </h3>
-                    <div className={styles.bodyContainer}>
-                        {documentToReactComponents(publishedBody, options)}
                     </div>
                 </div>
             </div>

@@ -40,17 +40,22 @@ body {
     font-family: var(--font);
 }
 
-a,
-.link {
+a {
     text-decoration: none;
     color: var(--dark);
     font-weight: 400;
-    transition: all 0.2s;
+
     cursor: pointer;
 }
+a:not(.logo) {
+    transition: all 0.2s;
+}
 
-a:hover,
-.link:hover {
+.lightLink {
+    font-weight: 300;
+}
+
+a:hover:not(.logo) {
     color: #b0aff6;
 }
 
@@ -175,7 +180,8 @@ header {
 
 nav {
     bottom: 0;
-    padding: 1rem 0 0.5rem 0;
+    /* border: 1px solid red; */
+    /* padding: 1rem 0 0.5rem 0; */
 }
 
 .nav_container {
@@ -278,10 +284,9 @@ nav {
 
 .container::before,
 .container::after {
-    height: 50px;
+    height: 100px;
 }
-
-.wrapper {
+*/ .wrapper {
     /* grid-column: 1 / -1;
     display: grid;
     row-gap: 30px;
