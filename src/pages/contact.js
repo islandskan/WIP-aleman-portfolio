@@ -14,7 +14,21 @@ const Contact = () => {
                     Use the contact form to contact me and I&apos;ll get back to
                     you as soon as I can.
                 </p>
-                <p className='paragraph link'>email address</p>
+                <div className='wrapper'>
+                    <h5>Email</h5>
+                    <p className='paragraph link'>info@aleman.se</p>
+                </div>
+                <div>
+                    <h5>Instagram</h5>
+                    <a
+                        className='paragraph link'
+                        href='https://www.instagram.com/madeleinealeman/'
+                        rel='noreferrer'
+                        target='_blank'
+                    >
+                        @madeleinealeman
+                    </a>
+                </div>
             </div>
             {/* <ContactElement /> */}
         </>

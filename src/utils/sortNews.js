@@ -16,7 +16,7 @@ const extractOnlineStore = (arr, arrCopy) => {
 const sorter = (arr) => {
     return arr.sort(
         (a, b) =>
-            Date.parse(a.fields.startDate) - Date.parse(b.fields.startDate)
+            Date.parse(b.fields.startDate) - Date.parse(a.fields.startDate)
     );
 };
 
