@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
+import styles from '../styles/Project.module.css';
 
 export const Video = ({ video }) => {
     const [hasWindow, setHasWindow] = useState(false);
@@ -11,15 +12,15 @@ export const Video = ({ video }) => {
         }
     }, []);
 
-    const { videoThumbnail, videoUrl, internalName } = video;
+    const { videoThumbnail, videoUrl, internalName, videoText } = video;
     const videoThumbnailURL = `https:${videoThumbnail.fields.file.url}`;
     const { height: HEIGHT, width: WIDTH } =
         videoThumbnail.fields.file.details.image;
 
-    console.log(HEIGHT, WIDTH);
+    console.log(videoText);
 
     return (
-        <div>
+        <div className={styles.videoContainer}>
             {hasWindow && (
                 <ReactPlayer
                     url={videoUrl}
@@ -36,6 +37,7 @@ export const Video = ({ video }) => {
                     }
                 />
             )}
+            <p className={styles.videoText}>{videoText}</p>
         </div>
     );
 };

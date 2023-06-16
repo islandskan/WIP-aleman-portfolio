@@ -35,9 +35,9 @@ function Axel({ res }) {
                     <h2 className='projektTitle'>{title}</h2>
                 </div>
                 <p>{getProjectTxt(content)}</p>
-                <div className={styles.videoContainer}>
-                    <Video video={axelVideo} />
-                </div>
+
+                <Video video={axelVideo} />
+
                 <div className='imageContainer'>
                     <ImageCollection images={axelImages} />
                 </div>

@@ -4,8 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
 
 :root {
-    /* --white: #fcf7f4; */
-    /* --white: #c3c3c3; */
     --white: #e3e3e3;
     --transparentWhite: rgba(252, 247, 244, 0.95);
     --dark: #05000d;
@@ -49,6 +47,11 @@ a,
     font-weight: 400;
     transition: all 0.2s;
     cursor: pointer;
+}
+
+a:hover,
+.link:hover {
+    color: #b0aff6;
 }
 
 .btn {
@@ -111,6 +114,8 @@ p {
     text-transform: uppercase;
     letter-spacing: 0.07rem;
     user-select: none;
+    padding: 1rem 0 0 0;
+    color: var(--transparentDarker);
 }
 
 h2,
@@ -147,8 +152,8 @@ h6 {
 }
 
 .menu ul li {
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.8rem;
+    line-height: 1.7;
     letter-spacing: 0.035rem;
     user-select: none;
 }
@@ -157,30 +162,29 @@ h6 {
 header,
 nav {
     background-color: var(--white);
-    padding: var(--padding);
     position: fixed;
-    left: 0;
-    right: 0;
+    width: 100%;
     z-index: 8;
     display: flex;
     justify-content: center;
 }
 
 header {
-    top: 0;
-    max-width: 960px;
-    margin: auto;
+    padding: var(--padding) 0;
 }
 
 nav {
     bottom: 0;
-    display: flex;
+    padding: 1rem 0 0.5rem 0;
+}
+
+.nav_container {
+    padding: 0 0 1rem 0;
 }
 
 .nav_container {
     max-width: 960px;
     width: 100%;
-    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,13 +192,13 @@ nav {
 
 .menu {
     background-color: var(--white);
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: 0;
+    /* height: 100vh; */
+    /* position: fixed; */
+    /* top: 0; */
+    /* right: 0; */
     opacity: 0;
     transition: all 0.4s ease-in-out;
-    translate: 100%;
+    /* translate: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -204,10 +208,10 @@ nav {
 }
 
 .menu ul {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 250px;
+    height: 250px; */
 }
 
 .menu ul .menu__link.active {
@@ -231,7 +235,7 @@ nav {
 }
 
 .line {
-    background-color: var(--dark);
+    background-color: var(--transparentDarker);
     height: 3px;
     width: 30px;
     margin: 5px 0;
@@ -260,7 +264,6 @@ nav {
     margin: auto;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    /* grid-template-rows: 50px auto 50px; */
 }
 
 .container {
@@ -282,21 +285,12 @@ nav {
     height: 50px;
 }
 
-/* .container::before {
-    margin-bottom: 30px;
-}
-
-.container::after {
-    margin-top: 30px;
-} */
-
 .wrapper {
     grid-column: 1 / -1;
     display: grid;
     row-gap: 30px;
     margin: 30px 0;
     display: grid;
-    grid-template-rows: 1fr auto;
 }
 
 .text-wrapper {

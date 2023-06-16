@@ -41,9 +41,8 @@ function Emanuel({ res }) {
                     <h2 className='projektTitle'>{title}</h2>
                 </div>
                 <p>{getProjectTxt(content)}</p>
-                <div className={styles.videoContainer}>
-                    <Video video={emanuelVideo} />
-                </div>
+
+                <Video video={emanuelVideo} />
 
                 <div className='imageContainer'>
                     <ImageCollection images={emanuelImages} />
@@ -51,9 +50,7 @@ function Emanuel({ res }) {
                 <div className={styles.linkContainer}>
                     <ThumbnailLink item={emanuelPDF} />
                 </div>
-                <div className={styles.videoContainer}>
-                    <Video video={emanuelInterviewVideo} />
-                </div>
+                <Video video={emanuelInterviewVideo} />
                 <GoBackLink slug={slug} />
             </div>
         </>

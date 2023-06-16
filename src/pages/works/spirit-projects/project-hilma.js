@@ -40,9 +40,9 @@ function Hilma({ res }) {
                     <h2 className='projektTitle'>{title}</h2>
                 </div>
                 <p>{getProjectTxt(content)}</p>
-                <div className={styles.videoContainer}>
-                    <Video video={hilmaVideo} />
-                </div>
+
+                <Video video={hilmaVideo} />
+
                 <div className='imageContainer'>
                     <ImageCollection images={hilmaImages} />
                 </div>
