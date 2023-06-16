@@ -8,11 +8,11 @@ export const NewsCard = ({ card }) => {
     return (
         <div className={`${styles.newsCard}`}>
             <div className={`${styles.newsCard__txtWrapper}`}>
-                {
+                {/* {
                     <div className={styles.newsCard__dates}>
                         {hasDates('ongoing', startDate, endDate)}
                     </div>
-                }
+                } */}
                 {link ? (
                     <Link
                         className={styles.newsCard__link}

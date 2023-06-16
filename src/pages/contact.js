@@ -1,8 +1,33 @@
 import { MetaData } from '../components/MetaData';
 import { ContactElement } from '../components/Contact';
+import { createClient } from 'contentful';
+
 import styles from '../styles/components/Contact.module.css';
 
-const Contact = () => {
+export async function getStaticProps() {
+    const client = createClient({
+        space: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    });
+    const res = await client.getAsset('4nx3gWODBf2IqawTOJjAby');
+    if (!res) {
+        return { notFound: true };
+    }
+
+    return {
+        props: {
+            res,
+        },
+    };
+}
+
+const Contact = ({ res }) => {
+    // const { details, url } = res.fields.file;
+    // const HEIGHT = details.image.height;
+    // const WIDTH = details.image.width;
+
+    // console.log(HEIGHT, WIDTH);
+    console.log(res);
     return (
         <>
             <MetaData page='Contact' />
