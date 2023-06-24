@@ -22,6 +22,7 @@
 
 .projectLink {
     width: fit-content;
+    line-height: 1.8;
 }
 .projectLinkTitle {
     font-weight: 400;

@@ -30,11 +30,15 @@ export const Navbar = () => {
     };
 
     const menuLinks = links.map((link, index) => (
-        <li
-            key={index}
-            className={`menuLink ${currentPage === link.url ? 'active' : ''}`}
-        >
-            <Link href={link.url}>{link.name}</Link>
+        <li key={index}>
+            <Link
+                href={link.url}
+                className={`menuLink ${
+                    currentPage === link.url ? 'active' : ''
+                }`}
+            >
+                {link.name}
+            </Link>
         </li>
     ));
 
@@ -42,9 +46,8 @@ export const Navbar = () => {
         <nav ref={menuRef}>
             <div className='navContainer'>
                 <BurgerMenu handleClick={handleClick} isExpanded={isExpanded} />
-                <div className={`menu ${isMenuOpen}`}>
-                    <ul>{menuLinks}</ul>
-                </div>
+
+                <ul className={`menu ${isMenuOpen}`}>{menuLinks}</ul>
             </div>
         </nav>
     );

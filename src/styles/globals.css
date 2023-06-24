@@ -8,7 +8,7 @@
     --transparentDarker: rgba(14, 6, 27, 0.7);
     --pinkish: #bb85ba;
     --lilac: #b0aff6;
-    --padding: 1.5em;
+    --padding: 1rem;
     --menuHeight: 50px;
     --font: 'Quicksand', sans-serif;
 }
@@ -41,18 +41,45 @@ a {
     text-decoration: none;
     color: var(--dark);
     font-weight: 400;
-
     cursor: pointer;
+    display: inline-block;
 }
-a:not(.logo) {
-    transition: all 0.2s;
+a:not(.logo, .skipLink) {
+    transition: color 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+
+a:not(.logo, .skipLink)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* display: block; */
+    width: 100%;
+    height: 1.5px;
+    background-color: var(--dark);
+    transform: scale(0);
+    transition: transform 0.4s;
+}
+
+a:not(.logo, .skipLink):hover::after {
+    transform: scale(1);
+}
+
+@keyframes underlinLink {
+    0% {
+    }
+    100% {
+    }
 }
 
 .lightLink {
     font-weight: 300;
 }
 
-a:hover:not(.logo) {
+a:hover:not(.logo, .skipLink),
+a:focus:not(.logo, .skipLink) {
     color: #b0aff6;
 }
 
@@ -62,7 +89,6 @@ a:hover:not(.logo) {
     color: var(--dark);
     font-size: 0.9rem;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
     max-width: 400px;
     height: 50px;
     border: 1.5px solid var(--dark);
@@ -112,7 +138,7 @@ p {
     text-transform: uppercase;
     letter-spacing: 0.07rem;
     user-select: none;
-    padding: 1rem 0 0 0;
+    margin: 1rem 0 0 0;
     color: var(--transparentDarker);
 }
 
@@ -140,7 +166,6 @@ h6 {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 30px;
-
     text-transform: uppercase;
 }
 
@@ -149,10 +174,10 @@ h6 {
     line-height: 1.5;
 }
 
-.menu ul li {
+.menuLink {
     font-size: 0.8rem;
-    line-height: 1.7;
-    letter-spacing: 0.035rem;
+    line-height: 1.8;
+    letter-spacing: 0.05rem;
     user-select: none;
 }
 
@@ -166,57 +191,50 @@ nav {
     justify-content: center;
 }
 
-header {
+header,
+nav {
     padding: var(--padding) 0;
 }
 
 nav {
     bottom: 0;
+    /* border: 2px solid red; */
+    align-items: flex-end;
 }
 
 .navContainer {
-    max-width: 960px;
-    width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 }
 
 .menu {
     background-color: var(--white);
-    /* height: 100vh; */
-    /* position: fixed; */
-    /* top: 0; */
-    /* right: 0; */
     opacity: 0;
-    transition: all 0.4s ease-in-out;
-    /* translate: 100%; */
+    transition: opacity 0.4s ease-in-out;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     z-index: 3;
-    padding: 0 2em;
     text-transform: uppercase;
 }
-
-.menu ul {
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: space-between; */
-    /* height: 250px; */
+.menu.open {
+    opacity: 1;
 }
 
-.menu ul .menuLink.active {
+.menuLink.active {
     --dark: #5e526e;
     cursor: none;
     pointer-events: none;
-    text-decoration: underline;
     color: var(--dark);
 }
 
-.menu.open {
-    opacity: 1;
-    translate: 0;
+.menuLink.active::after {
+    --dark: #5e526e;
+    transform: scale(1);
+    background-color: var(--dark);
+    opacity: 0.5;
 }
 
 .burgerMenu {
@@ -224,19 +242,44 @@ nav {
     cursor: pointer;
     position: absolute;
     z-index: 9;
+    animation: rotateBack 0.4s both;
+}
+
+.burgerMenu.open {
+    transform: rotate(0deg);
+    animation: rotation 1s both;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes rotateBack {
+    0% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .line {
-    background-color: var(--transparentDarker);
-    height: 3px;
-    width: 30px;
+    background-color: var(--dark);
+    height: 1.4px;
+    width: 20px;
     margin: 5px 0;
-    transform-origin: 26.5px;
-    transition: all 0.3s ease;
+    transform-origin: 9.5px;
+    transition: rotate 0.3s, opacity 0.3s, background-color 0.3s;
 }
 
 .burgerMenu.open .line:nth-child(1) {
     rotate: -45deg;
+    background-color: var(--lilac);
 }
 
 .burgerMenu.open .line:nth-child(2) {
@@ -245,6 +288,7 @@ nav {
 
 .burgerMenu.open .line:nth-child(3) {
     rotate: 45deg;
+    background-color: var(--lilac);
 }
 
 /* Layout styles */
@@ -259,27 +303,26 @@ nav {
 }
 
 .container {
+    grid-column: 1 / -1;
     display: grid;
-    grid-column: 1 / span 12;
-    /* grid-row: 2; */
-    grid-template-columns: repeat(12, 1fr);
+    /* justify-content: center; */
+    /* border: 4px solid blue; */
 }
 
 .container::before,
 .container::after {
     content: '';
     display: block;
-    grid-column: 1 / -1;
 }
 
 .container::before,
 .container::after {
-    height: 100px;
+    height: 80px;
 }
 
 .wrapper {
-    /* grid-column: 1 / -1; */
-    /* display: grid; */
+    /* border: 2px solid black; */
+    /* grid-column: 1; */
     /* row-gap: 30px; */
     /* margin: 50px 0; */
     /* display: grid; */
@@ -401,33 +444,26 @@ p.linkBody {
         display: none;
     }
 
+    .navContainer {
+        width: 100%;
+    }
+
     .menu {
+        /* border: 2px solid blue; */
         background-color: transparent;
-        height: fit-content;
         opacity: 1;
-        position: relative;
-        translate: 0;
-        max-width: 420px;
         width: 100%;
+        max-width: 400px;
         margin: auto;
-        /* display: inline-block; */
-        padding: 0;
-    }
-
-    .menu ul {
         flex-direction: row;
-        justify-content: space-between;
-        height: fit-content;
-        width: 100%;
+        justify-content: space-around;
+        /* padding: 0; */
+        /* justify-content: space-between; */
+        /* width: 100%; */
     }
 
-    .menu ul li {
+    .menuLink {
         font-size: 0.9rem;
-        line-height: 1.3;
-    }
-
-    .container {
-        /* row-gap: 4em; */
     }
 }
 
@@ -460,7 +496,4 @@ p.linkBody {
 }
 
 @media screen and (min-width: 1200px) {
-    .menu {
-        max-width: 450px;
-    }
 }

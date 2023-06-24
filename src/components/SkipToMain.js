@@ -3,7 +3,11 @@ import styles from '../styles/components/SkipToMainLink.module.css';
 
 const SkipToMain = ({ href }) => {
     return (
-        <Link href={href} className={styles.skipNavLink} scroll={false}>
+        <Link
+            href={href}
+            className={`${styles.skipNavLink} skipLink`}
+            scroll={false}
+        >
             skip navigation
         </Link>
     );
