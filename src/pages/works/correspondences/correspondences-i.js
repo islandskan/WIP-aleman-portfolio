@@ -39,10 +39,10 @@ function Korrespondanser1({ res }) {
         <>
             <MetaData page={title} />
             <div className='wrapper'>
-                <div className='page-title-wrapper'>
+                <div className='pageTitleWrapper'>
                     <h2 className='projektTitle'>{title}</h2>
                 </div>
-                <div className='page-text-wrapper'>
+                <div className='pageTxtWrapper'>
                     {documentToReactComponents(text, options)}
                 </div>
                 <div className='imageContainer'>

@@ -32,8 +32,8 @@ function AxisMundiBerlin({ res }) {
         <>
             <MetaData page={title} />
             <div className='wrapper'>
-                <div className='page-title-wrapper'>
-                    <div className='page-title-wrapper'>
+                <div className='pageTitleWrapper'>
+                    <div className='pageTitleWrapper'>
                         <h2 className='projektTitle'>{title}</h2>
                     </div>
                 </div>

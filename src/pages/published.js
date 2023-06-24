@@ -3,7 +3,6 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import styles from '../styles/About.module.css';
 import { createClient } from 'contentful';
 import { INLINES } from '@contentful/rich-text-types';
-// import { fetchEntries } from '../api/fetchEntries';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -49,7 +48,7 @@ const Published = ({ res }) => {
             <MetaData page='Published' />
             <div className='wrapper'>
                 <div className={styles.publishedContainer}>
-                    <h3 className={`page-title ${styles.aboutTitle}`}>
+                    <h3 className={`pageTitle ${styles.aboutTitle}`}>
                         {title}
                     </h3>
                     <div className={styles.bodyContainer}>

@@ -7,26 +7,21 @@ export const NewsCard = ({ card }) => {
 
     return (
         <div className={`${styles.newsCard}`}>
-            <div className={`${styles.newsCard__txtWrapper}`}>
-                {/* {
-                    <div className={styles.newsCard__dates}>
-                        {hasDates('ongoing', startDate, endDate)}
-                    </div>
-                } */}
+            <div className={`${styles.newsCardTxtWrapper}`}>
                 {link ? (
                     <Link
-                        className={styles.newsCard__link}
+                        className={styles.newsCardLink}
                         href={link}
                         target='_blank'
                     >
-                        <h4 className={styles.newsCard__title}>{title}</h4>
+                        <h4 className={styles.newsCardTitle}>{title}</h4>
                     </Link>
                 ) : (
-                    <h4 className={styles.newsCard__title}>{title}</h4>
+                    <h4 className={styles.newsCardTitle}>{title}</h4>
                 )}
 
                 {location && (
-                    <p className={styles.newsCard__location}>{location}</p>
+                    <p className={styles.newsCardLocation}>{location}</p>
                 )}
             </div>
         </div>

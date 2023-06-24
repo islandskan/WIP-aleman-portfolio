@@ -15,18 +15,18 @@ export const ThumbnailLink = ({ item }) => {
 
     return (
         <figure className={styles.PDFthumbnail}>
-            <Link href={linkUrl} className={styles.PDF__link} target='_blank'>
+            <Link href={linkUrl} className={styles.PDFLink} target='_blank'>
                 <Image
                     src={linkImg}
                     alt={item.thumbnail.fields.title}
                     width={WIDTH / 1.5}
                     height={HEIGHT / 1.5}
                     loading='lazy'
-                    className={styles.PDFthumbnail__img}
+                    className={styles.PDFthumbnailImg}
                 />
             </Link>
             {item.linkAssetText && (
-                <figcaption className={styles.PDFthumbnail__txt}>
+                <figcaption className={styles.PDFthumbnailTxt}>
                     {item.linkAssetText}
                 </figcaption>
             )}

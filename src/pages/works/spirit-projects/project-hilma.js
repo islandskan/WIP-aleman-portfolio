@@ -36,7 +36,7 @@ function Hilma({ res }) {
         <>
             <MetaData page={title} />
             <div className='wrapper'>
-                <div className='page-title-wrapper'>
+                <div className='pageTitleWrapper'>
                     <h2 className='projektTitle'>{title}</h2>
                 </div>
                 <p>{getProjectTxt(content)}</p>

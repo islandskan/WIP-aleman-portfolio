@@ -52,7 +52,7 @@ function Archive({ res }) {
             <div className='container'>
                 <div className={styles.archiveContainer}>
                     <div
-                        className={`page-title-wrapper ${styles.title__wrapper}`}
+                        className={`pageTitleWrapper ${styles.title__wrapper}`}
                     >
                         <h2 className='projektTitle'>{title}</h2>
                     </div>

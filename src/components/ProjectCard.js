@@ -9,10 +9,8 @@ const ProjectCard = ({ card }) => {
 
     const { slug, projectThumbnail, projectTitle } = card.fields;
     const { height, width } = cardImgSizes;
-    // console.log(`${projectTitle}, Height: ${height}, width: ${width}`);
     const thumbnailImgUrl = `https:${projectThumbnail.fields.file.url}`;
     const isTallImg = height > width;
-    // console.log(isTallImg, projectTitle);
 
     return (
         <li
@@ -21,13 +19,13 @@ const ProjectCard = ({ card }) => {
         >
             <Link href={`/works/${slug}`}>
                 <SrOnly text={`Go to ${projectTitle}`} />
-                <h4 className={styles.projectCard__title}>{projectTitle}</h4>
+                <h4 className={styles.projectCardTitle}>{projectTitle}</h4>
                 <Image
                     src={thumbnailImgUrl}
                     alt={projectTitle}
                     height={height}
                     width={width}
-                    className={styles.projectsCard__thumbnail}
+                    className={styles.projectsCardThumbnail}
                     loading='lazy'
                 />
             </Link>

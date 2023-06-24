@@ -6,14 +6,14 @@
     /* display: flex; */
 }
 
-.PDF__link {
+.PDFLink {
     display: inline-block;
 }
 
-.PDFthumbnail__img {
+.PDFthumbnailImg {
 }
 
-.PDFthumbnail__txt {
+.PDFthumbnailTxt {
     font-size: 0.9rem;
     line-height: 1.6;
 }

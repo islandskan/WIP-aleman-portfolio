@@ -29,9 +29,6 @@ const About = ({ aboutItems }) => {
         artist: aboutItems.findIndex(
             (item) => item.fields.aboutTitle === 'Artist Statement'
         ),
-        // published: aboutItems.findIndex(
-        //     (item) => item.fields.aboutTitle === 'Published'
-        // ),
     };
 
     const { aboutTitle: artistTitle, aboutPageContent: artistBody } =
@@ -48,7 +45,7 @@ const About = ({ aboutItems }) => {
             <MetaData page='About' />
             <div className='wrapper'>
                 <div className={styles.artistContainer}>
-                    <h3 className={`page-title ${styles.aboutTitle}`}>
+                    <h3 className={`pageTitle ${styles.aboutTitle}`}>
                         {artistTitle}
                     </h3>
                     <div className={styles.bodyContainer}>
@@ -56,7 +53,7 @@ const About = ({ aboutItems }) => {
                     </div>
                 </div>
                 <div className={styles.cvContainer}>
-                    <h3 className={`page-title ${styles.aboutTitle}`}>
+                    <h3 className={`pageTitle ${styles.aboutTitle}`}>
                         {cvTitle}
                     </h3>
                     <Button

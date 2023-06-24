@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { BurgerMenu } from './BurgerMenu';
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
+import { links } from '../data/menuLinks';
 
 export const Navbar = () => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -11,7 +12,6 @@ export const Navbar = () => {
 
     let isMenuOpen = isExpanded ? 'open' : '';
 
-    // closes mobile menu when you click somewhere outside
     useEffect(() => {
         const handler = (e) => {
             if (!menuRef.current.contains(e.target)) {
@@ -29,17 +29,10 @@ export const Navbar = () => {
         setIsExpanded((prevState) => !prevState);
     };
 
-    const links = [
-        { url: '/works', name: 'Works' },
-        { url: '/published', name: 'Published' },
-        { url: '/about', name: 'About' },
-        { url: '/news', name: 'News' },
-        { url: '/contact', name: 'Contact' },
-    ];
     const menuLinks = links.map((link, index) => (
         <li
             key={index}
-            className={`menu__link ${currentPage === link.url ? 'active' : ''}`}
+            className={`menuLink ${currentPage === link.url ? 'active' : ''}`}
         >
             <Link href={link.url}>{link.name}</Link>
         </li>
@@ -47,7 +40,7 @@ export const Navbar = () => {
 
     return (
         <nav ref={menuRef}>
-            <div className='nav_container'>
+            <div className='navContainer'>
                 <BurgerMenu handleClick={handleClick} isExpanded={isExpanded} />
                 <div className={`menu ${isMenuOpen}`}>
                     <ul>{menuLinks}</ul>

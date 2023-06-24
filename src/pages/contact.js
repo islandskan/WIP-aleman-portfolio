@@ -1,5 +1,4 @@
 import { MetaData } from '../components/MetaData';
-import { ContactElement } from '../components/Contact';
 import { createClient } from 'contentful';
 import Image from 'next/image';
 import styles from '../styles/Contact.module.css';
@@ -25,6 +24,8 @@ const Contact = ({ res }) => {
     const { details, url } = res.fields.file;
     const HEIGHT = details.image.height;
     const WIDTH = details.image.width;
+    const EMAIL = 'info@aleman.se';
+    const INSTA = '@madeleinealeman';
 
     return (
         <>
@@ -34,7 +35,7 @@ const Contact = ({ res }) => {
                     <div>
                         <h4>Email</h4>
                         <a href='#' className='lightLink'>
-                            info@aleman.se
+                            {EMAIL}
                         </a>
                     </div>
                     <div>
@@ -45,7 +46,7 @@ const Contact = ({ res }) => {
                             target='_blank'
                             className='lightLink'
                         >
-                            @madeleinealeman
+                            {INSTA}
                         </a>
                     </div>
                 </div>
@@ -57,7 +58,6 @@ const Contact = ({ res }) => {
                     width={WIDTH}
                 />
             </div>
-            {/* <ContactElement /> */}
         </>
     );
 };

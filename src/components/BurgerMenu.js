@@ -5,7 +5,7 @@ export const BurgerMenu = ({ isExpanded, handleClick }) => {
     return (
         <>
             <button
-                className={`burger-menu ${burgerStyles}`}
+                className={`burgerMenu ${burgerStyles}`}
                 onClick={handleClick}
             >
                 <div className='line' aria-hidden='true'></div>

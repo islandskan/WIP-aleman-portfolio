@@ -1,11 +1,8 @@
 import Link from 'next/link';
-// import { getProjectContent } from '../utils/getProjectContent';
 
 import styles from '../styles/Home.module.css';
 import { SrOnly } from './SrOnly.js';
 const ProjectListItem = ({ project }) => {
-    console.log(project);
-
     const { endYear, projectLinkUrl, projectLinksTitle, startYear } =
         project.fields;
 
@@ -14,7 +11,7 @@ const ProjectListItem = ({ project }) => {
             <Link href={`/works/${projectLinkUrl}`}>
                 <SrOnly text={`Go to ${projectLinksTitle}`} />
                 <h4
-                    className={styles.projectLink__title}
+                    className={styles.projectLinkTitle}
                 >{`${projectLinksTitle} ${startYear} - ${endYear}`}</h4>
             </Link>
         </li>
