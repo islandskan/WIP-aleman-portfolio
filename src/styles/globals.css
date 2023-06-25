@@ -4,6 +4,7 @@
     --white: #e3e3e3;
     --transparentWhite: rgba(252, 247, 244, 0.95);
     --dark: #05000d;
+    --grey: #737274;
     --transparentDark: rgba(14, 6, 27, 0.8);
     --transparentDarker: rgba(14, 6, 27, 0.7);
     --pinkish: #bb85ba;
@@ -39,13 +40,13 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--dark);
+    color: var(--grey);
     font-weight: 400;
     cursor: pointer;
     display: inline-block;
 }
 a:not(.logo, .skipLink) {
-    transition: color 0.5s;
+    transition: color 0.3s;
     position: relative;
     overflow: hidden;
 }
@@ -56,7 +57,7 @@ a:not(.logo, .skipLink)::after {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 1.5px;
+    height: 0.5px;
     background-color: var(--dark);
     transform: scale(0);
     transition: transform 0.4s;
@@ -73,7 +74,7 @@ a:not(.logo, .skipLink):focus::after {
 
 a:hover:not(.logo, .skipLink),
 a:focus:not(.logo, .skipLink) {
-    color: #b0aff6;
+    color: var(--dark);
 }
 
 .btn {
@@ -103,12 +104,12 @@ a:focus:not(.logo, .skipLink) {
 }
 
 .btn::before {
-    border-width: 1.5px 0;
+    border-width: 0.5px 0;
     transform: scaleX(0);
 }
 
 .btn::after {
-    border-width: 0 1.5px;
+    border-width: 0 0.5px;
     transform: scaleY(0);
 }
 .btn:hover::before,
@@ -195,52 +196,10 @@ h6 {
 }
 
 .menuLink {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     line-height: 1.8;
     letter-spacing: 0.05rem;
     user-select: none;
-}
-
-header,
-nav {
-    background-color: var(--white);
-    position: fixed;
-    width: 100%;
-    z-index: 8;
-    display: flex;
-    justify-content: center;
-}
-
-header,
-nav {
-    padding: var(--padding) 0;
-}
-
-nav {
-    bottom: 0;
-    /* border: 2px solid red; */
-    align-items: flex-end;
-}
-
-.navContainer {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-
-.menu {
-    background-color: var(--white);
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
-    z-index: 3;
-    text-transform: uppercase;
-}
-.menu.open {
-    opacity: 1;
 }
 
 .menuLink.active {
@@ -257,7 +216,44 @@ nav {
     opacity: 0.5;
 }
 
+header,
+nav {
+    background-color: var(--white);
+    position: fixed;
+    z-index: 8;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+header,
+nav {
+    padding: var(--padding) 0;
+}
+
+nav {
+    bottom: 0;
+    align-items: flex-end;
+}
+
+.navContainer {
+    max-width: 500px;
+    width: 100%;
+}
+
+.menu {
+    background-color: var(--white);
+    display: flex;
+    text-transform: uppercase;
+    justify-content: space-around;
+}
+
+.menu.open {
+    opacity: 1;
+}
+
 .burgerMenu {
+    display: none;
     background-color: transparent;
     cursor: pointer;
     position: absolute;
@@ -319,30 +315,23 @@ nav {
     max-width: 1000px;
     margin: auto;
     display: grid;
+    position: relative;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 70px 1fr 60px;
+    row-gap: 20px;
 }
 
 .container {
+    margin-bottom: 20px;
     grid-column: 1 / -1;
+    grid-row: 2 / span 1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
 }
 
-.container::before,
-.container::after {
-    content: '';
-    display: block;
-    grid-column: 1 / -1;
-}
-
-.container::before,
-.container::after {
-    height: 80px;
-}
-
 .wrapper {
     grid-column: 1 / -1;
-    /* row-gap: 30px; */
+    row-gap: 30px;
     /* margin: 50px 0; */
     display: grid;
 }
@@ -434,7 +423,10 @@ p.linkBody {
 
 /* Break points */
 
-@media screen and (min-width: 412px) {
+@media screen and (min-width: 375px) {
+    .menuLink {
+        font-size: 0.8rem;
+    }
 }
 
 @media screen and (min-width: 550px) {
@@ -461,24 +453,6 @@ p.linkBody {
 @media screen and (min-width: 768px) {
     .burgerMenu {
         display: none;
-    }
-
-    .navContainer {
-        width: 100%;
-    }
-
-    .menu {
-        /* border: 2px solid blue; */
-        background-color: transparent;
-        opacity: 1;
-        width: 100%;
-        max-width: 400px;
-        margin: auto;
-        flex-direction: row;
-        justify-content: space-around;
-        /* padding: 0; */
-        /* justify-content: space-between; */
-        /* width: 100%; */
     }
 
     .menuLink {
@@ -510,7 +484,7 @@ p.linkBody {
     }
 
     nav {
-        justify-content: center;
+        /* justify-content: center; */
     }
 }
 

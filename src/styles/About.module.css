@@ -5,6 +5,8 @@
 .artistContainer,
 .cvContainer,
 .publishedContainer {
+    display: flex;
+    flex-direction: column;
     grid-column: 1 / span 12;
 }
 
@@ -13,28 +15,34 @@
     line-height: 1.85;
     font-weight: 300;
 }
+.artistContainer .bodyContainer p {
+    max-width: fit-content;
+}
 
 .cvContainer {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 50px auto;
     row-gap: 15px;
+    margin-top: 10px;
 }
 
 .cvBtn {
-    grid-column: 7 / -1;
-}
-
-.cvContainer .aboutTitle {
-    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+    grid-column: 1/ -1;
 }
 
 .cvContainer .bodyContainer {
-    grid-column: 1 / -2;
+    grid-column: 1 / -1;
+    grid-row: 2 / span 1;
+    margin-top: 20px;
+}
+
+.cvContainer .bodyContainer > p {
+    font-size: 0.8rem;
 }
 
 .cvContainer .bodyContainer h5 {
-    /* border: 1px solid red; */
     font-size: 1.1rem;
     margin: 0.7em 0 0.5em 0;
 }
@@ -46,6 +54,7 @@
 }
 
 .cvContainer .bodyContainer h6 {
+    text-align: start;
     font-size: 1rem;
     margin: 1em 0 6px 0;
 }
@@ -53,12 +62,8 @@
 .cvContainer .bodyContainer li {
     margin-bottom: 4px;
 }
-.cvContainer .bodyContainer p {
-    line-height: 1.8;
-}
 
-.artistContainer .aboutTitle,
-.publishedContainer .aboutTitle {
+.artistContainer .aboutTitle {
     margin-bottom: 1rem;
 }
 
@@ -81,7 +86,7 @@
 
 @media screen and (min-width: 420px) {
     .cvBtn {
-        grid-column: 8 / -1;
+        grid-column: 2 / -2;
     }
 }
 
@@ -102,6 +107,7 @@
 
     .cvBtn {
         grid-column: 9 / -1;
+        font-size: 0.8rem;
     }
 }
 
@@ -116,9 +122,5 @@
     .cvContainer,
     .publishedContainer {
         grid-column: 3 / span 8;
-    }
-
-    .cvBtn {
-        /* grid-column: 10 / -1; */
     }
 }

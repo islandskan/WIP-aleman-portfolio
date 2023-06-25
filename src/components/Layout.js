@@ -1,16 +1,14 @@
 import { Navbar } from './Navbar';
-import SkipToMain from './SkipToMain';
 import { Logo } from './Logo';
 
 export const Layout = ({ children }) => {
     return (
-        <>
-            <SkipToMain href='' />
+        <div className='layout'>
             <Logo />
-            <main tabIndex={-1} className='layout'>
-                <div className='container'>{children}</div>
-            </main>
+
+            <main className='container'>{children}</main>
+
             <Navbar />
-        </>
+        </div>
     );
 };

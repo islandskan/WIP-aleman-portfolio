@@ -4,19 +4,25 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     column-gap: 20px;
     row-gap: 0.5rem;
+    border: 1px solid red;
 }
 
 .contactWrapper {
+    border: 1px solid blue;
     grid-column: 1 / span 1;
 }
 
-.contactWrapper div {
+.contactWrapper div:first-of-type {
     margin-bottom: 1rem;
 }
 
 .contactWrapper h4 {
     text-align: start;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
+}
+
+.contactWrapper a {
+    line-height: 1.8;
 }
 
 .contact img {
