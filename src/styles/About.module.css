@@ -97,13 +97,13 @@
         grid-column: 2 / span 10;
     }
 
-    .aboutContainer::before,
+    /* .aboutContainer::before,
     .aboutContainer::after {
         content: '';
         display: block;
         width: 100%;
         grid-column: 2 / span 10;
-    }
+    } */
 
     .cvBtn {
         grid-column: 9 / -1;

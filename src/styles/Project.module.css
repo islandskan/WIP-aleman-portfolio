@@ -11,47 +11,8 @@
     align-self: center;
 }
 
-/* Archive images */
-
-.archiveContainer {
-    grid-column: 1 / span 12;
-}
-
-/* parent of archiveGroup */
-.archiveWrapper {
-    row-gap: 3rem;
-    display: grid;
-}
-
-.archiveGroup {
-    /* border: 2px solid black; */
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    grid-template-rows: 30px auto;
-    row-gap: 2.5rem;
-    column-gap: 3rem;
-}
-
-.archiveGroup h3 {
-    grid-row: 1 / span 1;
-    grid-column: 1 / -1;
-}
-
-.archiveGroup .projectImageFigure {
-}
-
 .title__wrapper {
     grid-column: 1 / span 5;
-}
-
-.archiveImgFigure {
-    display: flex;
-    grid-column: span 3;
-    /* justify-content: center; */
-}
-
-.archiveImg {
-    flex-grow: 1;
 }
 
 .videoContainer {
@@ -89,43 +50,6 @@
 }
 
 @media screen and (min-width: 411px) {
-    .archiveContainer {
-        /* grid-auto-flow: row; */
-        /* grid-template-columns: 1fr 3fr 1fr; */
-    }
-
-    /* .archiveImgFigure:nth-of-type(13) {
-        grid-row: span 2;
-    } */
-
-    /* .archiveImgFigure:nth-of-type(14) {
-        grid-row: span 1;
-
-    } */
-
-    /* .archiveImgFigure:nth-of-type(17) {
-        grid-row: span 1;
-    } */
-    /*
-    .archiveImgFigure:nth-of-type(18) {
-        grid-column: 4 / span 3;
-        grid-row: span 2;
-    } */
-
-    /* .archiveImgFigure:nth-of-type(20) {
-        grid-column: 2 / span 4;
-        grid-row: span 1;
-    } */
-
-    /* .archiveImgFigure:nth-of-type(21) {
-        grid-column: 2 / span 4;
-        grid-row: 12 / span 1;
-    } */
-
-    /* .archiveImgFigure:nth-of-type(22) {
-        grid-column: 2 / span 4;
-        grid-row: 14 / span 1;
-    } */
 }
 
 @media screen and (min-width: 550px) {
@@ -147,9 +71,6 @@
     .videoContainer {
         /* grid-template-rows: minmax(350px, 1fr); */
     }
-    .archiveContainer {
-        /* grid-template-columns: repeat(auto-fit, minmax(5vw, 1fr)); */
-    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -162,17 +83,3 @@
 
 @media screen and (min-width: 1024px) {
 }
-
-/* LAYOUT STYLES FOR SPECIFIC PAGES */
-
-/* hilma */
-
-/* emanuel */
-
-/* axel */
-
-/* journey i & journey ii */
-
-/* correspondances i & correspondances ii */
-
-/* axis mundi berlin & axis mundi stockholm */

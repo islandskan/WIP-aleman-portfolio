@@ -1,6 +1,7 @@
 import { MetaData } from '../components/MetaData';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import styles from '../styles/About.module.css';
+// import styles from '../styles/About.module.css';
+import styles from '../styles/Published.module.css';
 import { createClient } from 'contentful';
 import { INLINES } from '@contentful/rich-text-types';
 
@@ -48,9 +49,7 @@ const Published = ({ res }) => {
             <MetaData page='Published' />
             <div className='wrapper'>
                 <div className={styles.publishedContainer}>
-                    <h3 className={`pageTitle ${styles.aboutTitle}`}>
-                        {title}
-                    </h3>
+                    <h3 className='pageTitle'>{title}</h3>
                     <div className={styles.bodyContainer}>
                         {documentToReactComponents(publishedBody, options)}
                     </div>
