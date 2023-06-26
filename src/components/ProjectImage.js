@@ -5,6 +5,10 @@ export const ProjectImage = ({ image }) => {
     const imageUrl = `https:${image.image.fields.file.url}`;
     const imageInfo = [image.imageTitle, image.materialOrMethod, image.size];
 
+    const { height, width } = image.image.fields.file.details.image;
+
+    const isVerticalImg = () => {};
+
     console.log(imageUrl);
     console.log(imageInfo);
     return (
