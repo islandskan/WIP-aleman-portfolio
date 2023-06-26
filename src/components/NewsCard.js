@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { hasDates } from '../utils/hasDates';
 
 export const NewsCard = ({ card }) => {
-    const { title, location, link, startDate, endDate } = card.fields;
+    const { title, location, link, startDate, endDate, newsInfo } = card.fields;
+    console.log(newsInfo);
 
     return (
         <div className={`${styles.newsCard}`}>
@@ -19,6 +20,7 @@ export const NewsCard = ({ card }) => {
                 ) : (
                     <h4 className={styles.newsCardTitle}>{title}</h4>
                 )}
+                {newsInfo && <p>{newsInfo}</p>}
 
                 {location && (
                     <p className={styles.newsCardLocation}>{location}</p>
