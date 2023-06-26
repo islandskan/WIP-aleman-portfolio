@@ -46,7 +46,7 @@ function Hilma({ res }) {
                 <div className='imageContainer'>
                     <ImageCollection images={hilmaImages} />
                 </div>
-                <div className={styles.linkContainer}>
+                <div className={`${styles.linkContainer} linkContainer`}>
                     <ThumbnailLink item={hilmaPDF} />
                     <ThumbnailLink item={blogLink} />
                 </div>

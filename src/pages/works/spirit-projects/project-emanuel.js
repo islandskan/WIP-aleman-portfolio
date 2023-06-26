@@ -47,7 +47,7 @@ function Emanuel({ res }) {
                 <div className='imageContainer'>
                     <ImageCollection images={emanuelImages} />
                 </div>
-                <div className={styles.linkContainer}>
+                <div className={`${styles.linkContainer} linkContainer`}>
                     <ThumbnailLink item={emanuelPDF} />
                 </div>
                 <Video video={emanuelInterviewVideo} />

@@ -17,10 +17,8 @@ export const Video = ({ video }) => {
     const { height: HEIGHT, width: WIDTH } =
         videoThumbnail.fields.file.details.image;
 
-    console.log(videoText);
-
     return (
-        <div className={styles.videoContainer}>
+        <div className={`video ${styles.videoContainer}`}>
             {hasWindow && (
                 <ReactPlayer
                     url={videoUrl}
@@ -31,8 +29,8 @@ export const Video = ({ video }) => {
                         <Image
                             src={videoThumbnailURL}
                             alt={internalName}
-                            height={HEIGHT}
-                            width={WIDTH}
+                            height={300}
+                            width={560}
                         />
                     }
                 />

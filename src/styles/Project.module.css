@@ -16,29 +16,34 @@
 }
 
 .videoContainer {
-    /* grid-column: span 12;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto;
-    margin: auto;
-    row-gap: 1rem;
     max-width: 560px;
-    width: 100%; */
+    width: 100%;
+    height: 300px;
 }
 
 .videoContainer iframe {
     max-width: 560px;
-    height: 100%;
+    height: 300px;
     grid-column: 1 / -1;
 }
 .videoText {
-    /* grid-row: 2 / span 1; */
+    margin-top: 12px;
 }
 
 .linkContainer {
     grid-column: span 12;
-    display: grid;
-    row-gap: 2rem;
+    max-width: 70ch;
+    width: fit-content;
+}
+
+.linkContainer div {
+}
+
+.linkContainer div:first-of-type {
+    margin-bottom: 1rem;
+}
+
+.linkContainer a {
 }
 
 .essayContainer {

@@ -245,65 +245,6 @@ nav {
     justify-content: space-around;
 }
 
-.menu.open {
-    opacity: 1;
-}
-
-.burgerMenu {
-    display: none;
-    background-color: transparent;
-    cursor: pointer;
-    position: absolute;
-    z-index: 9;
-    animation: rotateBack 0.4s both;
-}
-
-.burgerMenu.open {
-    transform: rotate(0deg);
-    animation: rotation 1s both;
-}
-
-@keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(90deg);
-    }
-}
-
-@keyframes rotateBack {
-    0% {
-        transform: rotate(90deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-.line {
-    background-color: var(--dark);
-    height: 1.4px;
-    width: 20px;
-    margin: 5px 0;
-    transform-origin: 9.5px;
-    transition: rotate 0.3s, opacity 0.3s, background-color 0.3s;
-}
-
-.burgerMenu.open .line:nth-child(1) {
-    rotate: -45deg;
-    background-color: var(--lilac);
-}
-
-.burgerMenu.open .line:nth-child(2) {
-    opacity: 0;
-}
-
-.burgerMenu.open .line:nth-child(3) {
-    rotate: 45deg;
-    background-color: var(--lilac);
-}
-
 /* Layout styles */
 
 .layout {
@@ -328,9 +269,6 @@ nav {
 
 .wrapper {
     grid-column: 1 / -1;
-    row-gap: 30px;
-    /* margin: 50px 0; */
-    display: grid;
 }
 
 .txtWrapper {
@@ -343,11 +281,20 @@ nav {
     grid-row: 1 / span 1;
 }
 
-.pageTitleWrapper,
-.container p,
-.pageTxtWrapper,
-.imageContainer {
-    grid-column: 1 / span 12;
+.pageTitleWrapper + p,
+.video,
+.imageContainer,
+.linkContainer {
+    margin: 0 auto 30px auto;
+}
+
+.video {
+    /* border: 1px solid blue; */
+}
+
+.imageContainer::before {
+    content: '';
+    display: block;
 }
 
 .container p {
@@ -355,12 +302,10 @@ nav {
 }
 
 .imageContainer {
+    /* border: 1px solid red; */
     display: grid;
     row-gap: 2.5rem;
-}
-
-.imageContainer::before {
-    content: '';
+    justify-content: center;
 }
 
 .imageContainer img {
@@ -416,10 +361,6 @@ p.linkBody {
     line-height: 1.9;
 }
 
-/* Hover, focus, transitions etc */
-
-/* Break points */
-
 @media screen and (min-width: 375px) {
     .menuLink {
         font-size: 0.8rem;
@@ -427,17 +368,6 @@ p.linkBody {
 }
 
 @media screen and (min-width: 550px) {
-    /* .projectContainer::before,
-    .projectContainer::after {
-        content: '';
-        display: block;
-        width: 100%;
-        grid-column: 2 / span 10;
-    } */
-
-    /* .projectContainer::before {
-        height: 50px;
-    } */
     .pageTitleWrapper,
     .container p,
     .imageContainer,
@@ -448,10 +378,6 @@ p.linkBody {
 }
 
 @media screen and (min-width: 768px) {
-    .burgerMenu {
-        display: none;
-    }
-
     .menuLink {
         font-size: 0.9rem;
     }
@@ -476,8 +402,7 @@ p.linkBody {
 @media screen and (min-width: 1024px) {
     .linkContainer {
         grid-column: 2 / span 3;
-        grid-row: 6 / span 1;
-        display: flex;
+        /* display: flex; */
     }
 
     nav {
