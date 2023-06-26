@@ -20,6 +20,11 @@ export const ProjectImage = ({ image }) => {
                 height={500}
                 width={400}
                 loading='lazy'
+                placeholder='blur'
+                style={{
+                    maxWidth: '100%',
+                    height: 'auto',
+                }}
             />
             <figcaption>{imageInfo.join(' - ')}</figcaption>
         </figure>
