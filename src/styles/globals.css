@@ -270,6 +270,9 @@ nav {
 
 .wrapper {
     grid-column: 1 / -1;
+    display: grid;
+    grid-auto-flow: dense;
+    row-gap: 20px;
 }
 
 .txtWrapper {
