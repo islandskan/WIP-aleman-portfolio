@@ -8,15 +8,15 @@ export const ProjectImage = ({ image }) => {
 
     const { height, width } = image.image.fields.file.details.image;
 
-    // console.log(isVerticalImg(height, width, imageUrl));
+    const newMeasurements = isVerticalImg(height, width);
     return (
         <figure className={styles.projectImageFigure}>
             <Image
-                className={styles.projectImage}
+                className={newMeasurements.className}
                 src={imageUrl}
                 alt={imageInfo}
-                height={height}
-                width={width}
+                height={newMeasurements.newHeight}
+                width={newMeasurements.newWidth}
                 loading='lazy'
                 // onError={(e) => console.log(e.target)}
                 // onLoadingComplete={(img) => console.log(img.height, img.width)}

@@ -1,9 +1,16 @@
-export function isVerticalImg(h, w, url) {
-    let height;
-    // let width;
-    if (h > w) {
-        height = Math.floor((h / 3) * 2);
-        // width = (w / 3) * 2;
+export function isVerticalImg(h, w) {
+    const diff = Math.abs(h - w);
+    let newHeight = h;
+    let newWidth = w;
+    let className = 'landscapeImg';
+    if (h > w && diff >= 300) {
+        newHeight = Math.floor(newHeight / 3);
+        newWidth = Math.floor(newWidth / 3);
+        className = 'portraitImg';
+        return { newHeight, newWidth, className };
+    } else {
+        newHeight = Math.floor(newHeight);
+        newWidth = Math.floor(newWidth);
+        return { newHeight, newWidth, className };
     }
-    return `${height}, ${url}`;
 }
