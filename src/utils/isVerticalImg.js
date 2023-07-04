@@ -4,8 +4,8 @@ export function isVerticalImg(h, w) {
     let newWidth = w;
     let className = 'landscapeImg';
     if (h > w && diff >= 300) {
-        newHeight = Math.floor(newHeight / 3);
-        newWidth = Math.floor(newWidth / 3);
+        newHeight = Math.floor((newHeight / 3) * 2);
+        newWidth = Math.floor((newWidth / 3) * 2);
         className = 'portraitImg';
         return { newHeight, newWidth, className };
     } else {

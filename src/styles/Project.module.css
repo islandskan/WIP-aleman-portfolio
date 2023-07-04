@@ -1,16 +1,5 @@
 /* STYLES FOR PROJECT COMPONENTS */
 
-.projectImageFigure {
-    display: grid;
-    row-gap: 8px;
-    grid-template-rows: 2fr minmax(2rem, 3vh);
-}
-
-.projectImageFigure figcaption {
-    justify-self: center;
-    align-self: center;
-}
-
 .title__wrapper {
     grid-column: 1 / span 5;
 }
