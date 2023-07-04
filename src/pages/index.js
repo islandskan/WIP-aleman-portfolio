@@ -25,7 +25,6 @@ function Home({ res }) {
     const HEIGHT = details.image.height;
     const WIDTH = details.image.width;
 
-    console.log(HEIGHT, WIDTH);
     return (
         <>
             <MetaData page='Start' />

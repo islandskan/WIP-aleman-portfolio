@@ -55,15 +55,11 @@
 
 @media screen and (min-width: 630px) {
     .videoContainer {
-        /* grid-template-rows: minmax(300px, 1fr); */
     }
 }
 
-/* w=1434, h=810 */
-
 @media screen and (min-width: 690px) {
     .videoContainer {
-        /* grid-template-rows: minmax(350px, 1fr); */
     }
 }
 

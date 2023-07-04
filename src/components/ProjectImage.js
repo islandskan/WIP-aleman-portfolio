@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import styles from '../styles/Project.module.css';
 import { isVerticalImg } from '../utils/isVerticalImg';
 
 export const ProjectImage = ({ image }) => {

@@ -1,6 +1,5 @@
 import { MetaData } from '../../../components/MetaData.js';
 import { createClient } from 'contentful';
-import styles from '../../../styles/Project.module.css';
 import { getProjectTxt } from '../../../utils/getProjectContent.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { Video } from '../../../components/Video.js';
@@ -24,8 +23,12 @@ export async function getStaticProps() {
 
 function Axel({ res }) {
     const { title, content, slug } = res.fields;
+
+    console.log(content);
     const axelImages = content.slice(2);
     const axelVideo = content[1].fields;
+
+    console.log(axelImages);
 
     return (
         <>
