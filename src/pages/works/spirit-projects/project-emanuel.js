@@ -27,11 +27,11 @@ function Emanuel({ res }) {
     console.log(res);
     const { title, content, slug } = res.fields;
     console.log(content);
-    const emanuelImages = content.slice(3, 6);
-    const emanuelPDF = content[6].fields;
+    const emanuelImages = content.slice(2, 5);
+    const emanuelPDF = content[5].fields;
 
     const emanuelVideo = content[1].fields;
-    const emanuelInterviewVideo = content[2].fields;
+    // const emanuelInterviewVideo = content[2].fields;
 
     return (
         <>
@@ -50,7 +50,7 @@ function Emanuel({ res }) {
                 <div className={`${styles.linkContainer} linkContainer`}>
                     <ThumbnailLink item={emanuelPDF} />
                 </div>
-                <Video video={emanuelInterviewVideo} />
+                {/* <Video video={emanuelInterviewVideo} /> */}
                 <GoBackLink slug={slug} />
             </div>
         </>
