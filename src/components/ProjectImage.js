@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { isVerticalImg } from '../utils/isVerticalImg';
+import ReactMarkdown from 'react-markdown';
 
 export const ProjectImage = ({ image }) => {
     const imageUrl = `https:${image.image.fields.file.url}`;
@@ -24,7 +25,7 @@ export const ProjectImage = ({ image }) => {
                 }}
             />
             <figcaption className={newMeasurements.className}>
-                {imageInfoText}
+                <ReactMarkdown>{imageInfoText}</ReactMarkdown>
             </figcaption>
         </figure>
     );

@@ -34,9 +34,7 @@ const Contact = ({ res }) => {
                 <div className={styles.contactWrapper}>
                     <div>
                         <h4>Email</h4>
-                        <a href='#' className='lightLink'>
-                            {EMAIL}
-                        </a>
+                        <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
                     </div>
                     <div>
                         <h4>Instagram</h4>
@@ -44,7 +42,6 @@ const Contact = ({ res }) => {
                             href='https://www.instagram.com/madeleinealeman/'
                             rel='noreferrer'
                             target='_blank'
-                            className='lightLink'
                         >
                             {INSTA}
                         </a>

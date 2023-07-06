@@ -11,7 +11,6 @@
 }
 
 .bodyContainer {
-    font-size: 1rem;
     line-height: 1.85;
     font-weight: 300;
 }
@@ -38,14 +37,14 @@
     margin-top: 20px;
 }
 
-.cvContainer .bodyContainer > p {
+/* .cvContainer .bodyContainer > p {
     font-size: 0.8rem;
-}
+} */
 
-.cvContainer .bodyContainer h5 {
+/* .cvContainer .bodyContainer h5 {
     font-size: 1.1rem;
     margin: 0.7em 0 0.5em 0;
-}
+} */
 
 .cvContainer .bodyContainer h5::before {
     content: '';
@@ -55,7 +54,7 @@
 
 .cvContainer .bodyContainer h6 {
     text-align: start;
-    font-size: 1rem;
+    /* font-size: 1rem; */
     margin: 1em 0 6px 0;
 }
 
@@ -68,7 +67,7 @@
 }
 
 .artistContainer p {
-    font-size: 0.9rem;
+    /* font-size: 0.9rem; */
     line-height: max(2, 2vh);
 }
 
@@ -107,7 +106,7 @@
 
     .cvBtn {
         grid-column: 9 / -1;
-        font-size: 0.8rem;
+        /* font-size: 0.8rem; */
     }
 }
 

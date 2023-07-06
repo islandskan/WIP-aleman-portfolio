@@ -40,7 +40,7 @@ function Project({ projects }) {
     return (
         <>
             <div className='container'>
-                <h2 className='projektTitle'>Hallo</h2>
+                <h2 className='projectTitle'>Hallo</h2>
             </div>
         </>
     );

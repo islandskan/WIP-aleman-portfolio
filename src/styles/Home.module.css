@@ -16,12 +16,14 @@
     flex-direction: column;
     grid-column: 1 / span 12;
     min-height: 250px;
+    /* border: 1px solid red; */
 }
 
 .projectLink {
+    /* border: 1px solid black; */
     width: fit-content;
     margin: auto;
-    line-height: 1.8;
+    /* line-height: 1.8; */
 }
 .projectLinkTitle {
     font-weight: 400;

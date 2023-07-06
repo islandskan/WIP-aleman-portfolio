@@ -34,7 +34,7 @@ function AxisMundiBerlin({ res }) {
             <div className='wrapper'>
                 <div className='pageTitleWrapper'>
                     <div className='pageTitleWrapper'>
-                        <h2 className='projektTitle'>{title}</h2>
+                        <h2 className='projectTitle'>{title}</h2>
                     </div>
                 </div>
                 <p>{getProjectTxt(content)}</p>

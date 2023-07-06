@@ -38,7 +38,7 @@ function Emanuel({ res }) {
             <MetaData page={title} />
             <div className='wrapper'>
                 <div className='pageTitleWrapper'>
-                    <h2 className='projektTitle'>{title}</h2>
+                    <h2 className='projectTitle'>{title}</h2>
                 </div>
                 <p>{getProjectTxt(content)}</p>
 

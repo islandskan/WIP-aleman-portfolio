@@ -12,6 +12,10 @@
     --padding: 0.4rem;
     --menuHeight: 50px;
     --font: 'Quicksand', sans-serif;
+    --logoFontSize: 1.2rem;
+    --projectTitleFontSize: 0.9rem;
+    --generalFontSize: 0.8rem;
+    --projectImageTextFontSize: 12px;
 }
 
 ::selection {
@@ -36,6 +40,7 @@ body {
     background-color: var(--white);
     color: var(--dark);
     font-family: var(--font);
+    font-size: var(--generalFontSize);
 }
 
 a {
@@ -66,10 +71,6 @@ a:not(.logo, .skipLink)::after {
 a:not(.logo, .skipLink):hover::after,
 a:not(.logo, .skipLink):focus::after {
     transform: scale(1);
-}
-
-.lightLink {
-    font-weight: 300;
 }
 
 a:hover:not(.logo, .skipLink),
@@ -118,15 +119,9 @@ a:focus:not(.logo, .skipLink) {
     transform: scale(1, 1);
 }
 
-button,
-input,
-textarea {
+button {
     border: none;
     padding: 8px;
-}
-
-textarea {
-    resize: none;
 }
 
 ul {
@@ -141,19 +136,20 @@ img {
 }
 
 p,
-input,
-textarea,
 a {
     letter-spacing: 0.025rem;
 }
 
-p {
+p,
+.paragraph {
     line-height: 1.7;
     font-weight: 300;
+    font-size: var(--generalFontSize);
+    /* line-height: 1.5; */
 }
 
 .logo {
-    font-size: 0.9rem;
+    font-size: var(--logoFontSize);
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.07rem;
@@ -165,10 +161,14 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.pageTitle {
     letter-spacing: 0.085rem;
     font-weight: 400;
-    text-align: center;
+    font-size: var(--projectTitleFontSize);
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
 p,
@@ -179,18 +179,6 @@ h4,
 h5,
 h6 {
     max-width: 70ch;
-}
-
-.pageTitle {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-}
-
-.paragraph {
-    font-size: 0.9rem;
-    line-height: 1.5;
 }
 
 .menuLink {
@@ -311,7 +299,7 @@ nav {
 }
 
 .container p {
-    font-size: 1rem;
+    /* font-size: 1rem; */
 }
 
 .imageContainer {
@@ -343,23 +331,18 @@ figure img {
 }
 
 figcaption {
-    font-size: 12px;
+    font-size: var(--projectImageTextFontSize);
     margin: auto;
     text-align: center;
     width: fit-content;
     word-wrap: break-word;
 }
 
-.projektTitle {
+.projectTitle {
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: var(--projectTitleFontSize);
     margin-bottom: 0.3em;
     text-align: center;
-}
-
-.projektYear,
-.pageUnderTitle {
-    font-size: 1rem;
 }
 
 /* NOT FOUND 404 styles */
