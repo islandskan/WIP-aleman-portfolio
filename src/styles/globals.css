@@ -208,6 +208,7 @@ header {
     background-color: var(--white);
     position: fixed;
     display: flex;
+    z-index: 8;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -223,7 +224,6 @@ nav {
 }
 
 .menu {
-    background-color: var(--white);
     display: flex;
     text-transform: uppercase;
     justify-content: space-around;
