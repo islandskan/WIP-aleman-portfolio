@@ -4,6 +4,7 @@ import styles from '../styles/components/PDFElement.module.css';
 
 export const ThumbnailLink = ({ item }) => {
     const linkImg = 'thumbnail' in item ? item.thumbnail.fields : '';
+    console.log(linkImg);
 
     const linkUrl =
         'linkAsset' in item

@@ -17,7 +17,7 @@
     grid-column: 1 / -1;
 }
 .videoText {
-    margin-top: 12px;
+    margin-top: max(1.5vh, 1.5rem);
 }
 
 .linkContainer {
