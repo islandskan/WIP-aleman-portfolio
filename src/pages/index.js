@@ -24,6 +24,7 @@ function Home({ res }) {
     const { details, url } = res.fields.file;
     const HEIGHT = details.image.height;
     const WIDTH = details.image.width;
+    console.log(HEIGHT, WIDTH);
 
     return (
         <>
