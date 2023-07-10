@@ -1,7 +1,5 @@
 .homeImg {
-    grid-column: 1 / span 12;
-    height: calc(100vh - 200px);
-    margin: auto;
+    grid-column: 2 / -2;
     overflow: hidden;
 }
 
