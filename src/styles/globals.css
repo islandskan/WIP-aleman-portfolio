@@ -290,7 +290,7 @@ nav {
 .video,
 .imageContainer,
 .linkContainer {
-    margin: 0 auto 30px auto;
+    /* margin: 0 auto 30px auto; */
 }
 
 .imageContainer {
