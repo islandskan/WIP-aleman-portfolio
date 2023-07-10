@@ -304,14 +304,16 @@ nav {
 }
 
 .imageContainer {
+    /* border: 1px solid red; */
     display: grid;
-    row-gap: max(1.7vh, 2.5rem);
+    row-gap: max(7vh, 4.5rem);
     width: 100%;
     margin-top: 20px;
 }
 
 figure {
-    row-gap: max(1vh, 1rem);
+    /* border: 1px solid black; */
+    row-gap: max(1.5vh, 1.5rem);
     display: grid;
 }
 
@@ -321,11 +323,11 @@ figure {
 } */
 
 .portraitImg {
-    width: max(25vw, 200px);
+    /* width: max(25vw, 200px); */
 }
 
 .landscapeImg {
-    width: min(40vw, 450px);
+    /* width: min(40vw, 450px); */
 }
 
 figure img {
