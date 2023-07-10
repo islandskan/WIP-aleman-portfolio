@@ -47,7 +47,7 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--grey);
+    color: var(--dark);
     font-weight: 400;
     cursor: pointer;
     display: inline-block;
@@ -183,7 +183,7 @@ h6 {
 }
 
 .menuLink {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     line-height: 1.8;
     letter-spacing: 0.05rem;
     user-select: none;
@@ -206,17 +206,17 @@ h6 {
 header {
     background-color: var(--white);
     position: fixed;
-    z-index: 8;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     justify-self: center;
-    padding: var(--paddA) var(--paddB);
+    padding: 1.5rem var(--paddB);
 }
 
 nav {
-    margin-top: 0.75rem;
+    /* border: 1px solid red; */
+    margin-top: 1.5rem;
     max-width: 500px;
     width: 100%;
 }
@@ -390,9 +390,6 @@ p.linkBody {
 }
 
 @media screen and (min-width: 768px) {
-    .menuLink {
-        font-size: 0.8rem;
-    }
 }
 
 @media screen and (min-width: 800px) {
