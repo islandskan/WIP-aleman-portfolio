@@ -4,9 +4,6 @@
 }
 
 .homeImg img {
-    /* width: 70ch; */
-    /* width: 70ch; */
-    /* height: calc(100vh - 100px); */
 }
 
 .projectsList {
@@ -21,7 +18,6 @@
 
 .projectLink {
     width: fit-content;
-    /* margin: auto; */
 }
 
 .projectLink a {
