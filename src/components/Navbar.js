@@ -21,9 +21,7 @@ export const Navbar = () => {
 
     return (
         <nav>
-            <div className='navContainer'>
-                <ul className='menu'>{menuLinks}</ul>
-            </div>
+            <ul className='menu'>{menuLinks}</ul>
         </nav>
     );
 };

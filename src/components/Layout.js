@@ -5,10 +5,9 @@ export const Layout = ({ children }) => {
     return (
         <div className='layout'>
             <Logo />
+            {/* <Navbar /> */}
 
             <main className='container'>{children}</main>
-
-            <Navbar />
         </div>
     );
 };

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Navbar } from './Navbar';
 
 export const Logo = () => {
     return (
@@ -6,6 +7,7 @@ export const Logo = () => {
             <Link className='logo' href='/'>
                 Madeleine Aleman
             </Link>
+            <Navbar />
         </header>
     );
 };
