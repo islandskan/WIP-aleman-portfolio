@@ -12,7 +12,9 @@
     row-gap: 1.5rem;
     column-gap: 0.5rem;
     flex-direction: column;
-    align-items: center;
+    margin: auto;
+    width: fit-content;
+    align-items: flex-start;
 }
 
 .info h4 {
@@ -38,14 +40,13 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 0.5fr 1fr 0.5fr;
         row-gap: 0;
-        column-gap: 20px;
+        column-gap: max(1.5vw, 1.5rem);
     }
 
     .contactInfoWrapper {
         grid-column: 1 / span 1;
         grid-row: 2 / span 1;
         justify-content: center;
-        align-items: flex-start;
     }
 
     .contactImg {
