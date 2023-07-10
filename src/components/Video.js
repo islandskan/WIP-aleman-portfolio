@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import styles from '../styles/Project.module.css';
+import ReactMarkdown from 'react-markdown';
 
 export const Video = ({ video }) => {
     const [hasWindow, setHasWindow] = useState(false);
@@ -35,10 +36,8 @@ export const Video = ({ video }) => {
                     }
                 />
             )}
-            <figcaption>
-                <p className={`${styles.videoText} imageInfoText`}>
-                    {videoText}
-                </p>
+            <figcaption className={`${styles.videoText} imageInfoText`}>
+                <ReactMarkdown>{videoText}</ReactMarkdown>
             </figcaption>
         </div>
     );
