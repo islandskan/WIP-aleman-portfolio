@@ -306,9 +306,9 @@ nav {
 .imageContainer {
     /* border: 1px solid red; */
     display: grid;
-    row-gap: max(7.5vh, 5rem);
+    row-gap: max(8vh, 6rem);
     width: 100%;
-    margin-top: 20px;
+    margin-top: max(6vh, 4rem);
 }
 
 figure {
