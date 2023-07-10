@@ -28,9 +28,10 @@ function Hilma({ res }) {
     const { title, content, slug } = res.fields;
 
     console.log(content);
-    const hilmaImages = content.slice(2, 16);
-    const blogLink = content[16].fields;
-    const hilmaPDF = content[17].fields;
+    console.log(content);
+    const hilmaImages = content.slice(2, 13);
+    const blogLink = content[13].fields;
+    const hilmaPDF = content[14].fields;
     const hilmaVideo = content[1].fields;
     return (
         <>

@@ -30,7 +30,7 @@ export const Video = ({ video }) => {
                         <Image
                             src={videoThumbnailURL}
                             alt={internalName}
-                            height={300}
+                            height={350}
                             width={560}
                         />
                     }

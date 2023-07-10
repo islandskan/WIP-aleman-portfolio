@@ -6,18 +6,20 @@
 
 .videoContainer {
     margin-top: max(6vh, 4rem);
-    max-width: 560px;
+    /* max-width: 560px; */
     width: 100%;
-    height: 300px;
+    /* height: auto; */
+    height: 355px;
+    border: 1px solid red;
 }
 
 .videoContainer iframe {
-    max-width: 560px;
-    height: 300px;
+    /* max-width: 560px; */
+    height: 350px;
     grid-column: 1 / -1;
 }
 .videoText {
-    margin-top: max(1.5vh, 1.5rem);
+    margin-top: 1.5rem;
 }
 
 .linkContainer {
