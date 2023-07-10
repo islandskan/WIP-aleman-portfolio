@@ -1,5 +1,5 @@
-import { Navbar } from './Navbar';
-import { Logo } from './Logo';
+import { Navbar } from './Navbar.js';
+import { Logo } from './Logo.js';
 
 export const Layout = ({ children }) => {
     return (

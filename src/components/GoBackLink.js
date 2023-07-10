@@ -1,5 +1,5 @@
 import styles from '../styles/components/GoBackLink.module.css';
-import { Button } from './Button';
+import { Button } from './Button.js';
 import { useRouter } from 'next/router';
 
 export const GoBackLink = ({ slug }) => {

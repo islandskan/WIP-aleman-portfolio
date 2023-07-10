@@ -61,8 +61,8 @@ function Journey2({ res }) {
                 <div className='imageContainer'>
                     <ImageCollection images={journey2Images} />
                 </div>
-                <GoBackLink slug={slug} />
             </div>
+            <GoBackLink slug={slug} />
         </>
     );
 }

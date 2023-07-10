@@ -35,7 +35,11 @@ export const Video = ({ video }) => {
                     }
                 />
             )}
-            <p className={styles.videoText}>{videoText}</p>
+            <figcaption>
+                <p className={`${styles.videoText} imageInfoText`}>
+                    {videoText}
+                </p>
+            </figcaption>
         </div>
     );
 };

@@ -24,7 +24,7 @@ export const ProjectImage = ({ image }) => {
                     height: 'auto',
                 }}
             />
-            <figcaption className={newMeasurements.className}>
+            <figcaption className='imageInfoText'>
                 <ReactMarkdown>{imageInfoText}</ReactMarkdown>
             </figcaption>
         </figure>

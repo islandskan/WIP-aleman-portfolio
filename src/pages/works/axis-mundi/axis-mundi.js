@@ -1,8 +1,8 @@
-import { MetaData } from '../../../components/MetaData';
-import { getProjectTxt } from '../../../utils/getProjectContent';
+import { MetaData } from '../../../components/MetaData.js';
+import { getProjectTxt } from '../../../utils/getProjectContent.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { createClient } from 'contentful';
-import { GoBackLink } from '../../../components/GoBackLink';
+import { GoBackLink } from '../../../components/GoBackLink.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -34,8 +34,8 @@ function AxisMundi({ res }) {
                 <div className='imageContainer'>
                     <ImageCollection images={axisMundiImages} />
                 </div>
-                <GoBackLink slug={slug} />
             </div>
+            <GoBackLink slug={slug} />
         </>
     );
 }

@@ -1,4 +1,4 @@
-import { ProjectImage } from './ProjectImage';
+import { ProjectImage } from './ProjectImage.js';
 
 export const ImageCollection = ({ images }) => {
     return (

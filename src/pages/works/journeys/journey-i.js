@@ -33,8 +33,8 @@ function Journey1({ res }) {
                 <div className='imageContainer'>
                     <ImageCollection images={journey1Images} />
                 </div>
-                <GoBackLink slug={slug} />
             </div>
+            <GoBackLink slug={slug} />
         </>
     );
 }

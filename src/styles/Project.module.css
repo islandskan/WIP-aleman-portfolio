@@ -21,26 +21,14 @@
 
 .linkContainer {
     grid-column: span 12;
-    max-width: 70ch;
-    width: fit-content;
+    /* max-width: 70ch; */
+    /* width: fit-content; */
 }
 
 .linkContainer div {
 }
 
-.linkContainer div:first-of-type {
-    margin-bottom: 1rem;
-}
-
 .linkContainer a {
-}
-
-.essayContainer {
-    grid-column: 1 / span 12;
-}
-
-.essayContainer p {
-    font-size: 12px;
 }
 
 @media screen and (min-width: 411px) {

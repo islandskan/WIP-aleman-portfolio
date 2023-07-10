@@ -97,19 +97,8 @@
     /* grid-row: 3 / span 1; */
 }
 
-.newsCardLinkCenter {
-}
-
-.newsCardLinkCenter::before {
-    content: '';
-    height: 27px;
-    margin-bottom: 8px;
-}
-
 .newsCardTitle {
-    /* text-transform: uppercase; */
-    line-height: 1.5;
-    margin-bottom: 6px;
+    margin-bottom: 0px;
 }
 
 @media screen and (min-width: 550px) {

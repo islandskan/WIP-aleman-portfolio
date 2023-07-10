@@ -53,6 +53,7 @@ const About = ({ aboutItems }) => {
                     </div>
                 </div>
                 <div className={styles.cvContainer}>
+                    <h4>{cvTitle}</h4>
                     <Button
                         type='button'
                         classname={styles.cvBtn}

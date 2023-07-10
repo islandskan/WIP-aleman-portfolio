@@ -50,9 +50,8 @@ function Hilma({ res }) {
                     <ThumbnailLink item={hilmaPDF} />
                     <ThumbnailLink item={blogLink} />
                 </div>
-
-                <GoBackLink slug={slug} />
             </div>
+            <GoBackLink slug={slug} />
         </>
     );
 }

@@ -31,12 +31,12 @@ const Contact = ({ res }) => {
         <>
             <MetaData page='Contact' />
             <div className={`wrapper ${styles.contact}`}>
-                <div className={styles.contactWrapper}>
-                    <div>
+                <div className={styles.contactInfoWrapper}>
+                    <div className={styles.info}>
                         <h4>Email</h4>
                         <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
                     </div>
-                    <div>
+                    <div className={styles.info}>
                         <h4>Instagram</h4>
                         <a
                             href='https://www.instagram.com/madeleinealeman/'
@@ -48,12 +48,14 @@ const Contact = ({ res }) => {
                     </div>
                 </div>
 
-                <Image
-                    alt={res.fields.title}
-                    src={`https:${url}`}
-                    height={HEIGHT}
-                    width={WIDTH}
-                />
+                <figure className={styles.contactImg}>
+                    <Image
+                        alt={res.fields.title}
+                        src={`https:${url}`}
+                        height={HEIGHT}
+                        width={WIDTH}
+                    />
+                </figure>
             </div>
         </>
     );

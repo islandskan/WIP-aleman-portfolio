@@ -49,8 +49,8 @@ function Korrespondanser2({ res }) {
                 <div className='imageContainer'>
                     <ImageCollection images={korrespondanser2Images} />
                 </div>
-                <GoBackLink slug={slug} />
             </div>
+            <GoBackLink slug={slug} />
         </>
     );
 }

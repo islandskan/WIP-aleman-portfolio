@@ -14,8 +14,10 @@
     --font: 'Quicksand', sans-serif;
     --logoFontSize: 1.2rem;
     --projectTitleFontSize: 0.9rem;
-    --generalFontSize: 0.8rem;
+    --generalFontSize: 0.85rem;
     --projectImageTextFontSize: 12px;
+    --paddA: 0.75rem;
+    --paddB: 0.3rem;
 }
 
 ::selection {
@@ -53,7 +55,7 @@ a {
 a:not(.logo, .skipLink) {
     transition: color 0.3s;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 a:not(.logo, .skipLink)::after {
@@ -87,7 +89,6 @@ a:focus:not(.logo, .skipLink) {
     max-width: 400px;
     height: 50px;
     position: relative;
-    overflow: hidden;
 }
 
 .btn:before,
@@ -184,7 +185,7 @@ h6 {
 .menuLink {
     font-size: 0.7rem;
     line-height: 1.8;
-    /* letter-spacing: 0.05rem; */
+    letter-spacing: 0.05rem;
     user-select: none;
 }
 
@@ -210,17 +211,19 @@ nav {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: var(--padding) 0;
     justify-self: center;
 }
 
 header {
-    padding-top: 0.75rem;
+    padding-top: var(--paddA);
+    padding-bottom: var(--paddB);
+    top: 0;
 }
 
 nav {
     bottom: 0;
-    align-items: flex-end;
+    padding-bottom: var(--paddA);
+    padding-top: var(--paddB);
 }
 
 .navContainer {
@@ -240,28 +243,30 @@ nav {
 
 .layout {
     min-height: 100vh;
-    padding: 0 var(--padding);
     max-width: 1000px;
     margin: auto;
     display: grid;
     position: relative;
-    grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 70px 1fr 60px;
     row-gap: 20px;
 }
 
 .container {
-    margin-bottom: 20px;
-    grid-column: 1 / -1;
+    /* border: 2px solid blue; */
     grid-row: 2 / span 1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr auto;
+    padding: 0 var(--padding);
+    row-gap: 3rem;
 }
 
 .wrapper {
+    /* border: 3px solid red; */
     grid-column: 1 / -1;
-    display: grid;
-    grid-auto-flow: dense;
+    display: flex;
+    flex-direction: column;
+    grid-row: 1 / span 1;
     row-gap: 20px;
 }
 
@@ -287,25 +292,22 @@ nav {
     margin: 0 4px;
 }
 
-.pageTitleWrapper + p,
+.imageInfoText {
+    max-width: 300px;
+}
+
+/* .pageTitleWrapper + p, */
 .video,
 .imageContainer,
 .linkContainer {
     margin: 0 auto 30px auto;
 }
 
-.video {
-    /* border: 1px solid blue; */
-}
-
-.container p {
-    /* font-size: 1rem; */
-}
-
 .imageContainer {
     display: grid;
     row-gap: max(1.7vh, 2.5rem);
     width: 100%;
+    margin-top: 20px;
 }
 
 figure {
@@ -313,10 +315,10 @@ figure {
     display: grid;
 }
 
-.imageContainer::before {
+/* .imageContainer::before {
     content: '';
     display: block;
-}
+} */
 
 .portraitImg {
     width: max(25vw, 200px);
@@ -330,7 +332,8 @@ figure img {
     margin: auto;
 }
 
-figcaption {
+figcaption,
+.mediaInfo {
     font-size: var(--projectImageTextFontSize);
     margin: auto;
     text-align: center;
@@ -341,8 +344,7 @@ figcaption {
 .projectTitle {
     text-transform: uppercase;
     font-size: var(--projectTitleFontSize);
-    margin-bottom: 0.3em;
-    text-align: center;
+    margin-bottom: 0.2em;
 }
 
 /* NOT FOUND 404 styles */

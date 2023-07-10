@@ -1,8 +1,8 @@
 import styles from '../../../styles/Home.module.css';
-import { GoBackLink } from '../../../components/GoBackLink';
-import { MetaData } from '../../../components/MetaData';
+import { GoBackLink } from '../../../components/GoBackLink.js';
+import { MetaData } from '../../../components/MetaData.js';
 import { createClient } from 'contentful';
-import { ProjectList } from '../../../components/ProjectList';
+import { ProjectList } from '../../../components/ProjectList.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -29,8 +29,8 @@ function Correspondences({ res }) {
             <MetaData page={projectLinksTitle} />
             <div className='wrapper'>
                 <ProjectList projects={projects} url={projectLinkUrl} />
-                <GoBackLink slug={projectLinkUrl} />
             </div>
+            <GoBackLink slug={projectLinkUrl} />
         </>
     );
 }

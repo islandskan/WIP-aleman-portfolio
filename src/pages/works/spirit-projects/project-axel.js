@@ -44,8 +44,8 @@ function Axel({ res }) {
                 <div className='imageContainer'>
                     <ImageCollection images={axelImages} />
                 </div>
-                <GoBackLink slug={slug} />
             </div>
+            <GoBackLink slug={slug} />
         </>
     );
 }

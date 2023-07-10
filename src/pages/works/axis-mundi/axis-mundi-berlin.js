@@ -42,8 +42,8 @@ function AxisMundiBerlin({ res }) {
                     <ImageCollection images={axisMundiBerlinImages} />
                 </div>
                 <AudioElement audioObj={axisMundiAudio} />
-                <GoBackLink slug={slug} />
             </div>
+            <GoBackLink slug={slug} />
         </>
     );
 }

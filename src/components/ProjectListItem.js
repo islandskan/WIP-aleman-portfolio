@@ -10,9 +10,8 @@ const ProjectListItem = ({ project }) => {
         <li key={projectLinkUrl} className={styles.projectLink}>
             <Link href={`/works/${projectLinkUrl}`}>
                 <SrOnly text={`Go to ${projectLinksTitle}`} />
-                <h4
-                    className={styles.projectLinkTitle}
-                >{`${projectLinksTitle} ${startYear} - ${endYear}`}</h4>
+
+                {`${projectLinksTitle} ${startYear} - ${endYear}`}
             </Link>
         </li>
     );

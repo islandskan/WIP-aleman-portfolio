@@ -1,6 +1,6 @@
 import styles from '../../styles/Home.module.css';
-import ProjectListItem from '../../components/ProjectListItem';
-import { MetaData } from '../../components/MetaData';
+import ProjectListItem from '../../components/ProjectListItem.js';
+import { MetaData } from '../../components/MetaData.js';
 import { createClient } from 'contentful';
 import { renderProjects } from '../../utils/sortProjects';
 export async function getStaticProps() {
