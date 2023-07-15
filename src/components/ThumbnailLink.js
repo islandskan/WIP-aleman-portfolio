@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/components/PDFElement.module.css';
+import ReactMarkdown from 'react-markdown';
 
 export const ThumbnailLink = ({ item }) => {
     const linkImg = 'thumbnail' in item ? item.thumbnail.fields : '';
@@ -13,7 +14,7 @@ export const ThumbnailLink = ({ item }) => {
 
     const linkImgOrTxt = linkImg ? (
         <Image
-            src={`https://${linkImg.file.url}`}
+            src={`https:${linkImg.file.url}`}
             alt={linkImg.description}
             width={300}
             height={500}
@@ -34,8 +35,10 @@ export const ThumbnailLink = ({ item }) => {
                 {linkImgOrTxt}
             </Link>
             {item.linkAssetText && (
-                <figcaption className={styles.PDFthumbnailTxt}>
-                    {item.linkAssetText}
+                <figcaption
+                    className={`${styles.PDFthumbnailTxt} imageInfoText`}
+                >
+                    <ReactMarkdown>{item.linkAssetText}</ReactMarkdown>
                 </figcaption>
             )}
         </div>
