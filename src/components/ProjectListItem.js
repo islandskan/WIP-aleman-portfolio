@@ -11,7 +11,8 @@ const ProjectListItem = ({ project }) => {
             <Link href={`/works/${projectLinkUrl}`}>
                 <SrOnly text={`Go to ${projectLinksTitle}`} />
 
-                {`${projectLinksTitle} ${startYear} - ${endYear}`}
+                {projectLinksTitle}
+                <span>{`${startYear} - ${endYear}`}</span>
             </Link>
         </li>
     );

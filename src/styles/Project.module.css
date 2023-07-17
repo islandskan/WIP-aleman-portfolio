@@ -6,18 +6,32 @@
 
 .videoContainer {
     margin-top: max(6vh, 4rem);
-    /* max-width: 560px; */
     width: 100%;
-    /* height: auto; */
-    height: 355px;
-    /* border: 1px solid red; */
+    height: 350px;
+    /* max-width: 960px; */
+}
+
+.videoContainer > div {
+    height: 350px;
+    max-width: 960px;
+}
+
+.videoContainer > div > div {
+    height: 350px;
+    overflow: hidden;
+    max-width: 960px;
 }
 
 .videoContainer iframe {
-    /* max-width: 560px; */
+    max-width: 960px;
     height: 350px;
     grid-column: 1 / -1;
 }
+
+.videoContainer img {
+    height: 350px;
+}
+
 .videoText {
     margin-top: 1.5rem;
 }

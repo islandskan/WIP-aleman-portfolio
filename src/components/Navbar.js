@@ -1,11 +1,7 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { links } from '../data/menuLinks';
 
-export const Navbar = () => {
-    const router = useRouter();
-    const currentPage = router.pathname;
-
+export const Navbar = ({ currentPage }) => {
     const menuLinks = links.map((link, index) => (
         <li key={index}>
             <Link
@@ -20,8 +16,13 @@ export const Navbar = () => {
     ));
 
     return (
-        <nav>
-            <ul className='menu'>{menuLinks}</ul>
-        </nav>
+        <header>
+            <Link className='logo' href='/'>
+                Madeleine Aleman
+            </Link>
+            <nav>
+                <ul className='menu'>{menuLinks}</ul>
+            </nav>
+        </header>
     );
 };
