@@ -18,10 +18,10 @@ export const ProjectImage = ({ image }) => {
                 height={height / 2}
                 width={width / 2}
                 loading='lazy'
-                // style={{
-                //     maxWidth: '100%',
-                //     height: 'auto',
-                // }}
+                style={{
+                    maxWidth: '100%',
+                    height: 'auto',
+                }}
             />
             <figcaption className='imageInfoText'>
                 <ReactMarkdown>{imageInfoText}</ReactMarkdown>

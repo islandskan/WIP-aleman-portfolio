@@ -245,7 +245,7 @@ nav {
     grid-row: 2 / span 1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    padding: 0 var(--padding) 1.5rem var(--padding);
+    /* padding: 0 var(--padding) 1.5rem var(--padding); */
     row-gap: 3rem;
 }
 
@@ -310,7 +310,7 @@ figure {
 }
 
 .portraitImg {
-    width: max(40vh, 350px);
+    /* width: max(60vh, 40s0px); */
     /* height: 60vh; */
 }
 
@@ -389,8 +389,10 @@ p.linkBody {
 }
 
 @media screen and (min-width: 768px) {
-    .container {
-        padding-bottom: 2rem;
+    .container:after {
+        content: '';
+        width: 100%;
+        grid-row: 2;
     }
 }
 
