@@ -298,9 +298,9 @@ nav {
 .imageContainer {
     /* border: 1px solid red; */
     display: grid;
-    row-gap: max(8vh, 6rem);
+    row-gap: max(6vh, 4rem);
     /* width: 100%; */
-    margin-top: max(6vh, 4rem);
+    margin-top: max(4vh, 3.5rem);
 }
 
 figure {
@@ -311,7 +311,6 @@ figure {
 
 .portraitImg {
     width: max(60vh, 400px);
-    /* height: 60vh; */
 }
 
 .landscapeImg {
