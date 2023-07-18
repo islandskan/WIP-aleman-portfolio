@@ -34,11 +34,13 @@ export const ThumbnailLink = ({ item }) => {
             >
                 {linkImgOrTxt}
             </Link>
-            {item.linkAssetText && (
+            {item.linkAsset && (
                 <figcaption
                     className={`${styles.PDFthumbnailTxt} imageInfoText`}
                 >
-                    <ReactMarkdown>{item.linkAssetText}</ReactMarkdown>
+                    <ReactMarkdown>
+                        {item.linkAsset.fields.description}
+                    </ReactMarkdown>
                 </figcaption>
             )}
         </div>
