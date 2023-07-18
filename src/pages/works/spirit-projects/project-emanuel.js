@@ -7,6 +7,7 @@ import { Video } from '../../../components/Video.js';
 import styles from '../../../styles/Project.module.css';
 import { GoBackLink } from '../../../components/GoBackLink.js';
 import { ThumbnailLink } from '../../../components/ThumbnailLink.js';
+import { setContent } from '../../../utils/setContentIndex.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -24,14 +25,12 @@ export async function getStaticProps() {
     };
 }
 function Emanuel({ res }) {
-    console.log(res);
     const { title, content, slug } = res.fields;
     console.log(content);
-    const emanuelImages = content.slice(2, 5);
     const emanuelPDF = content[5].fields;
-
-    const emanuelVideo = content[1].fields;
-    // const emanuelInterviewVideo = content[2].fields;
+    const emanuelText = setContent(content, 'textParagraph');
+    const emanuelImages = setContent(content, 'imageInfoText');
+    const emanuelVideo = setContent(content, 'videoId');
 
     return (
         <>
@@ -40,7 +39,7 @@ function Emanuel({ res }) {
                 <div className='pageTitleWrapper'>
                     <h2 className='projectTitle'>{title}</h2>
                 </div>
-                <p>{getProjectTxt(content)}</p>
+                <p>{emanuelText[0].fields.textParagraph}</p>
 
                 <Video video={emanuelVideo} />
 
@@ -50,7 +49,6 @@ function Emanuel({ res }) {
                 <div className={`${styles.linkContainer} linkContainer`}>
                     <ThumbnailLink item={emanuelPDF} />
                 </div>
-                {/* <Video video={emanuelInterviewVideo} /> */}
             </div>
             <GoBackLink slug={slug} />
         </>

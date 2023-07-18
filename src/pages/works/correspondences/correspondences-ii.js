@@ -4,6 +4,7 @@ import { ImageCollection } from '../../../components/ImageCollection.js';
 import { INLINES } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { GoBackLink } from '../../../components/GoBackLink.js';
+import { setContent } from '../../../utils/setContentIndex.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -22,9 +23,9 @@ export async function getStaticProps() {
 }
 function Korrespondanser2({ res }) {
     const { title, content, slug } = res.fields;
-    const korrespondanser2Images = content.slice(1);
+    const korrespondanser2Images = setContent(content, 'imageInfoText');
 
-    const text = content[0].fields.formattedText;
+    const corr2Text = setContent(content, 'formattedText');
 
     const options = {
         renderNode: {
@@ -44,7 +45,10 @@ function Korrespondanser2({ res }) {
                     <h2 className='projectTitle'>{title}</h2>
                 </div>
                 <div className='pageTxtWrapper'>
-                    {documentToReactComponents(text, options)}
+                    {documentToReactComponents(
+                        corr2Text[0].fields.formattedText,
+                        options
+                    )}
                 </div>
                 <div className='imageContainer'>
                     <ImageCollection images={korrespondanser2Images} />

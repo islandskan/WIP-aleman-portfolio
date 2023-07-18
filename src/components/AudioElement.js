@@ -2,7 +2,7 @@ import styles from '../styles/components/AudioElement.module.css';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export const AudioElement = ({ audioObj }) => {
-    const { audio, audioText } = audioObj;
+    const { audio, audioText } = audioObj[0].fields;
     const { url, contentType } = audio.fields.file;
 
     return (

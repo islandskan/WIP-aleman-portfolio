@@ -13,7 +13,8 @@ export const Video = ({ video }) => {
         }
     }, []);
 
-    const { videoThumbnail, videoUrl, internalName, videoText } = video;
+    const { videoThumbnail, videoUrl, internalName, videoText } =
+        video[0].fields;
     const videoThumbnailURL = `https:${videoThumbnail.fields.file.url}`;
     const { height: HEIGHT, width: WIDTH } =
         videoThumbnail.fields.file.details.image;

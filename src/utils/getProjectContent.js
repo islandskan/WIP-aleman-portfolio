@@ -1,3 +1,5 @@
+import { setContent } from './setContentIndex';
+
 const getCardImg = (card) => {
     const imgSizes = card.fields.projectThumbnail.fields.file.details.image;
     let { height, width } = imgSizes;
@@ -27,11 +29,6 @@ const getProjectTitle = (title) => {
     return;
 };
 
-// extract intro texts from projects
-const getProjectTxt = (content) => {
-    return content[0].fields.textParagraph;
-};
-
 // extract videos from projects
 const getProjectVideo = (videoContent) => {
     return;
@@ -53,7 +50,6 @@ export {
     getCardImg,
     getProjectImg,
     getProjectTitle,
-    getProjectTxt,
     getProjectVideo,
     getProjectLink,
     getProjectPdf,

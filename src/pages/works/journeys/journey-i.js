@@ -3,6 +3,7 @@ import { createClient } from 'contentful';
 import { getProjectTxt } from '../../../utils/getProjectContent.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { GoBackLink } from '../../../components/GoBackLink.js';
+import { setContent } from '../../../utils/setContentIndex.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -21,7 +22,10 @@ export async function getStaticProps() {
 }
 function Journey1({ res }) {
     const { title, content, slug } = res.fields;
-    const journey1Images = content.slice(1);
+
+    const journey1Text = setContent(content, 'textParagraph');
+    const journey1Images = setContent(content, 'imageInfoText');
+
     return (
         <>
             <MetaData page={title} />
@@ -29,7 +33,7 @@ function Journey1({ res }) {
                 <div className='pageTitleWrapper'>
                     <h2 className='projectTitle'>{title}</h2>
                 </div>
-                <p>{getProjectTxt(content)}</p>
+                <p>{journey1Text[0].fields.textParagraph}</p>
                 <div className='imageContainer'>
                     <ImageCollection images={journey1Images} />
                 </div>

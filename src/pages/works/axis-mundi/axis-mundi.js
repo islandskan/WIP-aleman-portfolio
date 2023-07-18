@@ -3,6 +3,7 @@ import { getProjectTxt } from '../../../utils/getProjectContent.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { createClient } from 'contentful';
 import { GoBackLink } from '../../../components/GoBackLink.js';
+import { setContent } from '../../../utils/setContentIndex.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -22,7 +23,8 @@ export async function getStaticProps() {
 
 function AxisMundi({ res }) {
     const { title, content, slug } = res.fields;
-    const axisMundiImages = content.slice(1);
+    const axisMundiImages = setContent(content, 'imageInfoText');
+    const axisMundiText = setContent(content, 'textParagraph');
     return (
         <>
             <MetaData page={title} />
@@ -30,7 +32,7 @@ function AxisMundi({ res }) {
                 <div className='pageTitleWrapper'>
                     <h2 className='projectTitle'>{title}</h2>
                 </div>
-                <p>{getProjectTxt(content)}</p>
+                <p>{axisMundiText[0].fields.textParagraph}</p>
                 <div className='imageContainer'>
                     <ImageCollection images={axisMundiImages} />
                 </div>

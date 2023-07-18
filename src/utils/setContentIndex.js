@@ -1,12 +1,11 @@
-export const setIndex = () => {};
-//     index = {
-//     cv: aboutItems.findIndex((item) => item.fields.aboutTitle === 'CV'),
-//     artist: aboutItems.findIndex(
-//         (item) => item.fields.aboutTitle === 'Artist Statement'
-//     ),
-// };
+export const setIndex = (content, propName) => {
+    const findIndex = content.findIndex((item) => propName in item.fields);
+    if (findIndex !== -1) {
+        return findIndex;
+    }
+    // return;
+};
 
-// const { aboutTitle: artistTitle, aboutPageContent: artistBody } =
-//     aboutItems[index.artist].fields;
-// const { aboutTitle: cvTitle, aboutPageContent: cvBody } =
-//     aboutItems[index.cv].fields;
+export const setContent = (content, propName) => {
+    return content.filter((item) => propName in item.fields);
+};

@@ -1,6 +1,7 @@
 .audioContainer {
     grid-column: 1 / -1;
     display: grid;
+    margin-top: max(1.5vh, 1.5rem);
 }
 
 .audioInfo {
@@ -16,11 +17,11 @@
 
 .audioText {
     font-size: 0.5rem;
-    /* border: 2px solid red; */
 }
 
 .audioPlayer {
-    height: 100px;
+    height: 50px;
+    width: 100%;
 }
 
 @media screen and (min-width: 550px) {

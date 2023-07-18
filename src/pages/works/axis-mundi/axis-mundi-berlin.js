@@ -1,6 +1,7 @@
 import { MetaData } from '../../../components/MetaData.js';
 import { getProjectTxt } from '../../../utils/getProjectContent.js';
 import { setImageCollection } from '../../../utils/setImageCollection.js';
+import { setContent } from '../../../utils/setContentIndex.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { createClient } from 'contentful';
 import { GoBackLink } from '../../../components/GoBackLink.js';
@@ -24,9 +25,9 @@ export async function getStaticProps() {
 
 function AxisMundiBerlin({ res }) {
     const { title, content, slug } = res.fields;
-
-    const axisMundiAudio = content[1].fields;
-    const axisMundiBerlinImages = content.slice(2);
+    const axisMundiAudio = setContent(content, 'audio');
+    const axisMundiBerlinImages = setContent(content, 'imageInfoText');
+    const axisMundiBerlinText = setContent(content, 'textParagraph');
 
     return (
         <>
@@ -37,7 +38,7 @@ function AxisMundiBerlin({ res }) {
                         <h2 className='projectTitle'>{title}</h2>
                     </div>
                 </div>
-                <p>{getProjectTxt(content)}</p>
+                <p>{axisMundiBerlinText[0].fields.textParagraph}</p>
                 <div className='imageContainer'>
                     <ImageCollection images={axisMundiBerlinImages} />
                 </div>

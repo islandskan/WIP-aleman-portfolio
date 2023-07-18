@@ -1,6 +1,7 @@
 import { MetaData } from '../../../components/MetaData.js';
 import { createClient } from 'contentful';
 import { getProjectTxt } from '../../../utils/getProjectContent.js';
+import { setContent } from '../../../utils/setContentIndex.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { Video } from '../../../components/Video.js';
 import { GoBackLink } from '../../../components/GoBackLink.js';
@@ -24,11 +25,9 @@ export async function getStaticProps() {
 function Axel({ res }) {
     const { title, content, slug } = res.fields;
 
-    console.log(content);
-    const axelImages = content.slice(2);
-    const axelVideo = content[1].fields;
-
-    console.log(axelImages);
+    const axelText = setContent(content, 'textParagraph');
+    const axelImages = setContent(content, 'imageInfoText');
+    const axelVideo = setContent(content, 'videoId');
 
     return (
         <>
@@ -37,7 +36,7 @@ function Axel({ res }) {
                 <div className='pageTitleWrapper'>
                     <h2 className='projectTitle'>{title}</h2>
                 </div>
-                <p>{getProjectTxt(content)}</p>
+                <p>{axelText[0].fields.textParagraph}</p>
 
                 <Video video={axelVideo} />
 

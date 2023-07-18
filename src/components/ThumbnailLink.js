@@ -4,8 +4,8 @@ import styles from '../styles/components/PDFElement.module.css';
 import ReactMarkdown from 'react-markdown';
 
 export const ThumbnailLink = ({ item }) => {
+    console.log(item);
     const linkImg = 'thumbnail' in item ? item.thumbnail.fields : '';
-    console.log(linkImg);
 
     const linkUrl =
         'linkAsset' in item
