@@ -310,11 +310,10 @@ figure {
 }
 
 .portraitImg {
-    /* width: max(50vh, 300px); */
+    width: max(50vw, 380px);
 }
 
 .landscapeImg {
-    /* width: min(40vw, 450px); */
 }
 
 figure img {
