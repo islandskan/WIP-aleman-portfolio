@@ -38,8 +38,8 @@
 
 .linkContainer {
     grid-column: span 12;
-    /* max-width: 70ch; */
-    /* width: fit-content; */
+    display: flex;
+    justify-content: center;
 }
 
 .linkContainer div {
