@@ -15,8 +15,8 @@ export const ProjectImage = ({ image }) => {
                 className={newMeasurements.className}
                 src={imageUrl}
                 alt={imageInfo}
-                height={height}
-                width={width}
+                height={height / 2}
+                width={width / 2}
                 loading='lazy'
                 // style={{
                 //     maxWidth: '100%',
