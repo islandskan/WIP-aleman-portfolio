@@ -38,11 +38,11 @@
 
 .linkContainer {
     grid-column: span 12;
-    display: flex;
-    justify-content: center;
+    /* border: 1px solid red; */
 }
 
 .PDFthumbnailTxt {
+    /* border: 1px solid red; */
 }
 
 .linkContainer div {

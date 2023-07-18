@@ -1,13 +1,13 @@
 /* Styles for the PDF component on Hilma Page */
 
 .PDFthumbnail {
-    grid-column: 2 / span 10;
-    /* grid-row: 9 / span 2; */
-    /* display: flex; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .PDFLink {
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 .PDFthumbnailImg {
@@ -16,6 +16,8 @@
 .PDFthumbnailTxt {
     font-size: 0.9rem;
     line-height: 1.6;
+    max-width: 500px;
+    margin-top: max(1.5vh, 1.5rem);
 }
 
 /* .linkContainer {
