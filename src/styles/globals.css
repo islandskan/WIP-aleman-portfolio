@@ -310,10 +310,12 @@ figure {
 }
 
 .portraitImg {
-    width: max(50vw, 380px);
+    width: max(40vh, 350px);
+    /* height: 60vh; */
 }
 
 .landscapeImg {
+    max-width: 500px;
 }
 
 figure img {
@@ -405,6 +407,10 @@ p.linkBody {
     .pageTxtWrapper,
     .wrapper {
         grid-column: 3 / span 8;
+    }
+
+    .landscapeImg {
+        max-width: 100%;
     }
 }
 
