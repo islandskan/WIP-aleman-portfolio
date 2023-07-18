@@ -310,7 +310,7 @@ figure {
 }
 
 .portraitImg {
-    width: max(50vh, 300px);
+    /* width: max(50vh, 300px); */
 }
 
 .landscapeImg {
