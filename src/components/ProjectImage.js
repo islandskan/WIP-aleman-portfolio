@@ -6,7 +6,6 @@ export const ProjectImage = ({ image }) => {
     const imageUrl = `https:${image.image.fields.file.url}`;
     const { imageAltText: imageInfo, imageInfoText } = image;
 
-    // console.log(image);
     const { height, width } = image.image.fields.file.details.image;
 
     const newMeasurements = isVerticalImg(height, width);
@@ -16,8 +15,8 @@ export const ProjectImage = ({ image }) => {
                 className={newMeasurements.className}
                 src={imageUrl}
                 alt={imageInfo}
-                height={newMeasurements.newHeight}
-                width={newMeasurements.newWidth}
+                height={height}
+                width={width}
                 loading='lazy'
                 style={{
                     maxWidth: '100%',

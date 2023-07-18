@@ -28,6 +28,7 @@ function AxisMundiBerlin({ res }) {
     const axisMundiAudio = setContent(content, 'audio');
     const axisMundiBerlinImages = setContent(content, 'imageInfoText');
     const axisMundiBerlinText = setContent(content, 'textParagraph');
+    console.log(axisMundiAudio);
 
     return (
         <>
