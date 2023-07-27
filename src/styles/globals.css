@@ -239,7 +239,7 @@ nav {
     position: relative;
     grid-template-rows: 130px 1fr;
     row-gap: 20px;
-    padding: 0 var(--paddB) 1.5rem var(--paddB);
+    padding: 0 var(--paddA) 1.5rem var(--paddA);
 }
 
 .container {

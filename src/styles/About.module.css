@@ -22,12 +22,12 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 50px auto;
-    margin-top: 30px;
+    margin-top: max(4vh, 3.5rem);
 }
 
 .cvBtn {
     grid-row: 1 / span 1;
-    grid-column: 1/ -1;
+    grid-column: 6/ -1;
     font-size: 0.8rem;
 }
 
@@ -86,9 +86,6 @@
 }
 
 @media screen and (min-width: 420px) {
-    .cvBtn {
-        grid-column: 2 / -2;
-    }
 }
 
 @media screen and (min-width: 550px) {
