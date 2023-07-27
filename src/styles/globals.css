@@ -47,8 +47,8 @@ body {
 
 a {
     text-decoration: none;
-    /* color: var(--dark); */
-    color: var(--grey);
+    color: var(--dark);
+    /* color: var(--grey); */
 
     font-weight: 500;
     cursor: pointer;
