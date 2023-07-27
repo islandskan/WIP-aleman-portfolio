@@ -1,6 +1,7 @@
 /* Styles for the PDF component on Hilma Page */
 
 .PDFthumbnail {
+    margin-top: max(4vh, 3.5rem);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,13 +12,15 @@
 }
 
 .PDFthumbnailImg {
+    width: 100%;
+    max-width: 500px;
 }
 
 .PDFthumbnailTxt {
     font-size: 0.9rem;
     line-height: 1.6;
     max-width: 500px;
-    margin-top: max(1.5vh, 1.5rem);
+    margin-top: max(2vh, 2rem);
 }
 
 /* .linkContainer {

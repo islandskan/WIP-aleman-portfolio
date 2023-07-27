@@ -4,7 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { INLINES } from '@contentful/rich-text-types';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { setContent } from '../../../utils/setContentIndex.js';
-
+import styles from '../../../styles/Project.module.css';
 import { GoBackLink } from '../../../components/GoBackLink.js';
 
 export async function getStaticProps() {
@@ -52,7 +52,7 @@ function Journey2({ res }) {
                 <div className='pageTitleWrapper'>
                     <h2 className='projectTitle'>{title}</h2>
                 </div>
-                <div className='pageTxtWrapper'>
+                <div className={`pageTxtWrapper ${styles.pageInfoText}`}>
                     {documentToReactComponents(
                         journey2Text[0].fields.formattedText,
                         options

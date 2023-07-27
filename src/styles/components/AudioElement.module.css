@@ -17,6 +17,7 @@
 
 .audioText {
     font-size: 0.5rem;
+    text-align: start;
 }
 
 .audioPlayer {

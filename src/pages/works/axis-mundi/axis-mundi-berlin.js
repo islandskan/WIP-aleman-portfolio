@@ -24,11 +24,11 @@ export async function getStaticProps() {
 }
 
 function AxisMundiBerlin({ res }) {
+    console.log(res);
     const { title, content, slug } = res.fields;
     const axisMundiAudio = setContent(content, 'audio');
     const axisMundiBerlinImages = setContent(content, 'imageInfoText');
     const axisMundiBerlinText = setContent(content, 'textParagraph');
-    console.log(axisMundiAudio);
 
     return (
         <>

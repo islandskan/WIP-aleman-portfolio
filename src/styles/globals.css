@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
 
 :root {
     --white: #e3e3e3;
@@ -47,8 +47,10 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--dark);
-    font-weight: 400;
+    /* color: var(--dark); */
+    color: var(--grey);
+
+    font-weight: 500;
     cursor: pointer;
     display: inline-block;
 }
@@ -185,6 +187,7 @@ h6 {
 
 .menuLink {
     font-size: 0.9rem;
+    /* font-weight: 400; */
     line-height: 1.8;
     letter-spacing: 0.05rem;
     user-select: none;
@@ -206,18 +209,15 @@ h6 {
 
 header {
     background-color: var(--white);
-    /* position: fixed; */
     display: flex;
-    /* z-index: 8; */
     flex-direction: column;
     align-items: center;
     width: 100%;
     justify-self: center;
-    padding: 1.5rem var(--paddB) var(--paddA) var(--paddB);
+    padding: 1.5rem 0 var(--paddA) 0;
 }
 
 nav {
-    /* border: 1px solid red; */
     margin-top: 1.5rem;
     max-width: 500px;
     width: 100%;
@@ -226,7 +226,7 @@ nav {
 .menu {
     display: flex;
     text-transform: uppercase;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 /* Layout styles */
@@ -239,13 +239,13 @@ nav {
     position: relative;
     grid-template-rows: 130px 1fr;
     row-gap: 20px;
+    padding: 0 var(--paddB) 1.5rem var(--paddB);
 }
 
 .container {
     grid-row: 2 / span 1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    /* padding: 0 var(--padding) 1.5rem var(--padding); */
     row-gap: 3rem;
 }
 

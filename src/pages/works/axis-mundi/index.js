@@ -22,7 +22,6 @@ export async function getStaticProps() {
 }
 
 function AxisMundi({ res }) {
-    console.log(res);
     const { projectLinkUrl, projectLinksTitle } = res.fields;
     const projects = res.fields.projectLinksUnderMenu;
 
