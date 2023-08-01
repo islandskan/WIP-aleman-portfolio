@@ -1,6 +1,7 @@
 const isProjectPage = (page) => {
     const regex = /works\//gi;
-    return page.match(regex);
+    const matchedPage = page.match(regex);
+    return matchedPage;
 };
 
 export { isProjectPage };

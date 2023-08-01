@@ -5,7 +5,6 @@ import { Button } from '../components/Button';
 import { createClient } from 'contentful';
 import { INLINES } from '@contentful/rich-text-types';
 import { generatePDF } from '../utils/generatePDF';
-// import { fetchEntries } from '../api/fetchEntries';
 
 export async function getStaticProps() {
     const client = createClient({

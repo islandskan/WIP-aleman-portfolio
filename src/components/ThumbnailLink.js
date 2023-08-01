@@ -4,7 +4,7 @@ import styles from '../styles/components/PDFElement.module.css';
 import ReactMarkdown from 'react-markdown';
 
 export const ThumbnailLink = ({ item }) => {
-    console.log(item);
+    console.log(item.linkAssetText);
     const linkImg = 'thumbnail' in item ? item.thumbnail.fields : '';
 
     const linkUrl =
@@ -34,13 +34,11 @@ export const ThumbnailLink = ({ item }) => {
             >
                 {linkImgOrTxt}
             </Link>
-            {item.linkAsset && (
+            {item.linkAssetText && (
                 <figcaption
                     className={`${styles.PDFthumbnailTxt} imageInfoText`}
                 >
-                    <ReactMarkdown>
-                        {item.linkAsset.fields.description}
-                    </ReactMarkdown>
+                    <ReactMarkdown>{item.linkAssetText}</ReactMarkdown>
                 </figcaption>
             )}
         </div>

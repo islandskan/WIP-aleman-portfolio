@@ -2,7 +2,7 @@
     display: grid;
     grid-column: 1 / -1;
     grid-template-rows: auto 1fr;
-    row-gap: max(1.5vh, 1.5rem);
+    row-gap: max(2vh, 2rem);
 }
 
 .contactInfoWrapper {
@@ -27,14 +27,13 @@
 
 .contactImg {
     height: fit-content;
-    max-width: 400px;
+    justify-self: flex-end;
 }
 
 @media screen and (min-width: 550px) {
     .contact {
         grid-column: 2 / span 10;
         grid-template-columns: repeat(3, 1fr);
-        /* grid-template-rows: 0.5fr repeat(2, 0.5fr) 0.5fr; */
         row-gap: 0;
         column-gap: max(1.5vw, 1.5rem);
     }
@@ -49,6 +48,7 @@
         grid-column: 2 / span 2;
         grid-row: 1 / span 3;
         align-self: center;
+        max-width: 400px;
     }
 }
 
@@ -59,16 +59,13 @@
 }
 
 @media screen and (min-width: 768px) {
-    /* .contact {
-        grid-template-columns: minmax(200px, 1fr) 10% minmax(200px, 1fr);
-    } */
     .contact img {
         grid-column: 2 / span 2;
     }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
     .contact {
-        grid-column: 3 / span 8;
+        column-gap: 0;
     }
 }

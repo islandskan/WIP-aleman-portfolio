@@ -5,48 +5,35 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 300px;
 }
 
 .PDFLink {
-    /* display: inline-block; */
 }
 
 .PDFthumbnailImg {
-    width: 100%;
-    max-width: 500px;
 }
 
 .PDFthumbnailTxt {
+    padding: 0 4px;
     font-size: 0.9rem;
     line-height: 1.6;
-    max-width: 500px;
-    margin-top: max(2vh, 2rem);
+    text-align: start;
+    margin-top: max(1.5vh, 1.5rem);
 }
 
-/* .linkContainer {
-    display: grid;
-    grid-template-columns: 5ch repeat(5, 1fr);
-    grid-template-rows: 2.5em repeat(2, min(3.5em, 0.3fr));
-    row-gap: 20px;
-} */
+@media screen and (min-width: 1000px) {
+    .PDFthumbnail {
+        flex-direction: row;
+        max-width: max-content;
+    }
 
-/* .link {
-    width: fit-content;
-    line-height: 1.8;
-    height: fit-content;
-    font-size: 1rem;
-    grid-column: 1 / span 4;
-    grid-row: 1 / span 1;
-    text-decoration: underline;
-} */
+    .PDFthumbnailImg {
+        max-width: 300px;
+    }
 
-/* .linkBody {
-    grid-column: 2 / span 3;
-    grid-row: 2 / span 2;
-} */
-
-/* p.linkBody {
-    font-size: 12px;
-    font-style: italic;
-    line-height: 1.9;
-} */
+    .PDFthumbnailTxt {
+        padding-left: max(1.5vh, 1.5rem);
+        margin-top: 0;
+    }
+}

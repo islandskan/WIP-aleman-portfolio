@@ -1,8 +1,6 @@
 .newsList {
     --dark: #08040e;
     --gap: 1.2em;
-    /* --white: #fcf7f4; */
-    /* --white: #c3c3c3; */
     --white: #e3e3e3;
     --opac: 0.5;
     --lineHeight: 0.5px;
@@ -12,41 +10,10 @@
     padding: 1.8em 8px;
     position: relative;
     background-color: var(--white);
-    /* background-image: radial-gradient(
-        circle at center,
-        var(--dark) 50%,
-        transparent 50%
-    );
-    background-repeat: no-repeat;
-    transition: background-size 0.5s, color 0.5s, box-shadow 0.5s ease-in;
-    background-size: 0 0;
-    background-position: 50% 50%; */
-    /* box-shadow: 1px 1px 15px 10px rgba(0, 0, 0, 0.02),
-        2px 2px 10px rgba(0, 0, 0, 0.05); */
 }
-
-/* .newsCard::before {
-    content: '';
-    width: 100%;
-    background-color: var(--dark);
-    opacity: var(--opac);
-    height: var(--lineHeight);
-    position: absolute;
-    top: 0;
-}
-
-.newsCard:last-of-type::after {
-    content: '';
-    width: 100%;
-    background-color: var(--dark);
-    height: var(--lineHeight);
-    position: absolute;
-    bottom: 0;
-} */
 
 .newsCardTxtWrapper {
     width: max(100%, 250px);
-    /* min-height: 110px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,11 +27,6 @@
 
 .newsCard.currentNews {
     --lightDark: rgba(45, 40, 52, 0.1);
-}
-
-.newsCard.currentNews:hover,
-.newsCard.currentInfo:focus {
-    /* border-radius: 50%; */
 }
 
 .newsCardDates {
@@ -87,14 +49,10 @@
 }
 
 .newsCardLink {
-    /* grid-row: 2; */
     width: fit-content;
     display: flex;
     align-items: center;
     font-size: 1.1rem;
-
-    /* grid-column: 3 / span 2; */
-    /* grid-row: 3 / span 1; */
 }
 
 .newsCardTitle {
@@ -123,7 +81,4 @@
 }
 
 @media and (min-width: 1024px) {
-    .news::before {
-        /* height: 10px; */
-    }
 }

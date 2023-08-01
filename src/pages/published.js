@@ -23,7 +23,6 @@ export async function getStaticProps() {
 }
 const Published = ({ res }) => {
     const { content, title } = res.fields;
-
     const publishedBody = content[0].fields.formattedText;
 
     const options = {

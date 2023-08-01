@@ -43,17 +43,9 @@
 
 .linkContainer {
     grid-column: span 12;
-    /* border: 1px solid red; */
-}
-
-.PDFthumbnailTxt {
-    /* border: 1px solid red; */
-}
-
-.linkContainer div {
-}
-
-.linkContainer a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media screen and (min-width: 411px) {
@@ -66,21 +58,17 @@
     }
 }
 
-@media screen and (min-width: 630px) {
-    .videoContainer {
-    }
-}
-
-@media screen and (min-width: 690px) {
-    .videoContainer {
-    }
-}
-
 @media screen and (min-width: 1000px) {
     .videoContainer,
     .essayContainer {
         grid-column: 3 / span 8;
         /* grid-column: span 6; */
+    }
+
+    .linkContainer {
+        /* flex-direction: row;
+        align-items: center;
+        justify-content: space-between; */
     }
 }
 
