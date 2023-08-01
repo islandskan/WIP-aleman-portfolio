@@ -284,23 +284,22 @@ figure {
 
 .portraitImg {
     /* width: max(60vh, 400px); */
-    width: 40%;
+    /* width: 40%; */
+    /* aspect-ratio: 3/4; */
 }
 
 .landscapeImg {
     /* max-width: 500px; */
     /* width: 50vmax; */
+    /* aspect-ratio: 2/1; */
 }
 
 figcaption,
 .mediaInfo,
 .imageInfoText {
-    border: 1px solid black;
     font-size: var(--projectImageTextFontSize);
     margin: auto;
     text-align: center;
-    /* width: fit-content; */
-    /* word-wrap: break-word; */
 }
 
 .projectTitle {

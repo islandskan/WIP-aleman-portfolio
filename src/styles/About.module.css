@@ -51,21 +51,15 @@
 
 .cvContainer .bodyContainer h6 {
     text-align: start;
-    /* font-size: 1rem; */
     margin: 1em 0 6px 0;
 }
 
 .cvContainer .bodyContainer li {
-    margin-bottom: 4px;
+    margin-bottom: 1vmin;
 }
 
 .artistContainer .aboutTitle {
     margin-bottom: 1rem;
-}
-
-.artistContainer p {
-    /* font-size: 0.9rem; */
-    line-height: max(2, 2vh);
 }
 
 .artistContainer p:nth-of-type(2) {
@@ -98,17 +92,8 @@
         grid-column: 2 / span 10;
     }
 
-    /* .aboutContainer::before,
-    .aboutContainer::after {
-        content: '';
-        display: block;
-        width: 100%;
-        grid-column: 2 / span 10;
-    } */
-
     .cvBtn {
         grid-column: 9 / -1;
-        /* font-size: 0.8rem; */
     }
 }
 
