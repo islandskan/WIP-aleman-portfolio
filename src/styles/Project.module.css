@@ -10,26 +10,27 @@
 
 .videoContainer {
     margin-top: max(6vh, 4rem);
-    width: 100%;
-    height: 350px;
+    aspect-ratio: 16 / 9;
     margin-bottom: max(4vh, 3.5rem);
-    max-width: 960px;
 }
 
-.videoContainer > div {
-    height: 350px;
-    max-width: 960px;
-}
+/* .videoContainer > div {
 
-.videoContainer > div > div {
-    height: 350px;
-    overflow: hidden;
-    max-width: 960px;
-}
+} */
+
+/* .videoContainer > div > div { */
+/* border: 1px solid red; */
+/* height: 350px; */
+
+/* max-width: 960px; */
+/* } */
 
 .videoContainer iframe {
-    max-width: 960px;
-    height: 350px;
+    aspect-ratio: 16 / 9;
+
+    /* border: 1px solid red; */
+    /* max-width: 960px; */
+    /* height: 350px; */
     grid-column: 1 / -1;
 }
 
