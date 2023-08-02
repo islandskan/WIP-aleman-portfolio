@@ -15,9 +15,8 @@
     align-items: center;
     justify-content: space-around;
     grid-column: 1 / span 12;
-    height: 30vmax;
-    position: relative;
-    top: 10vmax;
+    height: 35vmax;
+    margin-top: 10vmin;
 }
 
 .projectLink {
@@ -33,20 +32,9 @@
     margin-left: 22px;
 }
 
-/* @media screen and (min-width: 412px) {
-    .homeImg {
-        width: 80%;
+@media screen and (min-width: 768px) {
+    .projectsList {
+        height: 25vmax;
+        margin-top: 5vmin;
     }
-} */
-
-/* @media screen and (min-width: 550px) {
-    .homeImg {
-        width: 65%;
-    }
-} */
-
-/* @media screen and (min-width: 768px) {
-    .homeImg {
-        width: 50%;
-    }
-} */
+}
