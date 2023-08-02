@@ -194,6 +194,7 @@ header {
     background-color: var(--white);
     grid-template-rows: repeat(2, 1fr);
     row-gap: 1.5rem;
+
     padding: 1rem 0 var(--paddA) 0;
 }
 

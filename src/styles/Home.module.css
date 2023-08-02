@@ -5,11 +5,8 @@
 }
 
 .homeImg img {
-    /* position: absolute; */
-    /* left: 0; */
-    /* top: 0; */
-    /* max-width: 100%; */
-    /* height: auto; */
+    height: 100%;
+    aspect-ratio: 18/9;
 }
 
 .projectsList {
@@ -18,8 +15,9 @@
     align-items: center;
     justify-content: space-around;
     grid-column: 1 / span 12;
-    min-height: 50vh;
-    margin: auto;
+    height: 30vmax;
+    position: relative;
+    top: 10vmax;
 }
 
 .projectLink {
