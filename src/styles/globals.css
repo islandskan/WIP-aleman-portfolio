@@ -274,6 +274,7 @@ nav,
 .imageContainer {
     display: grid;
     row-gap: max(4vh, 4rem);
+    margin-top: max(1.5vh, 1.5rem);
 }
 
 figure {
@@ -284,14 +285,18 @@ figure {
 
 .portraitImg {
     /* width: max(60vh, 400px); */
-    /* width: 40%; */
-    /* aspect-ratio: 3/4; */
+    /* width: 30vmax; */
+    /* width: 50vw; */
+    width: max(50vw, 350px);
+    aspect-ratio: 2/3;
+    margin: auto;
 }
 
 .landscapeImg {
+    width: 100%;
+    margin: auto;
     /* max-width: 500px; */
     /* width: 50vmax; */
-    /* aspect-ratio: 2/1; */
 }
 
 figcaption,
@@ -358,6 +363,13 @@ p.linkBody {
 }
 
 @media screen and (min-width: 800px) {
+    .portraitImg {
+        width: 40vw;
+    }
+
+    .landscapeImg {
+        width: fit-content;
+    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -366,8 +378,11 @@ p.linkBody {
     .logo {
         grid-column: 3 / -3;
     } */
+    .portraitImg {
+        width: 35vw;
+    }
     .landscapeImg {
-        max-width: 100%;
+        /* max-width: 100%; */
     }
 
     .container {
