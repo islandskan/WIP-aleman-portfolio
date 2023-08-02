@@ -235,7 +235,7 @@ header {
     display: flex;
     flex-direction: column;
     grid-row: 1 / span 1;
-    row-gap: 20px;
+    row-gap: max(1vh, 1rem);
 }
 
 .wrapper,
@@ -271,7 +271,6 @@ nav,
 }
 
 .imageContainer {
-    /* border: 1px solid red; */
     display: grid;
     row-gap: max(4vh, 4rem);
 }
@@ -361,6 +360,11 @@ p.linkBody {
 }
 
 @media screen and (min-width: 1000px) {
+    /* .wrapper,
+    nav,
+    .logo {
+        grid-column: 3 / -3;
+    } */
     .landscapeImg {
         max-width: 100%;
     }
