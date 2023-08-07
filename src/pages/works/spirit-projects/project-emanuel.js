@@ -35,21 +35,21 @@ function Emanuel({ res }) {
     return (
         <>
             <MetaData page={title} />
-            <div className='wrapper'>
-                <div className='pageTitleWrapper'>
-                    <h2 className='projectTitle'>{title}</h2>
-                </div>
+
+            <div className='pageTitleWrapper'>
+                <h2 className='projectTitle'>{title}</h2>
                 <p>{emanuelText[0].fields.textParagraph}</p>
-
-                <Video video={emanuelVideo} />
-
-                <div className='imageContainer'>
-                    <ImageCollection images={emanuelImages} />
-                </div>
-                <div className={`${styles.linkContainer} linkContainer`}>
-                    <ThumbnailLink item={emanuelPDF} />
-                </div>
             </div>
+
+            <Video video={emanuelVideo} />
+
+            <div className='imageContainer'>
+                <ImageCollection images={emanuelImages} />
+            </div>
+            <div className={`${styles.linkContainer} linkContainer`}>
+                <ThumbnailLink item={emanuelPDF} />
+            </div>
+
             <GoBackLink slug={slug} />
         </>
     );

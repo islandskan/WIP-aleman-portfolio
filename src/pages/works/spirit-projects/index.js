@@ -27,9 +27,9 @@ function SpiritProjects({ res }) {
     return (
         <>
             <MetaData page={projectLinksTitle} />
-            <div className='wrapper'>
-                <ProjectList projects={projects} url={projectLinkUrl} />
-            </div>
+
+            <ProjectList projects={projects} url={projectLinkUrl} />
+
             <GoBackLink slug={projectLinkUrl} />
         </>
     );

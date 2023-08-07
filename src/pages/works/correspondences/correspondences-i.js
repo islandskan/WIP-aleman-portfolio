@@ -39,19 +39,15 @@ function Korrespondanser1({ res }) {
     return (
         <>
             <MetaData page={title} />
-            <div className='wrapper'>
-                <div className='pageTitleWrapper'>
-                    <h2 className='projectTitle'>{title}</h2>
-                </div>
-                <div className='pageTxtWrapper'>
-                    {documentToReactComponents(
-                        corr1Text[0].fields.formattedText,
-                        options
-                    )}
-                </div>
-                <div className='imageContainer'>
-                    <ImageCollection images={korrespondanser1Images} />
-                </div>
+            <div className='pageTitleWrapper'>
+                <h2 className='projectTitle'>{title}</h2>
+                {documentToReactComponents(
+                    corr1Text[0].fields.formattedText,
+                    options
+                )}
+            </div>
+            <div className='imageContainer'>
+                <ImageCollection images={korrespondanser1Images} />
             </div>
             <GoBackLink slug={slug} />
         </>

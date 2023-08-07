@@ -38,22 +38,22 @@ function Hilma({ res }) {
     return (
         <>
             <MetaData page={title} />
-            <div className='wrapper'>
-                <div className='pageTitleWrapper'>
-                    <h2 className='projectTitle'>{title}</h2>
-                </div>
+
+            <div className='pageTitleWrapper'>
+                <h2 className='projectTitle'>{title}</h2>
                 <p>{hilmaText[0].fields.textParagraph}</p>
-
-                <Video video={hilmaVideo} />
-
-                <div className='imageContainer'>
-                    <ImageCollection images={hilmaImages} />
-                </div>
-                <div className={`${styles.linkContainer} linkContainer`}>
-                    <ThumbnailLink item={hilmaPDF} />
-                    <ThumbnailLink item={blogLink} />
-                </div>
             </div>
+
+            <Video video={hilmaVideo} />
+
+            <div className='imageContainer'>
+                <ImageCollection images={hilmaImages} />
+            </div>
+            <div className={`${styles.linkContainer} linkContainer`}>
+                <ThumbnailLink item={hilmaPDF} />
+                <ThumbnailLink item={blogLink} />
+            </div>
+
             <GoBackLink slug={slug} />
         </>
     );

@@ -1,4 +1,4 @@
-import styles from '../styles/Home.module.css';
+import styles from '../styles/components/ProjectList.module.css';
 import Link from 'next/link';
 
 export const ProjectList = ({ projects, url }) => {
@@ -11,7 +11,7 @@ export const ProjectList = ({ projects, url }) => {
     ));
     return (
         <>
-            <ul id='works' className={styles.projectsList}>
+            <ul id='works' className={`${styles.projectsList} projectsList`}>
                 {projectList}
             </ul>
         </>

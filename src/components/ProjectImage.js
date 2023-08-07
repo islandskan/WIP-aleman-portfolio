@@ -3,6 +3,7 @@ import { isVerticalImg } from '../utils/isVerticalImg';
 import ReactMarkdown from 'react-markdown';
 
 export const ProjectImage = ({ image }) => {
+    console.log(image);
     const imageUrl = `https:${image.image.fields.file.url}`;
     const { imageAltText: imageInfo, imageInfoText } = image;
 
@@ -15,8 +16,8 @@ export const ProjectImage = ({ image }) => {
                 className={newMeasurements.className}
                 src={imageUrl}
                 alt={imageInfo}
-                height={height / 2}
-                width={width / 2}
+                height={height}
+                width={width}
                 loading='lazy'
                 style={{
                     maxWidth: '100%',

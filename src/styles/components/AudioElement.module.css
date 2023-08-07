@@ -9,20 +9,15 @@
     row-gap: 2rem;
 }
 
-.audioInfo h4 {
-}
-
-.audioImgContainer {
-}
-
 .audioText {
     font-size: 0.5rem;
     text-align: start;
 }
 
 .audioPlayer {
-    height: 50px;
+    height: min-content;
     width: 100%;
+    background-color: black;
 }
 
 @media screen and (min-width: 550px) {

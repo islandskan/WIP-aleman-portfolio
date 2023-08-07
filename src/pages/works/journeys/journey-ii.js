@@ -48,20 +48,18 @@ function Journey2({ res }) {
     return (
         <>
             <MetaData page={title} />
-            <div className='wrapper'>
-                <div className='pageTitleWrapper'>
-                    <h2 className='projectTitle'>{title}</h2>
-                </div>
-                <div className={`pageTxtWrapper ${styles.pageInfoText}`}>
-                    {documentToReactComponents(
-                        journey2Text[0].fields.formattedText,
-                        options
-                    )}
-                </div>
-                <div className='imageContainer'>
-                    <ImageCollection images={journey2Images} />
-                </div>
+
+            <div className='pageTitleWrapper'>
+                <h2 className='projectTitle'>{title}</h2>
+                {documentToReactComponents(
+                    journey2Text[0].fields.formattedText,
+                    options
+                )}
             </div>
+            <div className='imageContainer'>
+                <ImageCollection images={journey2Images} />
+            </div>
+
             <GoBackLink slug={slug} />
         </>
     );

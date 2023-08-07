@@ -29,22 +29,17 @@ function AxisMundiBerlin({ res }) {
     const axisMundiAudio = setContent(content, 'audio');
     const axisMundiBerlinImages = setContent(content, 'imageInfoText');
     const axisMundiBerlinText = setContent(content, 'textParagraph');
-
     return (
         <>
             <MetaData page={title} />
-            <div className='wrapper'>
-                <div className='pageTitleWrapper'>
-                    <div className='pageTitleWrapper'>
-                        <h2 className='projectTitle'>{title}</h2>
-                    </div>
-                </div>
+            <div className='pageTitleWrapper'>
+                <h2 className='projectTitle'>{title}</h2>
                 <p>{axisMundiBerlinText[0].fields.textParagraph}</p>
-                <div className='imageContainer'>
-                    <ImageCollection images={axisMundiBerlinImages} />
-                </div>
-                <AudioElement audioObj={axisMundiAudio} />
             </div>
+            <div className='imageContainer'>
+                <ImageCollection images={axisMundiBerlinImages} />
+            </div>
+            <AudioElement audioObj={axisMundiAudio} />
             <GoBackLink slug={slug} />
         </>
     );

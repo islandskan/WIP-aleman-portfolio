@@ -5,18 +5,24 @@ const NotFound = () => {
     return (
         <>
             <MetaData page='Not Found' />
-
             <div className='pageTitleWrapper'>
                 <h2 className='pageTitle'> 404 - Page Not Found</h2>
-                <h3 className='pageUnderTitle'>
-                    Sorry, there is nothing to see here
-                </h3>
-                <p>Use the links below to navigate back to start</p>
             </div>
-
-            <p>
-                Go back to the <Link href='/'>Start page</Link>
-            </p>
+            <div className='txtContainer'>
+                <p>
+                    Go back to the <Link href='/'>Start page</Link>
+                </p>
+                <p>
+                    Check out some of{' '}
+                    <Link href='/works'>Madeleine&apos;s work</Link>
+                </p>
+                <p>
+                    Or maybe read some of{' '}
+                    <Link href='/published'>
+                        Madeleine&apos;s published texts
+                    </Link>
+                </p>
+            </div>
         </>
     );
 };

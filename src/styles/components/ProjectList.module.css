@@ -1,0 +1,28 @@
+.projectsList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 35vmax;
+    margin-top: 10vmin;
+}
+
+.projectLink {
+    width: fit-content;
+}
+
+.projectLink a {
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.projectLink span {
+    margin-left: 22px;
+}
+
+@media screen and (min-width: 768px) {
+    .projectsList {
+        height: 25vmax;
+        margin-top: 5vmin;
+    }
+}

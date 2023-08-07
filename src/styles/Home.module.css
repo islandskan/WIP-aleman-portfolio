@@ -1,40 +1,8 @@
 .homeImg {
-    grid-column: 1 / -1;
-    display: flex;
-    align-items: flex-start;
+    /* border: 1px solid red; */
 }
 
-.homeImg img {
+/* .homeImg img {
     height: 100%;
     aspect-ratio: 18/9;
-}
-
-.projectsList {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    grid-column: 1 / span 12;
-    height: 35vmax;
-    margin-top: 10vmin;
-}
-
-.projectLink {
-    width: fit-content;
-}
-
-.projectLink a {
-    line-height: 1.8;
-    font-size: 1rem;
-}
-
-.projectLink span {
-    margin-left: 22px;
-}
-
-@media screen and (min-width: 768px) {
-    .projectsList {
-        height: 25vmax;
-        margin-top: 5vmin;
-    }
-}
+} */

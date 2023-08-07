@@ -1,4 +1,4 @@
-import styles from '../../styles/Home.module.css';
+import styles from '../../styles/components/ProjectList.module.css';
 import ProjectListItem from '../../components/ProjectListItem.js';
 import { MetaData } from '../../components/MetaData.js';
 import { createClient } from 'contentful';
@@ -25,11 +25,10 @@ function Works({ projectLinks }) {
     return (
         <>
             <MetaData page='Works' />
-            <div className='wrapper'>
-                <ul id='works' className={styles.projectsList}>
-                    {projectList}
-                </ul>
-            </div>
+
+            <ul id='works' className={`${styles.projectsList} projectsList`}>
+                {projectList}
+            </ul>
         </>
     );
 }

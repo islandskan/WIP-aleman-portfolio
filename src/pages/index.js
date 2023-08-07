@@ -33,14 +33,13 @@ function Home({ res }) {
         <>
             <MetaData page='Start' />
 
-            <figure className={styles.homeImg}>
-                <Image
-                    alt={landingContent.fields.imageAltText}
-                    src={`https:${url}`}
-                    height={HEIGHT}
-                    width={WIDTH}
-                />
-            </figure>
+            <Image
+                className={styles.homeImg}
+                alt={landingContent.fields.imageAltText}
+                src={`https:${url}`}
+                height={HEIGHT}
+                width={WIDTH}
+            />
         </>
     );
 }

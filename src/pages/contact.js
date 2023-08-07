@@ -30,7 +30,7 @@ const Contact = ({ res }) => {
     return (
         <>
             <MetaData page='Contact' />
-            <div className={`wrapper ${styles.contact}`}>
+            <div className={styles.contact}>
                 <div className={styles.contactInfoWrapper}>
                     <div className={styles.info}>
                         <h4>Email</h4>

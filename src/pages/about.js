@@ -42,26 +42,25 @@ const About = ({ aboutItems }) => {
     return (
         <>
             <MetaData page='About' />
-            <div className='wrapper'>
-                <div className={styles.artistContainer}>
-                    <h3 className={`pageTitle ${styles.aboutTitle}`}>
-                        {artistTitle}
-                    </h3>
-                    <div className={styles.bodyContainer}>
-                        {documentToReactComponents(artistBody)}
-                    </div>
+
+            <div className={styles.artistContainer}>
+                <h3 className={`pageTitle ${styles.aboutTitle}`}>
+                    {artistTitle}
+                </h3>
+                <div className={styles.bodyContainer}>
+                    {documentToReactComponents(artistBody)}
                 </div>
-                <div className={styles.cvContainer}>
-                    <h4>{cvTitle}</h4>
-                    <Button
-                        type='button'
-                        classname={styles.cvBtn}
-                        text='Save as PDF'
-                        onClick={handleSaveCV}
-                    />
-                    <div className={styles.bodyContainer} id='cvBody'>
-                        {documentToReactComponents(cvBody)}
-                    </div>
+            </div>
+            <div className={styles.cvContainer}>
+                <h4>{cvTitle}</h4>
+                <Button
+                    type='button'
+                    classname={styles.cvBtn}
+                    text='Save as PDF'
+                    onClick={handleSaveCV}
+                />
+                <div className={styles.bodyContainer} id='cvBody'>
+                    {documentToReactComponents(cvBody)}
                 </div>
             </div>
         </>
