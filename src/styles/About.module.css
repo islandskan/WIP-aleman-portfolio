@@ -65,3 +65,10 @@
         grid-column: 10 / -1;
     }
 }
+
+@media screen and (min-width: 1000px) {
+    .artistContainer,
+    .cvContainer {
+        max-width: 100%;
+    }
+}

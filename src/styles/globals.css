@@ -16,7 +16,7 @@
     --outline: 0.5px;
     --outlineOffset: 8px;
     --letterSpace: 0.03rem;
-    --layoutSpace: min(8vw, 6rem);
+    --layoutSpace: min(8vw, 6.5rem);
 }
 
 ::selection {
@@ -56,6 +56,7 @@ a {
     color: var(--dark);
     font-weight: 500;
     display: inline-block;
+    width: fit-content;
 }
 a:not(.logo, .skipLink) {
     transition: color 0.3s;
@@ -240,7 +241,7 @@ header {
 
 .container {
     grid-row: 2 / span 1;
-    row-gap: min(10vw, 5rem);
+    row-gap: var(--layoutSpace);
 }
 
 .projectLayout {
@@ -264,7 +265,6 @@ nav,
 
 .pageTitleWrapper {
     grid-row: 1 / span 1;
-    margin: auto;
 }
 
 .pageTitleWrapper p {

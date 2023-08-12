@@ -45,8 +45,7 @@ const Published = ({ res }) => {
     return (
         <>
             <MetaData page='Published' />
-
-            <div className={styles.publishedContainer}>
+            <div className={`${styles.publishedContainer} pageTitleWrapper`}>
                 <h3 className='pageTitle'>{title}</h3>
                 <div className={styles.bodyContainer}>
                     {documentToReactComponents(publishedBody, options)}
