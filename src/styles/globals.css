@@ -267,9 +267,6 @@ nav,
     grid-row: 1 / span 1;
 }
 
-.pageTitleWrapper p {
-}
-
 .pageTxtWrapper p {
     display: flex;
 }
