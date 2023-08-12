@@ -43,16 +43,14 @@ const About = ({ aboutItems }) => {
         <>
             <MetaData page='About' />
 
-            <div className={styles.artistContainer}>
-                <h3 className={`pageTitle ${styles.aboutTitle}`}>
+            <div className={`${styles.artistContainer} pageTitleWrapper`}>
+                <h3 className={`projectTitle ${styles.aboutTitle}`}>
                     {artistTitle}
                 </h3>
-                <div className={styles.bodyContainer}>
-                    {documentToReactComponents(artistBody)}
-                </div>
+                <div>{documentToReactComponents(artistBody)}</div>
             </div>
-            <div className={styles.cvContainer}>
-                <h4>{cvTitle}</h4>
+            <div className={`${styles.cvContainer} pageTitleWrapper`}>
+                <h4 className='projectTitle'>{cvTitle}</h4>
                 <Button
                     type='button'
                     classname={styles.cvBtn}

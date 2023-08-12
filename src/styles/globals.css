@@ -16,6 +16,7 @@
     --outline: 0.5px;
     --outlineOffset: 8px;
     --letterSpace: 0.03rem;
+    --layoutSpace: min(8vw, 6rem);
 }
 
 ::selection {
@@ -207,14 +208,21 @@ nav {
 /* Layout styles */
 
 .layout {
-    height: 100vh;
-    height: 100svh;
+    min-height: 100vh;
+    min-height: 100svh;
     max-width: 1200px;
+    row-gap: var(--layoutSpace);
     margin: auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
-    padding: 0 var(--space) var(--space) var(--space);
+    padding: 0 calc(var(--space) * 0.5);
+}
+
+.layout::after {
+    content: '';
+    display: block;
+    grid-column: 1 / -1;
 }
 
 .container,
@@ -227,7 +235,7 @@ header {
     background-color: var(--white);
     grid-template-rows: repeat(2, 1fr);
     row-gap: var(--space);
-    padding: var(--space) 0 calc(var(--space) * 2);
+    padding: var(--space) 0 var(--space);
 }
 
 .container {
@@ -354,6 +362,12 @@ figcaption,
         padding-top: var(--space);
     }
 } */
+
+@media screen and (min-width: 410px) {
+    .layout {
+        padding: 0 var(--space);
+    }
+}
 
 @media screen and (min-width: 550px) {
     .layout {
