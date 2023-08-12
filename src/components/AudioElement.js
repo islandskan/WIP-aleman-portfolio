@@ -11,31 +11,29 @@ export const AudioElement = ({ audioObj }) => {
     console.log(height, width);
 
     return (
-        <div className={styles.audioContainer}>
-            <div className={styles.audioInfo}>
-                <figure>
-                    <Image
-                        src={`https:${audioImage.fields.file.url}`}
-                        alt={audioImgAlt}
-                        height={height}
-                        width={width}
-                        loading='lazy'
-                        style={{
-                            maxWidth: '100%',
-                            height: 'auto',
-                        }}
-                    />
-                    <figcaption className='imageInfoText'>
-                        <ReactMarkdown>{audioImgInfo}</ReactMarkdown>
-                    </figcaption>
-                </figure>
-                <audio className={styles.audioPlayer} controls>
-                    <source src={`https:${url}`} type={contentType} />
-                    Your browser does not support the audio tag.
-                </audio>
-                <div className={`${styles.audioText} mediaInfo`}>
-                    {documentToReactComponents(audioText)}
-                </div>
+        <div className={`${styles.audioContainer} audioContainer`}>
+            <figure>
+                <Image
+                    src={`https:${audioImage.fields.file.url}`}
+                    alt={audioImgAlt}
+                    height={height}
+                    width={width}
+                    loading='lazy'
+                    style={{
+                        maxWidth: '100%',
+                        height: 'auto',
+                    }}
+                />
+                <figcaption className='imageInfoText'>
+                    <ReactMarkdown>{audioImgInfo}</ReactMarkdown>
+                </figcaption>
+            </figure>
+            <audio className={styles.audioPlayer} controls>
+                <source src={`https:${url}`} type={contentType} />
+                Your browser does not support the audio tag.
+            </audio>
+            <div className={`${styles.audioText} mediaInfo`}>
+                {documentToReactComponents(audioText)}
             </div>
         </div>
     );

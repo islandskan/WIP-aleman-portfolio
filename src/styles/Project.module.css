@@ -1,35 +1,36 @@
 /* STYLES FOR PROJECT COMPONENTS */
 
 .videoContainer {
-    /* margin-top: max(6vh, 4rem); */
-    /* margin-top: 4vmax; */
-    /* margin: max(4vh, 3.5rem) 0 max(5vh, 5rem) 0; */
+    min-height: 90vh;
 }
 
-.videoContainer,
+/* style for mobile/smaller screens */
+
 .videoContainer img,
 .videoContainer > div,
 .videoContainer > div > div,
 .videoContainer iframe {
-    /* aspect-ratio: 18/9; */
+    max-width: 750px;
+    width: 100%;
+    margin: auto;
 }
 
-/* .videoContainer img {
-    width: 100%;
+.videoContainer img {
+    object-fit: cover;
     height: 100%;
-} */
+}
 
-/* .videoContainer iframe {
-    grid-column: 1 / -1;
-} */
+.videoContainer iframe {
+    /* max-width: 800px; */
+}
 
 .videoText {
-    /* margin-top: 1.5rem; */
+    margin: auto;
 }
 
 .linkContainer {
     /* border: 1px solid red; */
-    grid-column: span 12;
+    /* grid-column: span 12; */
     display: flex;
     flex-direction: column;
     align-items: center;

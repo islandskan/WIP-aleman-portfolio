@@ -1,6 +1,5 @@
 import { MetaData } from '../components/MetaData';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-// import styles from '../styles/About.module.css';
 import styles from '../styles/Published.module.css';
 import { createClient } from 'contentful';
 import { INLINES } from '@contentful/rich-text-types';

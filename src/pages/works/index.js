@@ -22,6 +22,7 @@ export async function getStaticProps() {
 
 function Works({ projectLinks }) {
     const projectList = renderProjects(ProjectListItem, projectLinks);
+
     return (
         <>
             <MetaData page='Works' />

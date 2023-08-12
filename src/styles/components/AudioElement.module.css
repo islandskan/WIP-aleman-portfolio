@@ -1,12 +1,7 @@
 .audioContainer {
-    grid-column: 1 / -1;
     display: grid;
-    margin-top: max(1.5vh, 1.5rem);
-}
-
-.audioInfo {
-    display: grid;
-    row-gap: 2rem;
+    border: 2px solid red;
+    /* margin-top: max(1.5vh, 1.5rem); */
 }
 
 .audioText {
@@ -15,19 +10,13 @@
 }
 
 .audioPlayer {
-    height: min-content;
+    height: 3rem;
     width: 100%;
     background-color: black;
 }
 
 @media screen and (min-width: 550px) {
-    .audioContainer {
-        grid-column: 2 / span 10;
-    }
 }
 
 @media screen and (min-width: 1000px) {
-    .audioContainer {
-        grid-column: 3 / span 8;
-    }
 }
