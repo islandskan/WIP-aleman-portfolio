@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import styles from '../styles/components/ProjectList.module.css';
 import { SrOnly } from './SrOnly.js';
+
 const ProjectListItem = ({ project }) => {
     const { endYear, projectLinkUrl, projectLinksTitle, startYear } =
         project.fields;
