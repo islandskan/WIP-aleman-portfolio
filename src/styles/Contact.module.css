@@ -13,6 +13,9 @@
 
 .contactInfoWrapper h4 {
     width: fit-content;
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--contactTxtSpace);
 }
 
 .contactImg {
@@ -25,16 +28,15 @@
 }
 
 @media screen and (min-width: 550px) {
-}
+    /* change layout for larger screens */
 
-@media screen and (min-width: 568px) {
-    /* .contactWrapper {
-        align-self: center;
-    } */
-    /*
-    .contactImg {
-        padding: 7vmin;
-    } */
+    /* .contact {} */
+
+    /* .contactInfoWrapper {} */
+
+    /* .contactImg {} */
+
+    /* .contactImg img {} */
 }
 
 @media screen and (min-width: 768px) {
