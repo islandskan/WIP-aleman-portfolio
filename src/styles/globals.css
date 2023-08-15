@@ -18,7 +18,7 @@
     --letterSpace: 0.03rem;
     --headlineSpace: 0.085rem;
     --linkSpace: 0.06rem;
-    --layoutSpace: min(8vw, 5.5rem);
+    --layoutSpace: min(8.5vw, 6rem);
 }
 
 ::selection {
@@ -141,11 +141,8 @@ img {
 }
 
 p {
+    line-height: 1.9;
     letter-spacing: var(--letterSpace);
-}
-
-p {
-    line-height: 1.7;
     font-weight: 300;
     font-size: var(--generalFontSize);
 }
@@ -279,7 +276,18 @@ figure,
 .audioContainer {
     display: flex;
     flex-direction: column;
+}
+
+.pageTitleWrapper,
+figure {
     row-gap: var(--space);
+}
+
+.video,
+.linkContainer,
+.txtContainer,
+.audioContainer {
+    row-gap: calc(var(--space) * 1.3);
 }
 
 .goBackBtn {
@@ -295,7 +303,6 @@ figure,
 
 figure {
     align-items: center;
-    padding: 0 0 min(1.5vw, 2rem) 0;
 }
 
 .portraitImg {
@@ -320,8 +327,6 @@ figcaption,
 .mediaInfo,
 .imageInfoText {
     font-size: var(--projectImageTextFontSize);
-    text-align: center;
-    max-width: 75ch;
 }
 
 @media screen and (min-width: 375px) {

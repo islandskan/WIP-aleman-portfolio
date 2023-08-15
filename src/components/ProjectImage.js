@@ -23,7 +23,10 @@ export const ProjectImage = ({ image }) => {
                     height: 'auto',
                 }}
             />
-            <figcaption className='imageInfoText'>
+            <figcaption
+                className='imageInfoText'
+                style={{ maxWidthidth: width }}
+            >
                 <ReactMarkdown>{imageInfoText}</ReactMarkdown>
             </figcaption>
         </figure>

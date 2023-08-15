@@ -14,6 +14,7 @@ export const AudioElement = ({ audioObj }) => {
         <div className={`${styles.audioContainer} audioContainer`}>
             <figure>
                 <Image
+                    className={styles.audioImg}
                     src={`https:${audioImage.fields.file.url}`}
                     alt={audioImgAlt}
                     height={height}
@@ -32,7 +33,10 @@ export const AudioElement = ({ audioObj }) => {
                 <source src={`https:${url}`} type={contentType} />
                 Your browser does not support the audio tag.
             </audio>
-            <div className={`${styles.audioText} mediaInfo`}>
+            <div
+                className={`${styles.audioText} mediaInfo`}
+                style={{ maxWidth: width }}
+            >
                 {documentToReactComponents(audioText)}
             </div>
         </div>

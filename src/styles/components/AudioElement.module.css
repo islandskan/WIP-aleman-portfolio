@@ -1,12 +1,17 @@
 .audioContainer {
     display: grid;
-    border: 2px solid red;
-    /* margin-top: max(1.5vh, 1.5rem); */
+    justify-content: center;
+    margin-top: max(1.5vh, 1.5rem);
+}
+
+.audioImg {
+    margin: auto;
+    max-height: 78vh;
 }
 
 .audioText {
-    font-size: 0.5rem;
-    text-align: start;
+    text-align: center;
+    margin: auto;
 }
 
 .audioPlayer {
