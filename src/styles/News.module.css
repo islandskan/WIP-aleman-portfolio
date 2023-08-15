@@ -2,28 +2,33 @@
     --dark: #08040e;
     --gap: 1.2rem;
     --space: 1.5rem;
+    --cardPadding: 1rem;
     --white: #e3e3e3;
     --opac: 0.5;
-    --lineHeight: 0.5px;
-    --newsTxtSpace: 1vmin;
+    --newsTxtSpace: 1.5vmin;
+    --newsInfoSpace: 2px;
+    align-items: flex-start;
 }
 
 .newsCard {
-    padding: var(--space);
+    max-width: 800px;
+    width: 100%;
+    padding: var(--cardPadding) var(--cardPadding) var(--cardPadding) 0;
+    /* border: 1px solid grey; */
 }
 
 .newsCardTxtWrapper {
     display: flex;
     row-gap: var(--newsTxtSpace);
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
 }
 
-/* .newsInfo {
-    font-style: italic;
-    font-size: 14px;
-} */
+.newsInfo {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--newsInfoSpace);
+}
 
 /* .newsCard.currentNews {
     --lightDark: rgba(45, 40, 52, 0.1);
@@ -46,6 +51,26 @@
 /* .newsCardDates p:nth-of-type(2) {
     margin-left: 10px;
 } */
+
+@media screen and (min-width: 768px) {
+    .newsCardTxtWrapper {
+        row-gap: calc(var(--newsTxtSpace) * 1.1);
+    }
+    .newsInfo {
+        row-gap: calc(var(--newsInfoSpace) + 2px);
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .newsList {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .newsCard {
+        grid-column: 2 / -2;
+    }
+}
 
 @media screen and (min-width: 1000px) {
     .newsList {

@@ -3,7 +3,7 @@
     --space: 1.5rem;
     --cvUnderTitleSpace: 10px;
     --letterSpace: 0.03rem;
-    --cvListSpace: 1vmin;
+    --cvListSpace: 1.5vmin;
     display: flex;
     flex-direction: column;
     grid-column: 1 / span 12;

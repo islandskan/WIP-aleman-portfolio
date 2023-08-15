@@ -16,7 +16,9 @@
     --outline: 0.5px;
     --outlineOffset: 8px;
     --letterSpace: 0.03rem;
-    --layoutSpace: min(8vw, 6.5rem);
+    --headlineSpace: 0.085rem;
+    --linkSpace: 0.06rem;
+    --layoutSpace: min(8vw, 5.5rem);
 }
 
 ::selection {
@@ -41,8 +43,6 @@ body {
     background-color: var(--white);
     color: var(--dark);
     font-family: var(--font);
-    height: 100vh;
-    height: 100svh;
     margin: auto;
 }
 
@@ -62,6 +62,7 @@ a:not(.logo, .skipLink) {
     transition: color 0.3s;
     position: relative;
     line-height: 1.8;
+    letter-spacing: var(--linkSpace);
 }
 
 a:not(.logo, .skipLink)::after {
@@ -139,8 +140,7 @@ img {
     display: block;
 }
 
-p,
-a {
+p {
     letter-spacing: var(--letterSpace);
 }
 
@@ -167,16 +167,16 @@ h5,
 h6,
 .pageTitle,
 .projectTitle {
-    letter-spacing: 0.085rem;
+    letter-spacing: var(--headlineSpace);
     font-weight: 400;
     font-size: var(--projectTitleFontSize);
     text-transform: uppercase;
 }
 
-.menuLink {
+li a.menuLink {
     font-size: 0.9rem;
     line-height: 1.8;
-    letter-spacing: 0.05rem;
+    letter-spacing: var(--headlineSpace);
     user-select: none;
 }
 
@@ -196,10 +196,8 @@ h6,
 
 nav {
     grid-row: 2;
-    /* margin: auto; */
     margin: auto;
     width: 100%;
-    max-width: 800px;
 }
 
 .menu {
@@ -213,19 +211,13 @@ nav {
 .layout {
     min-height: 100vh;
     min-height: 100svh;
-    max-width: 1200px;
+    max-width: 1100px;
     row-gap: var(--layoutSpace);
     margin: auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     padding: 0 calc(var(--space) * 0.5);
-}
-
-.layout::after {
-    content: '';
-    display: block;
-    grid-column: 1 / -1;
 }
 
 .container,
@@ -237,13 +229,15 @@ header {
 header {
     background-color: var(--white);
     grid-template-rows: repeat(2, 1fr);
-    row-gap: var(--space);
-    padding: var(--space) 0 var(--space);
+    row-gap: calc(var(--space) + 0.5rem);
+    padding: calc(var(--space) - 0.5rem) 0 calc(var(--space) - 1rem);
 }
 
 .container {
+    grid-template-rows: auto;
     grid-row: 2 / span 1;
     row-gap: var(--layoutSpace);
+    padding-bottom: var(--layoutSpace);
 }
 
 .projectLayout {
@@ -287,10 +281,6 @@ figure,
     flex-direction: column;
     row-gap: var(--space);
 }
-
-/* .pageTitleWrapper + .video {
-    border: 2px solid orange;
-} */
 
 .goBackBtn {
     margin: auto;

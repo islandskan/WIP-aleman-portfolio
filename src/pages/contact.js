@@ -9,7 +9,7 @@ export async function getStaticProps() {
         space: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     });
-    const res = await client.getAsset('4nx3gWODBf2IqawTOJjAby');
+    const res = await client.getAsset('3LTpX2P3sknq61VOvaJ2ML');
     if (!res) {
         return { notFound: true };
     }
@@ -31,7 +31,7 @@ const Contact = ({ res }) => {
     return (
         <>
             <MetaData page='Contact' />
-            <div className={styles.contact}>
+            <div className={`${styles.contact}`}>
                 <div
                     className={`${styles.contactInfoWrapper} pageTitleWrapper`}
                 >

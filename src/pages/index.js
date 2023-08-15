@@ -3,6 +3,7 @@ import { MetaData } from '../components/MetaData';
 import { createClient } from 'contentful';
 import Image from 'next/image';
 import { setContent } from '../utils/setContentIndex';
+import fetchContent from '../lib/contentful';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -21,7 +22,21 @@ export async function getStaticProps() {
     };
 }
 
+// export async function getStaticProps() {
+//     const entries = await fetchContent('projects');
+//     const res = entries.map((item) => {
+//         return item;
+//     });
+
+//     return {
+//         props: {
+//             res,
+//         },
+//     };
+// }
+
 function Home({ res }) {
+    console.log(res);
     const { content } = res.fields;
     const landingContent = content[0];
     const { details, url } = landingContent.fields.image.fields.file;

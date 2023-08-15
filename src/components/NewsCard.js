@@ -20,11 +20,22 @@ export const NewsCard = ({ card }) => {
                 ) : (
                     <h4 className={styles.newsCardTitle}>{title}</h4>
                 )}
-                {newsInfo && <p>{newsInfo}</p>}
+                {(newsInfo || location) && (
+                    <div className={styles.newsInfo}>
+                        {newsInfo && <p>{newsInfo}</p>}
+
+                        {location && (
+                            <p className={styles.newsCardLocation}>
+                                {location}
+                            </p>
+                        )}
+                    </div>
+                )}
+                {/* {newsInfo && <p>{newsInfo}</p>}
 
                 {location && (
                     <p className={styles.newsCardLocation}>{location}</p>
-                )}
+                )} */}
             </div>
         </div>
     );
