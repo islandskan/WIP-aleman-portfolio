@@ -211,7 +211,7 @@ nav {
 .layout {
     min-height: 100vh;
     min-height: 100svh;
-    max-width: 1100px;
+    max-width: 1000px;
     row-gap: var(--layoutSpace);
     margin: auto;
     display: grid;
