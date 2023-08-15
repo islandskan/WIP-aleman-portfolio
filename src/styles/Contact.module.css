@@ -30,7 +30,7 @@
         row-gap: 0;
         column-gap: var(--layoutSpace);
         align-items: center;
-        margin-bottom: 3rem;
+        margin-bottom: 4rem;
         justify-content: space-between;
     }
 
