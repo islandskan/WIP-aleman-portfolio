@@ -1,8 +1,9 @@
 .contact {
     --space: 1.5rem;
-    --layoutSpace: min(6vw, 5.5rem);
+    --layoutSpace: min(8.5vw, 6rem);
     --lineHeight: 0.5px;
     --contactTxtSpace: 1vmin;
+    --contactInfoSpace: 3.5vmin;
     display: flex;
     flex-direction: column;
     row-gap: var(--layoutSpace);
@@ -48,7 +49,8 @@
     }
 
     .contactInfoWrapper {
-        grid-column: 2 / span 2;
+        grid-column: 1 / span 3;
+        row-gap: var(--contactInfoSpace);
     }
 
     .contactImg {

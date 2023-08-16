@@ -68,7 +68,8 @@
     }
 
     .newsCard {
-        grid-column: 2 / -2;
+        padding-right: 0;
+        grid-column: 5 / span 5;
     }
 }
 
