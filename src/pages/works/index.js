@@ -27,7 +27,7 @@ function Works({ projectLinks }) {
         <>
             <MetaData page='Works' />
 
-            <ul id='works' className={`${styles.projectsList} projectsList`}>
+            <ul id='works' className={`${styles.projectsList} listLayout`}>
                 {projectList}
             </ul>
         </>

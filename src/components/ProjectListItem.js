@@ -8,7 +8,7 @@ const ProjectListItem = ({ project }) => {
         project.fields;
 
     return (
-        <li key={projectLinkUrl} className={styles.projectLink}>
+        <li key={projectLinkUrl} className={`${styles.projectLink} listChild`}>
             <Link href={`/works/${projectLinkUrl}`}>
                 <SrOnly text={`Go to ${projectLinksTitle}`} />
 

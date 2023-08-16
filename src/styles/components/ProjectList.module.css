@@ -1,8 +1,9 @@
 .projectsList {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-around; */
+    /* border: 1px solid red; */
 }
 
 .projectLink {
@@ -15,7 +16,4 @@
 
 .projectLink span {
     margin-left: 22px;
-}
-
-@media screen and (min-width: 768px) {
 }

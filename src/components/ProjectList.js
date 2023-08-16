@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const ProjectList = ({ projects, url }) => {
     const projectList = projects.map((project) => (
-        <li key={project.sys.id} className={styles.projectLink}>
+        <li key={project.sys.id} className={`${styles.projectLink} listChild`}>
             <Link href={`${url}/${project.fields.slug}`}>
                 {project.fields.projectTitle}
             </Link>
@@ -11,7 +11,7 @@ export const ProjectList = ({ projects, url }) => {
     ));
     return (
         <>
-            <ul id='works' className={`${styles.projectsList} projectsList`}>
+            <ul id='works' className={`${styles.projectsList} listLayout`}>
                 {projectList}
             </ul>
         </>
