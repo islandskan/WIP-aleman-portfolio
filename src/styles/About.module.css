@@ -20,6 +20,11 @@
     grid-template-rows: 50px auto;
 }
 
+.artistContainer h3,
+.cvContainer h4 {
+    text-align: start;
+}
+
 .cvContainer b {
     font-weight: 400;
 }

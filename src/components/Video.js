@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
-import styles from '../styles/Project.module.css';
+import styles from '../styles/components/Video.module.css';
 import ReactMarkdown from 'react-markdown';
 
 export const Video = ({ video }) => {
