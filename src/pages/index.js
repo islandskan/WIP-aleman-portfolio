@@ -47,14 +47,15 @@ function Home({ res }) {
     return (
         <>
             <MetaData page='Start' />
-
-            <Image
-                className={styles.homeImg}
-                alt={landingContent.fields.imageAltText}
-                src={`https:${url}`}
-                height={HEIGHT}
-                width={WIDTH}
-            />
+            <div className='homePageWrapper'>
+                <Image
+                    className={styles.homeImg}
+                    alt={landingContent.fields.imageAltText}
+                    src={`https:${url}`}
+                    height={HEIGHT}
+                    width={WIDTH}
+                />
+            </div>
         </>
     );
 }

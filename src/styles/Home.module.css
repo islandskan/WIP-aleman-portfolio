@@ -1,18 +1,13 @@
 .homeImg {
-    /* height: 100%; */
-    /* max-height: 100vh; */
-    /* object-fit: cover; */
-    /* object-position: 5%; */
+    --space: 1.5rem;
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+    object-position: 80%;
 }
 
 @media screen and (min-width: 1000px) {
     .homeImg {
-        /* object-fit: contain; */
-        /* object-position: 50% 50%; */
+        object-fit: contain;
     }
 }
-
-/* .homeImg img {
-    height: 100%;
-    aspect-ratio: 18/9;
-} */

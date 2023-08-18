@@ -19,7 +19,7 @@
     --letterSpace: 0.03rem;
     --headlineSpace: 0.085rem;
     --linkSpace: 0.06rem;
-    --layoutSpace: min(8.5vw, 6rem);
+    --layoutSpace: min(3.5vh, 3rem);
 }
 
 ::selection {
@@ -150,6 +150,7 @@ p {
 
 .logo {
     margin: auto;
+    max-width: fit-content;
     font-size: var(--logoFontSize);
     font-weight: 400;
     text-transform: uppercase;
@@ -192,6 +193,19 @@ li a.menuLink {
     opacity: 0.5;
 }
 
+.container,
+header {
+    display: grid;
+    grid-column: 1 / -1;
+}
+
+header {
+    background-color: var(--white);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 1rem;
+    padding-top: var(--space);
+}
+
 nav {
     grid-row: 2;
     margin: auto;
@@ -202,6 +216,7 @@ nav {
     display: flex;
     text-transform: uppercase;
     justify-content: space-between;
+    padding-bottom: var(--layoutSpace);
 }
 
 /* Layout styles */
@@ -210,7 +225,6 @@ nav {
     min-height: 100vh;
     min-height: 100svh;
     max-width: 1100px;
-    row-gap: var(--layoutSpace);
     margin: auto;
     display: grid;
     grid-template-columns: 1fr;
@@ -218,21 +232,7 @@ nav {
     padding: 0 calc(var(--space) * 0.5);
 }
 
-.container,
-header {
-    display: grid;
-    grid-column: 1 / -1;
-}
-
-header {
-    background-color: var(--white);
-    grid-template-rows: repeat(2, 1fr);
-    row-gap: calc(var(--space) + 0.5rem);
-    padding: calc(var(--space)) 0 calc(var(--space) - 1rem) 0;
-}
-
 .container {
-    grid-template-rows: auto;
     grid-row: 2 / span 1;
     row-gap: var(--layoutSpace);
     padding-bottom: var(--layoutSpace);
@@ -304,6 +304,14 @@ figure {
 .linkContainer {
     row-gap: calc(var(--space) * 1.5);
     /* row-gap: calc(max(1.5vh, 1.5rem) * 1.5); */
+}
+
+.homePageWrapper {
+    grid-column: 1 / -1;
+    grid-row: 1 / span 1;
+    display: flex;
+    justify-content: center;
+    max-height: 75vh;
 }
 
 .goBackBtn {
