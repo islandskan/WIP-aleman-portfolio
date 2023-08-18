@@ -31,8 +31,8 @@ export const Video = ({ video }) => {
                         <Image
                             src={videoThumbnailURL}
                             alt={internalName}
-                            height={350}
-                            width={560}
+                            height={HEIGHT}
+                            width={WIDTH}
                         />
                     }
                 />

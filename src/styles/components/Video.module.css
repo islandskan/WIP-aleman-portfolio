@@ -1,14 +1,19 @@
 /* STYLES FOR PROJECT COMPONENTS */
 
 .videoContainer {
+    --layoutSpace: min(3.5vh, 3rem);
     --pageSpace: calc(var(--layoutSpace) + 1rem);
-    aspect-ratio: 16/9;
+    --space: 1.5rem;
+    --aspectRatio: 16/9;
+}
+
+.videoContainer iframe {
+    /* padding-bottom: calc(100% / (var(--aspectRatio))); */
 }
 
 .videoContainer img {
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
+    height: auto;
+    /* padding-bottom: calc(100% / (var(--aspectRatio))); */
 }
 
 .videoText {
