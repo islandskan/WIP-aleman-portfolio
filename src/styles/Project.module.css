@@ -28,14 +28,6 @@
     margin: auto;
 }
 
-.linkContainer {
-    /* border: 1px solid red; */
-    /* grid-column: span 12; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 @media screen and (min-width: 411px) {
 }
 
@@ -49,12 +41,6 @@
     .essayContainer {
         /* grid-column: 3 / span 8; */
         /* grid-column: span 6; */
-    }
-
-    .linkContainer {
-        /* flex-direction: row;
-        align-items: center;
-        justify-content: space-between; */
     }
 }
 

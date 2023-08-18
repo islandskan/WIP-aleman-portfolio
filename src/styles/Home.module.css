@@ -1,14 +1,14 @@
 .homeImg {
     /* height: 100%; */
     /* max-height: 100vh; */
-    object-fit: cover;
-    object-position: 5%;
+    /* object-fit: cover; */
+    /* object-position: 5%; */
 }
 
 @media screen and (min-width: 1000px) {
     .homeImg {
-        object-fit: contain;
-        object-position: 50% 50%;
+        /* object-fit: contain; */
+        /* object-position: 50% 50%; */
     }
 }
 

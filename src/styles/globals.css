@@ -13,6 +13,7 @@
     --generalFontSize: 0.85rem;
     --projectImageTextFontSize: 12px;
     --space: 1.5rem;
+    --listSpace: 1vh;
     --outline: 0.5px;
     --outlineOffset: 8px;
     --letterSpace: 0.03rem;
@@ -249,7 +250,7 @@ header {
     align-items: flex-start;
     justify-content: space-around;
     grid-row: 1 / span 1;
-    padding: calc(var(--space) * 2) 0;
+    /* padding: calc(var(--listSpace)) 0; */
 }
 
 .listChild {
@@ -285,9 +286,9 @@ nav,
 .pageTitleWrapper,
 figure,
 .video,
-.linkContainer,
 .txtContainer,
-.audioContainer {
+.audioContainer,
+.linkContainer {
     display: flex;
     flex-direction: column;
 }
@@ -298,10 +299,11 @@ figure {
 }
 
 .video,
-.linkContainer,
 .txtContainer,
-.audioContainer {
-    row-gap: calc(var(--space) * 1.3);
+.audioContainer,
+.linkContainer {
+    row-gap: calc(var(--space) * 1.5);
+    /* row-gap: calc(max(1.5vh, 1.5rem) * 1.5); */
 }
 
 .goBackBtn {
@@ -313,6 +315,10 @@ figure {
 .imageContainer {
     display: grid;
     row-gap: max(4vh, 4rem);
+}
+
+.linkContainer {
+    margin-top: calc(var(--space) * 1.5);
 }
 
 figure {
@@ -403,7 +409,6 @@ figcaption,
 @media screen and (min-width: 900px) {
     .listLayout {
         align-items: center;
-        padding: calc(var(--space) * 0.5) 0;
     }
 
     .listChild {
@@ -411,12 +416,6 @@ figcaption,
 }
 
 @media screen and (min-width: 1000px) {
-    nav {
-        /* margin: auto;
-        width: 100%;
-        max-width: 800px; */
-    }
-
     .pageTitleWrapper {
         max-width: 800px;
     }

@@ -4,9 +4,12 @@ import styles from '../styles/components/PDFElement.module.css';
 import ReactMarkdown from 'react-markdown';
 
 export const ThumbnailLink = ({ item }) => {
-    console.log(item.linkAssetText);
     const linkImg = 'thumbnail' in item ? item.thumbnail.fields : '';
 
+    const { height: HEIGHT, width: WIDTH } =
+        item.thumbnail.fields.file.details.image;
+
+    console.log(HEIGHT, WIDTH);
     const linkUrl =
         'linkAsset' in item
             ? `https:${item.linkAsset.fields.file.url}`
@@ -16,8 +19,8 @@ export const ThumbnailLink = ({ item }) => {
         <Image
             src={`https:${linkImg.file.url}`}
             alt={linkImg.description}
-            width={300}
-            height={500}
+            width={WIDTH}
+            height={HEIGHT}
             loading='lazy'
             className={styles.PDFthumbnailImg}
         />
@@ -25,8 +28,9 @@ export const ThumbnailLink = ({ item }) => {
         item.linkText
     );
 
+    // fix the height and width
     return (
-        <div className={styles.PDFthumbnail}>
+        <div className={styles.thumbnail}>
             <Link
                 href={linkUrl}
                 className={`${styles.PDFLink} skipLink`}

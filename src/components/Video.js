@@ -37,7 +37,10 @@ export const Video = ({ video }) => {
                     }
                 />
             )}
-            <figcaption className={`${styles.videoText} imageInfoText`}>
+            <figcaption
+                className={`${styles.videoText} imageInfoText`}
+                style={{ maxWidth: WIDTH }}
+            >
                 <ReactMarkdown>{videoText}</ReactMarkdown>
             </figcaption>
         </div>

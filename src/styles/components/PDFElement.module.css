@@ -1,39 +1,40 @@
 /* Styles for the PDF component on Hilma Page */
 
-.PDFthumbnail {
-    margin-top: max(4vh, 3.5rem);
+.thumbnail {
+    --listSpace: max(1.5vh, 1.5rem);
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 300px;
+    /* row-gap: 1.5vh; */
+    row-gap: var(--listSpace);
+}
+
+.thumbnail:first-of-type {
+    margin-bottom: var(--listSpace);
 }
 
 .PDFLink {
 }
 
 .PDFthumbnailImg {
+    height: fit-content;
+}
+
+.PDFthumbnailImg,
+.PDFthumbnailTxt {
+    max-width: 400px;
 }
 
 .PDFthumbnailTxt {
-    padding: 0 4px;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    text-align: start;
-    margin-top: max(1.5vh, 1.5rem);
 }
 
 @media screen and (min-width: 1000px) {
-    .PDFthumbnail {
-        flex-direction: row;
-        max-width: max-content;
-    }
-
     .PDFthumbnailImg {
-        max-width: 300px;
+        /* max-width: 300px; */
     }
 
     .PDFthumbnailTxt {
-        padding-left: max(1.5vh, 1.5rem);
-        margin-top: 0;
+        /* padding-left: max(1.5vh, 1.5rem); */
+        /* margin-top: 0; */
     }
 }

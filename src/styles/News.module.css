@@ -11,10 +11,8 @@
 }
 
 .newsCard {
-    max-width: 800px;
-    width: 100%;
+    width: fit-content;
     padding: var(--cardPadding) var(--cardPadding) var(--cardPadding) 0;
-    /* border: 1px solid grey; */
 }
 
 .newsCardTxtWrapper {
@@ -63,13 +61,21 @@
 
 @media screen and (min-width: 900px) {
     .newsList {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
+        align-items: center;
     }
 
     .newsCard {
         padding-right: 0;
-        grid-column: 5 / span 5;
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .newsCardTxtWrapper {
+        align-items: center;
+    }
+
+    .newsInfo {
+        text-align: center;
     }
 }
 
