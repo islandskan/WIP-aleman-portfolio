@@ -4,7 +4,6 @@ import { ThumbnailLink } from '../../../components/ThumbnailLink.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { Video } from '../../../components/Video.js';
 import { createClient } from 'contentful';
-import styles from '../../../styles/Project.module.css';
 
 import { setContent } from '../../../utils/setContentIndex.js';
 import { GoBackLink } from '../../../components/GoBackLink.js';

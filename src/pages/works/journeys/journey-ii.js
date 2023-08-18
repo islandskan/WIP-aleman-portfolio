@@ -4,7 +4,6 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { INLINES } from '@contentful/rich-text-types';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { setContent } from '../../../utils/setContentIndex.js';
-import styles from '../../../styles/Project.module.css';
 import { GoBackLink } from '../../../components/GoBackLink.js';
 
 export async function getStaticProps() {

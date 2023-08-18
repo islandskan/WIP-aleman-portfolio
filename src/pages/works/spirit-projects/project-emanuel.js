@@ -4,7 +4,6 @@ import { getProjectTxt } from '../../../utils/getProjectContent.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Video } from '../../../components/Video.js';
-import styles from '../../../styles/Project.module.css';
 import { GoBackLink } from '../../../components/GoBackLink.js';
 import { ThumbnailLink } from '../../../components/ThumbnailLink.js';
 import { setContent } from '../../../utils/setContentIndex.js';

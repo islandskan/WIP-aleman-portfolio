@@ -1,41 +1,15 @@
 /* STYLES FOR PROJECT COMPONENTS */
 
 .videoContainer {
-    min-height: 90vh;
-}
-
-/* style for mobile/smaller screens */
-
-.videoContainer img,
-.videoContainer > div,
-.videoContainer > div > div,
-.videoContainer iframe {
-    max-width: 750px;
-    width: 100%;
-    margin: auto;
+    aspect-ratio: 16/9;
 }
 
 .videoContainer img {
-    object-fit: cover;
     height: 100%;
-}
-
-.videoContainer iframe {
-    /* max-width: 800px; */
+    object-fit: cover;
+    width: 100%;
 }
 
 .videoText {
     margin: auto;
-}
-
-@media screen and (min-width: 411px) {
-}
-
-@media screen and (min-width: 550px) {
-}
-
-@media screen and (min-width: 1000px) {
-}
-
-@media screen and (min-width: 1024px) {
 }

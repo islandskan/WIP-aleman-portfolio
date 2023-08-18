@@ -1,4 +1,3 @@
-import styles from '../../../styles/Home.module.css';
 import { MetaData } from '../../../components/MetaData.js';
 import { GoBackLink } from '../../../components/GoBackLink.js';
 import { createClient } from 'contentful';
