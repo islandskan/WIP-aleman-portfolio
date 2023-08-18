@@ -280,6 +280,10 @@ nav,
     grid-column: 1 / -1;
 }
 
+.video {
+    margin-bottom: var(--pageSpace);
+}
+
 .pageTitleWrapper {
     grid-row: 1 / span 1;
     justify-self: center;

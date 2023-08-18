@@ -1,6 +1,7 @@
 /* STYLES FOR PROJECT COMPONENTS */
 
 .videoContainer {
+    --pageSpace: calc(var(--layoutSpace) + 1rem);
     aspect-ratio: 16/9;
 }
 
