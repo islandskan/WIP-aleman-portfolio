@@ -261,8 +261,7 @@ nav {
     align-items: flex-start;
     justify-content: space-around;
     grid-row: 1 / span 1;
-    height: 50vh;
-    align-self: center;
+    height: 55vh;
 }
 
 .listChild {

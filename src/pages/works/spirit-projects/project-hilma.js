@@ -27,6 +27,7 @@ export async function getStaticProps() {
 
 function Hilma({ res }) {
     const { title, content, slug } = res.fields;
+    console.log(res);
     const hilmaText = setContent(content, 'textParagraph');
     const hilmaImages = setContent(content, 'imageInfoText');
 
@@ -36,7 +37,7 @@ function Hilma({ res }) {
     const hilmaVideo = setContent(content, 'videoId');
     return (
         <>
-            <MetaData page={title} />
+            <MetaData page={slug} />
 
             <div className='pageTitleWrapper'>
                 <h2 className='projectTitle'>{title}</h2>
