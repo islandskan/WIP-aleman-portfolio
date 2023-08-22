@@ -8,6 +8,7 @@
     --newsTxtSpace: 1.5vmin;
     --newsInfoSpace: 2px;
     align-items: flex-start;
+    justify-self: flex-start;
 }
 
 .newsCard {
@@ -62,6 +63,7 @@
 @media screen and (min-width: 900px) {
     .newsList {
         align-items: center;
+        justify-self: center;
     }
 
     .newsCard {
