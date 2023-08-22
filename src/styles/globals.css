@@ -8,7 +8,7 @@
     /* --transparentDark: rgba(14, 6, 27, 0.8); */
     --transparentDarker: rgba(14, 6, 27, 0.7);
     --font: 'Quicksand', sans-serif;
-    --logoFontSize: 1.2rem;
+    --logoFontSize: 1.1rem;
     --projectTitleFontSize: 0.9rem;
     --generalFontSize: 0.85rem;
     --projectImageTextFontSize: 12px;
@@ -150,11 +150,12 @@ p {
 }
 
 .logo {
-    margin: auto;
-    max-width: fit-content;
     font-size: var(--logoFontSize);
     font-weight: 400;
+    justify-self: center;
+    height: fit-content;
     text-transform: uppercase;
+    text-align: center;
     letter-spacing: 0.07rem;
     user-select: none;
     color: var(--transparentDarker);
