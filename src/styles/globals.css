@@ -271,7 +271,6 @@ nav {
 .pageTitleWrapper,
 .imageContainer,
 .audioContainer,
-.video,
 .linkContainer,
 nav,
 .goBackBtn,
@@ -279,8 +278,16 @@ nav,
     grid-column: 1 / -1;
 }
 
-.video {
+.videoContainer {
+    /* border: 1px solid red; */
     margin-bottom: var(--pageSpace);
+}
+
+.videoBtn {
+    position: absolute;
+    bottom: 40%;
+    left: 40%;
+    /* border: 1px solid red; */
 }
 
 .pageTitleWrapper {
@@ -298,20 +305,20 @@ nav,
 
 .pageTitleWrapper,
 figure,
-.video,
 .txtContainer,
 .audioContainer,
-.linkContainer {
+.linkContainer,
+.videoContainer {
     display: flex;
     flex-direction: column;
 }
 
 .pageTitleWrapper,
-figure {
+figure,
+.videoContainer {
     row-gap: var(--space);
 }
 
-.video,
 .txtContainer,
 .audioContainer,
 .linkContainer {
