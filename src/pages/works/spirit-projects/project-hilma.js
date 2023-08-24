@@ -40,7 +40,6 @@ function Hilma({ res }) {
             <MetaData page={slug} />
 
             <div className='pageTitleWrapper'>
-                <h2 className='projectTitle'>{title}</h2>
                 <p>{hilmaText[0].fields.textParagraph}</p>
             </div>
 

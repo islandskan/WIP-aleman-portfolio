@@ -232,7 +232,7 @@ nav {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     row-gap: var(--layoutSpace);
-    padding: 0 calc(var(--space) * 0.5);
+    margin: 0 calc(var(--space) * 0.5);
 }
 
 .container {
