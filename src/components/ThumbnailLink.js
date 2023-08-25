@@ -9,7 +9,6 @@ export const ThumbnailLink = ({ item }) => {
     const { height: HEIGHT, width: WIDTH } =
         item.thumbnail.fields.file.details.image;
 
-    console.log(HEIGHT, WIDTH);
     const linkUrl =
         'linkAsset' in item
             ? `https:${item.linkAsset.fields.file.url}`
@@ -28,7 +27,6 @@ export const ThumbnailLink = ({ item }) => {
         item.linkText
     );
 
-    // fix the height and width
     return (
         <div className={styles.thumbnail}>
             <Link
@@ -41,6 +39,7 @@ export const ThumbnailLink = ({ item }) => {
             {item.linkAssetText && (
                 <figcaption
                     className={`${styles.PDFthumbnailTxt} imageInfoText`}
+                    style={{ maxWidth: WIDTH }}
                 >
                     <ReactMarkdown>{item.linkAssetText}</ReactMarkdown>
                 </figcaption>
