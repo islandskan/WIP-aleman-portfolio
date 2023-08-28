@@ -1,6 +1,8 @@
 import { MetaData } from '../../../components/MetaData.js';
 import { createClient } from 'contentful';
 import { getProjectTxt } from '../../../utils/getProjectContent.js';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
 import { setContent } from '../../../utils/setContentIndex.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { Video } from '../../../components/Video.js';
@@ -25,7 +27,7 @@ export async function getStaticProps() {
 function Axel({ res }) {
     const { title, content, slug } = res.fields;
 
-    const axelText = setContent(content, 'textParagraph');
+    const axelText = setContent(content, 'formattedText');
     const axelImages = setContent(content, 'imageInfoText');
     const axelVideo = setContent(content, 'videoId');
 
@@ -34,8 +36,7 @@ function Axel({ res }) {
             <MetaData page={title} />
 
             <div className='pageTitleWrapper'>
-                <h2 className='projectTitle'>{title}</h2>
-                <p>{axelText[0].fields.textParagraph}</p>
+                {documentToReactComponents(axelText[0].fields.formattedText)}
             </div>
 
             <Video video={axelVideo} />

@@ -13,6 +13,11 @@
     --generalFontSize: 0.85rem;
     --projectImageTextFontSize: 12px;
     --space: 1.5rem;
+    --headerTopSpace: 3rem;
+    --headerBottomSpace: calc(var(--headerTopSpace) * 0.5);
+    --headerHeight: calc(
+        var(--headerTopSpace) + var(--headerBottomSpace) + 100px
+    );
     --listSpace: 1vh;
     --outline: 0.5px;
     --outlineOffset: 8px;
@@ -201,11 +206,10 @@ header {
 }
 
 header {
+    grid-row: 1 / span 1;
     background-color: var(--white);
     grid-template-rows: repeat(2, 1fr);
-    row-gap: var(--space);
-    padding-top: var(--space);
-    margin-bottom: calc(var(--space) + 0.5rem);
+    padding: var(--headerTopSpace) 0 var(--headerBottomSpace) 0;
 }
 
 nav {
@@ -223,12 +227,12 @@ nav {
 /* Layout styles */
 
 .layout {
-    min-height: 100vh;
-    min-height: 100svh;
+    height: 100vh;
+    height: 100svh;
     max-width: 1100px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: var(--headerHeight) auto;
     row-gap: var(--layoutSpace);
     padding: 0 calc(var(--space) * 0.5);
     margin: auto;
@@ -237,8 +241,7 @@ nav {
 .container {
     grid-row: 2 / span 1;
     row-gap: var(--layoutSpace);
-    padding: var(--layoutSpace) 0;
-    /* justify-items: center; */
+    padding-bottom: var(--space);
 }
 
 .projectLayout {
@@ -261,7 +264,6 @@ nav {
     align-items: flex-start;
     justify-content: space-around;
     grid-row: 1 / span 1;
-    height: 55vh;
 }
 
 .listChild {
@@ -279,7 +281,6 @@ nav,
 }
 
 .videoContainer {
-    /* border: 1px solid red; */
     margin-bottom: var(--pageSpace);
 }
 
@@ -287,7 +288,6 @@ nav,
     position: absolute;
     bottom: 40%;
     left: 40%;
-    /* border: 1px solid red; */
 }
 
 .pageTitleWrapper {
@@ -323,15 +323,12 @@ figure,
 .audioContainer,
 .linkContainer {
     row-gap: calc(var(--space) * 1.5);
-    /* row-gap: calc(max(1.5vh, 1.5rem) * 1.5); */
 }
 
 .homePageWrapper {
     grid-column: 1 / -1;
     grid-row: 1 / span 1;
-    display: flex;
-    justify-content: center;
-    max-height: 75vh;
+    position: relative;
 }
 
 .goBackBtn {

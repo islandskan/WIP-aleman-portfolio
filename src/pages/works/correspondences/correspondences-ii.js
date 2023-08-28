@@ -42,7 +42,6 @@ function Korrespondanser2({ res }) {
             <MetaData page={title} />
 
             <div className='pageTitleWrapper'>
-                <h2 className='projectTitle'>{title}</h2>
                 {documentToReactComponents(
                     corr2Text[0].fields.formattedText,
                     options

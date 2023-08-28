@@ -1,12 +1,11 @@
 import { ThumbnailLink } from './ThumbnailLink';
 
-export const LinkList = ({ links, className }) => {
+export const LinkList = ({ links }) => {
+    console.log(links);
     const list = links.map((link) => (
         <li key={link.sys.id}>
-            <ThumbnailLink item={link} />
+            <ThumbnailLink item={link} />{' '}
         </li>
     ));
-    return (
-        <div className={`${className.linkContainer} linkContainer`}>{list}</div>
-    );
+    return <ul className='linkContainer'>{list}</ul>;
 };

@@ -3,6 +3,7 @@ import { ImageCollection } from '../../../components/ImageCollection.js';
 import { createClient } from 'contentful';
 import { GoBackLink } from '../../../components/GoBackLink.js';
 import { setContent } from '../../../utils/setContentIndex.js';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -23,13 +24,14 @@ export async function getStaticProps() {
 function AxisMundi({ res }) {
     const { title, content, slug } = res.fields;
     const axisMundiImages = setContent(content, 'imageInfoText');
-    const axisMundiText = setContent(content, 'textParagraph');
+    const axisMundiText = setContent(content, 'formattedText');
     return (
         <>
             <MetaData page={title} />
             <div className='pageTitleWrapper'>
-                <h2 className='projectTitle'>{title}</h2>
-                <p>{axisMundiText[0].fields.textParagraph}</p>
+                {documentToReactComponents(
+                    axisMundiText[0].fields.formattedText
+                )}
             </div>
             <div className='imageContainer'>
                 <ImageCollection images={axisMundiImages} />

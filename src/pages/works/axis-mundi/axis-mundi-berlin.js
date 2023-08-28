@@ -6,6 +6,7 @@ import { ImageCollection } from '../../../components/ImageCollection.js';
 import { createClient } from 'contentful';
 import { GoBackLink } from '../../../components/GoBackLink.js';
 import { AudioElement } from '../../../components/AudioElement.js';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -28,13 +29,14 @@ function AxisMundiBerlin({ res }) {
     const { title, content, slug } = res.fields;
     const axisMundiAudio = setContent(content, 'audio');
     const axisMundiBerlinImages = setContent(content, 'imageInfoText');
-    const axisMundiBerlinText = setContent(content, 'textParagraph');
+    const axisMundiBerlinText = setContent(content, 'formattedText');
     return (
         <>
             <MetaData page={title} />
             <div className='pageTitleWrapper'>
-                <h2 className='projectTitle'>{title}</h2>
-                <p>{axisMundiBerlinText[0].fields.textParagraph}</p>
+                {documentToReactComponents(
+                    axisMundiBerlinText[0].fields.formattedText
+                )}
             </div>
             <div className='imageContainer'>
                 <ImageCollection images={axisMundiBerlinImages} />

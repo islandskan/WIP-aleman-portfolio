@@ -1,7 +1,7 @@
 export function isVerticalImg(h, w, txt) {
     const diff = Math.abs(h - w);
-    console.log(`${txt}: ${Math.abs(h - w)}`);
-    console.log(`${txt}: ${diff <= 300}`);
+    // console.log(`${txt}: ${Math.abs(h - w)}`);
+    // console.log(`${txt}: ${diff <= 300}`);
     let className = 'landscapeImg';
     if (h > w && diff > 350) {
         className = 'portraitImg';

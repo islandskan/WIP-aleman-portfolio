@@ -49,7 +49,6 @@ function Journey2({ res }) {
             <MetaData page={title} />
 
             <div className='pageTitleWrapper'>
-                <h2 className='projectTitle'>{title}</h2>
                 {documentToReactComponents(
                     journey2Text[0].fields.formattedText,
                     options

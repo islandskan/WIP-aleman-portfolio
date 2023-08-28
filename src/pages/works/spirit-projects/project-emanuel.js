@@ -1,11 +1,10 @@
 import { MetaData } from '../../../components/MetaData.js';
 import { createClient } from 'contentful';
-import { getProjectTxt } from '../../../utils/getProjectContent.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Video } from '../../../components/Video.js';
 import { GoBackLink } from '../../../components/GoBackLink.js';
-import { ThumbnailLink } from '../../../components/ThumbnailLink.js';
+import { LinkList } from '../../../components/ThumbNailLinkList.js';
 import { setContent } from '../../../utils/setContentIndex.js';
 
 export async function getStaticProps() {
@@ -25,9 +24,8 @@ export async function getStaticProps() {
 }
 function Emanuel({ res }) {
     const { title, content, slug } = res.fields;
-    console.log(content);
-    const emanuelPDF = content[5].fields;
-    const emanuelText = setContent(content, 'textParagraph');
+    const emanuelText = setContent(content, 'formattedText');
+    const emanuelPDF = setContent(content, 'thumbnail');
     const emanuelImages = setContent(content, 'imageInfoText');
     const emanuelVideo = setContent(content, 'videoId');
 
@@ -36,8 +34,7 @@ function Emanuel({ res }) {
             <MetaData page={title} />
 
             <div className='pageTitleWrapper'>
-                <h2 className='projectTitle'>{title}</h2>
-                <p>{emanuelText[0].fields.textParagraph}</p>
+                {documentToReactComponents(emanuelText[0].fields.formattedText)}
             </div>
 
             <Video video={emanuelVideo} />
@@ -45,9 +42,7 @@ function Emanuel({ res }) {
             <div className='imageContainer'>
                 <ImageCollection images={emanuelImages} />
             </div>
-            <div className='linkContainer'>
-                <ThumbnailLink item={emanuelPDF} />
-            </div>
+            <LinkList links={emanuelPDF} />
 
             <GoBackLink slug={slug} />
         </>

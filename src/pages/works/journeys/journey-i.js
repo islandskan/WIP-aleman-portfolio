@@ -4,6 +4,7 @@ import { getProjectTxt } from '../../../utils/getProjectContent.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { GoBackLink } from '../../../components/GoBackLink.js';
 import { setContent } from '../../../utils/setContentIndex.js';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -23,16 +24,18 @@ export async function getStaticProps() {
 function Journey1({ res }) {
     const { title, content, slug } = res.fields;
 
-    const journey1Text = setContent(content, 'textParagraph');
+    const journey1Text = setContent(content, 'formattedText');
     const journey1Images = setContent(content, 'imageInfoText');
 
+    console.log(journey1Text);
     return (
         <>
             <MetaData page={title} />
 
             <div className='pageTitleWrapper'>
-                <h2 className='projectTitle'>{title}</h2>
-                <p>{journey1Text[0].fields.textParagraph}</p>
+                {documentToReactComponents(
+                    journey1Text[0].fields.formattedText
+                )}
             </div>
             <div className='imageContainer'>
                 <ImageCollection images={journey1Images} />

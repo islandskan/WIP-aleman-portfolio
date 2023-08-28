@@ -1,13 +1,11 @@
 import { MetaData } from '../../../components/MetaData.js';
-import { ThumbnailLink } from '../../../components/ThumbnailLink.js';
-// import { LinkList } from '../../../components/ThumbNailLinkList.js';
+import { LinkList } from '../../../components/ThumbNailLinkList.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { Video } from '../../../components/Video.js';
 import { createClient } from 'contentful';
-
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { setContent } from '../../../utils/setContentIndex.js';
 import { GoBackLink } from '../../../components/GoBackLink.js';
-// import Link from 'next/link.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -27,20 +25,17 @@ export async function getStaticProps() {
 
 function Hilma({ res }) {
     const { title, content, slug } = res.fields;
-    console.log(res);
-    const hilmaText = setContent(content, 'textParagraph');
+    const hilmaText = setContent(content, 'formattedText');
     const hilmaImages = setContent(content, 'imageInfoText');
 
-    // const hilmaLinks = setContent(content, 'linkText');
-    const blogLink = content[13].fields;
-    const hilmaPDF = content[14].fields;
+    const hilmaThumbnails = setContent(content, 'thumbnail');
     const hilmaVideo = setContent(content, 'videoId');
     return (
         <>
-            <MetaData page={slug} />
+            <MetaData page={title} />
 
             <div className='pageTitleWrapper'>
-                <p>{hilmaText[0].fields.textParagraph}</p>
+                {documentToReactComponents(hilmaText[0].fields.formattedText)}
             </div>
 
             <Video video={hilmaVideo} />
@@ -48,10 +43,7 @@ function Hilma({ res }) {
             <div className='imageContainer'>
                 <ImageCollection images={hilmaImages} />
             </div>
-            <div className='linkContainer'>
-                <ThumbnailLink item={hilmaPDF} />
-                <ThumbnailLink item={blogLink} />
-            </div>
+            <LinkList links={hilmaThumbnails} />
 
             <GoBackLink slug={slug} />
         </>

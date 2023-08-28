@@ -4,15 +4,19 @@ import styles from '../styles/components/PDFElement.module.css';
 import ReactMarkdown from 'react-markdown';
 
 export const ThumbnailLink = ({ item }) => {
-    const linkImg = 'thumbnail' in item ? item.thumbnail.fields : '';
+    /*
+    Make a "Read more text"
+    */
+    const linkImg =
+        'thumbnail' in item.fields ? item.fields.thumbnail.fields : '';
 
     const { height: HEIGHT, width: WIDTH } =
-        item.thumbnail.fields.file.details.image;
+        item.fields.thumbnail.fields.file.details.image;
 
     const linkUrl =
-        'linkAsset' in item
-            ? `https:${item.linkAsset.fields.file.url}`
-            : item.thumbnailLink;
+        'linkAsset' in item.fields
+            ? `https:${item.fields.linkAsset.fields.file.url}`
+            : item.fields.thumbnailLink;
 
     const linkImgOrTxt = linkImg ? (
         <Image
@@ -24,7 +28,7 @@ export const ThumbnailLink = ({ item }) => {
             className={styles.PDFthumbnailImg}
         />
     ) : (
-        item.linkText
+        item.fields.linkAssetText
     );
 
     return (
@@ -36,12 +40,12 @@ export const ThumbnailLink = ({ item }) => {
             >
                 {linkImgOrTxt}
             </Link>
-            {item.linkAssetText && (
+            {item.fields.linkAssetText && (
                 <figcaption
                     className={`${styles.PDFthumbnailTxt} imageInfoText`}
                     style={{ maxWidth: WIDTH }}
                 >
-                    <ReactMarkdown>{item.linkAssetText}</ReactMarkdown>
+                    <ReactMarkdown>{item.fields.linkAssetText}</ReactMarkdown>
                 </figcaption>
             )}
         </div>
