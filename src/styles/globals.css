@@ -4,8 +4,6 @@
     --white: #e3e3e3;
     --transparentWhite: rgba(252, 247, 244, 0.8);
     --dark: #05000d;
-    /* --grey: #737274; */
-    /* --transparentDark: rgba(14, 6, 27, 0.8); */
     --transparentDarker: rgba(14, 6, 27, 0.7);
     --font: 'Quicksand', sans-serif;
     --logoFontSize: 1.1rem;
@@ -58,12 +56,14 @@ button {
 }
 
 a {
-    line-height: 1.8;
+    /* outline: 1px solid grey; */
+    display: inline-block;
     text-decoration: none;
     font-weight: 500;
     width: fit-content;
     color: var(--dark);
     position: relative;
+    /* outline: 1px solid red; */
 }
 
 a:not(.logo)::after {
@@ -236,10 +236,12 @@ header {
 }
 
 header {
+    /* outline: 1px solid blue; */
     grid-row: 1 / span 1;
     background-color: var(--white);
     grid-template-rows: repeat(2, 1fr);
-    padding: var(--headerTopSpace) 0 var(--headerBottomSpace) 0;
+    height: var(--headerHeight);
+    align-items: center;
 }
 
 nav {
@@ -249,6 +251,8 @@ nav {
 }
 
 .menu {
+    /* border: 1px solid red; */
+    line-height: 2;
     display: flex;
     text-transform: uppercase;
     justify-content: space-between;
@@ -269,13 +273,14 @@ nav {
 }
 
 .container {
+    /* padding-top: var(--space); */
     grid-row: 2 / span 1;
     row-gap: var(--layoutSpace);
-    padding-bottom: var(--space);
+    /* padding-bottom: var(--space); */
 }
 
 .projectLayout {
-    grid-template-rows: 1fr auto;
+    grid-template-rows: 1fr 50px;
 }
 .projectLayout .pageTitleWrapper {
     margin-bottom: var(--pageSpace);
@@ -297,13 +302,12 @@ nav {
 .listLayout {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+
     justify-content: space-around;
     grid-row: 1 / span 1;
 }
 
 .listChild {
-    margin: var(--space) 0;
 }
 
 .pageTitleWrapper,
@@ -329,7 +333,6 @@ nav,
 .pageTitleWrapper {
     grid-row: 1 / span 1;
     justify-self: center;
-    padding-top: var(--space);
 }
 
 .pageTxtWrapper p {
@@ -413,13 +416,6 @@ figcaption,
 }
 
 @media screen and (min-width: 800px) {
-    /* .portraitImg {
-        width: 40vw;
-    }
-
-    .landscapeImg {
-        width: fit-content;
-    } */
 }
 
 @media screen and (min-width: 900px) {
