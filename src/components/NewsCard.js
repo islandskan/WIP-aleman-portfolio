@@ -9,17 +9,7 @@ export const NewsCard = ({ card }) => {
     return (
         <div className={`${styles.newsCard}`}>
             <div className={`${styles.newsCardTxtWrapper}`}>
-                {link ? (
-                    <Link
-                        className={styles.newsCardLink}
-                        href={link}
-                        target='_blank'
-                    >
-                        <h4 className={styles.newsCardTitle}>{title}</h4>
-                    </Link>
-                ) : (
-                    <h4 className={styles.newsCardTitle}>{title}</h4>
-                )}
+                <h4 className={styles.newsCardTitle}>{title}</h4>
                 {(newsInfo || location) && (
                     <div className={styles.newsInfo}>
                         {newsInfo && <p>{newsInfo}</p>}
@@ -28,6 +18,15 @@ export const NewsCard = ({ card }) => {
                             <p className={styles.newsCardLocation}>
                                 {location}
                             </p>
+                        )}
+                        {link && (
+                            <Link
+                                className={styles.newsCardLink}
+                                href={link}
+                                target='_blank'
+                            >
+                                <h6>Read more</h6>
+                            </Link>
                         )}
                     </div>
                 )}

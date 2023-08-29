@@ -1,6 +1,6 @@
 .newsList {
     --dark: #08040e;
-    --gap: 1.2rem;
+    --gap: 1rem;
     --space: 1.5rem;
     --cardPadding: 1rem;
     --white: #e3e3e3;
@@ -21,6 +21,10 @@
     row-gap: var(--newsTxtSpace);
     flex-direction: column;
     justify-content: space-between;
+}
+
+.newsCardLink {
+    margin-top: var(--gap);
 }
 
 .newsInfo {
@@ -62,16 +66,17 @@
 
 @media screen and (min-width: 900px) {
     .newsList {
-        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(2, 0.5fr) auto repeat(2, 0.5fr);
     }
 
     .newsCard {
+        grid-column: 3 / span 1;
         padding-right: 0;
-        max-width: 300px;
-        width: 100%;
+        padding-left: 0;
     }
 
-    .newsCardTxtWrapper {
+    .newsCardTxtWrapper a {
         /* align-items: center; */
     }
 

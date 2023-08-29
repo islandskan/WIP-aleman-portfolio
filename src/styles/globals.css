@@ -212,8 +212,21 @@ h6,
 .projectTitle {
     letter-spacing: var(--headlineSpace);
     font-weight: 400;
-    font-size: var(--projectTitleFontSize);
+
     text-transform: uppercase;
+}
+
+h2,
+h3,
+h4,
+h5,
+.pageTitle,
+.projectTitle {
+    font-size: var(--projectTitleFontSize);
+}
+
+h6 {
+    font-size: calc(var(--projectTitleFontSize) - 0.2rem);
 }
 
 li a.menuLink {
@@ -273,7 +286,7 @@ nav {
 }
 
 .container {
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
     padding-top: var(--space);
     grid-row: 2 / span 1;
     row-gap: var(--layoutSpace);
@@ -420,9 +433,7 @@ figcaption,
 
 @media screen and (min-width: 900px) {
     .listLayout {
-        border: 1px solid red;
         margin: 0 auto;
-        /* align-items: center; */
     }
 }
 
