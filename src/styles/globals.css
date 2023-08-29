@@ -2,7 +2,7 @@
 
 :root {
     --white: #e3e3e3;
-    /* --transparentWhite: rgba(252, 247, 244, 0.95); */
+    --transparentWhite: rgba(252, 247, 244, 0.8);
     --dark: #05000d;
     /* --grey: #737274; */
     /* --transparentDark: rgba(14, 6, 27, 0.8); */
@@ -13,7 +13,7 @@
     --generalFontSize: 0.85rem;
     --projectImageTextFontSize: 12px;
     --space: 1.5rem;
-    --headerTopSpace: 3rem;
+    --headerTopSpace: 3.2rem;
     --headerBottomSpace: calc(var(--headerTopSpace) * 0.5);
     --headerHeight: calc(
         var(--headerTopSpace) + var(--headerBottomSpace) + 100px
@@ -58,20 +58,53 @@ button {
 }
 
 a {
+    line-height: 1.8;
+    text-decoration: none;
+    font-weight: 500;
+    width: fit-content;
+    color: var(--dark);
+    position: relative;
+}
+
+a:not(.logo)::after {
+    content: '';
+    background-color: var(--transparentWhite);
+    mix-blend-mode: exclusion;
+    height: var(--outline);
+    left: -3px;
+    width: calc(100% + 6px);
+    position: absolute;
+    bottom: -2px;
+    transition: all 0.6s;
+}
+
+a:hover::after {
+    height: calc(100% + 4px);
+}
+
+/* focus state styles */
+
+/* figure out how to target mobile devices */
+
+/* a {
     text-decoration: none;
     color: var(--dark);
     font-weight: 500;
     display: inline-block;
     width: fit-content;
-}
-a:not(.logo, .skipLink) {
+} */
+/* a:not(.logo, .skipLink) {
     transition: color 0.3s;
     position: relative;
     line-height: 1.8;
     letter-spacing: var(--linkSpace);
-}
+} */
 
-a:not(.logo, .skipLink)::after {
+/* a:not(.logo, .menuLink) {
+    color: blue;
+} */
+
+/* a:not(.logo, .skipLink)::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -79,21 +112,22 @@ a:not(.logo, .skipLink)::after {
     width: 100%;
     height: var(--outline);
     background-color: var(--dark);
+
     transform: scale(0);
     transition: transform 0.4s;
-}
+} */
 
-a:not(.logo, .skipLink):hover::after,
+/* a:not(.logo, .skipLink):hover::after,
 a:not(.logo, .skipLink):focus-visible::after {
     transform: scale(1);
     color: var(--dark);
-}
+} */
 
-a:focus-visible,
+/* a:focus-visible,
 .btn:focus-visible {
     outline: var(--outline) solid var(--dark);
     outline-offset: var(--outlineOffset);
-}
+} */
 
 button {
     border: none;
@@ -142,6 +176,7 @@ ul {
 img {
     max-width: 100%;
     max-height: 90vh;
+
     object-fit: contain;
     display: block;
 }
@@ -186,17 +221,12 @@ li a.menuLink {
 }
 
 .menuLink.active {
-    --dark: #5e526e;
     cursor: none;
     pointer-events: none;
-    color: var(--dark);
 }
 
 .menuLink.active::after {
-    --dark: #5e526e;
-    transform: scale(1);
-    background-color: var(--dark);
-    opacity: 0.5;
+    height: calc(100% + 4px);
 }
 
 .container,
@@ -258,6 +288,12 @@ nav {
     margin-top: var(--pageSpace);
 }
 
+.pageTitleWrapper,
+.projectLayout .imageContainer figure {
+    width: 90%;
+    margin: auto;
+}
+
 .listLayout {
     display: flex;
     flex-direction: column;
@@ -293,6 +329,7 @@ nav,
 .pageTitleWrapper {
     grid-row: 1 / span 1;
     justify-self: center;
+    padding-top: var(--space);
 }
 
 .pageTxtWrapper p {
@@ -389,26 +426,6 @@ figcaption,
     .listLayout {
         align-items: center;
     }
-
-    .listChild {
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    .pageTitleWrapper {
-        max-width: 800px;
-    }
-
-    .projectTitle {
-        text-align: center;
-    }
-
-    .container {
-    }
-
-    .imageContainer,
-    .pageTitleWrapper {
-    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -416,14 +433,6 @@ figcaption,
 
 @media screen and (min-width: 1200px) {
 }
-
-/* media queries for hover effects on non-hover devices */
-
-/* this is all the hover stuff */
-/* @media (hover: hover) { */
-/* all of the extra hover states */
-/* Kevin's approach: write css without hover, make it all work, then add all hover stuff in this media query */
-/* } */
 
 /* targets only devices whose primary input isn't a cursor */
 /* @media (hover: none) { */
