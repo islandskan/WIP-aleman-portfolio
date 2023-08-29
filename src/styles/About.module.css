@@ -4,13 +4,17 @@
     --cvUnderTitleSpace: 10px;
     --letterSpace: 0.03rem;
     --cvListSpace: 1.5vmin;
+    --layoutSpace: min(3.5vh, 3rem);
+    --headerTopSpace: 3.2rem;
+    --pageSpace: calc(var(--layoutSpace) + 1rem);
     display: flex;
     flex-direction: column;
     grid-column: 1 / span 12;
+    width: 100%;
 }
 
 .artistContainer {
-    margin-bottom: calc(var(--space) * 1.3);
+    padding-bottom: var(--headerTopSpace);
 }
 
 .cvContainer {
@@ -72,12 +76,5 @@
 @media screen and (min-width: 768px) {
     .cvBtn {
         grid-column: 10 / -1;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    .artistContainer,
-    .cvContainer {
-        max-width: 100%;
     }
 }
