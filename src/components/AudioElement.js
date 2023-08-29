@@ -4,8 +4,15 @@ import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
 export const AudioElement = ({ audioObj }) => {
     console.log(audioObj);
-    const { audio, audioText, audioImage, audioImgAlt, audioImgInfo } =
-        audioObj[0].fields;
+    const {
+        audio,
+        audioText,
+        audioImage,
+        audioImgAlt,
+        audioImgInfo,
+        audioTitle,
+    } = audioObj[0].fields;
+    console.log(audioTitle);
     const { url, contentType } = audio.fields.file;
     const { height, width } = audioImage.fields.file.details.image;
     console.log(height, width);
@@ -37,6 +44,7 @@ export const AudioElement = ({ audioObj }) => {
                 className={`${styles.audioText} mediaInfo`}
                 style={{ maxWidth: width }}
             >
+                <p className={styles.audioTitle}>{audioTitle}</p>
                 {documentToReactComponents(audioText)}
             </div>
         </div>

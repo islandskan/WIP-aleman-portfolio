@@ -33,21 +33,28 @@ export const ThumbnailLink = ({ item }) => {
 
     return (
         <div className={styles.thumbnail}>
-            <Link
-                href={linkUrl}
-                className={`${styles.PDFLink} skipLink`}
-                target='_blank'
-            >
-                {linkImgOrTxt}
-            </Link>
-            {item.fields.linkAssetText && (
-                <figcaption
-                    className={`${styles.PDFthumbnailTxt} imageInfoText`}
-                    style={{ maxWidth: WIDTH }}
+            {linkImgOrTxt}
+
+            <div className={styles.thumbnailInfo}>
+                {item.fields.linkAssetText && (
+                    <figcaption
+                        className={`${styles.PDFthumbnailTxt} imageInfoText`}
+                        style={{ maxWidth: WIDTH }}
+                    >
+                        <ReactMarkdown>
+                            {item.fields.linkAssetText}
+                        </ReactMarkdown>
+                    </figcaption>
+                )}
+
+                <Link
+                    href={linkUrl}
+                    className={`${styles.PDFLink} readmoreLink`}
+                    target='_blank'
                 >
-                    <ReactMarkdown>{item.fields.linkAssetText}</ReactMarkdown>
-                </figcaption>
-            )}
+                    <h6>Read more</h6>
+                </Link>
+            </div>
         </div>
     );
 };

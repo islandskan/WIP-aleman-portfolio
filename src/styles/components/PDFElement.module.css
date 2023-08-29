@@ -1,11 +1,18 @@
 /* Styles for the PDF component on Hilma Page */
 
 .thumbnail {
+    --gap: 1rem;
     --listSpace: max(1.5vh, 1.5rem);
+    /* width: fit-content; */
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: var(--listSpace);
+}
+
+.thumbnailInfo {
+    display: flex;
+    flex-direction: column;
 }
 
 .thumbnail:first-of-type {

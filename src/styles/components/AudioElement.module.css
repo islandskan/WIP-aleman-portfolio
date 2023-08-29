@@ -1,4 +1,5 @@
 .audioContainer {
+    --space: 1rem;
     display: grid;
     justify-content: center;
     margin-top: max(1.5vh, 1.5rem);
@@ -9,9 +10,18 @@
     max-height: 73vh;
 }
 
+.audioTitle {
+    font-style: italic;
+    margin-bottom: var(--space);
+}
+
 .audioText {
     text-align: center;
     margin: auto;
+}
+
+.audioText p:not(.audioTitle) {
+    text-align: start;
 }
 
 .audioPlayer {

@@ -21,7 +21,7 @@ export const NewsCard = ({ card }) => {
                         )}
                         {link && (
                             <Link
-                                className={styles.newsCardLink}
+                                className='readmoreLink'
                                 href={link}
                                 target='_blank'
                             >

@@ -21,14 +21,13 @@
 }
 
 .bodyContainer {
-    border: 1px solid red;
 }
 
 .publishedContainer ul li p {
     /* border: 1px solid black; */
     width: fit-content;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
 }
 
 .publishedContainer ul li p a {
@@ -46,7 +45,11 @@
         max-width: 100%;
     }
 
-    .bodyContainer {
-        /* border: 1px solid blue; */
+    .bodyContainer ul {
+        grid-template-columns: repeat(2, 0.5fr) auto repeat(2, 0.5fr);
+    }
+
+    .bodyContainer ul li {
+        grid-column: 3 / span 1;
     }
 }

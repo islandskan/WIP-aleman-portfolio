@@ -24,6 +24,10 @@
     grid-template-rows: 50px auto;
 }
 
+.cvContainer h5 {
+    font-size: 0.8rem;
+}
+
 .artistContainer h3,
 .cvContainer h4 {
     text-align: start;
@@ -51,6 +55,10 @@
     content: '';
     height: var(--space);
     display: block;
+}
+
+.cvContainer .bodyContainer h5:first-of-type::before {
+    height: 0;
 }
 
 .cvContainer .bodyContainer li {
