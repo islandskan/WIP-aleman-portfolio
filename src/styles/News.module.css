@@ -9,11 +9,9 @@
     --newsInfoSpace: 2px;
     align-items: flex-start;
     justify-self: flex-start;
-    /* outline: 1px solid black; */
 }
 
 .newsCard {
-    /* outline: 1px solid red; */
     width: fit-content;
     padding: var(--cardPadding) var(--cardPadding) var(--cardPadding) 0;
 }
@@ -65,7 +63,6 @@
 @media screen and (min-width: 900px) {
     .newsList {
         align-items: center;
-        justify-self: center;
     }
 
     .newsCard {
@@ -75,11 +72,11 @@
     }
 
     .newsCardTxtWrapper {
-        align-items: center;
+        /* align-items: center; */
     }
 
     .newsInfo {
-        text-align: center;
+        /* text-align: center; */
     }
 }
 
