@@ -9,9 +9,11 @@
     --newsInfoSpace: 2px;
     align-items: flex-start;
     justify-self: flex-start;
+    /* outline: 1px solid black; */
 }
 
 .newsCard {
+    /* outline: 1px solid red; */
     width: fit-content;
     padding: var(--cardPadding) var(--cardPadding) var(--cardPadding) 0;
 }
