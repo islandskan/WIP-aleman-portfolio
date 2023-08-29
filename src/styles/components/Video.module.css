@@ -1,6 +1,7 @@
 /* STYLES FOR PROJECT COMPONENTS */
 
 .reactPlayer {
+    --lilac: #b49fb7;
     /* border: 1px solid black; */
     position: relative;
     padding-bottom: 56.25%;

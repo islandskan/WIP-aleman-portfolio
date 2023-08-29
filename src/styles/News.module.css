@@ -13,7 +13,7 @@
 
 .newsCard {
     width: fit-content;
-    padding: var(--cardPadding) var(--cardPadding) var(--cardPadding) 0;
+    padding: 0 var(--cardPadding) var(--cardPadding) 0;
 }
 
 .newsCardTxtWrapper {

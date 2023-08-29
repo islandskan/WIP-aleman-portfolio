@@ -17,12 +17,14 @@
 }
 
 .contactImg {
-    padding: 0;
+}
+
+.contactImg img,
+.contactInfoWrapper {
+    height: calc(100% - var(--layoutSpace));
 }
 
 .contactImg img {
-    object-fit: cover;
-    height: fit-content;
 }
 
 @media screen and (min-width: 550px) {
@@ -30,13 +32,21 @@
         flex-direction: row;
         row-gap: 0;
         column-gap: var(--layoutSpace);
-        align-items: center;
-        margin-bottom: 4rem;
         justify-content: space-between;
     }
 
+    .contactInfoWrapper {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .contactImg {
+        /* border: 1px solid red; */
+    }
+
     .contactImg img {
-        object-fit: contain;
+        /* object-fit: contain; */
     }
 }
 

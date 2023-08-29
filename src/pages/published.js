@@ -46,7 +46,6 @@ const Published = ({ res }) => {
         <>
             <MetaData page='Published' />
             <div className={`${styles.publishedContainer} listLayout`}>
-                <h3 className='pageTitle'>{title}</h3>
                 <div className={styles.bodyContainer}>
                     {documentToReactComponents(publishedBody, options)}
                 </div>

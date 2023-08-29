@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
-import { RiPlayFill } from 'react-icons/ri';
+import { MdPlayArrow } from 'react-icons/md';
 import { IconContext } from 'react-icons';
 import styles from '../styles/components/Video.module.css';
 import ReactMarkdown from 'react-markdown';
@@ -20,6 +20,7 @@ export const Video = ({ video }) => {
     const videoThumbnailURL = `https:${videoThumbnail.fields.file.url}`;
     const { height: HEIGHT, width: WIDTH } =
         videoThumbnail.fields.file.details.image;
+    const color = '#8DAF8D';
 
     return (
         // <div className={`video ${styles.videoContainer}`}>
@@ -34,12 +35,12 @@ export const Video = ({ video }) => {
                     playIcon={
                         <IconContext.Provider
                             value={{
-                                color: 'white',
-                                size: '20%',
+                                color: 'green',
+                                size: '30%',
                                 className: 'videoBtn',
                             }}
                         >
-                            <RiPlayFill />
+                            <MdPlayArrow />
                         </IconContext.Provider>
                     }
                     light={

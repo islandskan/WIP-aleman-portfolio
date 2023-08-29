@@ -3,7 +3,8 @@
 :root {
     --white: #e3e3e3;
     --transparentWhite: rgba(252, 247, 244, 0.8);
-    --dark: #05000d;
+    /* --dark: #010003; */
+    --dark: #000000;
     --transparentDarker: rgba(14, 6, 27, 0.7);
     --font: 'Quicksand', sans-serif;
     --logoFontSize: 1.1rem;
@@ -58,7 +59,6 @@ button {
 }
 
 a {
-    /* outline: 1px solid grey; */
     display: inline-block;
     text-decoration: none;
     font-weight: 500;
@@ -66,7 +66,6 @@ a {
     width: fit-content;
     color: var(--dark);
     position: relative;
-    /* outline: 1px solid red; */
 }
 
 a:not(.logo, .skipLink, .menuLink)::after {
@@ -81,8 +80,8 @@ a:not(.logo, .skipLink, .menuLink)::after {
     transition: all 0.6s;
 }
 
-a:hover::after,
-a:focus-visible::after {
+a:not(.menuLink, .menuLink.active):hover::after,
+a:not(.menuLink, .menuLink.active):focus-visible::after {
     height: 100%;
 }
 
@@ -94,25 +93,15 @@ a:focus-visible::after {
 
 /* figure out how to target mobile devices */
 
-/* a {
-    text-decoration: none;
-    color: var(--dark);
-    font-weight: 500;
-    display: inline-block;
-    width: fit-content;
-} */
-/* a:not(.logo, .skipLink) {
+.menuLink {
     transition: color 0.3s;
     position: relative;
-    line-height: 1.8;
-    letter-spacing: var(--linkSpace);
-} */
+    font-size: 0.9rem;
+    letter-spacing: var(--headlineSpace);
+    user-select: none;
+}
 
-/* a:not(.logo, .menuLink) {
-    color: blue;
-} */
-
-/* a:not(.logo, .skipLink)::after {
+.menuLink::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -120,22 +109,32 @@ a:focus-visible::after {
     width: 100%;
     height: var(--outline);
     background-color: var(--dark);
-
     transform: scale(0);
     transition: transform 0.4s;
-} */
+}
 
-/* a:not(.logo, .skipLink):hover::after,
-a:not(.logo, .skipLink):focus-visible::after {
+.menuLink:hover::after,
+.menuLink:focus-visible::after {
     transform: scale(1);
-    color: var(--dark);
-} */
+}
 
-/* a:focus-visible,
+a:focus-visible,
 .btn:focus-visible {
     outline: var(--outline) solid var(--dark);
     outline-offset: var(--outlineOffset);
-} */
+}
+
+.menuLink.active {
+    cursor: none;
+    pointer-events: none;
+}
+
+.menuLink.active::after {
+    height: calc(100% + 4px);
+}
+
+/* fixa menylänkarna, nu när man trycker på dem så är det en konstig svart ruta som krymper?!?!? */
+/* plus fixa så att den aktiva menylänken har ett streck under sig */
 
 button {
     border: none;
@@ -234,21 +233,6 @@ h6 {
     font-size: calc(var(--projectTitleFontSize) - 0.2rem);
 }
 
-li a.menuLink {
-    font-size: 0.9rem;
-    letter-spacing: var(--headlineSpace);
-    user-select: none;
-}
-
-.menuLink.active {
-    cursor: none;
-    pointer-events: none;
-}
-
-.menuLink.active::after {
-    height: calc(100% + 4px);
-}
-
 .container,
 header {
     display: grid;
@@ -321,7 +305,8 @@ nav {
 .listLayout {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    height: 80%;
     grid-row: 1 / span 1;
 }
 
@@ -347,11 +332,13 @@ nav,
     position: absolute;
     bottom: 40%;
     left: 40%;
+    /* background-color: var(--white); */
 }
 
 .pageTitleWrapper {
     grid-row: 1 / span 1;
     justify-self: center;
+    width: 100%;
 }
 
 .pageTxtWrapper p {
