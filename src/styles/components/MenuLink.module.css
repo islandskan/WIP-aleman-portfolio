@@ -1,0 +1,47 @@
+.menuLink {
+    --white: #e3e3e3;
+    --dark: #000000;
+    --transparentDarker: rgba(14, 6, 27, 0.8);
+    --space: 1.5rem;
+    --outline: 0.5px;
+    --headlineSpace: 0.085rem;
+    transition: color 0.3s;
+    position: relative;
+    font-size: 0.9rem;
+    letter-spacing: var(--headlineSpace);
+    user-select: none;
+    color: var(--transparentDarker);
+    transition: color 0.4s;
+}
+
+.menuLink::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--outline);
+    transform: scale(0);
+    background-color: var(--dark);
+    transition: all 0.4s;
+}
+
+.menuLink:hover,
+.menuLink:focus,
+.menuLink:focus-visible {
+    color: var(--dark);
+}
+
+.menuLink:hover::after,
+.menuLink:focus-visible::after {
+    transform: scale(1);
+}
+
+.active {
+    cursor: none;
+    pointer-events: none;
+}
+
+.menuLink.active::after {
+    transform: scale(1);
+}

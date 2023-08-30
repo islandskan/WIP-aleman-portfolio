@@ -68,7 +68,7 @@ a {
     position: relative;
 }
 
-a:not(.logo, .skipLink, .menuLink)::after {
+a:not(.logo, .skipLink)::after {
     content: '';
     background-color: var(--transparentWhite);
     mix-blend-mode: exclusion;
@@ -80,42 +80,13 @@ a:not(.logo, .skipLink, .menuLink)::after {
     transition: all 0.6s;
 }
 
-a:not(.menuLink, .menuLink.active):hover::after,
-a:not(.menuLink, .menuLink.active):focus-visible::after {
+a:not(.skipLink):hover::after,
+a:not(.skipLink):focus-visible::after {
     height: 100%;
 }
 
 .readmoreLink {
     margin-top: var(--gap);
-}
-
-/* focus state styles */
-
-/* figure out how to target mobile devices */
-
-.menuLink {
-    transition: color 0.3s;
-    position: relative;
-    font-size: 0.9rem;
-    letter-spacing: var(--headlineSpace);
-    user-select: none;
-}
-
-.menuLink::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: var(--outline);
-    background-color: var(--dark);
-    transform: scale(0);
-    transition: transform 0.4s;
-}
-
-.menuLink:hover::after,
-.menuLink:focus-visible::after {
-    transform: scale(1);
 }
 
 a:focus-visible,
@@ -124,14 +95,9 @@ a:focus-visible,
     outline-offset: var(--outlineOffset);
 }
 
-.menuLink.active {
-    cursor: none;
-    pointer-events: none;
-}
+/* focus state styles */
 
-.menuLink.active::after {
-    height: calc(100% + 4px);
-}
+/* figure out how to target mobile devices */
 
 /* fixa menylänkarna, nu när man trycker på dem så är det en konstig svart ruta som krymper?!?!? */
 /* plus fixa så att den aktiva menylänken har ett streck under sig */

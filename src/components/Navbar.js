@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import { links } from '../data/menuLinks';
+import styles from '../styles/components/MenuLink.module.css';
 
 export const Navbar = ({ currentPage }) => {
     const menuLinks = links.map((link, index) => (
         <li key={index}>
             <Link
                 href={link.url}
-                className={`menuLink ${
-                    currentPage === link.url ? 'active' : ''
+                className={`${styles.menuLink} skipLink ${
+                    currentPage === link.url ? styles.active : ''
                 }`}
             >
                 {link.name}
