@@ -2,14 +2,14 @@ import { MetaData } from '../components/MetaData';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import styles from '../styles/Published.module.css';
 import { createClient } from 'contentful';
-import { INLINES } from '@contentful/rich-text-types';
+import { INLINES, BLOCKS } from '@contentful/rich-text-types';
 
 export async function getStaticProps() {
     const client = createClient({
         space: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     });
-    const res = await client.getEntry('3NbAokT3varNIcLHHXlYYr');
+    const res = await client.getEntry('4bBs17JZfSz0cA3E6fOeWR');
     if (!res) {
         return { notFound: true };
     }
@@ -41,6 +41,8 @@ const Published = ({ res }) => {
             },
         },
     };
+
+    console.log(documentToReactComponents(publishedBody, options));
 
     return (
         <>

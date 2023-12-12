@@ -26,22 +26,33 @@
     transition: all 0.4s;
 }
 
-.menuLink:hover,
-.menuLink:focus,
-.menuLink:focus-visible {
+.menuLink:active {
     color: var(--dark);
 }
 
-.menuLink:hover::after,
-.menuLink:focus-visible::after {
+/* .menuLink:active::after {
     transform: scale(1);
-}
+} */
 
 .active {
     cursor: none;
     pointer-events: none;
+    color: var(--dark);
 }
 
 .menuLink.active::after {
     transform: scale(1);
+}
+
+@media screen and (min-width: 768px) {
+    .menuLink:hover,
+    .menuLink:focus,
+    .menuLink:focus-visible {
+        color: var(--dark);
+    }
+
+    .menuLink:hover::after,
+    .menuLink:focus-visible::after {
+        transform: scale(1);
+    }
 }
