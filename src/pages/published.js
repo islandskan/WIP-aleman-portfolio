@@ -42,8 +42,6 @@ const Published = ({ res }) => {
         },
     };
 
-    console.log(documentToReactComponents(publishedBody, options));
-
     return (
         <>
             <MetaData page='Published' />
