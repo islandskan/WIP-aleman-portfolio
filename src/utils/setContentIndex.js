@@ -6,6 +6,16 @@ export const setIndex = (content, propName) => {
     // return;
 };
 
+function getItem(items) {
+    if (!items) {
+        throw new Error('Empty');
+    }
+}
+
 export const setContent = (content, propName) => {
-    return content.filter((item) => propName in item.fields);
+    try {
+        return content.filter((item) => propName in item?.fields);
+    } catch (error) {
+        console.error(error);
+    }
 };

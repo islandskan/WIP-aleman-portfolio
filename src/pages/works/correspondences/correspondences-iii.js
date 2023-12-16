@@ -24,8 +24,9 @@ export async function getStaticProps() {
 function Korrespondanser3({ res }) {
     const { title, content, slug } = res.fields;
     // const korrespondanser3Images = setContent(content, 'imageInfoText');
-
-    // const corr3Text = setContent(content, 'formattedText');
+    // console.log(korrespondanser3Images);
+    const corr3Text = setContent(content, 'formattedText');
+    console.log(corr3Text);
 
     const options = {
         renderNode: {
