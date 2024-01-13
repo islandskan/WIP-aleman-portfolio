@@ -23,6 +23,7 @@ export async function getStaticProps() {
 function Correspondences({ res }) {
     const projects = res.fields.projectLinksUnderMenu;
     const { projectLinkUrl, projectLinksTitle } = res.fields;
+
     return (
         <>
             <MetaData page={projectLinksTitle} />
