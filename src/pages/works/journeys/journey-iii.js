@@ -23,8 +23,12 @@ export async function getStaticProps() {
 }
 function Journey3({ res }) {
     const { title, content, slug } = res.fields;
-    // const journey3Text = setContent(content, 'formattedText');
-    // const journey3Images = setContent(content, 'imageInfoText');
+
+    const journey3Text = setContent(content, 'formattedText');
+    const textContent = journey3Text[0].fields.formattedText;
+
+    const journey3Images = setContent(content, 'imageInfoText');
+    console.log(journey3Images);
 
     const options = {
         renderNode: {
@@ -49,13 +53,10 @@ function Journey3({ res }) {
             <MetaData page={title} />
 
             <div className='pageTitleWrapper'>
-                {/* {documentToReactComponents(
-                    journey3Text[0].fields.formattedText,
-                    options
-                )} */}
+                {documentToReactComponents(textContent, options)}
             </div>
             <div className='imageContainer'>
-                {/* <ImageCollection images={journey3Images} /> */}
+                <ImageCollection images={journey3Images} />
             </div>
 
             <GoBackLink slug={slug} />

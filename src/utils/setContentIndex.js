@@ -13,9 +13,6 @@ function getItem(items) {
 }
 
 export const setContent = (content, propName) => {
-    try {
-        return content.filter((item) => propName in item?.fields);
-    } catch (error) {
-        console.error(error);
-    }
+    return content.filter((item) => propName in item.fields);
+    // console.log(content.filter((item) => propName in item.fields));
 };

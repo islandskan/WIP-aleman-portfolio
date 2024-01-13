@@ -23,10 +23,14 @@ export async function getStaticProps() {
 }
 function Korrespondanser3({ res }) {
     const { title, content, slug } = res.fields;
-    // const korrespondanser3Images = setContent(content, 'imageInfoText');
-    // console.log(korrespondanser3Images);
+    const korrespondanser3Images = setContent(content, 'imageInfoText');
+    console.log(korrespondanser3Images);
     const corr3Text = setContent(content, 'formattedText');
-    console.log(corr3Text);
+    const textContent = corr3Text[0].fields.formattedText;
+
+    // console.log(textContent);
+
+    // console.log(res);
 
     const options = {
         renderNode: {
@@ -43,10 +47,7 @@ function Korrespondanser3({ res }) {
             <MetaData page={title} />
 
             <div className='pageTitleWrapper'>
-                {/* {documentToReactComponents(
-                    corr3Text[0].fields.formattedText,
-                    options
-                )} */}
+                {documentToReactComponents(textContent, options)}
             </div>
 
             <div className='imageContainer'>
