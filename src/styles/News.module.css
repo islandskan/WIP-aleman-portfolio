@@ -52,11 +52,28 @@
 } */
 
 @media screen and (min-width: 768px) {
+    .newsList {
+        align-items: center;
+        justify-self: flex-start;
+    }
+
+    .newsCard {
+        max-width: 300px;
+        width: 100%;
+    }
+
     .newsCardTxtWrapper {
+        align-items: center;
         row-gap: calc(var(--newsTxtSpace) * 1.1);
     }
+
+    .newsCardTxtWrapper {
+        text-align: center;
+    }
+
     .newsInfo {
         row-gap: calc(var(--newsInfoSpace) + 2px);
+        align-items: center;
     }
 }
 
