@@ -1,3 +1,71 @@
+.projectList {
+    --space: 1.5rem;
+    --layoutSpace: min(3.5vh, 3rem);
+    --pageSpace: calc(var(--layoutSpace) + 0.5rem);
+    row-gap: var(--pageSpace);
+}
+
+.projectLink {
+    max-width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.projectLinkWrapper {
+    grid-column: 4 / span 3;
+    grid-row: 1 / span 1;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .projectLink span {
-    margin-left: 22px;
+    margin-top: calc(var(--space) - 0.5rem);
+}
+
+.projectLink .projectLinkUrl {
+}
+
+.projectLink img {
+    grid-column: 1 / span 3;
+    aspect-ratio: 1 / 1;
+}
+
+@media screen and (min-width: 768px) {
+    .projectList {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: var(--space);
+        align-items: flex-start;
+    }
+
+    .projectLink {
+        grid-template-rows: 1fr auto;
+        row-gap: var(--space);
+        height: 100%;
+    }
+
+    .projectLink img {
+        grid-row: 1 / span 1;
+        grid-column: 2 / span 4;
+    }
+
+    .projectLinkWrapper {
+        grid-column: 2 / span 4;
+        grid-row: 2 / span 1;
+    }
+
+    .projectSubList {
+    }
+
+    .projectSubList .projectLink {
+        display: flex;
+        justify-content: center;
+        height: fit-content;
+    }
+
+    .projectSubLink {
+    }
 }

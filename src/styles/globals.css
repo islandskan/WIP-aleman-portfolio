@@ -245,7 +245,6 @@ nav {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    height: 80%;
     grid-row: 1 / span 1;
 }
 
@@ -419,6 +418,7 @@ figcaption,
         align-items: center;
     }
     .listChild {
+        /* border: 1px solid red; */
         text-align: center;
         width: 100%;
     }

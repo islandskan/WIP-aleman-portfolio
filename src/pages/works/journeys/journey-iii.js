@@ -24,6 +24,7 @@ export async function getStaticProps() {
 function Journey3({ res }) {
     const { title, content, slug } = res.fields;
 
+    console.log(res);
     const journey3Text = setContent(content, 'formattedText');
     const textContent = journey3Text[0].fields.formattedText;
 

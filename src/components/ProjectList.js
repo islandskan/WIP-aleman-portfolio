@@ -9,7 +9,10 @@ export const ProjectList = ({ projects, url }) => {
                     key={project.sys.id}
                     className={`${styles.projectLink} listChild`}
                 >
-                    <Link href={`${url}/${project.fields?.slug}`}>
+                    <Link
+                        href={`${url}/${project.fields?.slug}`}
+                        className={styles.projectSubLink}
+                    >
                         {project.fields?.projectTitle}
                     </Link>
                 </li>
@@ -17,7 +20,7 @@ export const ProjectList = ({ projects, url }) => {
     );
     return (
         <>
-            <ul id='works' className='listLayout'>
+            <ul id='works' className={`listLayout ${styles.projectSubList}`}>
                 {projectList}
             </ul>
         </>
