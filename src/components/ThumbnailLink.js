@@ -21,7 +21,7 @@ export const ThumbnailLink = ({ item }) => {
     const linkImgOrTxt = linkImg ? (
         <Image
             src={`https:${linkImg.file.url}`}
-            alt={linkImg.description}
+            alt={linkImg.description ? linkImg.description : ''}
             width={WIDTH}
             height={HEIGHT}
             loading='lazy'
