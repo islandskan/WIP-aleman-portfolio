@@ -36,17 +36,23 @@ const ProjectListItem = ({ project }) => {
                 <span>{`${startYear} - ${endYear}`}</span>
             </div>
             {projectThumbnail && (
-                <Image
-                    src={imageUrl}
-                    alt={imageAltText}
-                    height={height}
-                    width={width}
-                    loading='lazy'
-                    style={{
-                        maxWidth: '100%',
-                        height: 'auto',
-                    }}
-                />
+                <Link
+                    href={`/works/${projectLinkUrl}`}
+                    className={`skipLink ${styles.projectImgLink}`}
+                    tabIndex='-1'
+                >
+                    <Image
+                        src={imageUrl}
+                        alt={imageAltText}
+                        height={height}
+                        width={width}
+                        loading='lazy'
+                        style={{
+                            maxWidth: '100%',
+                            height: 'auto',
+                        }}
+                    />
+                </Link>
             )}
         </li>
     );
