@@ -4,7 +4,10 @@ import { ImageCollection } from '../../../components/ImageCollection.js';
 import { Video } from '../../../components/Video.js';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { setContent } from '../../../utils/setContentIndex.js';
+import {
+    setContent,
+    filterEmptyItems,
+} from '../../../utils/setContentIndex.js';
 import { GoBackLink } from '../../../components/GoBackLink.js';
 
 export async function getStaticProps() {
@@ -25,17 +28,19 @@ export async function getStaticProps() {
 
 function Hilma({ res }) {
     const { title, content, slug } = res.fields;
-    const hilmaText = setContent(content, 'formattedText');
-    const hilmaImages = setContent(content, 'imageInfoText');
+    const filteredItems = filterEmptyItems(content);
+    const hilmaText = setContent(filteredItems, 'formattedText');
+    const textContent = hilmaText[0].fields.formattedText;
+    const hilmaImages = setContent(filteredItems, 'image');
 
-    const hilmaThumbnails = setContent(content, 'thumbnail');
-    const hilmaVideo = setContent(content, 'videoId');
+    const hilmaThumbnails = setContent(filteredItems, 'thumbnail');
+    const hilmaVideo = setContent(filteredItems, 'videoId');
     return (
         <>
             <MetaData page={title} />
 
             <div className='pageTitleWrapper'>
-                {documentToReactComponents(hilmaText[0].fields.formattedText)}
+                {documentToReactComponents(textContent)}
             </div>
 
             <Video video={hilmaVideo} />

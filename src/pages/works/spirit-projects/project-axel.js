@@ -3,7 +3,10 @@ import { createClient } from 'contentful';
 import { getProjectTxt } from '../../../utils/getProjectContent.js';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-import { setContent } from '../../../utils/setContentIndex.js';
+import {
+    setContent,
+    filterEmptyItems,
+} from '../../../utils/setContentIndex.js';
 import { ImageCollection } from '../../../components/ImageCollection.js';
 import { Video } from '../../../components/Video.js';
 import { GoBackLink } from '../../../components/GoBackLink.js';
@@ -27,16 +30,19 @@ export async function getStaticProps() {
 function Axel({ res }) {
     const { title, content, slug } = res.fields;
 
-    const axelText = setContent(content, 'formattedText');
-    const axelImages = setContent(content, 'imageInfoText');
-    const axelVideo = setContent(content, 'videoId');
+    const filteredItems = filterEmptyItems(content);
+
+    const axelText = setContent(filteredItems, 'formattedText');
+    const textContent = axelText[0].fields.formattedText;
+    const axelImages = setContent(filteredItems, 'image');
+    const axelVideo = setContent(filteredItems, 'videoId');
 
     return (
         <>
             <MetaData page={title} />
 
             <div className='pageTitleWrapper'>
-                {documentToReactComponents(axelText[0].fields.formattedText)}
+                {documentToReactComponents(textContent)}
             </div>
 
             <Video video={axelVideo} />

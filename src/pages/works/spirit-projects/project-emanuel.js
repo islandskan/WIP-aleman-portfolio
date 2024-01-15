@@ -5,7 +5,10 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Video } from '../../../components/Video.js';
 import { GoBackLink } from '../../../components/GoBackLink.js';
 import { LinkList } from '../../../components/ThumbNailLinkList.js';
-import { setContent } from '../../../utils/setContentIndex.js';
+import {
+    setContent,
+    filterEmptyItems,
+} from '../../../utils/setContentIndex.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -24,17 +27,20 @@ export async function getStaticProps() {
 }
 function Emanuel({ res }) {
     const { title, content, slug } = res.fields;
-    const emanuelText = setContent(content, 'formattedText');
-    const emanuelPDF = setContent(content, 'thumbnail');
-    const emanuelImages = setContent(content, 'imageInfoText');
-    const emanuelVideo = setContent(content, 'videoId');
+
+    const filteredItems = filterEmptyItems(content);
+    const emanuelText = setContent(filteredItems, 'formattedText');
+    const textContent = emanuelText[0].fields.formattedText;
+    const emanuelPDF = setContent(filteredItems, 'thumbnail');
+    const emanuelImages = setContent(filteredItems, 'image');
+    const emanuelVideo = setContent(filteredItems, 'videoId');
 
     return (
         <>
             <MetaData page={title} />
 
             <div className='pageTitleWrapper'>
-                {documentToReactComponents(emanuelText[0].fields.formattedText)}
+                {documentToReactComponents(textContent)}
             </div>
 
             <Video video={emanuelVideo} />

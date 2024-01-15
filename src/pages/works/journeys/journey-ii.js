@@ -3,7 +3,10 @@ import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { INLINES } from '@contentful/rich-text-types';
 import { ImageCollection } from '../../../components/ImageCollection.js';
-import { setContent } from '../../../utils/setContentIndex.js';
+import {
+    setContent,
+    filterEmptyItems,
+} from '../../../utils/setContentIndex.js';
 import { GoBackLink } from '../../../components/GoBackLink.js';
 
 export async function getStaticProps() {
@@ -23,8 +26,10 @@ export async function getStaticProps() {
 }
 function Journey2({ res }) {
     const { title, content, slug } = res.fields;
-    const journey2Text = setContent(content, 'formattedText');
-    const journey2Images = setContent(content, 'imageInfoText');
+    const filteredItems = filterEmptyItems(content);
+    const journey2Text = setContent(filteredItems, 'formattedText');
+    const textContent = journey2Text[0].fields.formattedText;
+    const journey2Images = setContent(filteredItems, 'image');
 
     const options = {
         renderNode: {
@@ -49,10 +54,7 @@ function Journey2({ res }) {
             <MetaData page={title} />
 
             <div className='pageTitleWrapper'>
-                {documentToReactComponents(
-                    journey2Text[0].fields.formattedText,
-                    options
-                )}
+                {documentToReactComponents(textContent, options)}
             </div>
             <div className='imageContainer'>
                 <ImageCollection images={journey2Images} />

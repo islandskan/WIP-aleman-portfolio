@@ -3,7 +3,10 @@ import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { INLINES } from '@contentful/rich-text-types';
 import { ImageCollection } from '../../../components/ImageCollection.js';
-import { setContent } from '../../../utils/setContentIndex.js';
+import {
+    setContent,
+    filterEmptyItems,
+} from '../../../utils/setContentIndex.js';
 import { GoBackLink } from '../../../components/GoBackLink.js';
 
 export async function getStaticProps() {
@@ -24,12 +27,10 @@ export async function getStaticProps() {
 function Journey3({ res }) {
     const { title, content, slug } = res.fields;
 
-    console.log(res);
-    const journey3Text = setContent(content, 'formattedText');
+    const filteredItems = filterEmptyItems(content);
+    const journey3Images = setContent(filteredItems, 'image');
+    const journey3Text = setContent(filteredItems, 'formattedText');
     const textContent = journey3Text[0].fields.formattedText;
-
-    const journey3Images = setContent(content, 'imageInfoText');
-    console.log(journey3Images);
 
     const options = {
         renderNode: {

@@ -4,7 +4,10 @@ import { ImageCollection } from '../../../components/ImageCollection.js';
 import { INLINES } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { GoBackLink } from '../../../components/GoBackLink.js';
-import { setContent } from '../../../utils/setContentIndex.js';
+import {
+    setContent,
+    filterEmptyItems,
+} from '../../../utils/setContentIndex.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -23,14 +26,11 @@ export async function getStaticProps() {
 }
 function Korrespondanser3({ res }) {
     const { title, content, slug } = res.fields;
-    const korrespondanser3Images = setContent(content, 'imageInfoText');
-    console.log(korrespondanser3Images);
-    const corr3Text = setContent(content, 'formattedText');
+
+    const filteredItems = filterEmptyItems(content);
+    const korrespondanser3Images = setContent(filteredItems, 'image');
+    const corr3Text = setContent(filteredItems, 'formattedText');
     const textContent = corr3Text[0].fields.formattedText;
-
-    // console.log(textContent);
-
-    // console.log(res);
 
     const options = {
         renderNode: {

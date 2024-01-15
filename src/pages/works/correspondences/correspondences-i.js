@@ -4,7 +4,10 @@ import { ImageCollection } from '../../../components/ImageCollection.js';
 import { INLINES } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { GoBackLink } from '../../../components/GoBackLink.js';
-import { setContent } from '../../../utils/setContentIndex.js';
+import {
+    setContent,
+    filterEmptyItems,
+} from '../../../utils/setContentIndex.js';
 
 export async function getStaticProps() {
     const client = createClient({
@@ -23,9 +26,11 @@ export async function getStaticProps() {
 }
 function Korrespondanser1({ res }) {
     const { title, content, slug } = res.fields;
-    const korrespondanser1Images = setContent(content, 'imageInfoText');
 
-    const corr1Text = setContent(content, 'formattedText');
+    const filteredItems = filterEmptyItems(content);
+    const korrespondanser1Images = setContent(filteredItems, 'image');
+    const corr1Text = setContent(filteredItems, 'formattedText');
+    const textContent = corr1Text[0].fields.formattedText;
 
     const options = {
         renderNode: {
@@ -40,10 +45,7 @@ function Korrespondanser1({ res }) {
         <>
             <MetaData page={title} />
             <div className='pageTitleWrapper'>
-                {documentToReactComponents(
-                    corr1Text[0].fields.formattedText,
-                    options
-                )}
+                {documentToReactComponents(textContent, options)}
             </div>
             <div className='imageContainer'>
                 <ImageCollection images={korrespondanser1Images} />
