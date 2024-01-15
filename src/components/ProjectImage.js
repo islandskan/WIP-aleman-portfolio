@@ -7,7 +7,6 @@ export const ProjectImage = ({ image }) => {
     const imageUrl = `https:${image.image.fields.file.url}`;
     const { imageAltText: imageInfo, imageInfoText } = image;
     const { height, width } = image.image.fields.file.details.image;
-
     const newMeasurements = isVerticalImg(height, width, imageInfo);
     return (
         <figure>
