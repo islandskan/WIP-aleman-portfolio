@@ -33,6 +33,18 @@
     aspect-ratio: 1 / 1;
 }
 
+.projectSubList {
+    justify-content: space-around;
+    padding: calc(var(--layoutSpace) + 2rem) 0;
+}
+
+.projectSubList .projectLink {
+    grid-template-columns: 1fr;
+}
+
+.projectSubLink {
+}
+
 @media screen and (min-width: 768px) {
     .projectList {
         display: grid;
@@ -62,7 +74,6 @@
 
     .projectSubList .projectLink {
         display: flex;
-        justify-content: center;
         height: fit-content;
     }
 
