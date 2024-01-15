@@ -14,5 +14,8 @@ function getItem(items) {
 
 export const setContent = (content, propName) => {
     return content.filter((item) => propName in item.fields);
-    // console.log(content.filter((item) => propName in item.fields));
 };
+
+export function filterEmptyItems(items) {
+    return items.filter((item) => Object.hasOwn(item, 'fields'));
+}
