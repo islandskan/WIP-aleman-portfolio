@@ -11,15 +11,12 @@ const ProjectListItem = ({ project }) => {
         startYear,
         projectThumbnail,
     } = project.fields;
-    console.log(projectThumbnail);
 
     const { title: imageAltText } = projectThumbnail.fields;
     const imageUrl = `https:${projectThumbnail.fields.file.url}`;
-    console.log(imageUrl);
-    console.log(imageAltText);
+    imageUrl;
+    imageAltText;
     const { height, width } = projectThumbnail.fields.file.details.image;
-
-    console.log(height, width);
 
     return (
         <li key={projectLinkUrl} className={`${styles.projectLink} listChild`}>
@@ -46,7 +43,8 @@ const ProjectListItem = ({ project }) => {
                         alt={imageAltText}
                         height={height}
                         width={width}
-                        loading='lazy'
+                        priority
+                        // loading='lazy'
                         style={{
                             maxWidth: '100%',
                             height: 'auto',

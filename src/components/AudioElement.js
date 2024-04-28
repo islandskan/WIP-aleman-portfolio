@@ -3,7 +3,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
 export const AudioElement = ({ audioObj }) => {
-    console.log(audioObj);
+    audioObj;
     const {
         audio,
         audioText,
@@ -12,10 +12,10 @@ export const AudioElement = ({ audioObj }) => {
         audioImgInfo,
         audioTitle,
     } = audioObj[0].fields;
-    console.log(audioTitle);
+    audioTitle;
     const { url, contentType } = audio.fields.file;
     const { height, width } = audioImage.fields.file.details.image;
-    console.log(height, width);
+    height, width;
 
     return (
         <div className={`${styles.audioContainer} audioContainer`}>

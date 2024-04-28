@@ -8,7 +8,7 @@
 // export async function fetchContent(contentType) {
 //     const entries = await client.getContentType(`${contentType}`);
 //     if (entries.items) return entries.items;
-//     console.log(`Error getting Entries for ${contentType.name}.`);
+//     (`Error getting Entries for ${contentType.name}.`);
 // }
 
 // export default fetchContent;

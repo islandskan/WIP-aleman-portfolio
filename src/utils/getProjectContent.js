@@ -14,7 +14,7 @@ const getCardImg = (card) => {
 //             project.fields;
 
 //         // projectLinksUnderMenu,
-//         console.log(projectLinkUrl, projectLinksTitle, startYear, endYear);
+//         (projectLinkUrl, projectLinksTitle, startYear, endYear);
 //     });
 // };
 

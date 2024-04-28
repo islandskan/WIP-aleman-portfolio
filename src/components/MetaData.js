@@ -17,7 +17,7 @@ import Head from 'next/head';
 // }
 
 export const MetaData = ({ page, seoMetaData }) => {
-    // console.log(seoMetaData);
+    // (seoMetaData);
     return (
         <Head>
             <title>{`Madeleine Aleman | ${page}`}</title>

@@ -4,7 +4,6 @@ import { hasDates } from '../utils/hasDates';
 
 export const NewsCard = ({ card }) => {
     const { title, location, link, startDate, endDate, newsInfo } = card.fields;
-    console.log(newsInfo);
 
     return (
         <div className={`${styles.newsCard}`}>

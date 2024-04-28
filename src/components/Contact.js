@@ -24,8 +24,8 @@
 //         try {
 //             const response = await axios(config);
 //             if (response.status == 200) {
-//                 console.log('Successful submission');
-//                 console.log(response);
+//                 ('Successful submission');
+//                 (response);
 //             }
 //         } catch (error) {
 //             console.error(error);

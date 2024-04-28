@@ -36,7 +36,6 @@ export async function getStaticProps() {
 // }
 
 function Home({ res }) {
-    console.log(res);
     const { content } = res.fields;
     const landingContent = content[0];
     const { details, url } = landingContent.fields.image.fields.file;
@@ -54,6 +53,7 @@ function Home({ res }) {
                     src={`https:${url}`}
                     height={HEIGHT}
                     width={WIDTH}
+                    priority
                 />
             </div>
         </>

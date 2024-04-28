@@ -57,6 +57,7 @@ const Contact = ({ res }) => {
                         src={`https:${url}`}
                         height={HEIGHT}
                         width={WIDTH}
+                        priority
                     />
                 </figure>
             </div>
