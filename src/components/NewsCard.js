@@ -29,11 +29,6 @@ export const NewsCard = ({ card }) => {
                         )}
                     </div>
                 )}
-                {/* {newsInfo && <p>{newsInfo}</p>}
-
-                {location && (
-                    <p className={styles.newsCardLocation}>{location}</p>
-                )} */}
             </div>
         </div>
     );
