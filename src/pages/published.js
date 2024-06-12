@@ -10,6 +10,7 @@ export async function getStaticProps() {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     });
     const res = await client.getEntry('4bBs17JZfSz0cA3E6fOeWR');
+
     if (!res) {
         return { notFound: true };
     }
@@ -21,7 +22,7 @@ export async function getStaticProps() {
     };
 }
 const Published = ({ res }) => {
-    const { content, title } = res.fields;
+    const { content } = res.fields;
     const publishedBody = content[0].fields.formattedText;
 
     const options = {
