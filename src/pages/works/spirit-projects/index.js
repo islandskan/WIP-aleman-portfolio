@@ -38,7 +38,7 @@ function SpiritProjects({ res }) {
 
             <ul
                 id='spiritProjects'
-                className={`${styles.projectList} listLayout`}
+                className={`${styles.projectList} listLayout ${styles.underProjectLayout}`}
             >
                 {projectList}
             </ul>

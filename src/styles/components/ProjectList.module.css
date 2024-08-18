@@ -29,11 +29,11 @@
 
 .projectImgLink {
     grid-column: 1 / span 3;
-    height: fit-content;
-    margin: auto auto 0 auto;
 }
 
 .projectImgLink img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
 }
 
 .projectSubList {
@@ -81,5 +81,9 @@
     }
 
     .projectSubLink {
+    }
+
+    .underProjectLayout {
+        /* border: 1px solid black; */
     }
 }

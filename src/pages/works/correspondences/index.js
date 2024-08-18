@@ -39,7 +39,7 @@ function Correspondences({ res }) {
 
             <ul
                 id='correspondences'
-                className={`${styles.projectList} listLayout`}
+                className={`${styles.projectList} listLayout ${styles.underProjectLayout}`}
             >
                 {projectList}
             </ul>

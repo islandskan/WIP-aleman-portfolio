@@ -35,7 +35,10 @@ function AxisMundi({ res }) {
     return (
         <>
             <MetaData page={projectLinksTitle} />
-            <ul id='axisMundi' className={`${styles.projectList} listLayout`}>
+            <ul
+                id='axisMundi'
+                className={`${styles.projectList} listLayout ${styles.underProjectLayout}`}
+            >
                 {projectList}
             </ul>
             <GoBackLink slug={projectLinkUrl} />
