@@ -2,12 +2,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/components/ProjectList.module.css';
 import { SrOnly } from './SrOnly.js';
+import { usePathname } from 'next/navigation.js';
 
 const ProjectListItem = ({ project }) => {
     const {
         endYear,
         projectLinkUrl,
         projectLinksTitle,
+        projectTitle,
         startYear,
         projectThumbnail,
     } = project.fields;
@@ -17,24 +19,46 @@ const ProjectListItem = ({ project }) => {
     imageUrl;
     imageAltText;
     const { height, width } = projectThumbnail.fields.file.details.image;
+    const currentPath = usePathname();
+
+    const projectSubItemUrl = project.fields.slug;
+
+    function setUrl(url) {
+        if (!url || url === undefined || url === null) {
+            return `${currentPath}/${projectLinkUrl}`;
+        } else {
+            return `${currentPath}/${url}`;
+        }
+    }
+
+    function setYear(start, end) {
+        if (start && end) {
+            return `${start} - ${end}`;
+        } else if (start) {
+            return `${start}`;
+        } else {
+            return;
+        }
+    }
+
+    const setTitle = projectTitle ? projectTitle : projectLinksTitle;
 
     return (
         <li key={projectLinkUrl} className={`${styles.projectLink} listChild`}>
             <div className={styles.projectLinkWrapper}>
                 <Link
-                    href={`/works/${projectLinkUrl}`}
+                    href={setUrl(projectSubItemUrl)}
                     className={styles.projectLinkUrl}
                 >
-                    <SrOnly text={`Go to ${projectLinksTitle}`} />
+                    <SrOnly text={`Go to ${setTitle}`} />
 
-                    {projectLinksTitle}
-                    {/* <span>{`${startYear} - ${endYear}`}</span> */}
+                    {setTitle}
                 </Link>
-                <span>{`${startYear} - ${endYear}`}</span>
+                <span>{setYear(startYear, endYear)}</span>
             </div>
             {projectThumbnail && (
                 <Link
-                    href={`/works/${projectLinkUrl}`}
+                    href={setUrl(projectSubItemUrl)}
                     className={`skipLink ${styles.projectImgLink}`}
                     tabIndex='-1'
                 >
