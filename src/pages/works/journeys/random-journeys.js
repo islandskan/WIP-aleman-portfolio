@@ -27,10 +27,10 @@ export async function getStaticProps() {
 function RandomJourneys({ res }) {
     const { title, content, slug } = res.fields;
 
-    const filteredItems = filterEmptyItems(content);
+    // const filteredItems = filterEmptyItems(content);
     // const randomJourneysImages = setContent(filteredItems, 'image');
     // const randomJourneysText = setContent(filteredItems, 'formattedText');
-    const textContent = randomJourneysText[0].fields.formattedText;
+    // const textContent = randomJourneysText[0].fields.formattedText;
 
     const options = {
         renderNode: {
