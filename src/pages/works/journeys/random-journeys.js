@@ -27,8 +27,8 @@ export async function getStaticProps() {
 function RandomJourneys({ res }) {
     const { title, content, slug } = res.fields;
 
-    // const filteredItems = filterEmptyItems(content);
-    // const randomJourneysImages = setContent(filteredItems, 'image');
+    const filteredItems = filterEmptyItems(content);
+    const randomJourneysImages = setContent(filteredItems, 'image');
     // const randomJourneysText = setContent(filteredItems, 'formattedText');
     // const textContent = randomJourneysText[0].fields.formattedText;
 
@@ -58,7 +58,7 @@ function RandomJourneys({ res }) {
                 {documentToReactComponents(textContent, options)}
             </div> */}
             <div className='imageContainer'>
-                {/* <ImageCollection images={journey3Images} /> */}
+                <ImageCollection images={randomJourneysImages} />
             </div>
 
             <GoBackLink slug={slug} />
