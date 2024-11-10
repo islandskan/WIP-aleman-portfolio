@@ -29,8 +29,8 @@ function RandomJourneys({ res }) {
 
     const filteredItems = filterEmptyItems(content);
     const randomJourneysImages = setContent(filteredItems, 'image');
-    // const randomJourneysText = setContent(filteredItems, 'formattedText');
-    // const textContent = randomJourneysText[0].fields.formattedText;
+    const randomJourneysText = setContent(filteredItems, 'formattedText');
+    const textContent = randomJourneysText[0].fields.formattedText;
 
     const options = {
         renderNode: {
@@ -54,9 +54,9 @@ function RandomJourneys({ res }) {
         <>
             <MetaData page={title} />
 
-            {/* <div className='pageTitleWrapper'>
+            <div className='pageTitleWrapper'>
                 {documentToReactComponents(textContent, options)}
-            </div> */}
+            </div>
             <div className='imageContainer'>
                 <ImageCollection images={randomJourneysImages} />
             </div>
