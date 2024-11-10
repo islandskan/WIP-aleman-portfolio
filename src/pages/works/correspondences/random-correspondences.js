@@ -66,4 +66,4 @@ function RandomCorrespondences({ res }) {
     );
 }
 
-export default RandomJourneys;
+export default RandomCorrespondences;
