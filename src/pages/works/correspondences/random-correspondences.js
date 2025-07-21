@@ -28,8 +28,11 @@ function RandomCorrespondences({ res }) {
     const { title, content, slug } = res.fields;
 
     const filteredItems = filterEmptyItems(content);
-    // const randomCorrespondencesImages = setContent(filteredItems, 'image');
-    const randomCorrespondencesText = setContent(filteredItems, 'formattedText');
+    const randomCorrespondencesImages = setContent(filteredItems, 'image');
+    const randomCorrespondencesText = setContent(
+        filteredItems,
+        'formattedText'
+    );
     const textContent = randomCorrespondencesText[0].fields.formattedText;
 
     const options = {
@@ -58,7 +61,7 @@ function RandomCorrespondences({ res }) {
                 {documentToReactComponents(textContent, options)}
             </div>
             <div className='imageContainer'>
-                {/* <ImageCollection images={randomCorrespondencesImages} /> */}
+                <ImageCollection images={randomCorrespondencesImages} />
             </div>
 
             <GoBackLink slug={slug} />
