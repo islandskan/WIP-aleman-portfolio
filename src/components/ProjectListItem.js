@@ -14,11 +14,13 @@ const ProjectListItem = ({ project }) => {
         projectThumbnail,
     } = project.fields;
 
-    const { title: imageAltText } = projectThumbnail.fields;
-    const imageUrl = `https:${projectThumbnail.fields.file.url}`;
-    imageUrl;
-    imageAltText;
-    const { height, width } = projectThumbnail.fields.file.details.image;
+    const imageAltText = project?.fields?.title;
+    const imageUrl = projectThumbnail?.fields?.file?.url
+        ? `https:${projectThumbnail.fields.file.url}`
+        : null;
+    const height = projectThumbnail?.fields?.file?.details?.image?.height;
+    const width = projectThumbnail?.fields?.file?.details?.image?.width;
+    const hasThumbnail = projectThumbnail && imageUrl && height && width;
     const currentPath = usePathname();
 
     const projectSubItemUrl = project.fields.slug;
@@ -56,7 +58,7 @@ const ProjectListItem = ({ project }) => {
                 </Link>
                 <span>{setYear(startYear, endYear)}</span>
             </div>
-            {projectThumbnail && (
+            {hasThumbnail && (
                 <Link
                     href={setUrl(projectSubItemUrl)}
                     className={`skipLink ${styles.projectImgLink}`}
@@ -64,7 +66,7 @@ const ProjectListItem = ({ project }) => {
                 >
                     <Image
                         src={imageUrl}
-                        alt={imageAltText}
+                        alt={imageAltText || 'Project Thumnail'}
                         height={height}
                         width={width}
                         priority
