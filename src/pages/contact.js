@@ -9,7 +9,7 @@ export async function getStaticProps() {
         space: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     });
-    const res = await client.getAsset('OiqdPyN3OUcpCvHv7DeHW');
+    const res = await client.getAsset('3gVBMg1IhbFaPL5bP4WrDJ');
     if (!res) {
         return { notFound: true };
     }
