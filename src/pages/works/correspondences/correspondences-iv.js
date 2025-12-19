@@ -28,7 +28,7 @@ function Korrespondanser4({ res }) {
     const { title, content, slug } = res.fields;
 
     const filteredItems = filterEmptyItems(content);
-    const korrespondanser4Images = setContent(filteredItems, 'image');
+    // const korrespondanser4Images = setContent(filteredItems, 'image');
     const corr4Text = setContent(filteredItems, 'formattedText');
     const textContent = corr4Text[0].fields.formattedText;
 
@@ -52,7 +52,7 @@ function Korrespondanser4({ res }) {
             </div>
 
             <div className='imageContainer'>
-                <ImageCollection images={korrespondanser4Images} />
+                {/* <ImageCollection images={korrespondanser4Images} /> */}
             </div>
 
             <GoBackLink slug={slug} />
