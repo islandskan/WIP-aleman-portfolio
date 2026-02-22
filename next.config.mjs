@@ -10,10 +10,12 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'images.ctfassets.net',
-                pathname: `/${process.env.CONTENTFUL_SPACE_ID}/**`,
+                // pathname: `/${process.env.CONTENTFUL_SPACE_ID}/**`,
+                pathname: '/**',
             },
         ],
     },
 };
 
-export default nextConfig;
+// export default nextConfig;
+export default withPlaiceholder(nextConfig)
